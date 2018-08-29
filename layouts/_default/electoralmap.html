@@ -6,9 +6,9 @@
 
 }
 {{ range $state := .Params.states }}
-	#{{ $state.name }}B, #label{{ $state.name }}B {display: inline;}
-	#{{ $state.name }}BL, #label{{ $state.name }}BL, #{{ $state.name }}W, #label{{ $state.name }}W, #{{ $state.name }}RL, #label{{ $state.name }}RL, #{{ $state.name }}R, #label{{ $state.name }}R {display: none;}
-	#{{ $state.name }}B:checked ~ #{{ $state.name }}BL, #{{ $state.name }}B:checked ~ #label{{ $state.name }}BL, #{{ $state.name }}BL:checked ~ #{{ $state.name }}W, #{{ $state.name }}BL:checked ~ #label{{ $state.name }}W, #{{ $state.name }}W:checked ~ #{{ $state.name }}RL, #{{ $state.name }}W:checked ~ #label{{ $state.name }}RL, #{{ $state.name }}RL:checked ~ #{{ $state.name }}R, #{{ $state.name }}RL:checked ~ #label{{ $state.name }}R {display: inline;}
+	#{{ $state.name }}B:Not(:checked) ~ #label{{ $state.name }}B {display: inline; z-index: 1;}
+	#{{ $state.name }}B, #{{ $state.name }}BL, #label{{ $state.name }}BL, #{{ $state.name }}W, #label{{ $state.name }}W, #{{ $state.name }}RL, #label{{ $state.name }}RL, #{{ $state.name }}R, #label{{ $state.name }}R {display: none;}
+	#{{ $state.name }}B:checked ~ #label{{ $state.name }}BL, #{{ $state.name }}BL:checked ~ #label{{ $state.name }}W, #{{ $state.name }}W:checked ~ #label{{ $state.name }}RL, #{{ $state.name }}RL:checked ~ #label{{ $state.name }}R {display: inline; z-index: 2;}
 	#{{ $state.name }}B:Not(:checked) ~ #scoreboard #{{ $state.name }}blueL, #{{ $state.name }}W:Not(:checked) ~ #scoreboard #{{ $state.name }}redL, #{{ $state.name }}RL:Not(:checked) ~ #scoreboard #{{ $state.name }}red, #{{ $state.name }}R:Not(:checked) ~ #scoreboard #{{ $state.name }}blue{display: none;}
 
 	#{{ $state.name }}Hover {display: none;}

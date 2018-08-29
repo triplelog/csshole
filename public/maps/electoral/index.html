@@ -13,7 +13,7 @@
         <style>
 
     html body {
-        font-family: 'Raleway', sans-serif;
+        font-family: sans-serif;
         background-color: white;
     }
 
@@ -45,9 +45,9 @@
 
 }
 
-	#AKB, #labelAKB {display: inline;}
-	#AKBL, #labelAKBL, #AKW, #labelAKW, #AKRL, #labelAKRL, #AKR, #labelAKR {display: none;}
-	#AKB:checked ~ #AKBL, #AKB:checked ~ #labelAKBL, #AKBL:checked ~ #AKW, #AKBL:checked ~ #labelAKW, #AKW:checked ~ #AKRL, #AKW:checked ~ #labelAKRL, #AKRL:checked ~ #AKR, #AKRL:checked ~ #labelAKR {display: inline;}
+	#AKB:Not(:checked) ~ #labelAKB {display: inline; z-index: 1;}
+	#AKB, #AKBL, #labelAKBL, #AKW, #labelAKW, #AKRL, #labelAKRL, #AKR, #labelAKR {display: none;}
+	#AKB:checked ~ #labelAKBL, #AKBL:checked ~ #labelAKW, #AKW:checked ~ #labelAKRL, #AKRL:checked ~ #labelAKR {display: inline; z-index: 2;}
 	#AKB:Not(:checked) ~ #scoreboard #AKblueL, #AKW:Not(:checked) ~ #scoreboard #AKredL, #AKRL:Not(:checked) ~ #scoreboard #AKred, #AKR:Not(:checked) ~ #scoreboard #AKblue{display: none;}
 
 	#AKHover {display: none;}
@@ -57,9 +57,9 @@
 	input:checked + label + input + #labelAKRL:hover ~ #AKHover {display: inline;}
 	input:checked + label + input + #labelAKR:hover ~ #AKHover {display: inline;}
 
-	#HIB, #labelHIB {display: inline;}
-	#HIBL, #labelHIBL, #HIW, #labelHIW, #HIRL, #labelHIRL, #HIR, #labelHIR {display: none;}
-	#HIB:checked ~ #HIBL, #HIB:checked ~ #labelHIBL, #HIBL:checked ~ #HIW, #HIBL:checked ~ #labelHIW, #HIW:checked ~ #HIRL, #HIW:checked ~ #labelHIRL, #HIRL:checked ~ #HIR, #HIRL:checked ~ #labelHIR {display: inline;}
+	#HIB:Not(:checked) ~ #labelHIB {display: inline; z-index: 1;}
+	#HIB, #HIBL, #labelHIBL, #HIW, #labelHIW, #HIRL, #labelHIRL, #HIR, #labelHIR {display: none;}
+	#HIB:checked ~ #labelHIBL, #HIBL:checked ~ #labelHIW, #HIW:checked ~ #labelHIRL, #HIRL:checked ~ #labelHIR {display: inline; z-index: 2;}
 	#HIB:Not(:checked) ~ #scoreboard #HIblueL, #HIW:Not(:checked) ~ #scoreboard #HIredL, #HIRL:Not(:checked) ~ #scoreboard #HIred, #HIR:Not(:checked) ~ #scoreboard #HIblue{display: none;}
 
 	#HIHover {display: none;}
@@ -69,9 +69,9 @@
 	input:checked + label + input + #labelHIRL:hover ~ #HIHover {display: inline;}
 	input:checked + label + input + #labelHIR:hover ~ #HIHover {display: inline;}
 
-	#ALB, #labelALB {display: inline;}
-	#ALBL, #labelALBL, #ALW, #labelALW, #ALRL, #labelALRL, #ALR, #labelALR {display: none;}
-	#ALB:checked ~ #ALBL, #ALB:checked ~ #labelALBL, #ALBL:checked ~ #ALW, #ALBL:checked ~ #labelALW, #ALW:checked ~ #ALRL, #ALW:checked ~ #labelALRL, #ALRL:checked ~ #ALR, #ALRL:checked ~ #labelALR {display: inline;}
+	#ALB:Not(:checked) ~ #labelALB {display: inline; z-index: 1;}
+	#ALB, #ALBL, #labelALBL, #ALW, #labelALW, #ALRL, #labelALRL, #ALR, #labelALR {display: none;}
+	#ALB:checked ~ #labelALBL, #ALBL:checked ~ #labelALW, #ALW:checked ~ #labelALRL, #ALRL:checked ~ #labelALR {display: inline; z-index: 2;}
 	#ALB:Not(:checked) ~ #scoreboard #ALblueL, #ALW:Not(:checked) ~ #scoreboard #ALredL, #ALRL:Not(:checked) ~ #scoreboard #ALred, #ALR:Not(:checked) ~ #scoreboard #ALblue{display: none;}
 
 	#ALHover {display: none;}
@@ -81,9 +81,9 @@
 	input:checked + label + input + #labelALRL:hover ~ #ALHover {display: inline;}
 	input:checked + label + input + #labelALR:hover ~ #ALHover {display: inline;}
 
-	#AZB, #labelAZB {display: inline;}
-	#AZBL, #labelAZBL, #AZW, #labelAZW, #AZRL, #labelAZRL, #AZR, #labelAZR {display: none;}
-	#AZB:checked ~ #AZBL, #AZB:checked ~ #labelAZBL, #AZBL:checked ~ #AZW, #AZBL:checked ~ #labelAZW, #AZW:checked ~ #AZRL, #AZW:checked ~ #labelAZRL, #AZRL:checked ~ #AZR, #AZRL:checked ~ #labelAZR {display: inline;}
+	#AZB:Not(:checked) ~ #labelAZB {display: inline; z-index: 1;}
+	#AZB, #AZBL, #labelAZBL, #AZW, #labelAZW, #AZRL, #labelAZRL, #AZR, #labelAZR {display: none;}
+	#AZB:checked ~ #labelAZBL, #AZBL:checked ~ #labelAZW, #AZW:checked ~ #labelAZRL, #AZRL:checked ~ #labelAZR {display: inline; z-index: 2;}
 	#AZB:Not(:checked) ~ #scoreboard #AZblueL, #AZW:Not(:checked) ~ #scoreboard #AZredL, #AZRL:Not(:checked) ~ #scoreboard #AZred, #AZR:Not(:checked) ~ #scoreboard #AZblue{display: none;}
 
 	#AZHover {display: none;}
@@ -93,9 +93,9 @@
 	input:checked + label + input + #labelAZRL:hover ~ #AZHover {display: inline;}
 	input:checked + label + input + #labelAZR:hover ~ #AZHover {display: inline;}
 
-	#ARB, #labelARB {display: inline;}
-	#ARBL, #labelARBL, #ARW, #labelARW, #ARRL, #labelARRL, #ARR, #labelARR {display: none;}
-	#ARB:checked ~ #ARBL, #ARB:checked ~ #labelARBL, #ARBL:checked ~ #ARW, #ARBL:checked ~ #labelARW, #ARW:checked ~ #ARRL, #ARW:checked ~ #labelARRL, #ARRL:checked ~ #ARR, #ARRL:checked ~ #labelARR {display: inline;}
+	#ARB:Not(:checked) ~ #labelARB {display: inline; z-index: 1;}
+	#ARB, #ARBL, #labelARBL, #ARW, #labelARW, #ARRL, #labelARRL, #ARR, #labelARR {display: none;}
+	#ARB:checked ~ #labelARBL, #ARBL:checked ~ #labelARW, #ARW:checked ~ #labelARRL, #ARRL:checked ~ #labelARR {display: inline; z-index: 2;}
 	#ARB:Not(:checked) ~ #scoreboard #ARblueL, #ARW:Not(:checked) ~ #scoreboard #ARredL, #ARRL:Not(:checked) ~ #scoreboard #ARred, #ARR:Not(:checked) ~ #scoreboard #ARblue{display: none;}
 
 	#ARHover {display: none;}
@@ -105,9 +105,9 @@
 	input:checked + label + input + #labelARRL:hover ~ #ARHover {display: inline;}
 	input:checked + label + input + #labelARR:hover ~ #ARHover {display: inline;}
 
-	#CAB, #labelCAB {display: inline;}
-	#CABL, #labelCABL, #CAW, #labelCAW, #CARL, #labelCARL, #CAR, #labelCAR {display: none;}
-	#CAB:checked ~ #CABL, #CAB:checked ~ #labelCABL, #CABL:checked ~ #CAW, #CABL:checked ~ #labelCAW, #CAW:checked ~ #CARL, #CAW:checked ~ #labelCARL, #CARL:checked ~ #CAR, #CARL:checked ~ #labelCAR {display: inline;}
+	#CAB:Not(:checked) ~ #labelCAB {display: inline; z-index: 1;}
+	#CAB, #CABL, #labelCABL, #CAW, #labelCAW, #CARL, #labelCARL, #CAR, #labelCAR {display: none;}
+	#CAB:checked ~ #labelCABL, #CABL:checked ~ #labelCAW, #CAW:checked ~ #labelCARL, #CARL:checked ~ #labelCAR {display: inline; z-index: 2;}
 	#CAB:Not(:checked) ~ #scoreboard #CAblueL, #CAW:Not(:checked) ~ #scoreboard #CAredL, #CARL:Not(:checked) ~ #scoreboard #CAred, #CAR:Not(:checked) ~ #scoreboard #CAblue{display: none;}
 
 	#CAHover {display: none;}
@@ -117,9 +117,9 @@
 	input:checked + label + input + #labelCARL:hover ~ #CAHover {display: inline;}
 	input:checked + label + input + #labelCAR:hover ~ #CAHover {display: inline;}
 
-	#COB, #labelCOB {display: inline;}
-	#COBL, #labelCOBL, #COW, #labelCOW, #CORL, #labelCORL, #COR, #labelCOR {display: none;}
-	#COB:checked ~ #COBL, #COB:checked ~ #labelCOBL, #COBL:checked ~ #COW, #COBL:checked ~ #labelCOW, #COW:checked ~ #CORL, #COW:checked ~ #labelCORL, #CORL:checked ~ #COR, #CORL:checked ~ #labelCOR {display: inline;}
+	#COB:Not(:checked) ~ #labelCOB {display: inline; z-index: 1;}
+	#COB, #COBL, #labelCOBL, #COW, #labelCOW, #CORL, #labelCORL, #COR, #labelCOR {display: none;}
+	#COB:checked ~ #labelCOBL, #COBL:checked ~ #labelCOW, #COW:checked ~ #labelCORL, #CORL:checked ~ #labelCOR {display: inline; z-index: 2;}
 	#COB:Not(:checked) ~ #scoreboard #COblueL, #COW:Not(:checked) ~ #scoreboard #COredL, #CORL:Not(:checked) ~ #scoreboard #COred, #COR:Not(:checked) ~ #scoreboard #COblue{display: none;}
 
 	#COHover {display: none;}
@@ -129,9 +129,9 @@
 	input:checked + label + input + #labelCORL:hover ~ #COHover {display: inline;}
 	input:checked + label + input + #labelCOR:hover ~ #COHover {display: inline;}
 
-	#CTB, #labelCTB {display: inline;}
-	#CTBL, #labelCTBL, #CTW, #labelCTW, #CTRL, #labelCTRL, #CTR, #labelCTR {display: none;}
-	#CTB:checked ~ #CTBL, #CTB:checked ~ #labelCTBL, #CTBL:checked ~ #CTW, #CTBL:checked ~ #labelCTW, #CTW:checked ~ #CTRL, #CTW:checked ~ #labelCTRL, #CTRL:checked ~ #CTR, #CTRL:checked ~ #labelCTR {display: inline;}
+	#CTB:Not(:checked) ~ #labelCTB {display: inline; z-index: 1;}
+	#CTB, #CTBL, #labelCTBL, #CTW, #labelCTW, #CTRL, #labelCTRL, #CTR, #labelCTR {display: none;}
+	#CTB:checked ~ #labelCTBL, #CTBL:checked ~ #labelCTW, #CTW:checked ~ #labelCTRL, #CTRL:checked ~ #labelCTR {display: inline; z-index: 2;}
 	#CTB:Not(:checked) ~ #scoreboard #CTblueL, #CTW:Not(:checked) ~ #scoreboard #CTredL, #CTRL:Not(:checked) ~ #scoreboard #CTred, #CTR:Not(:checked) ~ #scoreboard #CTblue{display: none;}
 
 	#CTHover {display: none;}
@@ -141,9 +141,9 @@
 	input:checked + label + input + #labelCTRL:hover ~ #CTHover {display: inline;}
 	input:checked + label + input + #labelCTR:hover ~ #CTHover {display: inline;}
 
-	#DEB, #labelDEB {display: inline;}
-	#DEBL, #labelDEBL, #DEW, #labelDEW, #DERL, #labelDERL, #DER, #labelDER {display: none;}
-	#DEB:checked ~ #DEBL, #DEB:checked ~ #labelDEBL, #DEBL:checked ~ #DEW, #DEBL:checked ~ #labelDEW, #DEW:checked ~ #DERL, #DEW:checked ~ #labelDERL, #DERL:checked ~ #DER, #DERL:checked ~ #labelDER {display: inline;}
+	#DEB:Not(:checked) ~ #labelDEB {display: inline; z-index: 1;}
+	#DEB, #DEBL, #labelDEBL, #DEW, #labelDEW, #DERL, #labelDERL, #DER, #labelDER {display: none;}
+	#DEB:checked ~ #labelDEBL, #DEBL:checked ~ #labelDEW, #DEW:checked ~ #labelDERL, #DERL:checked ~ #labelDER {display: inline; z-index: 2;}
 	#DEB:Not(:checked) ~ #scoreboard #DEblueL, #DEW:Not(:checked) ~ #scoreboard #DEredL, #DERL:Not(:checked) ~ #scoreboard #DEred, #DER:Not(:checked) ~ #scoreboard #DEblue{display: none;}
 
 	#DEHover {display: none;}
@@ -153,9 +153,9 @@
 	input:checked + label + input + #labelDERL:hover ~ #DEHover {display: inline;}
 	input:checked + label + input + #labelDER:hover ~ #DEHover {display: inline;}
 
-	#DCB, #labelDCB {display: inline;}
-	#DCBL, #labelDCBL, #DCW, #labelDCW, #DCRL, #labelDCRL, #DCR, #labelDCR {display: none;}
-	#DCB:checked ~ #DCBL, #DCB:checked ~ #labelDCBL, #DCBL:checked ~ #DCW, #DCBL:checked ~ #labelDCW, #DCW:checked ~ #DCRL, #DCW:checked ~ #labelDCRL, #DCRL:checked ~ #DCR, #DCRL:checked ~ #labelDCR {display: inline;}
+	#DCB:Not(:checked) ~ #labelDCB {display: inline; z-index: 1;}
+	#DCB, #DCBL, #labelDCBL, #DCW, #labelDCW, #DCRL, #labelDCRL, #DCR, #labelDCR {display: none;}
+	#DCB:checked ~ #labelDCBL, #DCBL:checked ~ #labelDCW, #DCW:checked ~ #labelDCRL, #DCRL:checked ~ #labelDCR {display: inline; z-index: 2;}
 	#DCB:Not(:checked) ~ #scoreboard #DCblueL, #DCW:Not(:checked) ~ #scoreboard #DCredL, #DCRL:Not(:checked) ~ #scoreboard #DCred, #DCR:Not(:checked) ~ #scoreboard #DCblue{display: none;}
 
 	#DCHover {display: none;}
@@ -165,9 +165,9 @@
 	input:checked + label + input + #labelDCRL:hover ~ #DCHover {display: inline;}
 	input:checked + label + input + #labelDCR:hover ~ #DCHover {display: inline;}
 
-	#FLB, #labelFLB {display: inline;}
-	#FLBL, #labelFLBL, #FLW, #labelFLW, #FLRL, #labelFLRL, #FLR, #labelFLR {display: none;}
-	#FLB:checked ~ #FLBL, #FLB:checked ~ #labelFLBL, #FLBL:checked ~ #FLW, #FLBL:checked ~ #labelFLW, #FLW:checked ~ #FLRL, #FLW:checked ~ #labelFLRL, #FLRL:checked ~ #FLR, #FLRL:checked ~ #labelFLR {display: inline;}
+	#FLB:Not(:checked) ~ #labelFLB {display: inline; z-index: 1;}
+	#FLB, #FLBL, #labelFLBL, #FLW, #labelFLW, #FLRL, #labelFLRL, #FLR, #labelFLR {display: none;}
+	#FLB:checked ~ #labelFLBL, #FLBL:checked ~ #labelFLW, #FLW:checked ~ #labelFLRL, #FLRL:checked ~ #labelFLR {display: inline; z-index: 2;}
 	#FLB:Not(:checked) ~ #scoreboard #FLblueL, #FLW:Not(:checked) ~ #scoreboard #FLredL, #FLRL:Not(:checked) ~ #scoreboard #FLred, #FLR:Not(:checked) ~ #scoreboard #FLblue{display: none;}
 
 	#FLHover {display: none;}
@@ -177,9 +177,9 @@
 	input:checked + label + input + #labelFLRL:hover ~ #FLHover {display: inline;}
 	input:checked + label + input + #labelFLR:hover ~ #FLHover {display: inline;}
 
-	#GAB, #labelGAB {display: inline;}
-	#GABL, #labelGABL, #GAW, #labelGAW, #GARL, #labelGARL, #GAR, #labelGAR {display: none;}
-	#GAB:checked ~ #GABL, #GAB:checked ~ #labelGABL, #GABL:checked ~ #GAW, #GABL:checked ~ #labelGAW, #GAW:checked ~ #GARL, #GAW:checked ~ #labelGARL, #GARL:checked ~ #GAR, #GARL:checked ~ #labelGAR {display: inline;}
+	#GAB:Not(:checked) ~ #labelGAB {display: inline; z-index: 1;}
+	#GAB, #GABL, #labelGABL, #GAW, #labelGAW, #GARL, #labelGARL, #GAR, #labelGAR {display: none;}
+	#GAB:checked ~ #labelGABL, #GABL:checked ~ #labelGAW, #GAW:checked ~ #labelGARL, #GARL:checked ~ #labelGAR {display: inline; z-index: 2;}
 	#GAB:Not(:checked) ~ #scoreboard #GAblueL, #GAW:Not(:checked) ~ #scoreboard #GAredL, #GARL:Not(:checked) ~ #scoreboard #GAred, #GAR:Not(:checked) ~ #scoreboard #GAblue{display: none;}
 
 	#GAHover {display: none;}
@@ -189,9 +189,9 @@
 	input:checked + label + input + #labelGARL:hover ~ #GAHover {display: inline;}
 	input:checked + label + input + #labelGAR:hover ~ #GAHover {display: inline;}
 
-	#IDB, #labelIDB {display: inline;}
-	#IDBL, #labelIDBL, #IDW, #labelIDW, #IDRL, #labelIDRL, #IDR, #labelIDR {display: none;}
-	#IDB:checked ~ #IDBL, #IDB:checked ~ #labelIDBL, #IDBL:checked ~ #IDW, #IDBL:checked ~ #labelIDW, #IDW:checked ~ #IDRL, #IDW:checked ~ #labelIDRL, #IDRL:checked ~ #IDR, #IDRL:checked ~ #labelIDR {display: inline;}
+	#IDB:Not(:checked) ~ #labelIDB {display: inline; z-index: 1;}
+	#IDB, #IDBL, #labelIDBL, #IDW, #labelIDW, #IDRL, #labelIDRL, #IDR, #labelIDR {display: none;}
+	#IDB:checked ~ #labelIDBL, #IDBL:checked ~ #labelIDW, #IDW:checked ~ #labelIDRL, #IDRL:checked ~ #labelIDR {display: inline; z-index: 2;}
 	#IDB:Not(:checked) ~ #scoreboard #IDblueL, #IDW:Not(:checked) ~ #scoreboard #IDredL, #IDRL:Not(:checked) ~ #scoreboard #IDred, #IDR:Not(:checked) ~ #scoreboard #IDblue{display: none;}
 
 	#IDHover {display: none;}
@@ -201,9 +201,9 @@
 	input:checked + label + input + #labelIDRL:hover ~ #IDHover {display: inline;}
 	input:checked + label + input + #labelIDR:hover ~ #IDHover {display: inline;}
 
-	#ILB, #labelILB {display: inline;}
-	#ILBL, #labelILBL, #ILW, #labelILW, #ILRL, #labelILRL, #ILR, #labelILR {display: none;}
-	#ILB:checked ~ #ILBL, #ILB:checked ~ #labelILBL, #ILBL:checked ~ #ILW, #ILBL:checked ~ #labelILW, #ILW:checked ~ #ILRL, #ILW:checked ~ #labelILRL, #ILRL:checked ~ #ILR, #ILRL:checked ~ #labelILR {display: inline;}
+	#ILB:Not(:checked) ~ #labelILB {display: inline; z-index: 1;}
+	#ILB, #ILBL, #labelILBL, #ILW, #labelILW, #ILRL, #labelILRL, #ILR, #labelILR {display: none;}
+	#ILB:checked ~ #labelILBL, #ILBL:checked ~ #labelILW, #ILW:checked ~ #labelILRL, #ILRL:checked ~ #labelILR {display: inline; z-index: 2;}
 	#ILB:Not(:checked) ~ #scoreboard #ILblueL, #ILW:Not(:checked) ~ #scoreboard #ILredL, #ILRL:Not(:checked) ~ #scoreboard #ILred, #ILR:Not(:checked) ~ #scoreboard #ILblue{display: none;}
 
 	#ILHover {display: none;}
@@ -213,9 +213,9 @@
 	input:checked + label + input + #labelILRL:hover ~ #ILHover {display: inline;}
 	input:checked + label + input + #labelILR:hover ~ #ILHover {display: inline;}
 
-	#INB, #labelINB {display: inline;}
-	#INBL, #labelINBL, #INW, #labelINW, #INRL, #labelINRL, #INR, #labelINR {display: none;}
-	#INB:checked ~ #INBL, #INB:checked ~ #labelINBL, #INBL:checked ~ #INW, #INBL:checked ~ #labelINW, #INW:checked ~ #INRL, #INW:checked ~ #labelINRL, #INRL:checked ~ #INR, #INRL:checked ~ #labelINR {display: inline;}
+	#INB:Not(:checked) ~ #labelINB {display: inline; z-index: 1;}
+	#INB, #INBL, #labelINBL, #INW, #labelINW, #INRL, #labelINRL, #INR, #labelINR {display: none;}
+	#INB:checked ~ #labelINBL, #INBL:checked ~ #labelINW, #INW:checked ~ #labelINRL, #INRL:checked ~ #labelINR {display: inline; z-index: 2;}
 	#INB:Not(:checked) ~ #scoreboard #INblueL, #INW:Not(:checked) ~ #scoreboard #INredL, #INRL:Not(:checked) ~ #scoreboard #INred, #INR:Not(:checked) ~ #scoreboard #INblue{display: none;}
 
 	#INHover {display: none;}
@@ -225,9 +225,9 @@
 	input:checked + label + input + #labelINRL:hover ~ #INHover {display: inline;}
 	input:checked + label + input + #labelINR:hover ~ #INHover {display: inline;}
 
-	#IAB, #labelIAB {display: inline;}
-	#IABL, #labelIABL, #IAW, #labelIAW, #IARL, #labelIARL, #IAR, #labelIAR {display: none;}
-	#IAB:checked ~ #IABL, #IAB:checked ~ #labelIABL, #IABL:checked ~ #IAW, #IABL:checked ~ #labelIAW, #IAW:checked ~ #IARL, #IAW:checked ~ #labelIARL, #IARL:checked ~ #IAR, #IARL:checked ~ #labelIAR {display: inline;}
+	#IAB:Not(:checked) ~ #labelIAB {display: inline; z-index: 1;}
+	#IAB, #IABL, #labelIABL, #IAW, #labelIAW, #IARL, #labelIARL, #IAR, #labelIAR {display: none;}
+	#IAB:checked ~ #labelIABL, #IABL:checked ~ #labelIAW, #IAW:checked ~ #labelIARL, #IARL:checked ~ #labelIAR {display: inline; z-index: 2;}
 	#IAB:Not(:checked) ~ #scoreboard #IAblueL, #IAW:Not(:checked) ~ #scoreboard #IAredL, #IARL:Not(:checked) ~ #scoreboard #IAred, #IAR:Not(:checked) ~ #scoreboard #IAblue{display: none;}
 
 	#IAHover {display: none;}
@@ -237,9 +237,9 @@
 	input:checked + label + input + #labelIARL:hover ~ #IAHover {display: inline;}
 	input:checked + label + input + #labelIAR:hover ~ #IAHover {display: inline;}
 
-	#KSB, #labelKSB {display: inline;}
-	#KSBL, #labelKSBL, #KSW, #labelKSW, #KSRL, #labelKSRL, #KSR, #labelKSR {display: none;}
-	#KSB:checked ~ #KSBL, #KSB:checked ~ #labelKSBL, #KSBL:checked ~ #KSW, #KSBL:checked ~ #labelKSW, #KSW:checked ~ #KSRL, #KSW:checked ~ #labelKSRL, #KSRL:checked ~ #KSR, #KSRL:checked ~ #labelKSR {display: inline;}
+	#KSB:Not(:checked) ~ #labelKSB {display: inline; z-index: 1;}
+	#KSB, #KSBL, #labelKSBL, #KSW, #labelKSW, #KSRL, #labelKSRL, #KSR, #labelKSR {display: none;}
+	#KSB:checked ~ #labelKSBL, #KSBL:checked ~ #labelKSW, #KSW:checked ~ #labelKSRL, #KSRL:checked ~ #labelKSR {display: inline; z-index: 2;}
 	#KSB:Not(:checked) ~ #scoreboard #KSblueL, #KSW:Not(:checked) ~ #scoreboard #KSredL, #KSRL:Not(:checked) ~ #scoreboard #KSred, #KSR:Not(:checked) ~ #scoreboard #KSblue{display: none;}
 
 	#KSHover {display: none;}
@@ -249,9 +249,9 @@
 	input:checked + label + input + #labelKSRL:hover ~ #KSHover {display: inline;}
 	input:checked + label + input + #labelKSR:hover ~ #KSHover {display: inline;}
 
-	#KYB, #labelKYB {display: inline;}
-	#KYBL, #labelKYBL, #KYW, #labelKYW, #KYRL, #labelKYRL, #KYR, #labelKYR {display: none;}
-	#KYB:checked ~ #KYBL, #KYB:checked ~ #labelKYBL, #KYBL:checked ~ #KYW, #KYBL:checked ~ #labelKYW, #KYW:checked ~ #KYRL, #KYW:checked ~ #labelKYRL, #KYRL:checked ~ #KYR, #KYRL:checked ~ #labelKYR {display: inline;}
+	#KYB:Not(:checked) ~ #labelKYB {display: inline; z-index: 1;}
+	#KYB, #KYBL, #labelKYBL, #KYW, #labelKYW, #KYRL, #labelKYRL, #KYR, #labelKYR {display: none;}
+	#KYB:checked ~ #labelKYBL, #KYBL:checked ~ #labelKYW, #KYW:checked ~ #labelKYRL, #KYRL:checked ~ #labelKYR {display: inline; z-index: 2;}
 	#KYB:Not(:checked) ~ #scoreboard #KYblueL, #KYW:Not(:checked) ~ #scoreboard #KYredL, #KYRL:Not(:checked) ~ #scoreboard #KYred, #KYR:Not(:checked) ~ #scoreboard #KYblue{display: none;}
 
 	#KYHover {display: none;}
@@ -261,9 +261,9 @@
 	input:checked + label + input + #labelKYRL:hover ~ #KYHover {display: inline;}
 	input:checked + label + input + #labelKYR:hover ~ #KYHover {display: inline;}
 
-	#LAB, #labelLAB {display: inline;}
-	#LABL, #labelLABL, #LAW, #labelLAW, #LARL, #labelLARL, #LAR, #labelLAR {display: none;}
-	#LAB:checked ~ #LABL, #LAB:checked ~ #labelLABL, #LABL:checked ~ #LAW, #LABL:checked ~ #labelLAW, #LAW:checked ~ #LARL, #LAW:checked ~ #labelLARL, #LARL:checked ~ #LAR, #LARL:checked ~ #labelLAR {display: inline;}
+	#LAB:Not(:checked) ~ #labelLAB {display: inline; z-index: 1;}
+	#LAB, #LABL, #labelLABL, #LAW, #labelLAW, #LARL, #labelLARL, #LAR, #labelLAR {display: none;}
+	#LAB:checked ~ #labelLABL, #LABL:checked ~ #labelLAW, #LAW:checked ~ #labelLARL, #LARL:checked ~ #labelLAR {display: inline; z-index: 2;}
 	#LAB:Not(:checked) ~ #scoreboard #LAblueL, #LAW:Not(:checked) ~ #scoreboard #LAredL, #LARL:Not(:checked) ~ #scoreboard #LAred, #LAR:Not(:checked) ~ #scoreboard #LAblue{display: none;}
 
 	#LAHover {display: none;}
@@ -273,9 +273,9 @@
 	input:checked + label + input + #labelLARL:hover ~ #LAHover {display: inline;}
 	input:checked + label + input + #labelLAR:hover ~ #LAHover {display: inline;}
 
-	#MEB, #labelMEB {display: inline;}
-	#MEBL, #labelMEBL, #MEW, #labelMEW, #MERL, #labelMERL, #MER, #labelMER {display: none;}
-	#MEB:checked ~ #MEBL, #MEB:checked ~ #labelMEBL, #MEBL:checked ~ #MEW, #MEBL:checked ~ #labelMEW, #MEW:checked ~ #MERL, #MEW:checked ~ #labelMERL, #MERL:checked ~ #MER, #MERL:checked ~ #labelMER {display: inline;}
+	#MEB:Not(:checked) ~ #labelMEB {display: inline; z-index: 1;}
+	#MEB, #MEBL, #labelMEBL, #MEW, #labelMEW, #MERL, #labelMERL, #MER, #labelMER {display: none;}
+	#MEB:checked ~ #labelMEBL, #MEBL:checked ~ #labelMEW, #MEW:checked ~ #labelMERL, #MERL:checked ~ #labelMER {display: inline; z-index: 2;}
 	#MEB:Not(:checked) ~ #scoreboard #MEblueL, #MEW:Not(:checked) ~ #scoreboard #MEredL, #MERL:Not(:checked) ~ #scoreboard #MEred, #MER:Not(:checked) ~ #scoreboard #MEblue{display: none;}
 
 	#MEHover {display: none;}
@@ -285,9 +285,9 @@
 	input:checked + label + input + #labelMERL:hover ~ #MEHover {display: inline;}
 	input:checked + label + input + #labelMER:hover ~ #MEHover {display: inline;}
 
-	#MDB, #labelMDB {display: inline;}
-	#MDBL, #labelMDBL, #MDW, #labelMDW, #MDRL, #labelMDRL, #MDR, #labelMDR {display: none;}
-	#MDB:checked ~ #MDBL, #MDB:checked ~ #labelMDBL, #MDBL:checked ~ #MDW, #MDBL:checked ~ #labelMDW, #MDW:checked ~ #MDRL, #MDW:checked ~ #labelMDRL, #MDRL:checked ~ #MDR, #MDRL:checked ~ #labelMDR {display: inline;}
+	#MDB:Not(:checked) ~ #labelMDB {display: inline; z-index: 1;}
+	#MDB, #MDBL, #labelMDBL, #MDW, #labelMDW, #MDRL, #labelMDRL, #MDR, #labelMDR {display: none;}
+	#MDB:checked ~ #labelMDBL, #MDBL:checked ~ #labelMDW, #MDW:checked ~ #labelMDRL, #MDRL:checked ~ #labelMDR {display: inline; z-index: 2;}
 	#MDB:Not(:checked) ~ #scoreboard #MDblueL, #MDW:Not(:checked) ~ #scoreboard #MDredL, #MDRL:Not(:checked) ~ #scoreboard #MDred, #MDR:Not(:checked) ~ #scoreboard #MDblue{display: none;}
 
 	#MDHover {display: none;}
@@ -297,9 +297,9 @@
 	input:checked + label + input + #labelMDRL:hover ~ #MDHover {display: inline;}
 	input:checked + label + input + #labelMDR:hover ~ #MDHover {display: inline;}
 
-	#MAB, #labelMAB {display: inline;}
-	#MABL, #labelMABL, #MAW, #labelMAW, #MARL, #labelMARL, #MAR, #labelMAR {display: none;}
-	#MAB:checked ~ #MABL, #MAB:checked ~ #labelMABL, #MABL:checked ~ #MAW, #MABL:checked ~ #labelMAW, #MAW:checked ~ #MARL, #MAW:checked ~ #labelMARL, #MARL:checked ~ #MAR, #MARL:checked ~ #labelMAR {display: inline;}
+	#MAB:Not(:checked) ~ #labelMAB {display: inline; z-index: 1;}
+	#MAB, #MABL, #labelMABL, #MAW, #labelMAW, #MARL, #labelMARL, #MAR, #labelMAR {display: none;}
+	#MAB:checked ~ #labelMABL, #MABL:checked ~ #labelMAW, #MAW:checked ~ #labelMARL, #MARL:checked ~ #labelMAR {display: inline; z-index: 2;}
 	#MAB:Not(:checked) ~ #scoreboard #MAblueL, #MAW:Not(:checked) ~ #scoreboard #MAredL, #MARL:Not(:checked) ~ #scoreboard #MAred, #MAR:Not(:checked) ~ #scoreboard #MAblue{display: none;}
 
 	#MAHover {display: none;}
@@ -309,9 +309,9 @@
 	input:checked + label + input + #labelMARL:hover ~ #MAHover {display: inline;}
 	input:checked + label + input + #labelMAR:hover ~ #MAHover {display: inline;}
 
-	#MIB, #labelMIB {display: inline;}
-	#MIBL, #labelMIBL, #MIW, #labelMIW, #MIRL, #labelMIRL, #MIR, #labelMIR {display: none;}
-	#MIB:checked ~ #MIBL, #MIB:checked ~ #labelMIBL, #MIBL:checked ~ #MIW, #MIBL:checked ~ #labelMIW, #MIW:checked ~ #MIRL, #MIW:checked ~ #labelMIRL, #MIRL:checked ~ #MIR, #MIRL:checked ~ #labelMIR {display: inline;}
+	#MIB:Not(:checked) ~ #labelMIB {display: inline; z-index: 1;}
+	#MIB, #MIBL, #labelMIBL, #MIW, #labelMIW, #MIRL, #labelMIRL, #MIR, #labelMIR {display: none;}
+	#MIB:checked ~ #labelMIBL, #MIBL:checked ~ #labelMIW, #MIW:checked ~ #labelMIRL, #MIRL:checked ~ #labelMIR {display: inline; z-index: 2;}
 	#MIB:Not(:checked) ~ #scoreboard #MIblueL, #MIW:Not(:checked) ~ #scoreboard #MIredL, #MIRL:Not(:checked) ~ #scoreboard #MIred, #MIR:Not(:checked) ~ #scoreboard #MIblue{display: none;}
 
 	#MIHover {display: none;}
@@ -321,9 +321,9 @@
 	input:checked + label + input + #labelMIRL:hover ~ #MIHover {display: inline;}
 	input:checked + label + input + #labelMIR:hover ~ #MIHover {display: inline;}
 
-	#MNB, #labelMNB {display: inline;}
-	#MNBL, #labelMNBL, #MNW, #labelMNW, #MNRL, #labelMNRL, #MNR, #labelMNR {display: none;}
-	#MNB:checked ~ #MNBL, #MNB:checked ~ #labelMNBL, #MNBL:checked ~ #MNW, #MNBL:checked ~ #labelMNW, #MNW:checked ~ #MNRL, #MNW:checked ~ #labelMNRL, #MNRL:checked ~ #MNR, #MNRL:checked ~ #labelMNR {display: inline;}
+	#MNB:Not(:checked) ~ #labelMNB {display: inline; z-index: 1;}
+	#MNB, #MNBL, #labelMNBL, #MNW, #labelMNW, #MNRL, #labelMNRL, #MNR, #labelMNR {display: none;}
+	#MNB:checked ~ #labelMNBL, #MNBL:checked ~ #labelMNW, #MNW:checked ~ #labelMNRL, #MNRL:checked ~ #labelMNR {display: inline; z-index: 2;}
 	#MNB:Not(:checked) ~ #scoreboard #MNblueL, #MNW:Not(:checked) ~ #scoreboard #MNredL, #MNRL:Not(:checked) ~ #scoreboard #MNred, #MNR:Not(:checked) ~ #scoreboard #MNblue{display: none;}
 
 	#MNHover {display: none;}
@@ -333,9 +333,9 @@
 	input:checked + label + input + #labelMNRL:hover ~ #MNHover {display: inline;}
 	input:checked + label + input + #labelMNR:hover ~ #MNHover {display: inline;}
 
-	#MSB, #labelMSB {display: inline;}
-	#MSBL, #labelMSBL, #MSW, #labelMSW, #MSRL, #labelMSRL, #MSR, #labelMSR {display: none;}
-	#MSB:checked ~ #MSBL, #MSB:checked ~ #labelMSBL, #MSBL:checked ~ #MSW, #MSBL:checked ~ #labelMSW, #MSW:checked ~ #MSRL, #MSW:checked ~ #labelMSRL, #MSRL:checked ~ #MSR, #MSRL:checked ~ #labelMSR {display: inline;}
+	#MSB:Not(:checked) ~ #labelMSB {display: inline; z-index: 1;}
+	#MSB, #MSBL, #labelMSBL, #MSW, #labelMSW, #MSRL, #labelMSRL, #MSR, #labelMSR {display: none;}
+	#MSB:checked ~ #labelMSBL, #MSBL:checked ~ #labelMSW, #MSW:checked ~ #labelMSRL, #MSRL:checked ~ #labelMSR {display: inline; z-index: 2;}
 	#MSB:Not(:checked) ~ #scoreboard #MSblueL, #MSW:Not(:checked) ~ #scoreboard #MSredL, #MSRL:Not(:checked) ~ #scoreboard #MSred, #MSR:Not(:checked) ~ #scoreboard #MSblue{display: none;}
 
 	#MSHover {display: none;}
@@ -345,9 +345,9 @@
 	input:checked + label + input + #labelMSRL:hover ~ #MSHover {display: inline;}
 	input:checked + label + input + #labelMSR:hover ~ #MSHover {display: inline;}
 
-	#MOB, #labelMOB {display: inline;}
-	#MOBL, #labelMOBL, #MOW, #labelMOW, #MORL, #labelMORL, #MOR, #labelMOR {display: none;}
-	#MOB:checked ~ #MOBL, #MOB:checked ~ #labelMOBL, #MOBL:checked ~ #MOW, #MOBL:checked ~ #labelMOW, #MOW:checked ~ #MORL, #MOW:checked ~ #labelMORL, #MORL:checked ~ #MOR, #MORL:checked ~ #labelMOR {display: inline;}
+	#MOB:Not(:checked) ~ #labelMOB {display: inline; z-index: 1;}
+	#MOB, #MOBL, #labelMOBL, #MOW, #labelMOW, #MORL, #labelMORL, #MOR, #labelMOR {display: none;}
+	#MOB:checked ~ #labelMOBL, #MOBL:checked ~ #labelMOW, #MOW:checked ~ #labelMORL, #MORL:checked ~ #labelMOR {display: inline; z-index: 2;}
 	#MOB:Not(:checked) ~ #scoreboard #MOblueL, #MOW:Not(:checked) ~ #scoreboard #MOredL, #MORL:Not(:checked) ~ #scoreboard #MOred, #MOR:Not(:checked) ~ #scoreboard #MOblue{display: none;}
 
 	#MOHover {display: none;}
@@ -357,9 +357,9 @@
 	input:checked + label + input + #labelMORL:hover ~ #MOHover {display: inline;}
 	input:checked + label + input + #labelMOR:hover ~ #MOHover {display: inline;}
 
-	#MTB, #labelMTB {display: inline;}
-	#MTBL, #labelMTBL, #MTW, #labelMTW, #MTRL, #labelMTRL, #MTR, #labelMTR {display: none;}
-	#MTB:checked ~ #MTBL, #MTB:checked ~ #labelMTBL, #MTBL:checked ~ #MTW, #MTBL:checked ~ #labelMTW, #MTW:checked ~ #MTRL, #MTW:checked ~ #labelMTRL, #MTRL:checked ~ #MTR, #MTRL:checked ~ #labelMTR {display: inline;}
+	#MTB:Not(:checked) ~ #labelMTB {display: inline; z-index: 1;}
+	#MTB, #MTBL, #labelMTBL, #MTW, #labelMTW, #MTRL, #labelMTRL, #MTR, #labelMTR {display: none;}
+	#MTB:checked ~ #labelMTBL, #MTBL:checked ~ #labelMTW, #MTW:checked ~ #labelMTRL, #MTRL:checked ~ #labelMTR {display: inline; z-index: 2;}
 	#MTB:Not(:checked) ~ #scoreboard #MTblueL, #MTW:Not(:checked) ~ #scoreboard #MTredL, #MTRL:Not(:checked) ~ #scoreboard #MTred, #MTR:Not(:checked) ~ #scoreboard #MTblue{display: none;}
 
 	#MTHover {display: none;}
@@ -369,9 +369,9 @@
 	input:checked + label + input + #labelMTRL:hover ~ #MTHover {display: inline;}
 	input:checked + label + input + #labelMTR:hover ~ #MTHover {display: inline;}
 
-	#NEB, #labelNEB {display: inline;}
-	#NEBL, #labelNEBL, #NEW, #labelNEW, #NERL, #labelNERL, #NER, #labelNER {display: none;}
-	#NEB:checked ~ #NEBL, #NEB:checked ~ #labelNEBL, #NEBL:checked ~ #NEW, #NEBL:checked ~ #labelNEW, #NEW:checked ~ #NERL, #NEW:checked ~ #labelNERL, #NERL:checked ~ #NER, #NERL:checked ~ #labelNER {display: inline;}
+	#NEB:Not(:checked) ~ #labelNEB {display: inline; z-index: 1;}
+	#NEB, #NEBL, #labelNEBL, #NEW, #labelNEW, #NERL, #labelNERL, #NER, #labelNER {display: none;}
+	#NEB:checked ~ #labelNEBL, #NEBL:checked ~ #labelNEW, #NEW:checked ~ #labelNERL, #NERL:checked ~ #labelNER {display: inline; z-index: 2;}
 	#NEB:Not(:checked) ~ #scoreboard #NEblueL, #NEW:Not(:checked) ~ #scoreboard #NEredL, #NERL:Not(:checked) ~ #scoreboard #NEred, #NER:Not(:checked) ~ #scoreboard #NEblue{display: none;}
 
 	#NEHover {display: none;}
@@ -381,9 +381,9 @@
 	input:checked + label + input + #labelNERL:hover ~ #NEHover {display: inline;}
 	input:checked + label + input + #labelNER:hover ~ #NEHover {display: inline;}
 
-	#NVB, #labelNVB {display: inline;}
-	#NVBL, #labelNVBL, #NVW, #labelNVW, #NVRL, #labelNVRL, #NVR, #labelNVR {display: none;}
-	#NVB:checked ~ #NVBL, #NVB:checked ~ #labelNVBL, #NVBL:checked ~ #NVW, #NVBL:checked ~ #labelNVW, #NVW:checked ~ #NVRL, #NVW:checked ~ #labelNVRL, #NVRL:checked ~ #NVR, #NVRL:checked ~ #labelNVR {display: inline;}
+	#NVB:Not(:checked) ~ #labelNVB {display: inline; z-index: 1;}
+	#NVB, #NVBL, #labelNVBL, #NVW, #labelNVW, #NVRL, #labelNVRL, #NVR, #labelNVR {display: none;}
+	#NVB:checked ~ #labelNVBL, #NVBL:checked ~ #labelNVW, #NVW:checked ~ #labelNVRL, #NVRL:checked ~ #labelNVR {display: inline; z-index: 2;}
 	#NVB:Not(:checked) ~ #scoreboard #NVblueL, #NVW:Not(:checked) ~ #scoreboard #NVredL, #NVRL:Not(:checked) ~ #scoreboard #NVred, #NVR:Not(:checked) ~ #scoreboard #NVblue{display: none;}
 
 	#NVHover {display: none;}
@@ -393,9 +393,9 @@
 	input:checked + label + input + #labelNVRL:hover ~ #NVHover {display: inline;}
 	input:checked + label + input + #labelNVR:hover ~ #NVHover {display: inline;}
 
-	#NHB, #labelNHB {display: inline;}
-	#NHBL, #labelNHBL, #NHW, #labelNHW, #NHRL, #labelNHRL, #NHR, #labelNHR {display: none;}
-	#NHB:checked ~ #NHBL, #NHB:checked ~ #labelNHBL, #NHBL:checked ~ #NHW, #NHBL:checked ~ #labelNHW, #NHW:checked ~ #NHRL, #NHW:checked ~ #labelNHRL, #NHRL:checked ~ #NHR, #NHRL:checked ~ #labelNHR {display: inline;}
+	#NHB:Not(:checked) ~ #labelNHB {display: inline; z-index: 1;}
+	#NHB, #NHBL, #labelNHBL, #NHW, #labelNHW, #NHRL, #labelNHRL, #NHR, #labelNHR {display: none;}
+	#NHB:checked ~ #labelNHBL, #NHBL:checked ~ #labelNHW, #NHW:checked ~ #labelNHRL, #NHRL:checked ~ #labelNHR {display: inline; z-index: 2;}
 	#NHB:Not(:checked) ~ #scoreboard #NHblueL, #NHW:Not(:checked) ~ #scoreboard #NHredL, #NHRL:Not(:checked) ~ #scoreboard #NHred, #NHR:Not(:checked) ~ #scoreboard #NHblue{display: none;}
 
 	#NHHover {display: none;}
@@ -405,9 +405,9 @@
 	input:checked + label + input + #labelNHRL:hover ~ #NHHover {display: inline;}
 	input:checked + label + input + #labelNHR:hover ~ #NHHover {display: inline;}
 
-	#NJB, #labelNJB {display: inline;}
-	#NJBL, #labelNJBL, #NJW, #labelNJW, #NJRL, #labelNJRL, #NJR, #labelNJR {display: none;}
-	#NJB:checked ~ #NJBL, #NJB:checked ~ #labelNJBL, #NJBL:checked ~ #NJW, #NJBL:checked ~ #labelNJW, #NJW:checked ~ #NJRL, #NJW:checked ~ #labelNJRL, #NJRL:checked ~ #NJR, #NJRL:checked ~ #labelNJR {display: inline;}
+	#NJB:Not(:checked) ~ #labelNJB {display: inline; z-index: 1;}
+	#NJB, #NJBL, #labelNJBL, #NJW, #labelNJW, #NJRL, #labelNJRL, #NJR, #labelNJR {display: none;}
+	#NJB:checked ~ #labelNJBL, #NJBL:checked ~ #labelNJW, #NJW:checked ~ #labelNJRL, #NJRL:checked ~ #labelNJR {display: inline; z-index: 2;}
 	#NJB:Not(:checked) ~ #scoreboard #NJblueL, #NJW:Not(:checked) ~ #scoreboard #NJredL, #NJRL:Not(:checked) ~ #scoreboard #NJred, #NJR:Not(:checked) ~ #scoreboard #NJblue{display: none;}
 
 	#NJHover {display: none;}
@@ -417,9 +417,9 @@
 	input:checked + label + input + #labelNJRL:hover ~ #NJHover {display: inline;}
 	input:checked + label + input + #labelNJR:hover ~ #NJHover {display: inline;}
 
-	#NMB, #labelNMB {display: inline;}
-	#NMBL, #labelNMBL, #NMW, #labelNMW, #NMRL, #labelNMRL, #NMR, #labelNMR {display: none;}
-	#NMB:checked ~ #NMBL, #NMB:checked ~ #labelNMBL, #NMBL:checked ~ #NMW, #NMBL:checked ~ #labelNMW, #NMW:checked ~ #NMRL, #NMW:checked ~ #labelNMRL, #NMRL:checked ~ #NMR, #NMRL:checked ~ #labelNMR {display: inline;}
+	#NMB:Not(:checked) ~ #labelNMB {display: inline; z-index: 1;}
+	#NMB, #NMBL, #labelNMBL, #NMW, #labelNMW, #NMRL, #labelNMRL, #NMR, #labelNMR {display: none;}
+	#NMB:checked ~ #labelNMBL, #NMBL:checked ~ #labelNMW, #NMW:checked ~ #labelNMRL, #NMRL:checked ~ #labelNMR {display: inline; z-index: 2;}
 	#NMB:Not(:checked) ~ #scoreboard #NMblueL, #NMW:Not(:checked) ~ #scoreboard #NMredL, #NMRL:Not(:checked) ~ #scoreboard #NMred, #NMR:Not(:checked) ~ #scoreboard #NMblue{display: none;}
 
 	#NMHover {display: none;}
@@ -429,9 +429,9 @@
 	input:checked + label + input + #labelNMRL:hover ~ #NMHover {display: inline;}
 	input:checked + label + input + #labelNMR:hover ~ #NMHover {display: inline;}
 
-	#NYB, #labelNYB {display: inline;}
-	#NYBL, #labelNYBL, #NYW, #labelNYW, #NYRL, #labelNYRL, #NYR, #labelNYR {display: none;}
-	#NYB:checked ~ #NYBL, #NYB:checked ~ #labelNYBL, #NYBL:checked ~ #NYW, #NYBL:checked ~ #labelNYW, #NYW:checked ~ #NYRL, #NYW:checked ~ #labelNYRL, #NYRL:checked ~ #NYR, #NYRL:checked ~ #labelNYR {display: inline;}
+	#NYB:Not(:checked) ~ #labelNYB {display: inline; z-index: 1;}
+	#NYB, #NYBL, #labelNYBL, #NYW, #labelNYW, #NYRL, #labelNYRL, #NYR, #labelNYR {display: none;}
+	#NYB:checked ~ #labelNYBL, #NYBL:checked ~ #labelNYW, #NYW:checked ~ #labelNYRL, #NYRL:checked ~ #labelNYR {display: inline; z-index: 2;}
 	#NYB:Not(:checked) ~ #scoreboard #NYblueL, #NYW:Not(:checked) ~ #scoreboard #NYredL, #NYRL:Not(:checked) ~ #scoreboard #NYred, #NYR:Not(:checked) ~ #scoreboard #NYblue{display: none;}
 
 	#NYHover {display: none;}
@@ -441,9 +441,9 @@
 	input:checked + label + input + #labelNYRL:hover ~ #NYHover {display: inline;}
 	input:checked + label + input + #labelNYR:hover ~ #NYHover {display: inline;}
 
-	#NCB, #labelNCB {display: inline;}
-	#NCBL, #labelNCBL, #NCW, #labelNCW, #NCRL, #labelNCRL, #NCR, #labelNCR {display: none;}
-	#NCB:checked ~ #NCBL, #NCB:checked ~ #labelNCBL, #NCBL:checked ~ #NCW, #NCBL:checked ~ #labelNCW, #NCW:checked ~ #NCRL, #NCW:checked ~ #labelNCRL, #NCRL:checked ~ #NCR, #NCRL:checked ~ #labelNCR {display: inline;}
+	#NCB:Not(:checked) ~ #labelNCB {display: inline; z-index: 1;}
+	#NCB, #NCBL, #labelNCBL, #NCW, #labelNCW, #NCRL, #labelNCRL, #NCR, #labelNCR {display: none;}
+	#NCB:checked ~ #labelNCBL, #NCBL:checked ~ #labelNCW, #NCW:checked ~ #labelNCRL, #NCRL:checked ~ #labelNCR {display: inline; z-index: 2;}
 	#NCB:Not(:checked) ~ #scoreboard #NCblueL, #NCW:Not(:checked) ~ #scoreboard #NCredL, #NCRL:Not(:checked) ~ #scoreboard #NCred, #NCR:Not(:checked) ~ #scoreboard #NCblue{display: none;}
 
 	#NCHover {display: none;}
@@ -453,9 +453,9 @@
 	input:checked + label + input + #labelNCRL:hover ~ #NCHover {display: inline;}
 	input:checked + label + input + #labelNCR:hover ~ #NCHover {display: inline;}
 
-	#NDB, #labelNDB {display: inline;}
-	#NDBL, #labelNDBL, #NDW, #labelNDW, #NDRL, #labelNDRL, #NDR, #labelNDR {display: none;}
-	#NDB:checked ~ #NDBL, #NDB:checked ~ #labelNDBL, #NDBL:checked ~ #NDW, #NDBL:checked ~ #labelNDW, #NDW:checked ~ #NDRL, #NDW:checked ~ #labelNDRL, #NDRL:checked ~ #NDR, #NDRL:checked ~ #labelNDR {display: inline;}
+	#NDB:Not(:checked) ~ #labelNDB {display: inline; z-index: 1;}
+	#NDB, #NDBL, #labelNDBL, #NDW, #labelNDW, #NDRL, #labelNDRL, #NDR, #labelNDR {display: none;}
+	#NDB:checked ~ #labelNDBL, #NDBL:checked ~ #labelNDW, #NDW:checked ~ #labelNDRL, #NDRL:checked ~ #labelNDR {display: inline; z-index: 2;}
 	#NDB:Not(:checked) ~ #scoreboard #NDblueL, #NDW:Not(:checked) ~ #scoreboard #NDredL, #NDRL:Not(:checked) ~ #scoreboard #NDred, #NDR:Not(:checked) ~ #scoreboard #NDblue{display: none;}
 
 	#NDHover {display: none;}
@@ -465,9 +465,9 @@
 	input:checked + label + input + #labelNDRL:hover ~ #NDHover {display: inline;}
 	input:checked + label + input + #labelNDR:hover ~ #NDHover {display: inline;}
 
-	#OHB, #labelOHB {display: inline;}
-	#OHBL, #labelOHBL, #OHW, #labelOHW, #OHRL, #labelOHRL, #OHR, #labelOHR {display: none;}
-	#OHB:checked ~ #OHBL, #OHB:checked ~ #labelOHBL, #OHBL:checked ~ #OHW, #OHBL:checked ~ #labelOHW, #OHW:checked ~ #OHRL, #OHW:checked ~ #labelOHRL, #OHRL:checked ~ #OHR, #OHRL:checked ~ #labelOHR {display: inline;}
+	#OHB:Not(:checked) ~ #labelOHB {display: inline; z-index: 1;}
+	#OHB, #OHBL, #labelOHBL, #OHW, #labelOHW, #OHRL, #labelOHRL, #OHR, #labelOHR {display: none;}
+	#OHB:checked ~ #labelOHBL, #OHBL:checked ~ #labelOHW, #OHW:checked ~ #labelOHRL, #OHRL:checked ~ #labelOHR {display: inline; z-index: 2;}
 	#OHB:Not(:checked) ~ #scoreboard #OHblueL, #OHW:Not(:checked) ~ #scoreboard #OHredL, #OHRL:Not(:checked) ~ #scoreboard #OHred, #OHR:Not(:checked) ~ #scoreboard #OHblue{display: none;}
 
 	#OHHover {display: none;}
@@ -477,9 +477,9 @@
 	input:checked + label + input + #labelOHRL:hover ~ #OHHover {display: inline;}
 	input:checked + label + input + #labelOHR:hover ~ #OHHover {display: inline;}
 
-	#OKB, #labelOKB {display: inline;}
-	#OKBL, #labelOKBL, #OKW, #labelOKW, #OKRL, #labelOKRL, #OKR, #labelOKR {display: none;}
-	#OKB:checked ~ #OKBL, #OKB:checked ~ #labelOKBL, #OKBL:checked ~ #OKW, #OKBL:checked ~ #labelOKW, #OKW:checked ~ #OKRL, #OKW:checked ~ #labelOKRL, #OKRL:checked ~ #OKR, #OKRL:checked ~ #labelOKR {display: inline;}
+	#OKB:Not(:checked) ~ #labelOKB {display: inline; z-index: 1;}
+	#OKB, #OKBL, #labelOKBL, #OKW, #labelOKW, #OKRL, #labelOKRL, #OKR, #labelOKR {display: none;}
+	#OKB:checked ~ #labelOKBL, #OKBL:checked ~ #labelOKW, #OKW:checked ~ #labelOKRL, #OKRL:checked ~ #labelOKR {display: inline; z-index: 2;}
 	#OKB:Not(:checked) ~ #scoreboard #OKblueL, #OKW:Not(:checked) ~ #scoreboard #OKredL, #OKRL:Not(:checked) ~ #scoreboard #OKred, #OKR:Not(:checked) ~ #scoreboard #OKblue{display: none;}
 
 	#OKHover {display: none;}
@@ -489,9 +489,9 @@
 	input:checked + label + input + #labelOKRL:hover ~ #OKHover {display: inline;}
 	input:checked + label + input + #labelOKR:hover ~ #OKHover {display: inline;}
 
-	#ORB, #labelORB {display: inline;}
-	#ORBL, #labelORBL, #ORW, #labelORW, #ORRL, #labelORRL, #ORR, #labelORR {display: none;}
-	#ORB:checked ~ #ORBL, #ORB:checked ~ #labelORBL, #ORBL:checked ~ #ORW, #ORBL:checked ~ #labelORW, #ORW:checked ~ #ORRL, #ORW:checked ~ #labelORRL, #ORRL:checked ~ #ORR, #ORRL:checked ~ #labelORR {display: inline;}
+	#ORB:Not(:checked) ~ #labelORB {display: inline; z-index: 1;}
+	#ORB, #ORBL, #labelORBL, #ORW, #labelORW, #ORRL, #labelORRL, #ORR, #labelORR {display: none;}
+	#ORB:checked ~ #labelORBL, #ORBL:checked ~ #labelORW, #ORW:checked ~ #labelORRL, #ORRL:checked ~ #labelORR {display: inline; z-index: 2;}
 	#ORB:Not(:checked) ~ #scoreboard #ORblueL, #ORW:Not(:checked) ~ #scoreboard #ORredL, #ORRL:Not(:checked) ~ #scoreboard #ORred, #ORR:Not(:checked) ~ #scoreboard #ORblue{display: none;}
 
 	#ORHover {display: none;}
@@ -501,9 +501,9 @@
 	input:checked + label + input + #labelORRL:hover ~ #ORHover {display: inline;}
 	input:checked + label + input + #labelORR:hover ~ #ORHover {display: inline;}
 
-	#PAB, #labelPAB {display: inline;}
-	#PABL, #labelPABL, #PAW, #labelPAW, #PARL, #labelPARL, #PAR, #labelPAR {display: none;}
-	#PAB:checked ~ #PABL, #PAB:checked ~ #labelPABL, #PABL:checked ~ #PAW, #PABL:checked ~ #labelPAW, #PAW:checked ~ #PARL, #PAW:checked ~ #labelPARL, #PARL:checked ~ #PAR, #PARL:checked ~ #labelPAR {display: inline;}
+	#PAB:Not(:checked) ~ #labelPAB {display: inline; z-index: 1;}
+	#PAB, #PABL, #labelPABL, #PAW, #labelPAW, #PARL, #labelPARL, #PAR, #labelPAR {display: none;}
+	#PAB:checked ~ #labelPABL, #PABL:checked ~ #labelPAW, #PAW:checked ~ #labelPARL, #PARL:checked ~ #labelPAR {display: inline; z-index: 2;}
 	#PAB:Not(:checked) ~ #scoreboard #PAblueL, #PAW:Not(:checked) ~ #scoreboard #PAredL, #PARL:Not(:checked) ~ #scoreboard #PAred, #PAR:Not(:checked) ~ #scoreboard #PAblue{display: none;}
 
 	#PAHover {display: none;}
@@ -513,9 +513,9 @@
 	input:checked + label + input + #labelPARL:hover ~ #PAHover {display: inline;}
 	input:checked + label + input + #labelPAR:hover ~ #PAHover {display: inline;}
 
-	#RIB, #labelRIB {display: inline;}
-	#RIBL, #labelRIBL, #RIW, #labelRIW, #RIRL, #labelRIRL, #RIR, #labelRIR {display: none;}
-	#RIB:checked ~ #RIBL, #RIB:checked ~ #labelRIBL, #RIBL:checked ~ #RIW, #RIBL:checked ~ #labelRIW, #RIW:checked ~ #RIRL, #RIW:checked ~ #labelRIRL, #RIRL:checked ~ #RIR, #RIRL:checked ~ #labelRIR {display: inline;}
+	#RIB:Not(:checked) ~ #labelRIB {display: inline; z-index: 1;}
+	#RIB, #RIBL, #labelRIBL, #RIW, #labelRIW, #RIRL, #labelRIRL, #RIR, #labelRIR {display: none;}
+	#RIB:checked ~ #labelRIBL, #RIBL:checked ~ #labelRIW, #RIW:checked ~ #labelRIRL, #RIRL:checked ~ #labelRIR {display: inline; z-index: 2;}
 	#RIB:Not(:checked) ~ #scoreboard #RIblueL, #RIW:Not(:checked) ~ #scoreboard #RIredL, #RIRL:Not(:checked) ~ #scoreboard #RIred, #RIR:Not(:checked) ~ #scoreboard #RIblue{display: none;}
 
 	#RIHover {display: none;}
@@ -525,9 +525,9 @@
 	input:checked + label + input + #labelRIRL:hover ~ #RIHover {display: inline;}
 	input:checked + label + input + #labelRIR:hover ~ #RIHover {display: inline;}
 
-	#SCB, #labelSCB {display: inline;}
-	#SCBL, #labelSCBL, #SCW, #labelSCW, #SCRL, #labelSCRL, #SCR, #labelSCR {display: none;}
-	#SCB:checked ~ #SCBL, #SCB:checked ~ #labelSCBL, #SCBL:checked ~ #SCW, #SCBL:checked ~ #labelSCW, #SCW:checked ~ #SCRL, #SCW:checked ~ #labelSCRL, #SCRL:checked ~ #SCR, #SCRL:checked ~ #labelSCR {display: inline;}
+	#SCB:Not(:checked) ~ #labelSCB {display: inline; z-index: 1;}
+	#SCB, #SCBL, #labelSCBL, #SCW, #labelSCW, #SCRL, #labelSCRL, #SCR, #labelSCR {display: none;}
+	#SCB:checked ~ #labelSCBL, #SCBL:checked ~ #labelSCW, #SCW:checked ~ #labelSCRL, #SCRL:checked ~ #labelSCR {display: inline; z-index: 2;}
 	#SCB:Not(:checked) ~ #scoreboard #SCblueL, #SCW:Not(:checked) ~ #scoreboard #SCredL, #SCRL:Not(:checked) ~ #scoreboard #SCred, #SCR:Not(:checked) ~ #scoreboard #SCblue{display: none;}
 
 	#SCHover {display: none;}
@@ -537,9 +537,9 @@
 	input:checked + label + input + #labelSCRL:hover ~ #SCHover {display: inline;}
 	input:checked + label + input + #labelSCR:hover ~ #SCHover {display: inline;}
 
-	#SDB, #labelSDB {display: inline;}
-	#SDBL, #labelSDBL, #SDW, #labelSDW, #SDRL, #labelSDRL, #SDR, #labelSDR {display: none;}
-	#SDB:checked ~ #SDBL, #SDB:checked ~ #labelSDBL, #SDBL:checked ~ #SDW, #SDBL:checked ~ #labelSDW, #SDW:checked ~ #SDRL, #SDW:checked ~ #labelSDRL, #SDRL:checked ~ #SDR, #SDRL:checked ~ #labelSDR {display: inline;}
+	#SDB:Not(:checked) ~ #labelSDB {display: inline; z-index: 1;}
+	#SDB, #SDBL, #labelSDBL, #SDW, #labelSDW, #SDRL, #labelSDRL, #SDR, #labelSDR {display: none;}
+	#SDB:checked ~ #labelSDBL, #SDBL:checked ~ #labelSDW, #SDW:checked ~ #labelSDRL, #SDRL:checked ~ #labelSDR {display: inline; z-index: 2;}
 	#SDB:Not(:checked) ~ #scoreboard #SDblueL, #SDW:Not(:checked) ~ #scoreboard #SDredL, #SDRL:Not(:checked) ~ #scoreboard #SDred, #SDR:Not(:checked) ~ #scoreboard #SDblue{display: none;}
 
 	#SDHover {display: none;}
@@ -549,9 +549,9 @@
 	input:checked + label + input + #labelSDRL:hover ~ #SDHover {display: inline;}
 	input:checked + label + input + #labelSDR:hover ~ #SDHover {display: inline;}
 
-	#TNB, #labelTNB {display: inline;}
-	#TNBL, #labelTNBL, #TNW, #labelTNW, #TNRL, #labelTNRL, #TNR, #labelTNR {display: none;}
-	#TNB:checked ~ #TNBL, #TNB:checked ~ #labelTNBL, #TNBL:checked ~ #TNW, #TNBL:checked ~ #labelTNW, #TNW:checked ~ #TNRL, #TNW:checked ~ #labelTNRL, #TNRL:checked ~ #TNR, #TNRL:checked ~ #labelTNR {display: inline;}
+	#TNB:Not(:checked) ~ #labelTNB {display: inline; z-index: 1;}
+	#TNB, #TNBL, #labelTNBL, #TNW, #labelTNW, #TNRL, #labelTNRL, #TNR, #labelTNR {display: none;}
+	#TNB:checked ~ #labelTNBL, #TNBL:checked ~ #labelTNW, #TNW:checked ~ #labelTNRL, #TNRL:checked ~ #labelTNR {display: inline; z-index: 2;}
 	#TNB:Not(:checked) ~ #scoreboard #TNblueL, #TNW:Not(:checked) ~ #scoreboard #TNredL, #TNRL:Not(:checked) ~ #scoreboard #TNred, #TNR:Not(:checked) ~ #scoreboard #TNblue{display: none;}
 
 	#TNHover {display: none;}
@@ -561,9 +561,9 @@
 	input:checked + label + input + #labelTNRL:hover ~ #TNHover {display: inline;}
 	input:checked + label + input + #labelTNR:hover ~ #TNHover {display: inline;}
 
-	#TXB, #labelTXB {display: inline;}
-	#TXBL, #labelTXBL, #TXW, #labelTXW, #TXRL, #labelTXRL, #TXR, #labelTXR {display: none;}
-	#TXB:checked ~ #TXBL, #TXB:checked ~ #labelTXBL, #TXBL:checked ~ #TXW, #TXBL:checked ~ #labelTXW, #TXW:checked ~ #TXRL, #TXW:checked ~ #labelTXRL, #TXRL:checked ~ #TXR, #TXRL:checked ~ #labelTXR {display: inline;}
+	#TXB:Not(:checked) ~ #labelTXB {display: inline; z-index: 1;}
+	#TXB, #TXBL, #labelTXBL, #TXW, #labelTXW, #TXRL, #labelTXRL, #TXR, #labelTXR {display: none;}
+	#TXB:checked ~ #labelTXBL, #TXBL:checked ~ #labelTXW, #TXW:checked ~ #labelTXRL, #TXRL:checked ~ #labelTXR {display: inline; z-index: 2;}
 	#TXB:Not(:checked) ~ #scoreboard #TXblueL, #TXW:Not(:checked) ~ #scoreboard #TXredL, #TXRL:Not(:checked) ~ #scoreboard #TXred, #TXR:Not(:checked) ~ #scoreboard #TXblue{display: none;}
 
 	#TXHover {display: none;}
@@ -573,9 +573,9 @@
 	input:checked + label + input + #labelTXRL:hover ~ #TXHover {display: inline;}
 	input:checked + label + input + #labelTXR:hover ~ #TXHover {display: inline;}
 
-	#UTB, #labelUTB {display: inline;}
-	#UTBL, #labelUTBL, #UTW, #labelUTW, #UTRL, #labelUTRL, #UTR, #labelUTR {display: none;}
-	#UTB:checked ~ #UTBL, #UTB:checked ~ #labelUTBL, #UTBL:checked ~ #UTW, #UTBL:checked ~ #labelUTW, #UTW:checked ~ #UTRL, #UTW:checked ~ #labelUTRL, #UTRL:checked ~ #UTR, #UTRL:checked ~ #labelUTR {display: inline;}
+	#UTB:Not(:checked) ~ #labelUTB {display: inline; z-index: 1;}
+	#UTB, #UTBL, #labelUTBL, #UTW, #labelUTW, #UTRL, #labelUTRL, #UTR, #labelUTR {display: none;}
+	#UTB:checked ~ #labelUTBL, #UTBL:checked ~ #labelUTW, #UTW:checked ~ #labelUTRL, #UTRL:checked ~ #labelUTR {display: inline; z-index: 2;}
 	#UTB:Not(:checked) ~ #scoreboard #UTblueL, #UTW:Not(:checked) ~ #scoreboard #UTredL, #UTRL:Not(:checked) ~ #scoreboard #UTred, #UTR:Not(:checked) ~ #scoreboard #UTblue{display: none;}
 
 	#UTHover {display: none;}
@@ -585,9 +585,9 @@
 	input:checked + label + input + #labelUTRL:hover ~ #UTHover {display: inline;}
 	input:checked + label + input + #labelUTR:hover ~ #UTHover {display: inline;}
 
-	#VTB, #labelVTB {display: inline;}
-	#VTBL, #labelVTBL, #VTW, #labelVTW, #VTRL, #labelVTRL, #VTR, #labelVTR {display: none;}
-	#VTB:checked ~ #VTBL, #VTB:checked ~ #labelVTBL, #VTBL:checked ~ #VTW, #VTBL:checked ~ #labelVTW, #VTW:checked ~ #VTRL, #VTW:checked ~ #labelVTRL, #VTRL:checked ~ #VTR, #VTRL:checked ~ #labelVTR {display: inline;}
+	#VTB:Not(:checked) ~ #labelVTB {display: inline; z-index: 1;}
+	#VTB, #VTBL, #labelVTBL, #VTW, #labelVTW, #VTRL, #labelVTRL, #VTR, #labelVTR {display: none;}
+	#VTB:checked ~ #labelVTBL, #VTBL:checked ~ #labelVTW, #VTW:checked ~ #labelVTRL, #VTRL:checked ~ #labelVTR {display: inline; z-index: 2;}
 	#VTB:Not(:checked) ~ #scoreboard #VTblueL, #VTW:Not(:checked) ~ #scoreboard #VTredL, #VTRL:Not(:checked) ~ #scoreboard #VTred, #VTR:Not(:checked) ~ #scoreboard #VTblue{display: none;}
 
 	#VTHover {display: none;}
@@ -597,9 +597,9 @@
 	input:checked + label + input + #labelVTRL:hover ~ #VTHover {display: inline;}
 	input:checked + label + input + #labelVTR:hover ~ #VTHover {display: inline;}
 
-	#VAB, #labelVAB {display: inline;}
-	#VABL, #labelVABL, #VAW, #labelVAW, #VARL, #labelVARL, #VAR, #labelVAR {display: none;}
-	#VAB:checked ~ #VABL, #VAB:checked ~ #labelVABL, #VABL:checked ~ #VAW, #VABL:checked ~ #labelVAW, #VAW:checked ~ #VARL, #VAW:checked ~ #labelVARL, #VARL:checked ~ #VAR, #VARL:checked ~ #labelVAR {display: inline;}
+	#VAB:Not(:checked) ~ #labelVAB {display: inline; z-index: 1;}
+	#VAB, #VABL, #labelVABL, #VAW, #labelVAW, #VARL, #labelVARL, #VAR, #labelVAR {display: none;}
+	#VAB:checked ~ #labelVABL, #VABL:checked ~ #labelVAW, #VAW:checked ~ #labelVARL, #VARL:checked ~ #labelVAR {display: inline; z-index: 2;}
 	#VAB:Not(:checked) ~ #scoreboard #VAblueL, #VAW:Not(:checked) ~ #scoreboard #VAredL, #VARL:Not(:checked) ~ #scoreboard #VAred, #VAR:Not(:checked) ~ #scoreboard #VAblue{display: none;}
 
 	#VAHover {display: none;}
@@ -609,9 +609,9 @@
 	input:checked + label + input + #labelVARL:hover ~ #VAHover {display: inline;}
 	input:checked + label + input + #labelVAR:hover ~ #VAHover {display: inline;}
 
-	#WAB, #labelWAB {display: inline;}
-	#WABL, #labelWABL, #WAW, #labelWAW, #WARL, #labelWARL, #WAR, #labelWAR {display: none;}
-	#WAB:checked ~ #WABL, #WAB:checked ~ #labelWABL, #WABL:checked ~ #WAW, #WABL:checked ~ #labelWAW, #WAW:checked ~ #WARL, #WAW:checked ~ #labelWARL, #WARL:checked ~ #WAR, #WARL:checked ~ #labelWAR {display: inline;}
+	#WAB:Not(:checked) ~ #labelWAB {display: inline; z-index: 1;}
+	#WAB, #WABL, #labelWABL, #WAW, #labelWAW, #WARL, #labelWARL, #WAR, #labelWAR {display: none;}
+	#WAB:checked ~ #labelWABL, #WABL:checked ~ #labelWAW, #WAW:checked ~ #labelWARL, #WARL:checked ~ #labelWAR {display: inline; z-index: 2;}
 	#WAB:Not(:checked) ~ #scoreboard #WAblueL, #WAW:Not(:checked) ~ #scoreboard #WAredL, #WARL:Not(:checked) ~ #scoreboard #WAred, #WAR:Not(:checked) ~ #scoreboard #WAblue{display: none;}
 
 	#WAHover {display: none;}
@@ -621,9 +621,9 @@
 	input:checked + label + input + #labelWARL:hover ~ #WAHover {display: inline;}
 	input:checked + label + input + #labelWAR:hover ~ #WAHover {display: inline;}
 
-	#WVB, #labelWVB {display: inline;}
-	#WVBL, #labelWVBL, #WVW, #labelWVW, #WVRL, #labelWVRL, #WVR, #labelWVR {display: none;}
-	#WVB:checked ~ #WVBL, #WVB:checked ~ #labelWVBL, #WVBL:checked ~ #WVW, #WVBL:checked ~ #labelWVW, #WVW:checked ~ #WVRL, #WVW:checked ~ #labelWVRL, #WVRL:checked ~ #WVR, #WVRL:checked ~ #labelWVR {display: inline;}
+	#WVB:Not(:checked) ~ #labelWVB {display: inline; z-index: 1;}
+	#WVB, #WVBL, #labelWVBL, #WVW, #labelWVW, #WVRL, #labelWVRL, #WVR, #labelWVR {display: none;}
+	#WVB:checked ~ #labelWVBL, #WVBL:checked ~ #labelWVW, #WVW:checked ~ #labelWVRL, #WVRL:checked ~ #labelWVR {display: inline; z-index: 2;}
 	#WVB:Not(:checked) ~ #scoreboard #WVblueL, #WVW:Not(:checked) ~ #scoreboard #WVredL, #WVRL:Not(:checked) ~ #scoreboard #WVred, #WVR:Not(:checked) ~ #scoreboard #WVblue{display: none;}
 
 	#WVHover {display: none;}
@@ -633,9 +633,9 @@
 	input:checked + label + input + #labelWVRL:hover ~ #WVHover {display: inline;}
 	input:checked + label + input + #labelWVR:hover ~ #WVHover {display: inline;}
 
-	#WIB, #labelWIB {display: inline;}
-	#WIBL, #labelWIBL, #WIW, #labelWIW, #WIRL, #labelWIRL, #WIR, #labelWIR {display: none;}
-	#WIB:checked ~ #WIBL, #WIB:checked ~ #labelWIBL, #WIBL:checked ~ #WIW, #WIBL:checked ~ #labelWIW, #WIW:checked ~ #WIRL, #WIW:checked ~ #labelWIRL, #WIRL:checked ~ #WIR, #WIRL:checked ~ #labelWIR {display: inline;}
+	#WIB:Not(:checked) ~ #labelWIB {display: inline; z-index: 1;}
+	#WIB, #WIBL, #labelWIBL, #WIW, #labelWIW, #WIRL, #labelWIRL, #WIR, #labelWIR {display: none;}
+	#WIB:checked ~ #labelWIBL, #WIBL:checked ~ #labelWIW, #WIW:checked ~ #labelWIRL, #WIRL:checked ~ #labelWIR {display: inline; z-index: 2;}
 	#WIB:Not(:checked) ~ #scoreboard #WIblueL, #WIW:Not(:checked) ~ #scoreboard #WIredL, #WIRL:Not(:checked) ~ #scoreboard #WIred, #WIR:Not(:checked) ~ #scoreboard #WIblue{display: none;}
 
 	#WIHover {display: none;}
@@ -645,9 +645,9 @@
 	input:checked + label + input + #labelWIRL:hover ~ #WIHover {display: inline;}
 	input:checked + label + input + #labelWIR:hover ~ #WIHover {display: inline;}
 
-	#WYB, #labelWYB {display: inline;}
-	#WYBL, #labelWYBL, #WYW, #labelWYW, #WYRL, #labelWYRL, #WYR, #labelWYR {display: none;}
-	#WYB:checked ~ #WYBL, #WYB:checked ~ #labelWYBL, #WYBL:checked ~ #WYW, #WYBL:checked ~ #labelWYW, #WYW:checked ~ #WYRL, #WYW:checked ~ #labelWYRL, #WYRL:checked ~ #WYR, #WYRL:checked ~ #labelWYR {display: inline;}
+	#WYB:Not(:checked) ~ #labelWYB {display: inline; z-index: 1;}
+	#WYB, #WYBL, #labelWYBL, #WYW, #labelWYW, #WYRL, #labelWYRL, #WYR, #labelWYR {display: none;}
+	#WYB:checked ~ #labelWYBL, #WYBL:checked ~ #labelWYW, #WYW:checked ~ #labelWYRL, #WYRL:checked ~ #labelWYR {display: inline; z-index: 2;}
 	#WYB:Not(:checked) ~ #scoreboard #WYblueL, #WYW:Not(:checked) ~ #scoreboard #WYredL, #WYRL:Not(:checked) ~ #scoreboard #WYred, #WYR:Not(:checked) ~ #scoreboard #WYblue{display: none;}
 
 	#WYHover {display: none;}
