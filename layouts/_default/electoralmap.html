@@ -136,7 +136,7 @@ pointer-events: none;
 			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}BL" {{ if eq $state.last 2}}checked{{ end }}><label for="{{ $state.name }}BL" id="label{{ $state.name }}BL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	{{ range $idx,$polygon := $state.polygons }}
-			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  		<use xlink:href href="#{{ $state.name }}Poly{{ $idx }}" />
 			  	{{ end }}
 				</svg>
 		
@@ -144,7 +144,7 @@ pointer-events: none;
 			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}W" {{ if eq $state.last 3}}checked{{ end }}><label for="{{ $state.name }}W" id="label{{ $state.name }}W">
 				<svg viewBox="0 -450 1000 450" class="svgregion color3">
 			  	{{ range $idx,$polygon := $state.polygons }}
-			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  		<use xlink:href="#{{ $state.name }}Poly{{ $idx }}" />
 			  	{{ end }}
 				</svg>
 		
@@ -152,7 +152,7 @@ pointer-events: none;
 			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}RL" {{ if eq $state.last 4}}checked{{ end }}><label for="{{ $state.name }}RL" id="label{{ $state.name }}RL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color4">
 			  	{{ range $idx,$polygon := $state.polygons }}
-			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  		<use xlink:href="#{{ $state.name }}Poly{{ $idx }}" />
 			  	{{ end }}
 				</svg>
 		
@@ -160,7 +160,7 @@ pointer-events: none;
 			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}R" {{ if eq $state.last 0}}checked{{ end }}><label for="{{ $state.name }}R" id="label{{ $state.name }}R">
 				<svg viewBox="0 -450 1000 450" class="svgregion color5">
 			  	{{ range $idx,$polygon := $state.polygons }}
-			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  		<use xlink:href="#{{ $state.name }}Poly{{ $idx }}" />
 			  	{{ end }}
 				</svg>
 		
