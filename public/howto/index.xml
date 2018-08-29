@@ -2,31 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Howtos on CSS Hole - Interactive Web Apps using only HTML and CSS</title>
-    <link>https://csshole.github.io/howto/</link>
+    <link>https://csshole.com/howto/</link>
     <description>Recent content in Howtos on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://csshole.github.io/howto/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://csshole.com/howto/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Interactive Maps with only CSS/HTML</title>
-      <link>https://csshole.github.io/howto/howtomap/</link>
+      <link>https://csshole.com/howto/howtomap/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.github.io/howto/howtomap/</guid>
+      <guid>https://csshole.com/howto/howtomap/</guid>
       <description>Creating an interactive map with just HTML and CSS is something that should be possible. We just want to change the colors of certain parts of the map after they have been clicked. What makes certain maps hard?
  CSS allows for two color choices: checked and not checked. We would like more color choices. HTML likes rectangles and the U.S. does not consist of rectangular states. We really would like to display counts and CSS does not like adding user-generated numbers.</description>
     </item>
     
     <item>
-      <title>Sudoku Game with only CSS/HTML</title>
-      <link>https://csshole.github.io/howto/howtosudoku/</link>
+      <title>Interactive Web Pages using only CSS and HTML</title>
+      <link>https://csshole.com/howto/about/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.github.io/howto/howtosudoku/</guid>
+      <guid>https://csshole.com/howto/about/</guid>
+      <description>Every web page on this domain is created using only HTML and CSS. No Javascript and no server interaction (other than navigating to a new static page). There is no good reason to make an interactive website completely static and avoid Javascript. Most of these web pages could be improved and made smaller by using just a few lines of Javascript because CSS is really not designed to do the things I use it for.</description>
+    </item>
+    
+    <item>
+      <title>Sudoku Game with only CSS/HTML</title>
+      <link>https://csshole.com/howto/howtosudoku/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.com/howto/howtosudoku/</guid>
       <description>Sudoku is a relatively simple game to program in just about any programming language. Create a grid with 9 rows and columns and let the user input any number from 1-9 into each cell.
 But there are features that a computer makes possible that paper and pencil cannot match. One feature is blocking a user from inputting a number into row, column, or 3x3 block that already has that number. Another feature is to highlight the row, column, and 3x3 block of each cell to avoid any confusion.</description>
     </item>

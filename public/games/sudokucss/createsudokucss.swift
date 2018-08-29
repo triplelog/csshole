@@ -52,7 +52,7 @@ allPuzzles = """
 allPuzzles = allPuzzles.replacingOccurrences(of: "\n", with: "")
 let puzzleArray = allPuzzles.components(separatedBy: ",")
 for i in 0..<25 {
-	var startStr = "---\ntitle: 'Sudoku - Just CSS/HTML'\ndate: 2018-06-20\ntags: []\ndraft: false\ntype: 'games'\nnum19: [{'idx':1,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':2,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':3,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':4,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':5,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':6,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':7,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':8,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':9,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]}]\npuzzle: "
+	var startStr = "---\ntitle: 'Sudoku - Just CSS/HTML'\ndescription: 'Complete a sudoku puzzle without Javascript or server-side interaction.'\ngametype: 'simple'\ngameid: "+String(i+1)+"\ndate: 2018-06-20\ntags: []\ndraft: false\ntype: 'games'\nnum19: [{'idx':1,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':2,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':3,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':4,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':5,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':6,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':7,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':8,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]},{'idx':9,'arr1':[1,2,3,4,5,6,7,8,9],'arr2':[1,2,3,4,5,6,7,8,9]}]\npuzzle: "
 	startStr += convertPuzzle(initialPuzzle: puzzleArray[i]).description
 	startStr += "\nlayout: 'sudokucssstatic'\n---"
 	print(i)
@@ -60,7 +60,7 @@ for i in 0..<25 {
     // get the documents folder url
     if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
         // create the destination url for the text file to be saved
-        let fileURL = documentDirectory.appendingPathComponent("sudokucss/easy"+String(i)+".md")
+        let fileURL = documentDirectory.appendingPathComponent("sudokucss/simple"+String(i+1)+".md")
         // define the string/text to be saved
         let text = startStr
         // writing to disk

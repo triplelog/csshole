@@ -1,7 +1,7 @@
 :root {
-	--width-block: 35px;
+	--width-block: 6vmin;
     --shift-cover-puzzle: calc(-40px - var(--width-block)*9); 
-    --left-margin: 200px;
+    --left-margin: 0px;
 }
 
 input {
@@ -11,21 +11,21 @@ input {
 }
 .winner {
 	position:absolute;
-	top:250px;
+	top:calc(var(--width-block) * 11);
 	left:5px;
 	z-index:10;
-	width:200px;
+	width:100vmin;
 	height: 20px;
 	background: white;
 }
 .winmessage {
 	position:absolute;
-	top:250px;
+	top:calc(var(--width-block) * 11);
 	left:5px;
 	z-index:1;
-	width:200px;
 	height: 20px;
 	background: white;
+	overflow: hidden;
 }
 
 .normBlock {
@@ -36,11 +36,11 @@ input {
 }
 .sudokuAll {
 	position: absolute;
-	top: 100px;
+	top: calc(var(--width-block) * 2);
 	left: var(--left-margin);
 }
 .cmarkAll {
-	top: var(--width-block);
+	top: calc(var(--width-block) / 2);
 }
 .blackoutAll {
 	top: calc(var(--left-margin) * -1 + var(--width-block));

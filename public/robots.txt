@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://www.triplelog.com/sitemap.xml
+Sitemap: https://www.csshole.com/sitemap.xml

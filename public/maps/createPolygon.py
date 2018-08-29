@@ -789,6 +789,11 @@ minY = 10000
 maxY = -10000
 xstretch = .9
 
+#for i in theStateArray:
+#	print(i['info'],end='')
+#	print(',',end='')
+#print(soto)
+
 resultsData = readcsv('results96-16.csv')
 resultJson = [{'national16d':resultsData[54][1],'national16r':resultsData[54][2],'national12d':resultsData[54][4],'national12r':resultsData[54][5],'national08d':resultsData[54][7],'national08r':resultsData[54][8],'national04d':resultsData[54][10],'national04r':resultsData[54][11],'national00d':str(float(resultsData[54][13][:-1])/100)+'%','national00r':str(float(resultsData[54][14][:-1])/100)+'%','national96d':str(float(resultsData[54][16][:-1])/100)+'%','national96r':str(float(resultsData[54][17][:-1])/100)+'%'}]
 for i in resultsData[3:54]:
@@ -820,12 +825,12 @@ for i in theStateArray:
 		this_state['last'] = 3
 	else:
 		this_state['last'] = 4
-	this_state['national16']=int(round((float(this_state['results16d'][:-1])-float(this_state['results16r'][:-1]))-(float(resultJson[0]['national16d'][:-1])-float(resultJson[0]['national16r'][:-1])),0))
-	this_state['national12']=int(round((float(this_state['results12d'][:-1])-float(this_state['results12r'][:-1]))-(float(resultJson[0]['national12d'][:-1])-float(resultJson[0]['national12r'][:-1])),0))
-	this_state['national08']=int(round((float(this_state['results08d'][:-1])-float(this_state['results08r'][:-1]))-(float(resultJson[0]['national08d'][:-1])-float(resultJson[0]['national08r'][:-1])),0))
-	this_state['national04']=int(round((float(this_state['results04d'][:-1])-float(this_state['results04r'][:-1]))-(float(resultJson[0]['national04d'][:-1])-float(resultJson[0]['national04r'][:-1])),0))
-	this_state['national00']=int(round((float(this_state['results00d'][:-1])-float(this_state['results00r'][:-1]))-100*(float(resultJson[0]['national00d'][:-1])-float(resultJson[0]['national00r'][:-1])),0))
-	this_state['national96']=int(round((float(this_state['results96d'][:-1])-float(this_state['results96r'][:-1]))-100*(float(resultJson[0]['national96d'][:-1])-float(resultJson[0]['national96r'][:-1])),0))
+	this_state['national16']=int(round(((float(this_state['results16d'][:-1])-float(this_state['results16r'][:-1]))-(float(resultJson[0]['national16d'][:-1])-float(resultJson[0]['national16r'][:-1])))/2.0,0))
+	this_state['national12']=int(round(((float(this_state['results12d'][:-1])-float(this_state['results12r'][:-1]))-(float(resultJson[0]['national12d'][:-1])-float(resultJson[0]['national12r'][:-1])))/2.0,0))
+	this_state['national08']=int(round(((float(this_state['results08d'][:-1])-float(this_state['results08r'][:-1]))-(float(resultJson[0]['national08d'][:-1])-float(resultJson[0]['national08r'][:-1])))/2.0,0))
+	this_state['national04']=int(round(((float(this_state['results04d'][:-1])-float(this_state['results04r'][:-1]))-(float(resultJson[0]['national04d'][:-1])-float(resultJson[0]['national04r'][:-1])))/2.0,0))
+	this_state['national00']=int(round(((float(this_state['results00d'][:-1])-float(this_state['results00r'][:-1]))-100*(float(resultJson[0]['national00d'][:-1])-float(resultJson[0]['national00r'][:-1])))/2.0,0))
+	this_state['national96']=int(round(((float(this_state['results96d'][:-1])-float(this_state['results96r'][:-1]))-100*(float(resultJson[0]['national96d'][:-1])-float(resultJson[0]['national96r'][:-1])))/2.0,0))
 	this_state['name'] = i['name']
 	this_state['name_full'] = i['info'][2]
 	this_state['polygons'] = []
@@ -846,6 +851,6 @@ for i in theStateArray:
 				minX = int(xstretch*iii['myXVals'][ii])
 		this_state['polygons'].append(iStr)
 	allStates.append(this_state)
-print allStates
+print(allStates)
 print(minX,minY,maxX,maxY)
 	

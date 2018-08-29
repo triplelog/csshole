@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maps on CSS Hole - Interactive Web Apps using only HTML and CSS</title>
-    <link>https://csshole.github.io/maps/</link>
+    <link>https://csshole.com/maps/</link>
     <description>Recent content in Maps on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://csshole.github.io/maps/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://csshole.com/maps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.github.io/maps/cdmap/</link>
+      <link>https://csshole.com/maps/cdmap/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.github.io/maps/cdmap/</guid>
+      <guid>https://csshole.com/maps/cdmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.github.io/maps/electoral/</link>
+      <link>https://csshole.com/maps/electoral/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.github.io/maps/electoral/</guid>
+      <guid>https://csshole.com/maps/electoral/</guid>
       <description></description>
     </item>
     
