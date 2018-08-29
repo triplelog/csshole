@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS Hole - Interactive Web Apps using only HTML and CSS</title>
+    <link>https://csshole.github.io/</link>
+    <description>Recent content on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://csshole.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Electoral Map - Just CSS/HTML</title>
+      <link>https://csshole.github.io/maps/cdmap/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/maps/cdmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electoral Map - Just CSS/HTML</title>
+      <link>https://csshole.github.io/maps/electoral/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/maps/electoral/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive Maps with only CSS/HTML</title>
+      <link>https://csshole.github.io/howto/howtomap/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/howto/howtomap/</guid>
+      <description>Creating an interactive map with just HTML and CSS is something that should be possible. We just want to change the colors of certain parts of the map after they have been clicked. What makes certain maps hard?
+ CSS allows for two color choices: checked and not checked. We would like more color choices. HTML likes rectangles and the U.S. does not consist of rectangular states. We really would like to display counts and CSS does not like adding user-generated numbers.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://csshole.github.io/about/privacy/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/about/privacy/</guid>
+      <description>Triplelog.com PRIVACY POLICY 
+This privacy policy governs your use of the website www.triplelog.com that was created by&amp;nbsp;TripleLog, LLC.
+&amp;nbsp; What information does the website obtain and how is it used?
+User Provided Information&amp;nbsp;
+The website does not obtain any personal information from you.
+Automatically Collected Information&amp;nbsp;
+&amp;nbsp;
+In addition, the website may collect certain information automatically, including, but not limited to, the IP address of your device, your operating system, the type of Internet browsers you use, and information about the way you use the website.</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://csshole.github.io/about/sudokufarmprivacy/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/about/sudokufarmprivacy/</guid>
+      <description>SUDOKU FARM PRIVACY POLICY 
+This privacy policy governs your use of the software application Sudoku Farm for mobile devices that was created by&amp;nbsp;TripleLog, LLC. The Application is a mobile puzzle and strategy game.
+&amp;nbsp; What information does the Application obtain and how is it used?
+User Provided Information&amp;nbsp;
+The Application does not obtain any personal information from you.
+Automatically Collected Information&amp;nbsp;
+&amp;nbsp;
+In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.</description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy0/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy1/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy10/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy11/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy12/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy13/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy13/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy14/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy14/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy15/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy15/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy16/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy16/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy17/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy18/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy19/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy2/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy20/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy21/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy22/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy22/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy23/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy23/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy24/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy3/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy4/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy5/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy6/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy7/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy8/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/easy9/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/easy9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku - Just CSS/HTML</title>
+      <link>https://csshole.github.io/games/sudokucss/sudokucss/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokucss/sudokucss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudoku Game with only CSS/HTML</title>
+      <link>https://csshole.github.io/howto/howtosudoku/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/howto/howtosudoku/</guid>
+      <description>Sudoku is a relatively simple game to program in just about any programming language. Create a grid with 9 rows and columns and let the user input any number from 1-9 into each cell.
+But there are features that a computer makes possible that paper and pencil cannot match. One feature is blocking a user from inputting a number into row, column, or 3x3 block that already has that number. Another feature is to highlight the row, column, and 3x3 block of each cell to avoid any confusion.</description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/games/dinogame/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/dinogame/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/games/sudokupage/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/sudokupage/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/mathquiz/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/mathquiz/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/trigknob/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/trigknob/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/trigonometryquiz/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/trigonometryquiz/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Travelling Salesman</title>
+      <link>https://csshole.github.io/games/travellingsalesman/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/travellingsalesman/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://csshole.github.io/games/contents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/games/contents/</guid>
+      <description> More Tutorials Learn Sudoku
+Picture Sudokus
+Resources Overview
+Plots Overview
+Plots Detail
+Family Farm
+Crop Rotation
+Population Frenzy
+ </description>
+    </item>
+    
+  </channel>
+</rss>

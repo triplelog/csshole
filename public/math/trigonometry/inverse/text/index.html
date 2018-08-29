@@ -1,0 +1,43 @@
+<div id="text1" class="text">
+    <span class="textHalf">
+		<h3>What is <span class="myKatex">\sin^{-1}(x)?</span></h3>
+		<ul>
+			<li>
+				Find a <span class="myKatex">\theta</span> with <span class="myKatex">\sin(\theta)=x</span>.
+			</li>
+			<li>
+				Infinitely many choices.
+			</li>
+			<li>
+				Choose <span class="myKatex">\frac{-\pi}{2}\leq \theta\leq \frac{\pi}{2}.</span>
+			</li>
+			<li>
+				What is the domain?
+			</li>
+		</ul>
+    </span>
+    <span class="textHalf">
+		<h3>What is <span class="myKatex">\cos^{-1}(x)?</span></h3>
+		<ul>
+			<li>
+				Find a <span class="myKatex">\theta</span> with <span class="myKatex">\cos(\theta)=x</span>.
+			</li>
+			<li>
+				Infinitely many choices.
+			</li>
+			<li>
+				Choose <span class="myKatex">0\leq \theta\leq\pi</span>.
+			</li>
+			<li>
+				What is the domain?
+			</li>
+		</ul>
+    </span>
+</div>
+
+<script>
+var allKatex = document.getElementsByClassName("myKatex");
+for (i=0;i<allKatex.length;i++) {
+	katex.render(allKatex.item(i).innerHTML,allKatex.item(i));
+}
+</script>

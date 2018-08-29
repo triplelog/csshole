@@ -1,0 +1,4378 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sudoku Page</title>
+        
+        <link rel="icon" href="https://csshole.github.io/images/logo.png">
+        
+        
+        <meta name="description" content="U"/>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://csshole.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+ <meta name="generator" content="Hugo 0.40.3" />
+
+
+
+
+
+
+<style>
+.submitButton, .nextButton {
+    display: inline-block;
+    border: none;
+    padding: .5rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+
+}
+
+.nextButton {
+		left: 0px;
+		top:130px;
+		display: none;
+}
+
+.submitButton {
+		left: 240px;
+		top:50px;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.nextButton:hover,
+.nextButton:focus {
+    background: #0053ba;
+}
+
+.submitButton:focus,
+.nextButton:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.submitButton:active,
+.nextButton:active {
+    transform: scale(0.99);
+}
+
+
+	div.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n1 {
+		
+		z-index: 1000;
+		display: none;
+	}
+	span.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n1Next:checked ~ .c1n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ div.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ input.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ label.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ #q1n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n1:checked + span.correct.c0n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked + span + span.incorrect.c0n1 {
+		display: block;
+	}
+	input:valid + input#q0n1:checked + span + span + input + #q0n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked + span + span + input + #q0n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n1:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n1 {
+		
+		z-index: 1001;
+		display: none;
+	}
+	span.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n1Next:checked ~ .c2n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ div.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ input.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ label.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ #q2n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n1:checked + span.correct.c1n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked + span + span.incorrect.c1n1 {
+		display: block;
+	}
+	input:valid + input#q1n1:checked + span + span + input + #q1n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked + span + span + input + #q1n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n1:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n1 {
+		
+		z-index: 1002;
+		display: none;
+	}
+	span.c2n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n1Next:checked ~ .c3n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n1Next:checked ~ div.c3n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n1Next:checked ~ input.c3n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n1Next:checked ~ label.c3n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n1Next:checked ~ #q3n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n1:checked + span.correct.c2n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n1:checked + span + span.incorrect.c2n1 {
+		display: block;
+	}
+	input:valid + input#q2n1:checked + span + span + input + #q2n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n1:checked + span + span + input + #q2n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n1:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n1 {
+		
+		z-index: 1003;
+		display: none;
+	}
+	span.c3n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n1Next:checked ~ .c4n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n1Next:checked ~ div.c4n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n1Next:checked ~ input.c4n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n1Next:checked ~ label.c4n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n1Next:checked ~ #q4n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n1:checked + span.correct.c3n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n1:checked + span + span.incorrect.c3n1 {
+		display: block;
+	}
+	input:valid + input#q3n1:checked + span + span + input + #q3n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n1:checked + span + span + input + #q3n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n1:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 2000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 2000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n2 {
+		
+		z-index: 2000;
+		display: none;
+	}
+	span.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 2000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n2Next:checked ~ .c1n2 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ div.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ input.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ label.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ #q1n2NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ .c0n3 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ div.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ input.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ label.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ #q0n3NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n2:checked + span.correct.c0n2 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked + span + span.incorrect.c0n2 {
+		display: block;
+	}
+	input:valid + input#q0n2:checked + span + span + input + #q0n2NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked + span + span + input + #q0n2NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n2:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n2 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 2001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n2 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 2001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n2 {
+		
+		z-index: 2001;
+		display: none;
+	}
+	span.c1n2 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 2001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n2Next:checked ~ .c2n2 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n2Next:checked ~ div.c2n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n2Next:checked ~ input.c2n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n2Next:checked ~ label.c2n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n2Next:checked ~ #q2n2NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n2Next:checked ~ .c0n3 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n2Next:checked ~ div.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n2Next:checked ~ input.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n2Next:checked ~ label.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n2Next:checked ~ #q0n3NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n2:checked + span.correct.c1n2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n2:checked + span + span.incorrect.c1n2 {
+		display: block;
+	}
+	input:valid + input#q1n2:checked + span + span + input + #q1n2NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n2:checked + span + span + input + #q1n2NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n2:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n2:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n2 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 2002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n2 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 2002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n2 {
+		
+		z-index: 2002;
+		display: none;
+	}
+	span.c2n2 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 2002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n2Next:checked ~ .c3n2 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n2Next:checked ~ div.c3n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n2Next:checked ~ input.c3n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n2Next:checked ~ label.c3n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n2Next:checked ~ #q3n2NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n2Next:checked ~ .c0n3 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n2Next:checked ~ div.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n2Next:checked ~ input.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n2Next:checked ~ label.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n2Next:checked ~ #q0n3NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n2:checked + span.correct.c2n2 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n2:checked + span + span.incorrect.c2n2 {
+		display: block;
+	}
+	input:valid + input#q2n2:checked + span + span + input + #q2n2NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n2:checked + span + span + input + #q2n2NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n2:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n2:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n2 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 2003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n2 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 2003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n2 {
+		
+		z-index: 2003;
+		display: none;
+	}
+	span.c3n2 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 2003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n2Next:checked ~ .c4n2 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n2Next:checked ~ div.c4n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n2Next:checked ~ input.c4n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n2Next:checked ~ label.c4n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n2Next:checked ~ #q4n2NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n2Next:checked ~ .c0n3 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n2Next:checked ~ div.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n2Next:checked ~ input.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n2Next:checked ~ label.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n2Next:checked ~ #q0n3NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n2:checked + span.correct.c3n2 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n2:checked + span + span.incorrect.c3n2 {
+		display: block;
+	}
+	input:valid + input#q3n2:checked + span + span + input + #q3n2NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n2:checked + span + span + input + #q3n2NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n2:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n2:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n3 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 3000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n3 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 3000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n3 {
+		
+		z-index: 3000;
+		display: none;
+	}
+	span.c0n3 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 3000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n3Next:checked ~ .c1n3 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n3Next:checked ~ div.c1n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n3Next:checked ~ input.c1n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n3Next:checked ~ label.c1n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n3Next:checked ~ #q1n3NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n3Next:checked ~ .c0n4 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n3Next:checked ~ div.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n3Next:checked ~ input.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n3Next:checked ~ label.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n3Next:checked ~ #q0n4NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n3:checked + span.correct.c0n3 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n3:checked + span + span.incorrect.c0n3 {
+		display: block;
+	}
+	input:valid + input#q0n3:checked + span + span + input + #q0n3NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n3:checked + span + span + input + #q0n3NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n3:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n3:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n3 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 3001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n3 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 3001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n3 {
+		
+		z-index: 3001;
+		display: none;
+	}
+	span.c1n3 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 3001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n3Next:checked ~ .c2n3 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n3Next:checked ~ div.c2n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n3Next:checked ~ input.c2n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n3Next:checked ~ label.c2n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n3Next:checked ~ #q2n3NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n3Next:checked ~ .c0n4 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n3Next:checked ~ div.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n3Next:checked ~ input.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n3Next:checked ~ label.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n3Next:checked ~ #q0n4NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n3:checked + span.correct.c1n3 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n3:checked + span + span.incorrect.c1n3 {
+		display: block;
+	}
+	input:valid + input#q1n3:checked + span + span + input + #q1n3NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n3:checked + span + span + input + #q1n3NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n3:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n3:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n3 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 3002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n3 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 3002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n3 {
+		
+		z-index: 3002;
+		display: none;
+	}
+	span.c2n3 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 3002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n3Next:checked ~ .c3n3 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n3Next:checked ~ div.c3n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n3Next:checked ~ input.c3n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n3Next:checked ~ label.c3n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n3Next:checked ~ #q3n3NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n3Next:checked ~ .c0n4 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n3Next:checked ~ div.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n3Next:checked ~ input.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n3Next:checked ~ label.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n3Next:checked ~ #q0n4NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n3:checked + span.correct.c2n3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n3:checked + span + span.incorrect.c2n3 {
+		display: block;
+	}
+	input:valid + input#q2n3:checked + span + span + input + #q2n3NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n3:checked + span + span + input + #q2n3NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n3:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n3:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n3 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 3003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n3 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 3003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n3 {
+		
+		z-index: 3003;
+		display: none;
+	}
+	span.c3n3 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 3003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n3Next:checked ~ .c4n3 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n3Next:checked ~ div.c4n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n3Next:checked ~ input.c4n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n3Next:checked ~ label.c4n3 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n3Next:checked ~ #q4n3NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n3Next:checked ~ .c0n4 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n3Next:checked ~ div.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n3Next:checked ~ input.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n3Next:checked ~ label.c0n4 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n3Next:checked ~ #q0n4NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n3:checked + span.correct.c3n3 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n3:checked + span + span.incorrect.c3n3 {
+		display: block;
+	}
+	input:valid + input#q3n3:checked + span + span + input + #q3n3NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n3:checked + span + span + input + #q3n3NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n3:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n3:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n4 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 4000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n4 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 4000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n4 {
+		
+		z-index: 4000;
+		display: none;
+	}
+	span.c0n4 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 4000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n4Next:checked ~ .c1n4 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n4Next:checked ~ div.c1n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n4Next:checked ~ input.c1n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n4Next:checked ~ label.c1n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n4Next:checked ~ #q1n4NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n4Next:checked ~ .c0n5 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n4Next:checked ~ div.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n4Next:checked ~ input.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n4Next:checked ~ label.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n4Next:checked ~ #q0n5NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n4:checked + span.correct.c0n4 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n4:checked + span + span.incorrect.c0n4 {
+		display: block;
+	}
+	input:valid + input#q0n4:checked + span + span + input + #q0n4NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n4:checked + span + span + input + #q0n4NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n4:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n4:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n4 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 4001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n4 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 4001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n4 {
+		
+		z-index: 4001;
+		display: none;
+	}
+	span.c1n4 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 4001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n4Next:checked ~ .c2n4 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n4Next:checked ~ div.c2n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n4Next:checked ~ input.c2n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n4Next:checked ~ label.c2n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n4Next:checked ~ #q2n4NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n4Next:checked ~ .c0n5 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n4Next:checked ~ div.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n4Next:checked ~ input.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n4Next:checked ~ label.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n4Next:checked ~ #q0n5NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n4:checked + span.correct.c1n4 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n4:checked + span + span.incorrect.c1n4 {
+		display: block;
+	}
+	input:valid + input#q1n4:checked + span + span + input + #q1n4NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n4:checked + span + span + input + #q1n4NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n4:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n4:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n4 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 4002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n4 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 4002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n4 {
+		
+		z-index: 4002;
+		display: none;
+	}
+	span.c2n4 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 4002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n4Next:checked ~ .c3n4 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n4Next:checked ~ div.c3n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n4Next:checked ~ input.c3n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n4Next:checked ~ label.c3n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n4Next:checked ~ #q3n4NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n4Next:checked ~ .c0n5 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n4Next:checked ~ div.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n4Next:checked ~ input.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n4Next:checked ~ label.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n4Next:checked ~ #q0n5NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n4:checked + span.correct.c2n4 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n4:checked + span + span.incorrect.c2n4 {
+		display: block;
+	}
+	input:valid + input#q2n4:checked + span + span + input + #q2n4NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n4:checked + span + span + input + #q2n4NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n4:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n4:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n4 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 4003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n4 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 4003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n4 {
+		
+		z-index: 4003;
+		display: none;
+	}
+	span.c3n4 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 4003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n4Next:checked ~ .c4n4 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n4Next:checked ~ div.c4n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n4Next:checked ~ input.c4n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n4Next:checked ~ label.c4n4 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n4Next:checked ~ #q4n4NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n4Next:checked ~ .c0n5 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n4Next:checked ~ div.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n4Next:checked ~ input.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n4Next:checked ~ label.c0n5 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n4Next:checked ~ #q0n5NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n4:checked + span.correct.c3n4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n4:checked + span + span.incorrect.c3n4 {
+		display: block;
+	}
+	input:valid + input#q3n4:checked + span + span + input + #q3n4NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n4:checked + span + span + input + #q3n4NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n4:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n4:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n5 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 5000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n5 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 5000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n5 {
+		
+		z-index: 5000;
+		display: none;
+	}
+	span.c0n5 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 5000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n5Next:checked ~ .c1n5 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n5Next:checked ~ div.c1n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n5Next:checked ~ input.c1n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n5Next:checked ~ label.c1n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n5Next:checked ~ #q1n5NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n5Next:checked ~ .c0n6 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n5Next:checked ~ div.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n5Next:checked ~ input.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n5Next:checked ~ label.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n5Next:checked ~ #q0n6NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n5:checked + span.correct.c0n5 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n5:checked + span + span.incorrect.c0n5 {
+		display: block;
+	}
+	input:valid + input#q0n5:checked + span + span + input + #q0n5NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n5:checked + span + span + input + #q0n5NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n5:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n5:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n5 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 5001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n5 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 5001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n5 {
+		
+		z-index: 5001;
+		display: none;
+	}
+	span.c1n5 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 5001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n5Next:checked ~ .c2n5 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n5Next:checked ~ div.c2n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n5Next:checked ~ input.c2n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n5Next:checked ~ label.c2n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n5Next:checked ~ #q2n5NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n5Next:checked ~ .c0n6 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n5Next:checked ~ div.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n5Next:checked ~ input.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n5Next:checked ~ label.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n5Next:checked ~ #q0n6NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n5:checked + span.correct.c1n5 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n5:checked + span + span.incorrect.c1n5 {
+		display: block;
+	}
+	input:valid + input#q1n5:checked + span + span + input + #q1n5NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n5:checked + span + span + input + #q1n5NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n5:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n5:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n5 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 5002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n5 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 5002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n5 {
+		
+		z-index: 5002;
+		display: none;
+	}
+	span.c2n5 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 5002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n5Next:checked ~ .c3n5 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n5Next:checked ~ div.c3n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n5Next:checked ~ input.c3n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n5Next:checked ~ label.c3n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n5Next:checked ~ #q3n5NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n5Next:checked ~ .c0n6 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n5Next:checked ~ div.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n5Next:checked ~ input.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n5Next:checked ~ label.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n5Next:checked ~ #q0n6NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n5:checked + span.correct.c2n5 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n5:checked + span + span.incorrect.c2n5 {
+		display: block;
+	}
+	input:valid + input#q2n5:checked + span + span + input + #q2n5NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n5:checked + span + span + input + #q2n5NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n5:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n5:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n5 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 5003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n5 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 5003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n5 {
+		
+		z-index: 5003;
+		display: none;
+	}
+	span.c3n5 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 5003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n5Next:checked ~ .c4n5 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n5Next:checked ~ div.c4n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n5Next:checked ~ input.c4n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n5Next:checked ~ label.c4n5 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n5Next:checked ~ #q4n5NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n5Next:checked ~ .c0n6 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n5Next:checked ~ div.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n5Next:checked ~ input.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n5Next:checked ~ label.c0n6 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n5Next:checked ~ #q0n6NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n5:checked + span.correct.c3n5 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n5:checked + span + span.incorrect.c3n5 {
+		display: block;
+	}
+	input:valid + input#q3n5:checked + span + span + input + #q3n5NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n5:checked + span + span + input + #q3n5NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n5:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n5:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n6 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 6000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n6 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 6000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n6 {
+		
+		z-index: 6000;
+		display: none;
+	}
+	span.c0n6 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 6000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n6Next:checked ~ .c1n6 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n6Next:checked ~ div.c1n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n6Next:checked ~ input.c1n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n6Next:checked ~ label.c1n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n6Next:checked ~ #q1n6NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n6Next:checked ~ .c0n7 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n6Next:checked ~ div.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n6Next:checked ~ input.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n6Next:checked ~ label.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n6Next:checked ~ #q0n7NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n6:checked + span.correct.c0n6 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n6:checked + span + span.incorrect.c0n6 {
+		display: block;
+	}
+	input:valid + input#q0n6:checked + span + span + input + #q0n6NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n6:checked + span + span + input + #q0n6NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n6:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n6:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n6 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 6001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n6 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 6001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n6 {
+		
+		z-index: 6001;
+		display: none;
+	}
+	span.c1n6 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 6001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n6Next:checked ~ .c2n6 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n6Next:checked ~ div.c2n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n6Next:checked ~ input.c2n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n6Next:checked ~ label.c2n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n6Next:checked ~ #q2n6NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n6Next:checked ~ .c0n7 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n6Next:checked ~ div.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n6Next:checked ~ input.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n6Next:checked ~ label.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n6Next:checked ~ #q0n7NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n6:checked + span.correct.c1n6 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n6:checked + span + span.incorrect.c1n6 {
+		display: block;
+	}
+	input:valid + input#q1n6:checked + span + span + input + #q1n6NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n6:checked + span + span + input + #q1n6NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n6:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n6:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n6 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 6002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n6 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 6002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n6 {
+		
+		z-index: 6002;
+		display: none;
+	}
+	span.c2n6 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 6002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n6Next:checked ~ .c3n6 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n6Next:checked ~ div.c3n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n6Next:checked ~ input.c3n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n6Next:checked ~ label.c3n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n6Next:checked ~ #q3n6NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n6Next:checked ~ .c0n7 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n6Next:checked ~ div.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n6Next:checked ~ input.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n6Next:checked ~ label.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n6Next:checked ~ #q0n7NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n6:checked + span.correct.c2n6 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n6:checked + span + span.incorrect.c2n6 {
+		display: block;
+	}
+	input:valid + input#q2n6:checked + span + span + input + #q2n6NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n6:checked + span + span + input + #q2n6NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n6:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n6:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n6 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 6003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n6 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 6003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n6 {
+		
+		z-index: 6003;
+		display: none;
+	}
+	span.c3n6 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 6003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n6Next:checked ~ .c4n6 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n6Next:checked ~ div.c4n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n6Next:checked ~ input.c4n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n6Next:checked ~ label.c4n6 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n6Next:checked ~ #q4n6NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n6Next:checked ~ .c0n7 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n6Next:checked ~ div.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n6Next:checked ~ input.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n6Next:checked ~ label.c0n7 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n6Next:checked ~ #q0n7NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n6:checked + span.correct.c3n6 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n6:checked + span + span.incorrect.c3n6 {
+		display: block;
+	}
+	input:valid + input#q3n6:checked + span + span + input + #q3n6NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n6:checked + span + span + input + #q3n6NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n6:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n6:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n7 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 7000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n7 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 7000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n7 {
+		
+		z-index: 7000;
+		display: none;
+	}
+	span.c0n7 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 7000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n7Next:checked ~ .c1n7 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n7Next:checked ~ div.c1n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n7Next:checked ~ input.c1n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n7Next:checked ~ label.c1n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n7Next:checked ~ #q1n7NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n7Next:checked ~ .c0n8 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n7Next:checked ~ div.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n7Next:checked ~ input.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n7Next:checked ~ label.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n7Next:checked ~ #q0n8NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n7:checked + span.correct.c0n7 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n7:checked + span + span.incorrect.c0n7 {
+		display: block;
+	}
+	input:valid + input#q0n7:checked + span + span + input + #q0n7NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n7:checked + span + span + input + #q0n7NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n7:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n7:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n7 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 7001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n7 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 7001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n7 {
+		
+		z-index: 7001;
+		display: none;
+	}
+	span.c1n7 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 7001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n7Next:checked ~ .c2n7 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n7Next:checked ~ div.c2n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n7Next:checked ~ input.c2n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n7Next:checked ~ label.c2n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n7Next:checked ~ #q2n7NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n7Next:checked ~ .c0n8 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n7Next:checked ~ div.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n7Next:checked ~ input.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n7Next:checked ~ label.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n7Next:checked ~ #q0n8NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n7:checked + span.correct.c1n7 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n7:checked + span + span.incorrect.c1n7 {
+		display: block;
+	}
+	input:valid + input#q1n7:checked + span + span + input + #q1n7NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n7:checked + span + span + input + #q1n7NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n7:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n7:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n7 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 7002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n7 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 7002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n7 {
+		
+		z-index: 7002;
+		display: none;
+	}
+	span.c2n7 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 7002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n7Next:checked ~ .c3n7 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n7Next:checked ~ div.c3n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n7Next:checked ~ input.c3n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n7Next:checked ~ label.c3n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n7Next:checked ~ #q3n7NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n7Next:checked ~ .c0n8 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n7Next:checked ~ div.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n7Next:checked ~ input.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n7Next:checked ~ label.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n7Next:checked ~ #q0n8NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n7:checked + span.correct.c2n7 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n7:checked + span + span.incorrect.c2n7 {
+		display: block;
+	}
+	input:valid + input#q2n7:checked + span + span + input + #q2n7NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n7:checked + span + span + input + #q2n7NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n7:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n7:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n7 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 7003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n7 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 7003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n7 {
+		
+		z-index: 7003;
+		display: none;
+	}
+	span.c3n7 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 7003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n7Next:checked ~ .c4n7 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n7Next:checked ~ div.c4n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n7Next:checked ~ input.c4n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n7Next:checked ~ label.c4n7 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n7Next:checked ~ #q4n7NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n7Next:checked ~ .c0n8 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n7Next:checked ~ div.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n7Next:checked ~ input.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n7Next:checked ~ label.c0n8 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n7Next:checked ~ #q0n8NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n7:checked + span.correct.c3n7 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n7:checked + span + span.incorrect.c3n7 {
+		display: block;
+	}
+	input:valid + input#q3n7:checked + span + span + input + #q3n7NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n7:checked + span + span + input + #q3n7NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n7:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n7:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n8 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 8000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n8 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 8000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n8 {
+		
+		z-index: 8000;
+		display: none;
+	}
+	span.c0n8 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 8000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n8Next:checked ~ .c1n8 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n8Next:checked ~ div.c1n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n8Next:checked ~ input.c1n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n8Next:checked ~ label.c1n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n8Next:checked ~ #q1n8NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n8Next:checked ~ .c0n9 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n8Next:checked ~ div.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n8Next:checked ~ input.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n8Next:checked ~ label.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n8Next:checked ~ #q0n9NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n8:checked + span.correct.c0n8 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n8:checked + span + span.incorrect.c0n8 {
+		display: block;
+	}
+	input:valid + input#q0n8:checked + span + span + input + #q0n8NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n8:checked + span + span + input + #q0n8NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n8:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n8:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n8 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 8001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n8 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 8001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n8 {
+		
+		z-index: 8001;
+		display: none;
+	}
+	span.c1n8 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 8001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n8Next:checked ~ .c2n8 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n8Next:checked ~ div.c2n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n8Next:checked ~ input.c2n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n8Next:checked ~ label.c2n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n8Next:checked ~ #q2n8NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n8Next:checked ~ .c0n9 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n8Next:checked ~ div.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n8Next:checked ~ input.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n8Next:checked ~ label.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n8Next:checked ~ #q0n9NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n8:checked + span.correct.c1n8 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n8:checked + span + span.incorrect.c1n8 {
+		display: block;
+	}
+	input:valid + input#q1n8:checked + span + span + input + #q1n8NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n8:checked + span + span + input + #q1n8NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n8:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n8:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n8 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 8002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n8 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 8002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n8 {
+		
+		z-index: 8002;
+		display: none;
+	}
+	span.c2n8 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 8002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n8Next:checked ~ .c3n8 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n8Next:checked ~ div.c3n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n8Next:checked ~ input.c3n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n8Next:checked ~ label.c3n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n8Next:checked ~ #q3n8NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n8Next:checked ~ .c0n9 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n8Next:checked ~ div.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n8Next:checked ~ input.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n8Next:checked ~ label.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n8Next:checked ~ #q0n9NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n8:checked + span.correct.c2n8 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n8:checked + span + span.incorrect.c2n8 {
+		display: block;
+	}
+	input:valid + input#q2n8:checked + span + span + input + #q2n8NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n8:checked + span + span + input + #q2n8NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n8:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n8:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n8 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 8003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n8 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 8003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n8 {
+		
+		z-index: 8003;
+		display: none;
+	}
+	span.c3n8 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 8003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n8Next:checked ~ .c4n8 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n8Next:checked ~ div.c4n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n8Next:checked ~ input.c4n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n8Next:checked ~ label.c4n8 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n8Next:checked ~ #q4n8NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n8Next:checked ~ .c0n9 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n8Next:checked ~ div.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n8Next:checked ~ input.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n8Next:checked ~ label.c0n9 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n8Next:checked ~ #q0n9NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n8:checked + span.correct.c3n8 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n8:checked + span + span.incorrect.c3n8 {
+		display: block;
+	}
+	input:valid + input#q3n8:checked + span + span + input + #q3n8NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n8:checked + span + span + input + #q3n8NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n8:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n8:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n9 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 9000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n9 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 9000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n9 {
+		
+		z-index: 9000;
+		display: none;
+	}
+	span.c0n9 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 9000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n9Next:checked ~ .c1n9 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n9Next:checked ~ div.c1n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n9Next:checked ~ input.c1n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n9Next:checked ~ label.c1n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n9Next:checked ~ #q1n9NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n9Next:checked ~ .c0n10 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n9Next:checked ~ div.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n9Next:checked ~ input.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n9Next:checked ~ label.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n9Next:checked ~ #q0n10NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n9:checked + span.correct.c0n9 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n9:checked + span + span.incorrect.c0n9 {
+		display: block;
+	}
+	input:valid + input#q0n9:checked + span + span + input + #q0n9NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n9:checked + span + span + input + #q0n9NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n9:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n9:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n9 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 9001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n9 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 9001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n9 {
+		
+		z-index: 9001;
+		display: none;
+	}
+	span.c1n9 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 9001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n9Next:checked ~ .c2n9 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n9Next:checked ~ div.c2n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n9Next:checked ~ input.c2n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n9Next:checked ~ label.c2n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n9Next:checked ~ #q2n9NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n9Next:checked ~ .c0n10 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n9Next:checked ~ div.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n9Next:checked ~ input.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n9Next:checked ~ label.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n9Next:checked ~ #q0n10NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n9:checked + span.correct.c1n9 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n9:checked + span + span.incorrect.c1n9 {
+		display: block;
+	}
+	input:valid + input#q1n9:checked + span + span + input + #q1n9NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n9:checked + span + span + input + #q1n9NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n9:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n9:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n9 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 9002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n9 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 9002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n9 {
+		
+		z-index: 9002;
+		display: none;
+	}
+	span.c2n9 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 9002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n9Next:checked ~ .c3n9 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n9Next:checked ~ div.c3n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n9Next:checked ~ input.c3n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n9Next:checked ~ label.c3n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n9Next:checked ~ #q3n9NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n9Next:checked ~ .c0n10 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n9Next:checked ~ div.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n9Next:checked ~ input.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n9Next:checked ~ label.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n9Next:checked ~ #q0n10NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n9:checked + span.correct.c2n9 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n9:checked + span + span.incorrect.c2n9 {
+		display: block;
+	}
+	input:valid + input#q2n9:checked + span + span + input + #q2n9NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n9:checked + span + span + input + #q2n9NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n9:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n9:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n9 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 9003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n9 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 9003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n9 {
+		
+		z-index: 9003;
+		display: none;
+	}
+	span.c3n9 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 9003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n9Next:checked ~ .c4n9 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n9Next:checked ~ div.c4n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n9Next:checked ~ input.c4n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n9Next:checked ~ label.c4n9 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n9Next:checked ~ #q4n9NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n9Next:checked ~ .c0n10 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n9Next:checked ~ div.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n9Next:checked ~ input.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n9Next:checked ~ label.c0n10 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n9Next:checked ~ #q0n10NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n9:checked + span.correct.c3n9 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n9:checked + span + span.incorrect.c3n9 {
+		display: block;
+	}
+	input:valid + input#q3n9:checked + span + span + input + #q3n9NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n9:checked + span + span + input + #q3n9NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n9:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n9:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n10 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 10000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n10 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 10000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n10 {
+		
+		z-index: 10000;
+		display: none;
+	}
+	span.c0n10 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 10000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n10Next:checked ~ .c1n10 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n10Next:checked ~ div.c1n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n10Next:checked ~ input.c1n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n10Next:checked ~ label.c1n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n10Next:checked ~ #q1n10NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n10Next:checked ~ .c0n11 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n10Next:checked ~ div.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n10Next:checked ~ input.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n10Next:checked ~ label.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n10Next:checked ~ #q0n11NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n10:checked + span.correct.c0n10 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n10:checked + span + span.incorrect.c0n10 {
+		display: block;
+	}
+	input:valid + input#q0n10:checked + span + span + input + #q0n10NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n10:checked + span + span + input + #q0n10NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n10:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n10:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n10 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 10001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n10 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 10001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n10 {
+		
+		z-index: 10001;
+		display: none;
+	}
+	span.c1n10 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 10001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n10Next:checked ~ .c2n10 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n10Next:checked ~ div.c2n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n10Next:checked ~ input.c2n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n10Next:checked ~ label.c2n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n10Next:checked ~ #q2n10NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n10Next:checked ~ .c0n11 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n10Next:checked ~ div.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n10Next:checked ~ input.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n10Next:checked ~ label.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n10Next:checked ~ #q0n11NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n10:checked + span.correct.c1n10 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n10:checked + span + span.incorrect.c1n10 {
+		display: block;
+	}
+	input:valid + input#q1n10:checked + span + span + input + #q1n10NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n10:checked + span + span + input + #q1n10NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n10:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n10:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c2n10 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 10002;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c2n10 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 10002;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c2n10 {
+		
+		z-index: 10002;
+		display: none;
+	}
+	span.c2n10 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 10002;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q2n10Next:checked ~ .c3n10 {
+		display: none;
+	}
+	input:valid + input + span + span + #q2n10Next:checked ~ div.c3n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n10Next:checked ~ input.c3n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n10Next:checked ~ label.c3n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q2n10Next:checked ~ #q3n10NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q2n10Next:checked ~ .c0n11 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q2n10Next:checked ~ div.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n10Next:checked ~ input.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n10Next:checked ~ label.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q2n10Next:checked ~ #q0n11NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q2n10:checked + span.correct.c2n10 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n10:checked + span + span.incorrect.c2n10 {
+		display: block;
+	}
+	input:valid + input#q2n10:checked + span + span + input + #q2n10NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q2n10:checked + span + span + input + #q2n10NextLabel {
+		display: block;
+	}
+	input:valid + input#q2n10:checked ~ .block3 {
+		display: block;
+	}
+	input:not(:valid) + input#q2n10:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c3n10 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 10003;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c3n10 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 10003;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c3n10 {
+		
+		z-index: 10003;
+		display: none;
+	}
+	span.c3n10 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 10003;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q3n10Next:checked ~ .c4n10 {
+		display: none;
+	}
+	input:valid + input + span + span + #q3n10Next:checked ~ div.c4n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n10Next:checked ~ input.c4n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n10Next:checked ~ label.c4n10 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q3n10Next:checked ~ #q4n10NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q3n10Next:checked ~ .c0n11 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q3n10Next:checked ~ div.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n10Next:checked ~ input.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n10Next:checked ~ label.c0n11 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q3n10Next:checked ~ #q0n11NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q3n10:checked + span.correct.c3n10 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n10:checked + span + span.incorrect.c3n10 {
+		display: block;
+	}
+	input:valid + input#q3n10:checked + span + span + input + #q3n10NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q3n10:checked + span + span + input + #q3n10NextLabel {
+		display: block;
+	}
+	input:valid + input#q3n10:checked ~ .block4 {
+		display: block;
+	}
+	input:not(:valid) + input#q3n10:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+input:valid + input:checked + span.correct {
+	display: block;
+}
+
+input:not(:valid) + input:checked + span + span.incorrect {
+	display: block;
+}
+div.c0n1 {
+	display: inline-block;
+}
+input.c0n1 {
+	display: inline-block;
+}
+label.c0n1 {
+	display: inline-block;
+}
+
+.block0 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 0px;
+	height: 20px;
+	background: green;
+	z-index: 1000;
+	display: none;
+}
+
+.block1 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 10px;
+	height: 20px;
+	background: green;
+	z-index: 2000;
+	display: none;
+}
+
+.block2 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 20px;
+	height: 20px;
+	background: green;
+	z-index: 3000;
+	display: none;
+}
+
+.block3 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 30px;
+	height: 20px;
+	background: green;
+	z-index: 4000;
+	display: none;
+}
+
+.block4 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 40px;
+	height: 20px;
+	background: green;
+	z-index: 5000;
+	display: none;
+}
+
+.block5 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 50px;
+	height: 20px;
+	background: green;
+	z-index: 6000;
+	display: none;
+}
+
+.block6 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 60px;
+	height: 20px;
+	background: green;
+	z-index: 7000;
+	display: none;
+}
+
+.block7 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 70px;
+	height: 20px;
+	background: green;
+	z-index: 8000;
+	display: none;
+}
+
+.block8 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 80px;
+	height: 20px;
+	background: green;
+	z-index: 9000;
+	display: none;
+}
+
+.block9 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 90px;
+	height: 20px;
+	background: green;
+	z-index: 10000;
+	display: none;
+}
+
+.block10 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 100px;
+	height: 20px;
+	background: green;
+	z-index: 11000;
+	display: none;
+}
+
+.block11 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 110px;
+	height: 20px;
+	background: green;
+	z-index: 12000;
+	display: none;
+}
+
+.block12 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 120px;
+	height: 20px;
+	background: green;
+	z-index: 13000;
+	display: none;
+}
+
+.block13 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 130px;
+	height: 20px;
+	background: green;
+	z-index: 14000;
+	display: none;
+}
+
+.block14 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 140px;
+	height: 20px;
+	background: green;
+	z-index: 15000;
+	display: none;
+}
+
+.block15 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 150px;
+	height: 20px;
+	background: green;
+	z-index: 16000;
+	display: none;
+}
+
+.block16 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 160px;
+	height: 20px;
+	background: green;
+	z-index: 17000;
+	display: none;
+}
+
+.block17 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 170px;
+	height: 20px;
+	background: green;
+	z-index: 18000;
+	display: none;
+}
+
+.block18 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 180px;
+	height: 20px;
+	background: green;
+	z-index: 19000;
+	display: none;
+}
+
+.block19 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 190px;
+	height: 20px;
+	background: green;
+	z-index: 20000;
+	display: none;
+}
+
+.block20 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 200px;
+	height: 20px;
+	background: green;
+	z-index: 21000;
+	display: none;
+}
+
+.block21 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 210px;
+	height: 20px;
+	background: green;
+	z-index: 22000;
+	display: none;
+}
+
+.block22 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 220px;
+	height: 20px;
+	background: green;
+	z-index: 23000;
+	display: none;
+}
+
+.block23 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 230px;
+	height: 20px;
+	background: green;
+	z-index: 24000;
+	display: none;
+}
+
+.block24 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 240px;
+	height: 20px;
+	background: green;
+	z-index: 25000;
+	display: none;
+}
+
+.block25 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 250px;
+	height: 20px;
+	background: green;
+	z-index: 26000;
+	display: none;
+}
+
+.block26 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 260px;
+	height: 20px;
+	background: green;
+	z-index: 27000;
+	display: none;
+}
+
+.block27 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 270px;
+	height: 20px;
+	background: green;
+	z-index: 28000;
+	display: none;
+}
+
+.block28 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 280px;
+	height: 20px;
+	background: green;
+	z-index: 29000;
+	display: none;
+}
+
+.block29 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 290px;
+	height: 20px;
+	background: green;
+	z-index: 30000;
+	display: none;
+}
+
+
+
+</style>
+<link rel="stylesheet" href="http://localhost:1313/css/katex.min.css">
+</head>
+ 
+      
+    <body>
+        <ul class="navbar">
+				
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+			<li class="nav dropdown1">
+				<ul class="dropdown-content1">
+					<li><a href="/games/travellingsalesman">Travelling Salesman</a></li>
+					<li><a href="/games/sudokucss/simple1">Simple Sudoku</a></li>
+					<li><a href="/games/sudokucss/easy1">Easy Sudoku</a></li>
+					<li><a href="/games/sudokucss/medium1">Medium Sudoku</a></li>
+					<li><a href="/games/sudokucss/hard1">Hard Sudoku</a></li>
+				</ul>
+				<a class="dropdown1">Games</a>
+			</li>
+			<li class="nav dropdown2">
+				<ul class="dropdown-content2">
+					<li><a href="/maps/electoral">Electoral College</a></li>
+					<li><a href="/maps/cdmap">U.S. House Map</a></li>
+				</ul>
+				<a class="dropdown2">Maps</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/quizzes/trigonometryquiz">Trigonometry</a></li>
+				</ul>
+				<a class="dropdown3">Quizzes</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/howto/sudoku">Sudoku</a></li>
+					<li><a href="/howto/maps">Maps</a></li>
+					<li><a href="/howto/quiz">Quiz</a></li>
+				</ul>
+				<a class="dropdown3">About</a>
+			</li>
+		
+		</ul>
+
+	<div style="position: relative; left: 5%;">
+	
+		
+			<div class="c0n1">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n1" required>
+		  <input type="radio" name="submitAnswer" id="q0n1" style="display: none;">
+		  <span class="correct c0n1">Good!</span>
+		  <span class="incorrect c0n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n1Next" style="display: none;">
+		  <label for="q0n1Next" id="q0n1NextLabel" class="c0n1 nextButton">Next Question</label>
+		  <label for="q0n1" class="c0n1 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n1">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n1" required>
+		  <input type="radio" name="submitAnswer" id="q1n1" style="display: none;">
+		  <span class="correct c1n1">Good!</span>
+		  <span class="incorrect c1n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n1Next" style="display: none;">
+		  <label for="q1n1Next" id="q1n1NextLabel" class="c1n1 nextButton">Next Question</label>
+		  <label for="q1n1" class="c1n1 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n1">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mi>π</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(\pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n1" required>
+		  <input type="radio" name="submitAnswer" id="q2n1" style="display: none;">
+		  <span class="correct c2n1">Good!</span>
+		  <span class="incorrect c2n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n1Next" style="display: none;">
+		  <label for="q2n1Next" id="q2n1NextLabel" class="c2n1 nextButton">Next Question</label>
+		  <label for="q2n1" class="c2n1 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n1">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mi>π</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(\pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n1" required>
+		  <input type="radio" name="submitAnswer" id="q3n1" style="display: none;">
+		  <span class="correct c3n1">Good!</span>
+		  <span class="incorrect c3n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n1Next" style="display: none;">
+		  <label for="q3n1Next" id="q3n1NextLabel" class="c3n1 nextButton">Next Question</label>
+		  <label for="q3n1" class="c3n1 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n2">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n2" required>
+		  <input type="radio" name="submitAnswer" id="q0n2" style="display: none;">
+		  <span class="correct c0n2">Good!</span>
+		  <span class="incorrect c0n2">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n2Next" style="display: none;">
+		  <label for="q0n2Next" id="q0n2NextLabel" class="c0n2 nextButton">Next Question</label>
+		  <label for="q0n2" class="c0n2 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n2">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n2" required>
+		  <input type="radio" name="submitAnswer" id="q1n2" style="display: none;">
+		  <span class="correct c1n2">Good!</span>
+		  <span class="incorrect c1n2">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n2Next" style="display: none;">
+		  <label for="q1n2Next" id="q1n2NextLabel" class="c1n2 nextButton">Next Question</label>
+		  <label for="q1n2" class="c1n2 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n2">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{4\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n2" required>
+		  <input type="radio" name="submitAnswer" id="q2n2" style="display: none;">
+		  <span class="correct c2n2">Good!</span>
+		  <span class="incorrect c2n2">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n2Next" style="display: none;">
+		  <label for="q2n2Next" id="q2n2NextLabel" class="c2n2 nextButton">Next Question</label>
+		  <label for="q2n2" class="c2n2 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n2">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{4\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n2" required>
+		  <input type="radio" name="submitAnswer" id="q3n2" style="display: none;">
+		  <span class="correct c3n2">Good!</span>
+		  <span class="incorrect c3n2">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n2Next" style="display: none;">
+		  <label for="q3n2Next" id="q3n2NextLabel" class="c3n2 nextButton">Next Question</label>
+		  <label for="q3n2" class="c3n2 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n3">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n3" required>
+		  <input type="radio" name="submitAnswer" id="q0n3" style="display: none;">
+		  <span class="correct c0n3">Good!</span>
+		  <span class="incorrect c0n3">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n3Next" style="display: none;">
+		  <label for="q0n3Next" id="q0n3NextLabel" class="c0n3 nextButton">Next Question</label>
+		  <label for="q0n3" class="c0n3 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n3">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n3" required>
+		  <input type="radio" name="submitAnswer" id="q1n3" style="display: none;">
+		  <span class="correct c1n3">Good!</span>
+		  <span class="incorrect c1n3">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n3Next" style="display: none;">
+		  <label for="q1n3Next" id="q1n3NextLabel" class="c1n3 nextButton">Next Question</label>
+		  <label for="q1n3" class="c1n3 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n3">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>5</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{5\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n3" required>
+		  <input type="radio" name="submitAnswer" id="q2n3" style="display: none;">
+		  <span class="correct c2n3">Good!</span>
+		  <span class="incorrect c2n3">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n3Next" style="display: none;">
+		  <label for="q2n3Next" id="q2n3NextLabel" class="c2n3 nextButton">Next Question</label>
+		  <label for="q2n3" class="c2n3 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n3">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{2\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n3" required>
+		  <input type="radio" name="submitAnswer" id="q3n3" style="display: none;">
+		  <span class="correct c3n3">Good!</span>
+		  <span class="incorrect c3n3">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n3Next" style="display: none;">
+		  <label for="q3n3Next" id="q3n3NextLabel" class="c3n3 nextButton">Next Question</label>
+		  <label for="q3n3" class="c3n3 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n4">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n4" required>
+		  <input type="radio" name="submitAnswer" id="q0n4" style="display: none;">
+		  <span class="correct c0n4">Good!</span>
+		  <span class="incorrect c0n4">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n4Next" style="display: none;">
+		  <label for="q0n4Next" id="q0n4NextLabel" class="c0n4 nextButton">Next Question</label>
+		  <label for="q0n4" class="c0n4 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n4">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n4" required>
+		  <input type="radio" name="submitAnswer" id="q1n4" style="display: none;">
+		  <span class="correct c1n4">Good!</span>
+		  <span class="incorrect c1n4">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n4Next" style="display: none;">
+		  <label for="q1n4Next" id="q1n4NextLabel" class="c1n4 nextButton">Next Question</label>
+		  <label for="q1n4" class="c1n4 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n4">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>7</mn><mi>π</mi></mrow><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{7\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">7</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n4" required>
+		  <input type="radio" name="submitAnswer" id="q2n4" style="display: none;">
+		  <span class="correct c2n4">Good!</span>
+		  <span class="incorrect c2n4">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n4Next" style="display: none;">
+		  <label for="q2n4Next" id="q2n4NextLabel" class="c2n4 nextButton">Next Question</label>
+		  <label for="q2n4" class="c2n4 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n4">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{4\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n4" required>
+		  <input type="radio" name="submitAnswer" id="q3n4" style="display: none;">
+		  <span class="correct c3n4">Good!</span>
+		  <span class="incorrect c3n4">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n4Next" style="display: none;">
+		  <label for="q3n4Next" id="q3n4NextLabel" class="c3n4 nextButton">Next Question</label>
+		  <label for="q3n4" class="c3n4 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n5">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n5" required>
+		  <input type="radio" name="submitAnswer" id="q0n5" style="display: none;">
+		  <span class="correct c0n5">Good!</span>
+		  <span class="incorrect c0n5">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n5Next" style="display: none;">
+		  <label for="q0n5Next" id="q0n5NextLabel" class="c0n5 nextButton">Next Question</label>
+		  <label for="q0n5" class="c0n5 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n5">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n5" required>
+		  <input type="radio" name="submitAnswer" id="q1n5" style="display: none;">
+		  <span class="correct c1n5">Good!</span>
+		  <span class="incorrect c1n5">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n5Next" style="display: none;">
+		  <label for="q1n5Next" id="q1n5NextLabel" class="c1n5 nextButton">Next Question</label>
+		  <label for="q1n5" class="c1n5 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n5">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{4\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n5" required>
+		  <input type="radio" name="submitAnswer" id="q2n5" style="display: none;">
+		  <span class="correct c2n5">Good!</span>
+		  <span class="incorrect c2n5">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n5Next" style="display: none;">
+		  <label for="q2n5Next" id="q2n5NextLabel" class="c2n5 nextButton">Next Question</label>
+		  <label for="q2n5" class="c2n5 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n5">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>5</mn><mi>π</mi></mrow><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{5\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n5" required>
+		  <input type="radio" name="submitAnswer" id="q3n5" style="display: none;">
+		  <span class="correct c3n5">Good!</span>
+		  <span class="incorrect c3n5">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n5Next" style="display: none;">
+		  <label for="q3n5Next" id="q3n5NextLabel" class="c3n5 nextButton">Next Question</label>
+		  <label for="q3n5" class="c3n5 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n6">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord">0</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n6" required>
+		  <input type="radio" name="submitAnswer" id="q0n6" style="display: none;">
+		  <span class="correct c0n6">Good!</span>
+		  <span class="incorrect c0n6">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n6Next" style="display: none;">
+		  <label for="q0n6Next" id="q0n6NextLabel" class="c0n6 nextButton">Next Question</label>
+		  <label for="q0n6" class="c0n6 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n6">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n6" required>
+		  <input type="radio" name="submitAnswer" id="q1n6" style="display: none;">
+		  <span class="correct c1n6">Good!</span>
+		  <span class="incorrect c1n6">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n6Next" style="display: none;">
+		  <label for="q1n6Next" id="q1n6NextLabel" class="c1n6 nextButton">Next Question</label>
+		  <label for="q1n6" class="c1n6 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n6">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{3\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n6" required>
+		  <input type="radio" name="submitAnswer" id="q2n6" style="display: none;">
+		  <span class="correct c2n6">Good!</span>
+		  <span class="incorrect c2n6">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n6Next" style="display: none;">
+		  <label for="q2n6Next" id="q2n6NextLabel" class="c2n6 nextButton">Next Question</label>
+		  <label for="q2n6" class="c2n6 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n6">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>4</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{4\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n6" required>
+		  <input type="radio" name="submitAnswer" id="q3n6" style="display: none;">
+		  <span class="correct c3n6">Good!</span>
+		  <span class="incorrect c3n6">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n6Next" style="display: none;">
+		  <label for="q3n6Next" id="q3n6NextLabel" class="c3n6 nextButton">Next Question</label>
+		  <label for="q3n6" class="c3n6 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n7">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n7" required>
+		  <input type="radio" name="submitAnswer" id="q0n7" style="display: none;">
+		  <span class="correct c0n7">Good!</span>
+		  <span class="incorrect c0n7">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n7Next" style="display: none;">
+		  <label for="q0n7Next" id="q0n7NextLabel" class="c0n7 nextButton">Next Question</label>
+		  <label for="q0n7" class="c0n7 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n7">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n7" required>
+		  <input type="radio" name="submitAnswer" id="q1n7" style="display: none;">
+		  <span class="correct c1n7">Good!</span>
+		  <span class="incorrect c1n7">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n7Next" style="display: none;">
+		  <label for="q1n7Next" id="q1n7NextLabel" class="c1n7 nextButton">Next Question</label>
+		  <label for="q1n7" class="c1n7 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n7">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{3\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n7" required>
+		  <input type="radio" name="submitAnswer" id="q2n7" style="display: none;">
+		  <span class="correct c2n7">Good!</span>
+		  <span class="incorrect c2n7">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n7Next" style="display: none;">
+		  <label for="q2n7Next" id="q2n7NextLabel" class="c2n7 nextButton">Next Question</label>
+		  <label for="q2n7" class="c2n7 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n7">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mi>π</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(\pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n7" required>
+		  <input type="radio" name="submitAnswer" id="q3n7" style="display: none;">
+		  <span class="correct c3n7">Good!</span>
+		  <span class="incorrect c3n7">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n7Next" style="display: none;">
+		  <label for="q3n7Next" id="q3n7NextLabel" class="c3n7 nextButton">Next Question</label>
+		  <label for="q3n7" class="c3n7 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n8">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n8" required>
+		  <input type="radio" name="submitAnswer" id="q0n8" style="display: none;">
+		  <span class="correct c0n8">Good!</span>
+		  <span class="incorrect c0n8">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n8Next" style="display: none;">
+		  <label for="q0n8Next" id="q0n8NextLabel" class="c0n8 nextButton">Next Question</label>
+		  <label for="q0n8" class="c0n8 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n8">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n8" required>
+		  <input type="radio" name="submitAnswer" id="q1n8" style="display: none;">
+		  <span class="correct c1n8">Good!</span>
+		  <span class="incorrect c1n8">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n8Next" style="display: none;">
+		  <label for="q1n8Next" id="q1n8NextLabel" class="c1n8 nextButton">Next Question</label>
+		  <label for="q1n8" class="c1n8 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n8">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{3\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n8" required>
+		  <input type="radio" name="submitAnswer" id="q2n8" style="display: none;">
+		  <span class="correct c2n8">Good!</span>
+		  <span class="incorrect c2n8">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n8Next" style="display: none;">
+		  <label for="q2n8Next" id="q2n8NextLabel" class="c2n8 nextButton">Next Question</label>
+		  <label for="q2n8" class="c2n8 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n8">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>5</mn><mi>π</mi></mrow><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{5\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n8" required>
+		  <input type="radio" name="submitAnswer" id="q3n8" style="display: none;">
+		  <span class="correct c3n8">Good!</span>
+		  <span class="incorrect c3n8">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n8Next" style="display: none;">
+		  <label for="q3n8Next" id="q3n8NextLabel" class="c3n8 nextButton">Next Question</label>
+		  <label for="q3n8" class="c3n8 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n9">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n9" required>
+		  <input type="radio" name="submitAnswer" id="q0n9" style="display: none;">
+		  <span class="correct c0n9">Good!</span>
+		  <span class="incorrect c0n9">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n9Next" style="display: none;">
+		  <label for="q0n9Next" id="q0n9NextLabel" class="c0n9 nextButton">Next Question</label>
+		  <label for="q0n9" class="c0n9 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n9">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n9" required>
+		  <input type="radio" name="submitAnswer" id="q1n9" style="display: none;">
+		  <span class="correct c1n9">Good!</span>
+		  <span class="incorrect c1n9">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n9Next" style="display: none;">
+		  <label for="q1n9Next" id="q1n9NextLabel" class="c1n9 nextButton">Next Question</label>
+		  <label for="q1n9" class="c1n9 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n9">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{2\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n9" required>
+		  <input type="radio" name="submitAnswer" id="q2n9" style="display: none;">
+		  <span class="correct c2n9">Good!</span>
+		  <span class="incorrect c2n9">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n9Next" style="display: none;">
+		  <label for="q2n9Next" id="q2n9NextLabel" class="c2n9 nextButton">Next Question</label>
+		  <label for="q2n9" class="c2n9 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n9">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>5</mn><mi>π</mi></mrow><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{5\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n9" required>
+		  <input type="radio" name="submitAnswer" id="q3n9" style="display: none;">
+		  <span class="correct c3n9">Good!</span>
+		  <span class="incorrect c3n9">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n9Next" style="display: none;">
+		  <label for="q3n9Next" id="q3n9NextLabel" class="c3n9 nextButton">Next Question</label>
+		  <label for="q3n9" class="c3n9 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+			<div class="c0n10">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c0n10" required>
+		  <input type="radio" name="submitAnswer" id="q0n10" style="display: none;">
+		  <span class="correct c0n10">Good!</span>
+		  <span class="incorrect c0n10">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n10Next" style="display: none;">
+		  <label for="q0n10Next" id="q0n10NextLabel" class="c0n10 nextButton">Next Question</label>
+		  <label for="q0n10" class="c0n10 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n10">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>π</mi><mn>6</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{\pi}{6})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c1n10" required>
+		  <input type="radio" name="submitAnswer" id="q1n10" style="display: none;">
+		  <span class="correct c1n10">Good!</span>
+		  <span class="incorrect c1n10">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n10Next" style="display: none;">
+		  <label for="q1n10Next" id="q1n10NextLabel" class="c1n10 nextButton">Next Question</label>
+		  <label for="q1n10" class="c1n10 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+			<div class="c2n10">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>5</mn><mi>π</mi></mrow><mn>4</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(rac{5\pi}{4})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c2n10" required>
+		  <input type="radio" name="submitAnswer" id="q2n10" style="display: none;">
+		  <span class="correct c2n10">Good!</span>
+		  <span class="incorrect c2n10">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q2n10Next" style="display: none;">
+		  <label for="q2n10Next" id="q2n10NextLabel" class="c2n10 nextButton">Next Question</label>
+		  <label for="q2n10" class="c2n10 submitButton">Submit</label>
+		  <div class="block2"></div>
+
+		
+			<div class="c3n10">What is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mn>3</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(rac{2\pi}{3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathit mtight" style="margin-right:0.03588em;">π</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>?</div>
+		  <input type="text" pattern="2" title="" class="c3n10" required>
+		  <input type="radio" name="submitAnswer" id="q3n10" style="display: none;">
+		  <span class="correct c3n10">Good!</span>
+		  <span class="incorrect c3n10">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q3n10Next" style="display: none;">
+		  <label for="q3n10Next" id="q3n10NextLabel" class="c3n10 nextButton">Next Question</label>
+		  <label for="q3n10" class="c3n10 submitButton">Submit</label>
+		  <div class="block3"></div>
+
+		
+		
+	</div>
+
+</body>
+
+
+       
+    </body>
+
+</html>

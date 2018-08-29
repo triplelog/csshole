@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sudoku Page</title>
+        
+        <link rel="icon" href="https://csshole.github.io/images/logo.png">
+        
+        
+        <meta name="description" content="U"/>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://csshole.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+ <meta name="generator" content="Hugo 0.40.3" />
+
+
+
+
+
+
+<style>
+.submitButton, .nextButton {
+    display: inline-block;
+    border: none;
+    padding: .5rem 1rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+
+}
+
+.nextButton {
+		left: 0px;
+		top:130px;
+		display: none;
+}
+
+.submitButton {
+		left: 240px;
+		top:50px;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.nextButton:hover,
+.nextButton:focus {
+    background: #0053ba;
+}
+
+.submitButton:focus,
+.nextButton:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.submitButton:active,
+.nextButton:active {
+    transform: scale(0.99);
+}
+
+
+	div.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n1 {
+		
+		z-index: 1000;
+		display: none;
+	}
+	span.c0n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n1Next:checked ~ .c1n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ div.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ input.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ label.c1n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n1Next:checked ~ #q1n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n1:checked + span.correct.c0n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked + span + span.incorrect.c0n1 {
+		display: block;
+	}
+	input:valid + input#q0n1:checked + span + span + input + #q0n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked + span + span + input + #q0n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n1:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 2000;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 2000;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c0n2 {
+		
+		z-index: 2000;
+		display: none;
+	}
+	span.c0n2 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 2000;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q0n2Next:checked ~ .c1n2 {
+		display: none;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ div.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ input.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ label.c1n2 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q0n2Next:checked ~ #q1n2NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ .c0n3 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ div.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ input.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ label.c0n3 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q0n2Next:checked ~ #q0n3NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q0n2:checked + span.correct.c0n2 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked + span + span.incorrect.c0n2 {
+		display: block;
+	}
+	input:valid + input#q0n2:checked + span + span + input + #q0n2NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked + span + span + input + #q0n2NextLabel {
+		display: block;
+	}
+	input:valid + input#q0n2:checked ~ .block1 {
+		display: block;
+	}
+	input:not(:valid) + input#q0n2:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+	div.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:0px;
+		z-index: 1001;
+		width:500px;
+		height:500px;
+		background: white;
+		display: none;
+	}
+	input.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:50px;
+		z-index: 1001;
+		display: none;
+		height: 1.5rem;
+		font-size:1rem;
+	}
+	label.c1n1 {
+		
+		z-index: 1001;
+		display: none;
+	}
+	span.c1n1 {
+		position: absolute;
+		left: 0px;
+		top:100px;
+		z-index: 1001;
+		display: none;
+	}
+	
+	input:valid + input + span + span + #q1n1Next:checked ~ .c2n1 {
+		display: none;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ div.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ input.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ label.c2n1 {
+		display: inline-block;
+	}
+	input:valid + input + span + span + #q1n1Next:checked ~ #q2n1NextLabel {
+		display: none;
+	}
+	
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ .c0n2 {
+		display: none;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ div.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ input.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ label.c0n2 {
+		display: inline-block;
+	}
+	input:not(:valid) + input + span + span + #q1n1Next:checked ~ #q0n2NextLabel {
+		display: none;
+	}
+	
+	input:valid + input#q1n1:checked + span.correct.c1n1 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked + span + span.incorrect.c1n1 {
+		display: block;
+	}
+	input:valid + input#q1n1:checked + span + span + input + #q1n1NextLabel {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked + span + span + input + #q1n1NextLabel {
+		display: block;
+	}
+	input:valid + input#q1n1:checked ~ .block2 {
+		display: block;
+	}
+	input:not(:valid) + input#q1n1:checked ~ .block0 {
+		display: block;
+	}
+
+	
+
+
+input:valid + input:checked + span.correct {
+	display: block;
+}
+
+input:not(:valid) + input:checked + span + span.incorrect {
+	display: block;
+}
+div.c0n1 {
+	display: inline-block;
+}
+input.c0n1 {
+	display: inline-block;
+}
+label.c0n1 {
+	display: inline-block;
+}
+
+.block0 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 0px;
+	height: 20px;
+	background: green;
+	z-index: 1000;
+	display: none;
+}
+
+.block1 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 10px;
+	height: 20px;
+	background: green;
+	z-index: 2000;
+	display: none;
+}
+
+.block2 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 20px;
+	height: 20px;
+	background: green;
+	z-index: 3000;
+	display: none;
+}
+
+.block3 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 30px;
+	height: 20px;
+	background: green;
+	z-index: 4000;
+	display: none;
+}
+
+.block4 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 40px;
+	height: 20px;
+	background: green;
+	z-index: 5000;
+	display: none;
+}
+
+.block5 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 50px;
+	height: 20px;
+	background: green;
+	z-index: 6000;
+	display: none;
+}
+
+.block6 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 60px;
+	height: 20px;
+	background: green;
+	z-index: 7000;
+	display: none;
+}
+
+.block7 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 70px;
+	height: 20px;
+	background: green;
+	z-index: 8000;
+	display: none;
+}
+
+.block8 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 80px;
+	height: 20px;
+	background: green;
+	z-index: 9000;
+	display: none;
+}
+
+.block9 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 90px;
+	height: 20px;
+	background: green;
+	z-index: 10000;
+	display: none;
+}
+
+.block10 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 100px;
+	height: 20px;
+	background: green;
+	z-index: 11000;
+	display: none;
+}
+
+.block11 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 110px;
+	height: 20px;
+	background: green;
+	z-index: 12000;
+	display: none;
+}
+
+.block12 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 120px;
+	height: 20px;
+	background: green;
+	z-index: 13000;
+	display: none;
+}
+
+.block13 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 130px;
+	height: 20px;
+	background: green;
+	z-index: 14000;
+	display: none;
+}
+
+.block14 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 140px;
+	height: 20px;
+	background: green;
+	z-index: 15000;
+	display: none;
+}
+
+.block15 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 150px;
+	height: 20px;
+	background: green;
+	z-index: 16000;
+	display: none;
+}
+
+.block16 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 160px;
+	height: 20px;
+	background: green;
+	z-index: 17000;
+	display: none;
+}
+
+.block17 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 170px;
+	height: 20px;
+	background: green;
+	z-index: 18000;
+	display: none;
+}
+
+.block18 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 180px;
+	height: 20px;
+	background: green;
+	z-index: 19000;
+	display: none;
+}
+
+.block19 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 190px;
+	height: 20px;
+	background: green;
+	z-index: 20000;
+	display: none;
+}
+
+.block20 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 200px;
+	height: 20px;
+	background: green;
+	z-index: 21000;
+	display: none;
+}
+
+.block21 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 210px;
+	height: 20px;
+	background: green;
+	z-index: 22000;
+	display: none;
+}
+
+.block22 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 220px;
+	height: 20px;
+	background: green;
+	z-index: 23000;
+	display: none;
+}
+
+.block23 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 230px;
+	height: 20px;
+	background: green;
+	z-index: 24000;
+	display: none;
+}
+
+.block24 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 240px;
+	height: 20px;
+	background: green;
+	z-index: 25000;
+	display: none;
+}
+
+.block25 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 250px;
+	height: 20px;
+	background: green;
+	z-index: 26000;
+	display: none;
+}
+
+.block26 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 260px;
+	height: 20px;
+	background: green;
+	z-index: 27000;
+	display: none;
+}
+
+.block27 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 270px;
+	height: 20px;
+	background: green;
+	z-index: 28000;
+	display: none;
+}
+
+.block28 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 280px;
+	height: 20px;
+	background: green;
+	z-index: 29000;
+	display: none;
+}
+
+.block29 {
+	position: absolute;
+	left: 0px;
+	top: 200px;
+	width: 290px;
+	height: 20px;
+	background: green;
+	z-index: 30000;
+	display: none;
+}
+
+
+
+</style>
+<link rel="stylesheet" href="http://localhost:1313/css/katex.min.css">
+</head>
+ 
+      
+    <body>
+        <ul class="navbar">
+				
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+			<li class="nav dropdown1">
+				<ul class="dropdown-content1">
+					<li><a href="/games/travellingsalesman">Travelling Salesman</a></li>
+					<li><a href="/games/sudokucss/simple1">Simple Sudoku</a></li>
+					<li><a href="/games/sudokucss/easy1">Easy Sudoku</a></li>
+					<li><a href="/games/sudokucss/medium1">Medium Sudoku</a></li>
+					<li><a href="/games/sudokucss/hard1">Hard Sudoku</a></li>
+				</ul>
+				<a class="dropdown1">Games</a>
+			</li>
+			<li class="nav dropdown2">
+				<ul class="dropdown-content2">
+					<li><a href="/maps/electoral">Electoral College</a></li>
+					<li><a href="/maps/cdmap">U.S. House Map</a></li>
+				</ul>
+				<a class="dropdown2">Maps</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/quizzes/trigonometryquiz">Trigonometry</a></li>
+				</ul>
+				<a class="dropdown3">Quizzes</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/howto/sudoku">Sudoku</a></li>
+					<li><a href="/howto/maps">Maps</a></li>
+					<li><a href="/howto/quiz">Quiz</a></li>
+				</ul>
+				<a class="dropdown3">About</a>
+			</li>
+		
+		</ul>
+
+	<div style="position: relative; left: 5%;">
+	
+		
+			<div class="c0n1">What is the derivative of x^3</div>
+		  <input type="text" pattern="3x\^2" title="" class="c0n1" required>
+		  <input type="radio" name="submitAnswer" id="q0n1" style="display: none;">
+		  <span class="correct c0n1">Good!</span>
+		  <span class="incorrect c0n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n1Next" style="display: none;">
+		  <label for="q0n1Next" id="q0n1NextLabel" class="c0n1 nextButton">Next Question</label>
+		  <label for="q0n1" class="c0n1 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c0n2">What is the derivative of x^4</div>
+		  <input type="text" pattern="4x\^3" title="" class="c0n2" required>
+		  <input type="radio" name="submitAnswer" id="q0n2" style="display: none;">
+		  <span class="correct c0n2">Good!</span>
+		  <span class="incorrect c0n2">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q0n2Next" style="display: none;">
+		  <label for="q0n2Next" id="q0n2NextLabel" class="c0n2 nextButton">Next Question</label>
+		  <label for="q0n2" class="c0n2 submitButton">Submit</label>
+		  <div class="block0"></div>
+
+		
+			<div class="c1n1">What is the derivative of x^5</div>
+		  <input type="text" pattern="5x\^4" title="" class="c1n1" required>
+		  <input type="radio" name="submitAnswer" id="q1n1" style="display: none;">
+		  <span class="correct c1n1">Good!</span>
+		  <span class="incorrect c1n1">Wrong!</span>
+		  <input type="radio" name="nextQuestion" id="q1n1Next" style="display: none;">
+		  <label for="q1n1Next" id="q1n1NextLabel" class="c1n1 nextButton">Next Question</label>
+		  <label for="q1n1" class="c1n1 submitButton">Submit</label>
+		  <div class="block1"></div>
+
+		
+		
+	</div>
+
+</body>
+
+
+       
+    </body>
+
+</html>

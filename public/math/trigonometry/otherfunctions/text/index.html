@@ -1,0 +1,37 @@
+<div id="text1" class="text">
+    <span class="textHalf">
+		<h3>Tangent and Cotangent</h3>
+		<ul>
+			<li>
+				<span class="myKatex">\tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}.</span>
+			</li>
+			<li>
+				<span class="myKatex">\cot(\theta)=\frac{\sin(\theta)}{\cos(\theta)}.</span>
+			</li>
+			<li>
+				When are these functions undefined?
+			</li>
+		</ul>
+    </span>
+    <span class="textHalf">
+		<h3>Secant and Cosecant</h3>
+		<ul>
+			<li>
+				<span class="myKatex">\sec(\theta)=\frac{1}{\cos(\theta)}.</span>
+			</li>
+			<li>
+				<span class="myKatex">\csc(\theta)=\frac{1}{\sin(\theta)}.</span>
+			</li>
+			<li>
+				When are these functions undefined?
+			</li>
+		</ul>
+    </span>
+</div>
+
+<script>
+var allKatex = document.getElementsByClassName("myKatex");
+for (i=0;i<allKatex.length;i++) {
+	katex.render(allKatex.item(i).innerHTML,allKatex.item(i));
+}
+</script>

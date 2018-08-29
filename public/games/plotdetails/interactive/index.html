@@ -1,0 +1,125 @@
+<div id="interactive1" style="display: block;">
+	
+	You need to know which plots produce which resources and which plots consume which resources so that your farm never runs out.
+
+  <ol id="ranked" style="min-height:30px; min-width:5px; width: 60px; background-color: green; padding-bottom: 15px; padding-top: 15px;">
+
+  </ol>
+
+  <ul id="unranked" style="list-style-type: none; min-height:30px; min-width:5px; width: 60px; background-color: gray; padding-bottom: 15px; padding-top: 15px;">
+    <li><img src="/images/farm1.png" height="30px"></li>
+    <li><img src="/images/farm2.png" height="30px"></li>
+    <li><img src="/images/farm3.png" height="30px"></li>
+    <li><img src="/images/farm4.png" height="30px"></li>
+    <li><img src="/images/farm5.png" height="30px"></li>
+    <li><img src="/images/farm6.png" height="30px"></li>
+    <li><img src="/images/farm7.png" height="30px"></li>
+    <li><img src="/images/farm8.png" height="30px"></li>
+    <li><img src="/images/farm9.png" height="30px"></li>
+  </ul>
+
+</div>
+<div id="interactive2" style="display: none;">
+	<canvas id="myCanvas2" width="100" height="100"></canvas>
+	<button id="takeTurn2">Take Turn</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script>
+
+	Sortable.create(ranked, {
+	  group: {
+		name: 'ranked',
+		put: 'unranked',
+		pull: function (to, from) {
+		  return 'true';
+		}
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+
+	Sortable.create(unranked, {
+	  group: {
+		name: 'unranked',
+		put: function (to) {
+		  return 'true';
+		}
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+
+var ranking = [];
+var allPlots = [1,2,3,4,5,6,7,8,9];
+var gameID = 0;
+var goodValues = [[7,21,16,3,0,0,10,30,15,6]];
+goodValues.push([1,0,0,0,30,0,0,0,0,0]);
+goodValues.push([3,0,0,0,0,0,3,0,15,24]);
+goodValues.push([3,10,10,10,0,0,0,0,0,0]);
+goodValues.push([2,0,0,0,0,15,2,0,0,0]);
+goodValues.push([2,5,0,13,0,0,0,0,0,0]);
+function sortEnded(toId,fromId,oldIndex,newIndex) {
+	if (toId == "ranked") {
+		if (fromId == "unranked") {
+			if (ranking.length == 0) {
+				ranking.push(allPlots[oldIndex]);
+			}
+			else {
+				ranking.splice(newIndex,0,allPlots[oldIndex]);
+			}
+			allPlots.splice(oldIndex,1);
+		}
+		else {
+			let oldNumber = ranking[oldIndex];
+			ranking.splice(oldIndex,1);
+			ranking.splice(newIndex,0,oldNumber);
+		}
+	}
+	else {
+		if (fromId == "ranked") {
+			if (allPlots.length == 0) {
+				allPlots.push(ranking[oldIndex]);
+			}
+			else {
+				allPlots.splice(newIndex,0,ranking[oldIndex]);
+			}
+			ranking.splice(oldIndex,1);
+		}
+		else {
+			let oldNumber = allPlots[oldIndex];
+			allPlots.splice(oldIndex,1);
+			allPlots.splice(newIndex,0,oldNumber);
+		}
+	}
+	if (checkCorrect()) {
+		alert("good job");
+		gameID +=1;
+	}
+}
+
+function checkCorrect(){
+	if (ranking.length == goodValues[gameID][0]) {
+		for (i=0;i<ranking.length-1;i++){
+			if (goodValues[gameID][ranking[i]] < goodValues[gameID][ranking[i+1]]) {
+				return false;
+			}
+			if (goodValues[gameID][ranking[i]]<= 0) {
+				return false;
+			}
+		}
+		if (goodValues[gameID][ranking[ranking.length-1]]<= 0) {
+			return false;
+		}
+	}
+	else {
+		return false;
+	}
+	return true;
+}
+
+</script>

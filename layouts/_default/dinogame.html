@@ -1,0 +1,258 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }}</title>
+<link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+<meta name="description" content="{{ .Params.description }}"/>
+
+<style>
+:root {
+    --main-speed: 2s; 
+}
+@keyframes labelJump {
+    0% {top: 110px;}
+    74.9% {top: 110px;}
+    75% {top: 130px;}
+    85% {top: 130px;}
+    85.1% {top: 130px;}
+    99.9% {top: 130px;}
+}
+@keyframes labelJump2 {
+    0% {top: 130px;}
+    74.9% {top: 130px;}
+    75% {top: 110px;}
+    85% {top: 110px;}
+    85.1% {top: 130px;}
+    99.9% {top: 130px;}
+}
+@keyframes labelJump3 {
+    0% {top: 130px;}
+    74.9% {top: 130px;}
+    75% {top: 130px;}
+    85% {top: 130px;}
+    85.1% {top: 110px;}
+    99.9% {top: 110px;}
+}
+@keyframes jump {
+    from {left: 500px;}
+    to {left: 100px;}
+}
+@keyframes jump2 {
+    from {left: 600px;}
+    to {left: 100px;}
+}
+@keyframes jump3 {
+    from {left: 500px;}
+    to {left: 0px;}
+}
+@keyframes playerJump {
+    from {top: 50px;}
+    to {top: 0px;}
+}
+@keyframes playerJumpInfinite {
+    from {top: 50px;}
+    to {top: -950px;}
+}
+@keyframes playerColumnJumpInfinite {
+    from {top: 0px;}
+    to {top: 1000px;}
+}
+#jumpContinue:active + label {
+	position: absolute;
+	height: 18px;
+	top: 110px;
+	left: 100px;
+	background: green;
+	animation-name: labelJump2;
+	animation-duration: 0s;
+}
+#jumpNothing:active + label {
+	position: absolute;
+	height: 18px;
+	top: 110px;
+	left: 100px;
+	background: yellow;
+	animation-name: labelJump;
+	animation-duration: 0s;
+}
+#jumpLate:active + label {
+	position: absolute;
+	height: 18px;
+	top: 110px;
+	left: 100px;
+	background: red;
+	animation-name: labelJump3;
+	animation-duration: 0s;
+}
+#jumpContinue + label {
+	position: absolute;
+	height: 18px;
+	top: 130px;
+	left: 100px;
+	background: green;
+	animation-name: labelJump2;
+	animation-duration: calc( 4 * var(--main-speed));
+}
+#jumpNothing + label {
+	position: absolute;
+	height: 18px;
+	top: 110px;
+	left: 100px;
+	background: yellow;
+	animation-name: labelJump;
+	animation-duration: calc( 4 * var(--main-speed));
+}
+#jumpLate + label {
+	position: absolute;
+	height: 18px;
+	top: 130px;
+	left: 100px;
+	background: red;
+	animation-name: labelJump3;
+	animation-duration: calc( 4 * var(--main-speed));
+}
+.jump1 {
+	position: absolute;
+	height: 20px;
+	top: 50px;
+	left: 100px;
+	width: 50px;
+	background: yellow;
+	animation-name: jump;
+	animation-timing-function: linear;
+	animation-duration: calc( 4 * var(--main-speed));
+}
+.jump2 {
+	position: absolute;
+	height: 20px;
+	top: 70px;
+	left: 100px;
+	width: 50px;
+	background: yellow;
+	opacity: 0.0;
+	animation-name: jump2;
+	animation-timing-function: linear;
+	animation-duration: calc( 5 * var(--main-speed));
+}
+.jump3 {
+	position: absolute;
+	height: 20px;
+	top: 50px;
+	width: 50px;
+	background: yellow;
+	opacity: 0.0;
+	animation-name: jump3;
+	animation-timing-function: linear;
+	animation-duration: calc( 5 * var(--main-speed));
+}
+span.player {
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	width: 20px;
+	height: 20px;
+	background: red;
+}
+span.playerLate {
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	width: 20px;
+	height: 20px;
+	background: red;
+	display: none;
+}
+span.playerColumn {
+	position: absolute;
+	left: 80px;
+	top: 0px;
+	width: 20px;
+	height: 200px;
+	background: rgba(0,0,0,0.0);
+}
+input:checked + label + .jump1 {
+	color: blue;
+	opacity: 0.0;
+}
+input:checked + label + span + .jump2 {
+	opacity: 1.0;
+}
+input:checked + label + span + span + .jump3 {
+	opacity: 1.0;
+}
+
+#jumpNothing:checked ~ span.playerColumn span.player {
+	animation-duration: calc( 1 * var(--main-speed));
+	animation-timing-function: linear;
+	animation-name: playerJump;
+	animation-direction: alternate;
+	animation-iteration-count: 2;
+	animation-delay: 0s;
+}
+#jumpContinue:checked ~ span.playerColumn span.player {
+	animation-duration: calc( 1 * var(--main-speed));
+	animation-timing-function: linear;
+	animation-name: playerJump;
+	animation-direction: alternate;
+	animation-iteration-count: 2;
+	animation-delay: 0s;
+}
+span.player {
+	animation-duration: calc( 20 * var(--main-speed));
+	animation-timing-function: linear;
+	animation-name: playerJumpInfinite;
+	animation-delay: calc( 4 * var(--main-speed));
+}
+#jumpLate:checked ~ span.playerColumn span.playerLate {
+	display: inline-block;
+	animation-duration: calc( 20 * var(--main-speed));
+	animation-timing-function: linear;
+	animation-name: playerJumpInfinite;
+	animation-delay: 0s;
+}
+#jumpLate:checked ~ span.playerColumn span.player {
+	display: none;
+}
+span.playerColumn {
+	animation-duration: calc( 20 * var(--main-speed));
+	animation-timing-function: linear;
+	animation-name: playerColumnJumpInfinite;
+	animation-delay: calc( 4 * var(--main-speed));
+}
+#jumpContinue:checked ~ span.playerColumn {
+	animation-duration: 0s;
+	animation-timing-function: linear;
+	animation-name: playerColumnJumpInfinite;
+	animation-delay: 0s;
+}
+
+
+</style>
+
+</head>
+<body>
+	<div style="position: absolute; background: gray; width: 500px; height: 200px; top: 50px; left: 20px;">
+		
+		<input type="checkbox" id="jumpNothing" style="display: none;">
+		<label for="jumpNothing">Jump</label>
+		<input type="checkbox" id="jumpLate" style="display: none;">
+		<label for="jumpLate">Jump</label>
+		<input type="checkbox" id="jumpContinue" style="display: none;">
+		<label for="jumpContinue">Jump</label>
+		<span class="jump1">Jump</span>
+		<span class="jump2">2nd</span>
+		<span class="jump3">Jump</span>
+		<span class="playerColumn">
+			<span class="player">P</span>
+			<span class="playerLate">P</span>
+		</span>
+	</div>
+	
+		
+
+
+</body>
+
+{{ partial "footer.html" . }}

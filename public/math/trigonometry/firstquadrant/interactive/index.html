@@ -1,0 +1,310 @@
+<div id="interactive1" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
+  <div style="flex: 1; border: 1px solid black;">
+  	<center><span style="font-size:1em;" id="header1"></span></center>
+  	<hr>
+	  <ul id="angleTrig" style="height:200px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+	
+	  </ul>
+  </div>
+  
+  <div style="flex: 1; border: 1px solid black;">
+  	<center><span style="font-size:1em;" id="header2"></span></center>
+  	<hr>
+	  <ul id="sineTrig" style="height:200px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+
+	  </ul>
+  </div>
+
+  <div style="flex: 1; border: 1px solid black;">
+  	<center><span style="font-size:1em;" id="header3"></span></center>
+  	<hr>
+	  <ul id="cosineTrig" style="height:200px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+	  </ul>
+  </div>
+
+</div>
+
+<div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
+	<div style="flex: 1;">
+		<ul id="objectsTrig1" style="height:300px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+			<li id="object1" class="objectTrig"></li>
+			<li id="object2" class="objectTrig"></li>
+			<li id="object3" class="objectTrig"></li>
+			<li id="object4" class="objectTrig"></li>
+			<li id="object5" class="objectTrig"></li>
+		</ul>
+	</div>
+	<div style="flex: 1;">
+		<ul id="objectsTrig2" style="height:300px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+			<li id="object6" class="objectTrig"></li>
+			<li id="object7" class="objectTrig"></li>
+			<li id="object8" class="objectTrig"></li>
+			<li id="object9" class="objectTrig"></li>
+			<li id="object10" class="objectTrig"></li>
+		</ul>
+	</div>
+	<div style="flex: 1;">
+		<ul id="objectsTrig3" style="height:300px; padding-bottom: 5px; padding-top: 5px; list-style-type: none;">
+			<li id="object11" class="objectTrig"></li>
+			<li id="object12" class="objectTrig"></li>
+			<li id="object13" class="objectTrig"></li>
+			<li id="object14" class="objectTrig"></li>
+			<li id="object15" class="objectTrig"></li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script>
+	var firstThird = [];
+	var secondThird = [];
+	var thirdThird = [];
+	var baseObjects = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]];
+
+	var el = document.getElementById('header1');
+	katex.render('\\theta',el);
+	el = document.getElementById('header2');
+	katex.render('\\sin(\\theta)',el);
+	el = document.getElementById('header3');
+	katex.render('\\cos(\\theta)',el);
+	el = document.getElementById('object1');
+	katex.render('0',el);
+	el = document.getElementById('object8');
+	katex.render('\\frac{\\pi}{6}',el);
+	el = document.getElementById('object11');
+	katex.render('\\frac{\\pi}{4}',el);
+	el = document.getElementById('object14');
+	katex.render('\\frac{\\pi}{3}',el);
+	el = document.getElementById('object15');
+	katex.render('\\frac{\\pi}{2}',el);
+	el = document.getElementById('object7');
+	katex.render('\\frac{1}{2}',el);
+	el = document.getElementById('object10');
+	katex.render('\\frac{\\sqrt{2}}{2}',el);
+	el = document.getElementById('object13');
+	katex.render('\\frac{\\sqrt{3}}{2}',el);
+	el = document.getElementById('object5');
+	katex.render('1',el);
+	el = document.getElementById('object2');
+	katex.render('0',el);
+	el = document.getElementById('object6');
+	katex.render('\\frac{1}{2}',el);
+	el = document.getElementById('object9');
+	katex.render('\\frac{\\sqrt{2}}{2}',el);
+	el = document.getElementById('object12');
+	katex.render('\\frac{\\sqrt{3}}{2}',el);
+	el = document.getElementById('object4');
+	katex.render('1',el);
+	el = document.getElementById('object3');
+	katex.render('0',el);
+
+	Sortable.create(angleTrig, {
+	  group: {
+		name: 'angleTrig',
+		put: ['objectsTrig1','sineTrig','cosineTrig','objectsTrig2','objectsTrig3'],
+		pull: ['objectsTrig1','sineTrig','cosineTrig','objectsTrig2','objectsTrig3']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+
+	Sortable.create(sineTrig, {
+	  group: {
+		name: 'sineTrig',
+		put: ['objectsTrig1','angleTrig','cosineTrig','objectsTrig2','objectsTrig3'],
+		pull: ['objectsTrig1','angleTrig','cosineTrig','objectsTrig2','objectsTrig3']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+	
+	Sortable.create(cosineTrig, {
+	  group: {
+		name: 'cosineTrig',
+		put: ['objectsTrig1','sineTrig','angleTrig','objectsTrig2','objectsTrig3'],
+		pull: ['objectsTrig1','sineTrig','angleTrig','objectsTrig2','objectsTrig3']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+	
+	Sortable.create(objectsTrig1, {
+	  group: {
+		name: 'objectsTrig1',
+		put: ['sineTrig','angleTrig','cosineTrig','objectsTrig2','objectsTrig3'],
+		pull: ['sineTrig','angleTrig','cosineTrig','objectsTrig2','objectsTrig3']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+	
+	Sortable.create(objectsTrig2, {
+	  group: {
+		name: 'objectsTrig2',
+		put: ['sineTrig','angleTrig','cosineTrig','objectsTrig1','objectsTrig3'],
+		pull: ['sineTrig','angleTrig','cosineTrig','objectsTrig1','objectsTrig3']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+	
+	Sortable.create(objectsTrig3, {
+	  group: {
+		name: 'objectsTrig3',
+		put: ['sineTrig','angleTrig','cosineTrig','objectsTrig2','objectsTrig1'],
+		pull: ['sineTrig','angleTrig','cosineTrig','objectsTrig2','objectsTrig1']
+	  },
+	  onEnd: function ( evt) {
+		sortEnded(evt.to.id,evt.from.id,evt.oldIndex,evt.newIndex);
+	  },
+	  animation: 200
+	});
+
+function sortEnded(toId,fromId,oldIndex,newIndex) {
+	if (toId == "angleTrig"){
+		if (fromId == "objectsTrig1") {
+			firstThird.splice(newIndex,0,baseObjects[0][oldIndex]);
+			baseObjects[0].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig2") {
+			firstThird.splice(newIndex,0,baseObjects[1][oldIndex]);
+			baseObjects[1].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig3") {
+			firstThird.splice(newIndex,0,baseObjects[2][oldIndex]);
+			baseObjects[2].splice(oldIndex,1);
+		}
+		else if (fromId == "sineTrig") {
+			firstThird.splice(newIndex,0,secondThird[oldIndex]);
+			secondThird.splice(oldIndex,1);
+		}
+		else if (fromId == "cosineTrig") {
+			firstThird.splice(newIndex,0,thirdThird[oldIndex]);
+			thirdThird.splice(oldIndex,1);
+		}
+		else {
+			oldObject = firstThird[oldIndex]
+			firstThird.splice(oldIndex,1);
+			firstThird.splice(newIndex,0,oldObject);
+		}
+	}
+	else if (toId == "sineTrig"){
+		if (fromId == "objectsTrig1") {
+			secondThird.splice(newIndex,0,baseObjects[0][oldIndex]);
+			baseObjects[0].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig2") {
+			secondThird.splice(newIndex,0,baseObjects[1][oldIndex]);
+			baseObjects[1].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig3") {
+			secondThird.splice(newIndex,0,baseObjects[2][oldIndex]);
+			baseObjects[2].splice(oldIndex,1);
+		}
+		else if (fromId == "angleTrig") {
+			secondThird.splice(newIndex,0,firstThird[oldIndex]);
+			firstThird.splice(oldIndex,1);
+		}
+		else if (fromId == "cosineTrig") {
+			secondThird.splice(newIndex,0,thirdThird[oldIndex]);
+			thirdThird.splice(oldIndex,1);
+		}
+		else {
+			oldObject = secondThird[oldIndex]
+			secondThird.splice(oldIndex,1);
+			secondThird.splice(newIndex,0,oldObject);
+		}
+	}
+	else if (toId == "cosineTrig"){
+		if (fromId == "objectsTrig1") {
+			thirdThird.splice(newIndex,0,baseObjects[0][oldIndex]);
+			baseObjects[0].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig2") {
+			thirdThird.splice(newIndex,0,baseObjects[1][oldIndex]);
+			baseObjects[1].splice(oldIndex,1);
+		}
+		else if (fromId == "objectsTrig3") {
+			thirdThird.splice(newIndex,0,baseObjects[2][oldIndex]);
+			baseObjects[2].splice(oldIndex,1);
+		}
+		else if (fromId == "angleTrig") {
+			thirdThird.splice(newIndex,0,firstThird[oldIndex]);
+			firstThird.splice(oldIndex,1);
+		}
+		else if (fromId == "sineTrig") {
+			thirdThird.splice(newIndex,0,secondThird[oldIndex]);
+			secondThird.splice(oldIndex,1);
+		}
+		else {
+			oldObject = thirdThird[oldIndex]
+			thirdThird.splice(oldIndex,1);
+			thirdThird.splice(newIndex,0,oldObject);
+		}
+	}
+	var anglesCorrect = false;
+	var sineCorrect = false;
+	var cosineCorrect = false;
+	if (firstThird.length == 5){
+		if (firstThird[0] == 1 || firstThird[0] == 2 || firstThird[0] == 3) {
+			if (firstThird[1] == 8 && firstThird[2] == 11 && firstThird[3] == 14 && firstThird[4] == 15) {
+				anglesCorrect = true;
+			}
+		}
+	}
+	if (secondThird.length == 5){
+		if (secondThird[0] == 1 || secondThird[0] == 2 || secondThird[0] == 3) {
+			if ( (secondThird[1] == 6 || secondThird[1] == 7) && (secondThird[2] == 9 || secondThird[2] == 10) && (secondThird[3] == 12 || secondThird[3] == 13) && (secondThird[4] == 4 || secondThird[4] == 5) ) {
+				sineCorrect = true;
+			}
+		}
+	}
+	if (thirdThird.length == 5){
+		if (thirdThird[4] == 1 || thirdThird[4] == 2 || thirdThird[4] == 3) {
+			if ( (thirdThird[3] == 6 || thirdThird[3] == 7) && (thirdThird[2] == 9 || thirdThird[2] == 10) && (thirdThird[1] == 12 || thirdThird[1] == 13) && (thirdThird[0] == 4 || thirdThird[0] == 5) ) {
+				cosineCorrect = true;
+			}
+		}
+	}
+	if (anglesCorrect) {
+		greenRedRatio[0][1] = .5;
+	}
+	else {
+		greenRedRatio[0][1] = 0;
+	}
+	if (sineCorrect) {
+		greenRedRatio[2][1] = .5;
+	}
+	else {
+		greenRedRatio[2][1] = 0;
+	}
+	if (cosineCorrect) {
+		greenRedRatio[3][1] = .5;
+	}
+	else {
+		greenRedRatio[3][1] = 0;
+	}
+	greenRedRatio[1][1] = 0;
+	if (firstThird[0] == 1 || firstThird[0] == 2 || firstThird[0] == 3) {
+		if (secondThird[0] == 1 || secondThird[0] == 2 || secondThird[0] == 3) {
+			greenRedRatio[1][1] = .5;
+		}
+	}
+	greenRed();
+	
+}
+
+</script>

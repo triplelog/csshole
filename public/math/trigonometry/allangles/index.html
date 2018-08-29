@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trigonometric Values of All Angles by TripleLog</title>
+        
+        <link rel="icon" href="https://www.triplelog.com/images/logo.png">
+        
+        
+        <meta name="description" content="Learn how to compute sine and cosine of any angle with video, interactive tools, and tips."/>
+        
+        <meta name="google-site-verification" content="iZk9UXmK-YrpxP_EEHKt6ju9nF23ZZW2DdKWKLtjmlA" />
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://www.triplelog.com/css/main.css">
+<link rel="stylesheet" href="https://www.triplelog.com/css/app.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+ 
+
+
+
+
+ <meta name="generator" content="Hugo 0.40.3" />
+
+        
+        
+        
+		
+		
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
+    	
+    	
+    </head>
+
+    <body>
+         
+        <ul class="navbar">
+				
+					<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+					<li class="nav dropdown1">
+						<ul class="dropdown-content1">
+							<li><a href="/games/sudokupage">Sudoku Farm</a></li>
+						</ul>
+						<a class="dropdown1">Games</a>
+					</li>
+					<li class="nav dropdown2">
+						<ul class="dropdown-content2">
+							<li><a href="/sports/pitchcharts/pitchcharts">Pitch Charts</a></li>
+						</ul>
+						<a class="dropdown2">Sports</a>
+					</li>
+					<li class="nav dropdown3">
+						<ul class="dropdown-content3">
+							<li><a href="/math/trigonometry/firstquadrant">Trigonometry</a></li>
+						</ul>
+						<a class="dropdown3">Math</a>
+					</li>
+				
+			</ul>
+
+
+<main>
+
+	<div class="box" id="bigBox">
+		<div class="left">
+			<span class="interactive">
+				
+				
+<div id="interactive1" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
+	<div id="question"></div>
+
+
+</div>
+
+<div style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: space-around;" id="addAnswers">
+	<div style="flex: 1; display: flex; flex-direction: row; justify-content: space-around; padding: 10px;">
+		<button id="object1" style="padding: 5px;" onclick="sendValue(1);"></button>
+		<button id="object2" style="padding: 5px;" onclick="sendValue(2);"></button>
+		<button id="object3" style="padding: 5px;" onclick="sendValue(3);"></button>
+		<button id="object4" style="padding: 5px;" onclick="sendValue(0);"></button>
+		<button id="object5" style="padding: 5px;" onclick="sendValue(4);"></button>
+	</div>
+	<div style="flex: 1; display: flex; flex-direction: row; justify-content: space-around; padding: 10px;">
+		<button id="object6" style="padding: 5px;" onclick="sendPM(1);"></button>
+		<button id="object7" style="padding: 5px;" onclick="sendPM(-1);"></button>
+		<button onclick="newQ()">New</button>
+	</div>
+	<div style="flex: 1;" id="myAnswer">
+
+	</div>
+	
+</div>
+
+
+<script>
+	var setPM = 0;
+	var setValue = -1;
+	var absV = -1;
+	var actPM = 0;
+	var allDenom = [1,2,3,4,6];
+	var theQuestion = '=';
+	var el = document.getElementById('question');
+	katex.render(theQuestion+'???',el);
+	el = document.getElementById('object1');
+	katex.render('\\frac{1}{2}',el);
+	el = document.getElementById('object2');
+	katex.render('\\frac{\\sqrt{2}}{2}',el);
+	el = document.getElementById('object3');
+	katex.render('\\frac{\\sqrt{3}}{2}',el);
+	el = document.getElementById('object4');
+	katex.render('0',el);
+	el = document.getElementById('object5');
+	katex.render('1',el);
+	el = document.getElementById('object6');
+	katex.render('+',el);
+	el = document.getElementById('object7');
+	katex.render('-',el);
+	newQ();
+function newQ() {
+	setPM = 0;
+	setValue = -1;
+	var newDenom = allDenom[Math.trunc(Math.random()*5)];
+	var newMod = newDenom-1;
+	var sincosValues = {1:[0,4],6:[1,3],4:[2,2],3:[3,1],2:[4,0]};
+	
+	if (Math.random()<.5){
+		newMod = 1;
+	}
+	var newNumer = Math.trunc(Math.random()*16)-7;
+	if (newNumer == 0){
+		newNumer = -8*newDenom+newMod;
+	}
+	else {
+		newNumer = newNumer*newDenom+newMod;
+	}
+	var newFn = 'cos';
+	if (Math.random()<.5){
+		newFn = 'sin';
+	}
+	if (newFn == 'sin') {
+		absV = sincosValues[newDenom][0];
+		if (newDenom == 1) {
+			actPM = 0;
+		}
+		else {
+			if ((newNumer -1) % (2*newDenom) == 0) {
+				actPM = 1;
+			}
+			else if ((newNumer +1+newDenom) % (2*newDenom) == 0) {
+				actPM = 1;
+			}
+			else {
+				actPM = -1;
+			}
+		}
+	}
+	else {
+		absV = sincosValues[newDenom][1];
+		if (newDenom == 2) {
+			actPM = 0;
+		}
+		else if (newDenom == 1) {
+			if (newNumer % 2 == 0) {
+				actPM = 1;
+			}
+			else {
+				actPM = -1;
+			}
+		}
+		else {
+			if ((newNumer -1) % (2*newDenom) == 0) {
+				actPM = 1;
+			}
+			else if ((newNumer +1) % (2*newDenom) == 0) {
+				actPM = 1;
+			}
+			else {
+				actPM = -1;
+			}
+		}
+	}
+	if (newDenom == 1){
+		if (newNumer==0){
+			theQuestion = '\\'+newFn+'(0)=';
+		}
+		else {
+			theQuestion = '\\'+newFn+'('+newNumer.toString()+'\\pi)=';
+		}
+	}
+	else {
+		theQuestion = '\\'+newFn+'(\\frac{'+newNumer.toString()+'\\pi}{'+newDenom.toString()+'})=';
+	}
+	var el = document.getElementById('question');
+	katex.render(theQuestion+'???',el);
+}
+	
+function sendValue(val) {
+	var el = document.getElementById('question');
+	var theSign = '\\pm ';
+	if (setPM == 1){theSign = '+';}
+	else if (setPM == -1){theSign = '-';}
+	
+	setValue = val;
+	if (absV == val) {
+		if (val == 1) {
+			katex.render(theQuestion+theSign+'\\frac{1}{2}',el);
+		}
+		else if (val == 2) {
+			katex.render(theQuestion+theSign+'\\frac{\\sqrt{2}}{2}',el);
+		}
+		else if (val == 3) {
+			katex.render(theQuestion+theSign+'\\frac{\\sqrt{3}}{2}',el);
+		}
+		else if (val == 4) {
+			katex.render(theQuestion+theSign+'1',el);
+		}
+		else if (val == 0) {
+			katex.render(theQuestion+'0',el);
+		}
+		greenRedRatio[0][1] = Math.max(0,Math.min(.67,greenRedRatio[0][1]+.1));
+		greenRed();
+		if (setPM == actPM || actPM == 0){
+			addCorrect(theQuestion,theSign,val);
+			newQ();
+		}
+	}
+	else {
+		katex.render(theQuestion+theSign+'??',el);
+		greenRedRatio[0][1] = Math.max(0,Math.min(.67,greenRedRatio[0][1]-.1));
+		greenRed();
+	}
+}
+function sendPM(pmV) {
+	var el = document.getElementById('question');
+	setPM = pmV;
+	var theSign = '\\pm ';
+	if (setPM == 1){theSign = '+';}
+	else if (setPM == -1){theSign = '-';}
+	if (actPM == setPM){
+		katex.render(theQuestion+theSign+'??',el);
+		greenRedRatio[1][1] = Math.max(0,Math.min(.67,greenRedRatio[1][1]+.1));
+		greenRed();
+		
+		if (setValue == absV) {
+			addCorrect(theQuestion,theSign,absV);
+			newQ();
+		}
+	}
+	else {
+		greenRedRatio[1][1] = Math.max(0,Math.min(.67,greenRedRatio[1][1]-.1));
+		greenRed();
+	}
+	
+}
+function addCorrect(theQuestion,theSign,val){
+	var newEl = document.createElement("div");
+	var elP = document.getElementById('addAnswers');
+	newEl.style.flex = 1;
+	newEl.id = "myAnswer";
+	if (theSign == '+'){theSign = "";}
+	if (val == 1) {
+		katex.render(theQuestion+theSign+'\\frac{1}{2}',newEl);
+	}
+	else if (val == 2) {
+		katex.render(theQuestion+theSign+'\\frac{\\sqrt{2}}{2}',newEl);
+	}
+	else if (val == 3) {
+		katex.render(theQuestion+theSign+'\\frac{\\sqrt{3}}{2}',newEl);
+	}
+	else if (val == 4) {
+		katex.render(theQuestion+theSign+'1',newEl);
+	}
+	else if (val == 0) {
+		katex.render(theQuestion+'0',newEl);
+	}
+
+	elP.insertBefore(newEl,document.getElementById("myAnswer"));
+
+}
+</script>
+			</span>
+		</div>
+		<div class="middle">
+			<div class="video">
+				
+<video autoplay width="100%" id="myVideo" controls="true" src='/videos/video1.mp4' type='video/mp4'>
+</video>
+
+<script>
+	var videoPlaylist = [1];
+    document.getElementById('myVideo').addEventListener('ended',videoEnded,false);
+    document.getElementById('myVideo').addEventListener('timeupdate',updateTime,false);
+    function videoEnded() {
+        var vid = document.getElementById('myVideo');
+        var newVid = false;
+        if (videoPlaylist.length > 0) {
+			for (i=0;i<videoPlaylist.length-1;i++) {
+				if (vid.getAttribute("src") == "/videos/video"+videoPlaylist[i]+".mp4") {
+					vid.src = "/videos/video"+videoPlaylist[i+1]+".mp4";
+					newVid = true;
+					break;
+				}
+			}
+			if (!newVid) {
+				vid.src = "/videos/video"+videoPlaylist[0]+".mp4";
+			}
+		}
+
+    }
+    function updateTime() {
+        var vid = document.getElementById('myVideo');
+        if (vid.currentTime > 0) {
+			if (vid.getAttribute("src") == "/videos/video1.mp4") {
+				greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration*3-.5),greenRedRatio[0][0]);
+				greenRed();
+			}
+			else if (vid.getAttribute("src") == "/videos/video2.mp4") {
+				greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*3-.5),greenRedRatio[1][0]);
+				greenRed();
+			}
+        }
+    }
+    function chgVideo(videoId) {
+        var vid = document.getElementById('myVideo');
+        vid.src = "/videos/video"+videoId.toString()+".mp4";
+    }
+</script>
+
+			</div>
+			<div id="text1" class="text">
+    <span class="textHalf">
+		<h3>Absolute Value of Sine</h3>
+		<ul>
+			<li>
+				Reduce theta so that <span class="myKatex">\gcd(a,b)=1</span> where <span class="myKatex">\theta = \frac{a\pi}{b}.</span>
+			</li>
+			<li>
+				What is the denominator?
+			</li>
+			<li>
+				What is <span class="myKatex">\sin(\frac{\pi}{b})</span>?
+			</li>
+			<li>
+				If b=1,2,3,4, or 6 and a is integer with gcd(a,b)=1 then <span class="myKatex">\sin(\frac{a\pi}{b})=\pm \sin(\frac{\pi}{b}).</span>
+			</li>
+		</ul>
+    </span>
+    <span class="textHalf">
+		<h3>Positive or Negative?</h3>
+		<ul>
+			<li>
+				For cosine, is <span class="myKatex">\frac{a\pi}{b}</span> on left or right?
+			</li>
+			<li>
+				For sine, is <span class="myKatex">\frac{a\pi}{b}</span> on top or bottom?
+			</li>
+			<li>
+				Add or subtract <span class="myKatex">\frac{2b\pi}{b}</span> until <span class="myKatex">-b\lt a\lt b.</span>
+			</li>
+			<li>
+				If <span class="myKatex">a\gt 0</span> then <span class="myKatex">\sin(\frac{a\pi}{b})</span> is positive.
+			</li>
+			<li>
+				If <span class="myKatex">|2a|\lt b</span> then <span class="myKatex">\cos(\frac{a\pi}{b})</span> is positive.
+			</li>
+		</ul>
+    </span>
+</div>
+
+<script>
+var allKatex = document.getElementsByClassName("myKatex");
+for (i=0;i<allKatex.length;i++) {
+	katex.render(allKatex.item(i).innerHTML,allKatex.item(i));
+}
+</script>
+		</div>
+		<div class="right">
+			<span class="objective">
+				
+<div id="objective1">
+    <h2><center>Objectives</center></h2>
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Identify Base Angle</span>
+    </div>
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Determine the Sign</span>
+    </div>
+
+</div>
+
+<script>
+var html = katex.renderToString("\\sin(\\frac{\\pi}{6})");
+
+greenRedRatio = [[0,0],[0,0],[0]];
+function sumArray(theArray) {
+	var workingSum = 0
+	for (arri=0;arri<theArray.length;arri++) {
+		workingSum += theArray[arri];
+	}
+	return workingSum
+}
+function greenRed() {
+	var allObjectives = document.querySelectorAll('.anObjective');
+	for (i=0;i<allObjectives.length;i++) {
+		if (allObjectives.item(i).getAttribute("name") == 'textObjective') {
+			var allGreen = allObjectives.item(i).querySelector(".greenText");
+    		var allRed = allObjectives.item(i).querySelector(".redText");
+			var x = sumArray(greenRedRatio[i]);
+			if (x>.975) {x = 1}
+			var fullString = allGreen.textContent+allRed.textContent;
+			allGreen.innerHTML = fullString.substring(0,fullString.length*x);
+			allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length);
+			if (x > .975) {
+				if (i>=0) {
+					var index = videoPlaylist.indexOf(i+1);
+					if (index > -1) {
+						videoPlaylist.splice(index,1);
+					}
+				}
+			}
+		}
+		else {
+			var allColored = allObjectives.item(i).querySelectorAll('[name="coloredText"]');
+			var x = sumArray(greenRedRatio[i]);
+			if (x>.975) {x = 1}
+			for (ii=0;ii<allColored.length*x;ii++) {
+				allColored.item(ii).classList.remove("redText");
+				allColored.item(ii).classList.add("greenText");
+			}
+			for (ii=allColored.length*x;ii<allColored.length;ii++) {
+				allColored.item(ii).classList.remove("greenText");
+				allColored.item(ii).classList.add("redText");
+			}
+		}
+	}
+    
+}
+greenRed();
+function quizButton1(buttonID) {
+    var vid = document.getElementById("myVideo");
+    document.getElementById("pullQuote").innerHTML = vid.currentTime;
+    if (buttonID == 0) {
+        vid.src = "/videos/video5.mp4";
+        chgQuiz(1,3);
+        chgText(1,2);
+        createSudoku("farm");
+    }
+    else {
+        chgQuiz(1,2);
+    }
+}
+</script>
+
+			</span>
+			
+<div>
+	<h2><center>More Tutorials</center></h2>
+    <br />
+    <a href="/math/trigonometry/firstquadrant">First Quadrant</a><br />
+    <a href="/math/trigonometry/knowquadrants">Know Quadrants</a><br />
+    <a href="/math/trigonometry/allangles">All Angles</a><br />
+    <a href="/math/trigonometry/identities">Identities</a><br />
+    <a href="/math/trigonometry/otherfunctions">Other Functions</a><br />
+    <a href="/math/trigonometry/inverse">Inverse Trig</a><br />
+</div>
+
+			<div>
+<h2><center>Download <br />Sudoku Farm</center></h2>
+<img src="/images/appStore.png">
+</div>
+		</div>
+	</div>
+
+
+</main>
+
+
+       
+    </body>
+
+</html>
+

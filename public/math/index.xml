@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maths on TripleLog - Mobile Games, Sports, and Math.</title>
+    <link>https://www.triplelog.com/math/</link>
+    <description>Recent content in Maths on TripleLog - Mobile Games, Sports, and Math.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.triplelog.com/math/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Quadrant Trigonometry - Sine and Cosine by TripleLog</title>
+      <link>https://www.triplelog.com/math/trigonometry/firstquadrant/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/firstquadrant/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Inverse Trigonometric Functions by TripleLog</title>
+      <link>https://www.triplelog.com/math/trigonometry/inverse/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/inverse/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Other Trig Functions: Tangent, Secant, Cot, and Csc</title>
+      <link>https://www.triplelog.com/math/trigonometry/otherfunctions/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/otherfunctions/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Quadrants for Trigonometry by TripleLog</title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Trigonometric Identities by TripleLog</title>
+      <link>https://www.triplelog.com/math/trigonometry/identities/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/identities/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Trigonometric Values of All Angles by TripleLog</title>
+      <link>https://www.triplelog.com/math/trigonometry/allangles/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/allangles/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/allangles/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/allangles/interactive/</guid>
+      <description>New     var setPM = 0; var setValue = -1; var absV = -1; var actPM = 0; var allDenom = [1,2,3,4,6]; var theQuestion = &#39;=&#39;; var el = document.getElementById(&#39;question&#39;); katex.render(theQuestion+&#39;???&#39;,el); el = document.getElementById(&#39;object1&#39;); katex.render(&#39;\\frac{1}{2}&#39;,el); el = document.getElementById(&#39;object2&#39;); katex.render(&#39;\\frac{\\sqrt{2}}{2}&#39;,el); el = document.getElementById(&#39;object3&#39;); katex.render(&#39;\\frac{\\sqrt{3}}{2}&#39;,el); el = document.getElementById(&#39;object4&#39;); katex.render(&#39;0&#39;,el); el = document.getElementById(&#39;object5&#39;); katex.render(&#39;1&#39;,el); el = document.getElementById(&#39;object6&#39;); katex.render(&#39;+&#39;,el); el = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/allangles/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/allangles/objective/</guid>
+      <description>Objectives Identify Base Angle  Determine the Sign    var html = katex.renderToString(&#34;\\sin(\\frac{\\pi}{6})&#34;); greenRedRatio = [[0,0],[0,0],[0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.item(i).querySelectorAll(&#39;[name=&#34;coloredText&#34;]&#39;); var x = sumArray(greenRedRatio[i]); if (x.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/allangles/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/allangles/text/</guid>
+      <description>Absolute Value of Sine   Reduce theta so that \gcd(a,b)=1 where \theta = \frac{a\pi}{b}.   What is the denominator?   What is \sin(\frac{\pi}{b})?   If b=1,2,3,4, or 6 and a is integer with gcd(a,b)=1 then \sin(\frac{a\pi}{b})=\pm \sin(\frac{\pi}{b}).    Positive or Negative?   For cosine, is \frac{a\pi}{b} on left or right?   For sine, is \frac{a\pi}{b} on top or bottom?   Add or subtract \frac{2b\pi}{b} until -b\lt a\lt b.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/allangles/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/allangles/video/</guid>
+      <description>  var videoPlaylist = [1]; document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vid = document.getElementById(&#39;myVideo&#39;); var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration*3-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video2.mp4&#34;) { greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*3-.5),greenRedRatio[1][0]); greenRed(); } } } function chgVideo(videoId) { var vid = document.getElementById(&#39;myVideo&#39;); vid.src = &#34;/videos/video&#34;+videoId.toString()+&#34;.mp4&#34;; }  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/contents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/contents/</guid>
+      <description> More Tutorials First Quadrant
+Know Quadrants
+All Angles
+Identities
+Other Functions
+Inverse Trig
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/firstquadrant/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/firstquadrant/interactive/</guid>
+      <description>var firstThird = []; var secondThird = []; var thirdThird = []; var baseObjects = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]; var el = document.getElementById(&#39;header1&#39;); katex.render(&#39;\\theta&#39;,el); el = document.getElementById(&#39;header2&#39;); katex.render(&#39;\\sin(\\theta)&#39;,el); el = document.getElementById(&#39;header3&#39;); katex.render(&#39;\\cos(\\theta)&#39;,el); el = document.getElementById(&#39;object1&#39;); katex.render(&#39;0&#39;,el); el = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/firstquadrant/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/firstquadrant/objective/</guid>
+      <description>Objectives Know 5 angles  sin(6π​)  Know Values of Sine  Know Values of Cosine    var html = katex.renderToString(&#34;\\sin(\\frac{\\pi}{6})&#34;); greenRedRatio = [[0,0],[0,0],[0,0],[0,0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { //videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/firstquadrant/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/firstquadrant/text/</guid>
+      <description>Important angles?  What is sine?   Sine is a function.   The input is an angle.   The output is a y-coordinate.    What is cosine?   Cosine is a function.   The input is an angle.   The output is an x-coordinate.     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/firstquadrant/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/firstquadrant/video/</guid>
+      <description>var videoPlaylist = [1,2,3,4]; var currentVideo = 1; document.getElementById(&#39;myVideo1&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo1&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); document.getElementById(&#39;myVideo2&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo2&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); document.getElementById(&#39;myVideo3&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo3&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); document.getElementById(&#39;myVideo4&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo4&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vidNow = document.getElementById(&#39;myVideo&#39;+currentVideo.toString()); if (currentVideo == 2){ greenRedRatio[1][0] = Math.max(.5,greenRedRatio[1][0]); greenRed(); } var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/firstquadrant/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/firstquadrant/video2.mp4&#34;) { greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]); greenRed(); } else if (vid.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/identities/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/identities/interactive/</guid>
+      <description>var firstThird = []; var secondThird = []; var thirdThird = []; var baseObjects = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]]; var el = document.getElementById(&#39;header1&#39;); katex.render(&#39;\\theta&#39;,el); el = document.getElementById(&#39;header2&#39;); katex.render(&#39;\\sin(\\theta)&#39;,el); el = document.getElementById(&#39;header3&#39;); katex.render(&#39;\\cos(\\theta)&#39;,el); el = document.getElementById(&#39;object1&#39;); katex.render(&#39;0&#39;,el); el = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/identities/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/identities/objective/</guid>
+      <description>Objectives sin(6π​)  Know 5 angles  Know sine    var html = katex.renderToString(&#34;\\sin(\\frac{\\pi}{6})&#34;); greenRedRatio = [[0],[0],[0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.item(i).querySelectorAll(&#39;[name=&#34;coloredText&#34;]&#39;); var x = sumArray(greenRedRatio[i]); if (x.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/identities/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/identities/text/</guid>
+      <description>Basic Identities   \sin(2\theta)=2\sin(\theta)\cos(\theta)   \cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)   \cos^2(\theta)+\sin^2(\theta)=1    Half-angle Formulae   \sin(\frac{\theta}{2})=\pm \sqrt{\frac{1-\cos(\theta)}{2}}   \cos(\frac{\theta}{2})=\pm \sqrt{\frac{1+\cos(\theta)}{2}}   Determine the quadrant of \frac{\theta}{2} to determine the sign.      var allKatex = document.getElementsByClassName(&#34;myKatex&#34;); for (i=0;i</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/identities/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/identities/video/</guid>
+      <description>var videoPlaylist = [1]; document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vid = document.getElementById(&#39;myVideo&#39;); var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video2.mp4&#34;) { greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[1][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video3.mp4&#34;) { greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video4.mp4&#34;) { greenRedRatio[3][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[3][0]); greenRed(); } } } function chgVideo(videoId) { var vid = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/inverse/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/inverse/interactive/</guid>
+      <description>var firstThird = []; var secondThird = []; var thirdThird = []; var baseObjects = [[1,2,3,4,5,16,17,18,19],[6,7,8,9,10,20,21,22,23],[11,12,13,14,15,24,25,26,27]]; var el = document.getElementById(&#39;header1&#39;); katex.render(&#39;x&#39;,el); el = document.getElementById(&#39;header2&#39;); katex.render(&#39;\\sin^{-1}(x)&#39;,el); el = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/inverse/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/inverse/objective/</guid>
+      <description>Objectives Know 9 common values  Learn sin−1(x)  Learn cos−1(x)    var html = katex.renderToString(&#34;\\pm \\sqrt{\\frac{1-\\cos(\\theta)}{2}}&#34;, {displayMode: false}); greenRedRatio = [[0],[0],[0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/inverse/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/inverse/text/</guid>
+      <description>What is \sin^{-1}(x)?   Find a \theta with \sin(\theta)=x.   Infinitely many choices.   Choose \frac{-\pi}{2}\leq \theta\leq \frac{\pi}{2}.   What is the domain?    What is \cos^{-1}(x)?   Find a \theta with \cos(\theta)=x.   Infinitely many choices.   Choose 0\leq \theta\leq\pi.   What is the domain?      var allKatex = document.getElementsByClassName(&#34;myKatex&#34;); for (i=0;i</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/inverse/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/inverse/video/</guid>
+      <description>var videoPlaylist = [1]; document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vid = document.getElementById(&#39;myVideo&#39;); var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video2.mp4&#34;) { greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[1][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video3.mp4&#34;) { greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video4.mp4&#34;) { greenRedRatio[3][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[3][0]); greenRed(); } } } function chgVideo(videoId) { var vid = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/explanation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/explanation/</guid>
+      <description>Trigonometry   What do you need to know about trigonometry to succeed in Calculus?  Know the values of sine and cosine for the basic angles. Know how the other trig functions relate to sine and cosine. Know basic trig identities and how to manipulate them. Know what an inverse trig function is.  Here is the chart you need to just know:   xsin(x)cos(x)   001   pi/61/2sqrt(3)/2   pi/4sqrt(2)/2sqrt(2)/2   pi/3sqrt(3)/21/2   pi/210   But you really don&#39;t want to try to memorize the whole thing.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/interactive/</guid>
+      <description>Rotate the above knob until the angle is  radians.  TopBottom  LeftRight  1234     var angleArray = [[30,1,6],[45,1,4],[60,1,3],[120,2,3],[135,3,4],[150,5,6],[210,-5,6],[225,-3,4],[240,-2,3],[300,-1,3],[315,-1,4],[330,-1,6]]; var angleN = Math.trunc(Math.random()*12); var correctAngle = angleArray[angleN][0]; var angleSpot = document.getElementById(&#39;angleSpot&#39;); if (angleArray[angleN][1] == 1){ katex.render(&#34;\\frac{\\pi}{&#34;+angleArray[angleN][2].toString()+&#34;}&#34;,angleSpot); } else if (angleArray[angleN][1] == -1){ katex.render(&#34;\\frac{-\\pi}{&#34;+angleArray[angleN][2].toString()+&#34;}&#34;,angleSpot); } else { katex.render(&#34;\\frac{&#34;+angleArray[angleN][1].toString()+&#34;\\pi}{&#34;+angleArray[angleN][2].toString()+&#34;}&#34;,angleSpot); } var allQuadrants = false; var rotationSnap = 90; var knobEl = document.getElementById(&#39;knobInfo&#39;); function newQuestion() { angleN = Math.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/objective/</guid>
+      <description>Objectives Top or Bottom  Left or Right  Equivalent Angles  Identify Quadrant    var html = katex.renderToString(&#34;\\sin(\\frac{\\pi}{6})&#34;); greenRedRatio = [[0,0],[0,0],[0,0],[0,0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { //videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/text/</guid>
+      <description>Where are the quadrants?  How to identify quadrant:   Find equivalent angle with -pi Is angle positive?   Is abs(angle) less than pi/2?     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/knowquadrants/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/knowquadrants/video/</guid>
+      <description>var videoPlaylist = [1]; document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vid = document.getElementById(&#39;myVideo&#39;); var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video2.mp4&#34;) { greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[1][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video3.mp4&#34;) { greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video4.mp4&#34;) { greenRedRatio[3][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[3][0]); greenRed(); } } } function chgVideo(videoId) { var vid = document.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/otherfunctions/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/otherfunctions/interactive/</guid>
+      <description>Drag each of the 3 values into one of the above 3 columns. Then drag one of the 4 functions into the box with the ???. Pick values and a function that make the completed table correct. There are 2 correct solutions for each scenario.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/otherfunctions/objective/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/otherfunctions/objective/</guid>
+      <description>Objectives Learn Tangent  Learn Cotangent  Learn Secant  Learn Cosecant    var html = katex.renderToString(&#34;\\sin(\\frac{\\pi}{6})&#34;); greenRedRatio = [[0],[0],[0],[0]]; function sumArray(theArray) { var workingSum = 0 for (arri=0;arri.975) {x = 1} var fullString = allGreen.textContent+allRed.textContent; allGreen.innerHTML = fullString.substring(0,fullString.length*x); allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length); if (x  .975) { if (i=0) { var index = videoPlaylist.indexOf(i+1); if (index  -1) { videoPlaylist.splice(index,1); } } } } else { var allColored = allObjectives.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/otherfunctions/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/otherfunctions/text/</guid>
+      <description>Tangent and Cotangent   \tan(\theta)=\frac{\cos(\theta)}{\sin(\theta)}.   \cot(\theta)=\frac{\sin(\theta)}{\cos(\theta)}.   When are these functions undefined?    Secant and Cosecant   \sec(\theta)=\frac{1}{\cos(\theta)}.   \csc(\theta)=\frac{1}{\sin(\theta)}.   When are these functions undefined?      var allKatex = document.getElementsByClassName(&#34;myKatex&#34;); for (i=0;i</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.triplelog.com/math/trigonometry/otherfunctions/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.triplelog.com/math/trigonometry/otherfunctions/video/</guid>
+      <description>var videoPlaylist = [1]; document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;ended&#39;,videoEnded,false); document.getElementById(&#39;myVideo&#39;).addEventListener(&#39;timeupdate&#39;,updateTime,false); function videoEnded() { var vid = document.getElementById(&#39;myVideo&#39;); var newVid = false; if (videoPlaylist.length  0) { for (i=0;i0) { if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video1.mp4&#34;) { greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration-.5),greenRedRatio[0][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video2.mp4&#34;) { greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[1][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video3.mp4&#34;) { greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]); greenRed(); } else if (vid.getAttribute(&#34;src&#34;) == &#34;/videos/video4.mp4&#34;) { greenRedRatio[3][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[3][0]); greenRed(); } } } function chgVideo(videoId) { var vid = document.</description>
+    </item>
+    
+  </channel>
+</rss>

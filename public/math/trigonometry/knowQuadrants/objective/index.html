@@ -1,0 +1,86 @@
+<div id="objective1">
+    <h2><center>Objectives</center></h2>
+
+    
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Top or Bottom</span>
+    </div>
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Left or Right</span>
+    </div>
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Equivalent Angles</span>
+    </div>
+    <br />
+    <div class="anObjective" name="textObjective">
+    	<input type="checkbox"><span class="greenText"></span><span class="redText">Identify Quadrant</span>
+    </div>
+
+
+</div>
+
+<script>
+var html = katex.renderToString("\\sin(\\frac{\\pi}{6})");
+
+greenRedRatio = [[0,0],[0,0],[0,0],[0,0]];
+function sumArray(theArray) {
+	var workingSum = 0
+	for (arri=0;arri<theArray.length;arri++) {
+		workingSum += theArray[arri];
+	}
+	return workingSum
+}
+function greenRed() {
+	var allObjectives = document.querySelectorAll('.anObjective');
+	for (i=0;i<allObjectives.length;i++) {
+		if (allObjectives.item(i).getAttribute("name") == 'textObjective') {
+			var allGreen = allObjectives.item(i).querySelector(".greenText");
+    		var allRed = allObjectives.item(i).querySelector(".redText");
+			var x = sumArray(greenRedRatio[i]);
+			if (x>.975) {x = 1}
+			var fullString = allGreen.textContent+allRed.textContent;
+			allGreen.innerHTML = fullString.substring(0,fullString.length*x);
+			allRed.innerHTML = fullString.substring(fullString.length*x,fullString.length);
+			if (x > .975) {
+				if (i>=0) {
+					var index = videoPlaylist.indexOf(i+1);
+					if (index > -1) {
+						
+					}
+				}
+			}
+		}
+		else {
+			var allColored = allObjectives.item(i).querySelectorAll('[name="coloredText"]');
+			var x = sumArray(greenRedRatio[i]);
+			if (x>.975) {x = 1}
+			for (ii=0;ii<allColored.length*x;ii++) {
+				allColored.item(ii).classList.remove("redText");
+				allColored.item(ii).classList.add("greenText");
+			}
+			for (ii=allColored.length*x;ii<allColored.length;ii++) {
+				allColored.item(ii).classList.remove("greenText");
+				allColored.item(ii).classList.add("redText");
+			}
+		}
+	}
+    
+}
+greenRed();
+function quizButton1(buttonID) {
+    var vid = document.getElementById("myVideo");
+    document.getElementById("pullQuote").innerHTML = vid.currentTime;
+    if (buttonID == 0) {
+        vid.src = "/videos/video5.mp4";
+        chgQuiz(1,3);
+        chgText(1,2);
+        createSudoku("farm");
+    }
+    else {
+        chgQuiz(1,2);
+    }
+}
+</script>

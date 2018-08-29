@@ -1,0 +1,116 @@
+<div style="display:block;">
+	<canvas id="gif_canvas" width="200" height="200" style="position:relative; border: 0px; display: none;">
+	</canvas>
+	<img id="image">
+</div>
+
+
+
+<script>
+var gif_canvas = document.getElementById('gif_canvas');
+function createGif(this_ab){
+	
+	gif_context = gif_canvas.getContext('2d');
+	var encoder = new GIFEncoder();
+	encoder.setRepeat(1); 
+	encoder.setDelay(800);
+	gif_canvas.width = 222;
+	gif_canvas.height = 222;
+	encoder.setSize(222,222);
+	encoder.start();
+
+	gif_context.fillStyle = "rgb(255,255,255)";  
+	gif_context.fillRect(0,0,222,222);
+	gif_context.strokeStyle = "black";
+	gif_context.beginPath();
+	gif_context.moveTo(51,51);
+	gif_context.lineTo(171,51);
+	gif_context.lineTo(171,171);
+	gif_context.lineTo(51,171);
+	gif_context.lineTo(51,51);
+	gif_context.stroke();
+	gif_context.closePath();
+	for (ab_i=0;ab_i<this_ab.length;ab_i++){
+		
+		var pitchAlpha = 1;
+		if (this_ab[ab_i][5] == 1) {pitchAlpha = 1;}
+		else {pitchAlpha = .33;}
+		var pcolor = "rgba(0,0,0,"+pitchAlpha.toString()+")";
+		var ocolor = "rgba(255,0,0,"+(pitchAlpha*1.5).toString()+")";
+		if (this_ab[ab_i][0] == 1) { pcolor = "rgba(255,0,0,"+pitchAlpha.toString()+")"; ocolor = "rgba(0,0,0,"+(pitchAlpha*1.5).toString()+")"}
+		else if (this_ab[ab_i][0] == 2) { pcolor = "rgba(0,128,0,"+pitchAlpha.toString()+")"; ocolor = "rgba(0,0,0,"+(pitchAlpha*1.5).toString()+")"}
+		else if (this_ab[ab_i][0] == 3) { pcolor = "rgba(255,165,0,"+pitchAlpha.toString()+")"; ocolor = "rgba(0,0,0,"+(pitchAlpha*1.5).toString()+")"}
+		else if (this_ab[ab_i][0] == 4) { pcolor = "rgba(0,0,255,"+pitchAlpha.toString()+")"; ocolor = "rgba(255,0,0,"+(pitchAlpha*1.5).toString()+")"}
+		if (this_ab[ab_i][0] != 0) {
+			draw_loc_gif(parseFloat(this_ab[ab_i][1])*2+11,parseFloat(this_ab[ab_i][2])*2+11,pcolor,parseInt(this_ab[ab_i][6]),ocolor,parseFloat(this_ab[ab_i][3]),parseFloat(this_ab[ab_i][4]),90);
+		}
+		encoder.addFrame(gif_context);
+	}
+
+
+	encoder.finish();
+	document.getElementById('image').src = 'data:image/gif;base64,'+encode64(encoder.stream().getData());
+
+}
+
+function draw_loc_gif(center_x, center_y,color,swing,outlinecolor,move_x,move_y,velocity){
+	var cx_chg1; var cx_chg2; var y01; var y02;
+	xi=-move_x*120.0/17.0;
+	yi=(move_y-10.0)*120.0/17.0;
+	y01 = (200*yi+Math.sqrt(40000*yi*yi-4*(yi*yi+xi*xi)*(10000-100*xi*xi)))/(2*(yi*yi+xi*xi));
+	x0a=Math.sqrt((100-y01*y01));
+	x0b=-Math.sqrt((100-y01*y01));
+	if (Math.abs(y01/x0a+(xi-x0a)/(yi-y01))<Math.abs(y01/x0b+(xi-x0b)/(yi-y01))){cx_chg1=x0a;}
+	else {cx_chg1=x0b;}
+	xi=-move_x*120.0/17.0;
+	yi=(move_y-10.0)*120.0/17.0;
+	y02 = (200*yi-Math.sqrt(40000*yi*yi-4*(yi*yi+xi*xi)*(10000-100*xi*xi)))/(2*(yi*yi+xi*xi));
+	x0a=Math.sqrt((100-y02*y02));
+	x0b=-Math.sqrt((100-y02*y02));
+	if (Math.abs(y02/x0a+(xi-x0a)/(yi-y02))<Math.abs(y02/x0b+(xi-x0b)/(yi-y02))){cx_chg2=x0a;}
+	else {cx_chg2=x0b;}
+	gif_context.beginPath();
+	gif_context.moveTo(center_x-move_x*120.0/17.0,center_y+(move_y-10.0)*120.0/17.0);
+	gif_context.lineTo(center_x+cx_chg1,center_y+y01);
+	gif_context.lineTo(center_x+cx_chg2,center_y+y02);
+	gif_context.lineTo(center_x-move_x*120.0/17.0,center_y+(move_y-10.0)*120.0/17.0);
+	gif_context.fillStyle = "rgba(200,200,200,.5)";
+	gif_context.fill();
+	gif_context.closePath();
+
+	gif_context.beginPath();
+	gif_context.arc(center_x,center_y,11,0,2*Math.PI);
+	gif_context.fillStyle = color;
+	gif_context.fill();	
+	gif_context.closePath();
+
+	if (swing==1){
+	gif_context.lineWidth = 1;
+	gif_context.strokeStyle = "white";
+	gif_context.beginPath();
+	gif_context.arc(center_x,center_y,10,0,2*Math.PI);
+	gif_context.stroke();	
+	gif_context.closePath();
+	gif_context.lineWidth = 2;
+	gif_context.strokeStyle = outlinecolor;
+	gif_context.beginPath();
+	gif_context.arc(center_x,center_y,11,0,2*Math.PI);
+	gif_context.stroke();	
+	gif_context.closePath();
+	}
+
+	gif_context.strokeStyle = "rgba(255,255,255, 1.0)";
+	gif_context.lineWidth = 1;
+
+	gif_context.beginPath();
+	gif_context.arc(center_x-9,center_y+9,10,-Math.PI/2,0);
+	gif_context.stroke();
+
+	gif_context.beginPath();
+	gif_context.arc(center_x+9,center_y-9,10,Math.PI/2,Math.PI);
+	gif_context.stroke();
+
+
+
+}
+</script>

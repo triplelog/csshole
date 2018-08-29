@@ -1,0 +1,301 @@
+{{ partial "header" . }}
+<style>
+:root {
+	--map-height: 40vw;
+}
+.cellinput {
+	display:none;
+}
+.celllabel {
+	position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: gray;
+}
+input:checked + .celllabel1 {
+	background: red;
+}
+input:checked + .celllabel2 {
+	background: blue;
+}
+{{ $ncols := 6 }}
+{{ $powers2 := $.Param "powers2" }}
+{{ range $adder := (seq 2) }}
+	#span{{ $adder}}r1 {
+		float:left;
+
+	}
+	#span{{ $adder}}r2 {
+		float: left;
+	}
+	#span{{ $adder}}r3 {
+		position: absolute;
+		top:22px;
+		left: 0px;
+	}
+	
+	
+	{{range $col := (seq $ncols) }}
+		#span{{ $adder}}r1 .span1{{ $col }} {
+			float: left;
+			display: none;
+			width: {{index $powers2 $col}}px;
+			background: red;
+			height: 20px;
+			border: 1px solid white;
+			border-width: 1px 1px 1px 0px;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:checked ~ #span{{ $adder}}r1 .span1{{ $col }} {
+			display: inline-block;
+		}
+		#span{{ $adder}}r2 .span2{{ $col }} {
+			float: left;
+			display: none;
+			width: {{index $powers2 $col}}px;
+			background: blue;
+			height: 20px;
+			border: 1px solid white;
+			border-width: 1px 1px 1px 0px;
+		}
+		input#cell{{ $adder}}r2{{ $col }}:checked ~ #span{{ $adder}}r2 .span2{{ $col }} {
+			display: inline-block;
+		}
+		#span{{ $adder}}r3 .span3{{ $col }} {
+			float: left;
+			display: none;
+			width: {{index $powers2 $col}}px;
+			background: purple;
+			height: 20px;
+			border: 1px solid white;
+			border-width: 1px 1px 1px 0px;
+		}
+	{{ end }}
+	#span{{ $adder}}r3 .span3{{add $ncols 1}} {
+		float: left;
+		display: none;
+		width: {{index $powers2 (add $ncols 1)}}px;
+		background: purple;
+		height: 20px;
+		border: 1px solid white;
+		border-width: 1px 1px 1px 0px;
+	}
+
+	.cell3{{ add $ncols 1 }}label {
+		left: 0px;
+		top: {{add (mul 3 20) 80}}px;
+	}
+	{{ range $row := (seq 3) }}
+		{{ range $col := (seq $ncols) }}
+			.cell{{ $row }}{{ $col }}label {
+				left: {{mul (sub (add $ncols 1) $col) 20}}px;
+				top: {{add (mul $row 20) 80}}px;
+			}
+		{{ end }}
+	{{ end }}
+
+	{{ range $col := (seq $ncols) }}
+		input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ label.cell3{{ $col }}label {
+			background: gray;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ label.cell3{{ $col }}label {
+			background: purple;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ label.cell3{{ $col }}label {
+			background: purple;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ label.cell3{{ $col }}label {
+			background: gray;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+			display: none;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }} {
+			display: inline-block;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+			display: inline-block;
+		}
+		input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }} {
+			display: none;
+		}
+	{{ end }}
+	{{range $col := (seq $ncols) }}
+		{{if gt $col 1 }}
+			{{ range $maxcol := (seq (sub $col 1)) }}
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ label.cell3{{ $col }}label {
+					background: purple;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ label.cell3{{ $col }}label{
+					background: gray;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ label.cell3{{ $col }}label {
+					background: gray;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ label.cell3{{ $col }}label{
+					background: purple;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ label.cell3{{ $col }}label {
+					background: gray;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ label.cell3{{ $col }}label{
+					background: purple;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ label.cell3{{ $col }}label {
+					background: purple;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ label.cell3{{ $col }}label{
+					background: gray;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+					display: inline-block;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }}{
+					display:  none;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+					display:  none;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:checked ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }}{
+					display: inline-block;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+					display:  none;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:checked ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }}{
+					display: inline-block;
+				}
+			
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ #span{{ $adder}}r3 .span3{{ $col }} {
+					display: inline-block;
+				}
+				input#cell{{ $adder}}r1{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r2{{ $col }}:not(:checked) ~ input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{ $col }}{
+					display:  none;
+				}
+			
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ range $maxcol := (seq (sub $ncols 0)) }}
+		input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ label.cell3{{add $ncols 1}}label {
+			background: purple;
+		}
+		input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ label.cell3{{add $ncols 1}}label{
+			background: gray;
+		}
+	
+		input#cell{{ $adder}}r1{{$maxcol }}:checked ~ input#cell{{ $adder}}r2{{$maxcol }}:checked ~ #span{{ $adder}}r3 .span3{{add $ncols 1}} {
+			display: inline-block;
+		}
+		input#cell{{ $adder}}r1{{$maxcol }}:not(:checked) ~ input#cell{{ $adder}}r2{{$maxcol }}:not(:checked) ~ #span{{ $adder}}r3 .span3{{add $ncols 1}}{
+			display: none;
+		}
+	
+	{{ end }}
+{{ end }}
+</style>
+</head>
+
+{{ partial "body-open" . }}
+	<div style="position: relative; left: 30%; z-index: 5; width: 40%;">
+		<center>What is binary addition?</center>
+		All information that computers use is stored as a series of on and off. Using 0 to represent off and 1 to represent on is common, but most people equate "10" with the base-10 value that is equal to the number of fingers most people have. While in binary, "10" represents the number of hands most people have.
+		
+		
+		Instead of numbers we are going to use colors and widths to avoid preconceived notions of what digits represent. Going forward, any digit or number will be standard base-10. When dealing with binary representations, gray will represent off while any of red, blue, or purple will represent on. 
+		
+		You should be try to perform all of the operations without thinking about binary numbers, but to convert from colors to binary numbers is very simple.
+		
+		How wide is the following block? 
+		
+		<span style="width:17.3vw; position: relative; display: block; height: 2vh; background: black;"></span>
+		
+		We could use base-10 and say it is 173 units, but how can a computer store that information using only on and off?
+		
+		We can use a set of smaller blocks that will uniquely define the width by stating whether each block is required or not.
+		
+		<span style="width:17.3vw; position: relative; display: block; height: 2vh; background: black;"></span>
+		
+		Each block is twice the size of the next smaller block, so no matter how wide the block is we can communicate its width in terms of yes or no regarding the set of smaller blocks.
+		
+		<span>binary notation</span>
+		
+		Addition is an important operation. If we place two blocks next to each other, how wide will the resulting block be? One way is to place them next to each other and see the total width.
+		
+		<div>
+		<span style="width:5.3vw; float: left; display: inline-block; height: 2vh; background: red;"></span>
+		<span style="width:4.3vw; float: left; display: inline-block; height: 2vh; background: blue;"></span>
+		</div><br />
+		
+		In base-10 we could say it is 96 units. However, if we want to convey that width to a computer we need to use the set of smaller blocks again. One way to perform addition is to get the width of the combined block using the same idea of checking which smaller blocks are required to match the width.
+		
+		<div>
+		<span style="width:5.3vw; float: left; display: inline-block; height: 2vh; background: red;"></span>
+		<span style="width:4.3vw; float: left; display: inline-block; height: 2vh; background: blue;"></span>
+		</div><br />
+		
+		Any definition of addition should match the result that is generated by measuring the combined widths, but we want to automate the process so that a computer can use on and off.
+		
+		If you add one of the smallest blocks to nothing then the result will be one of the smallest blocks. So red + gray = red. In fact, gray is the additive identity. No matter what we add to gray, the result does not change.
+		
+		What is red + red? Remember we are only allowed to use each small block at most one time. So combining two blocks of the same size requires the use of the a larger block. In the case of red + red, the next sized block is exactly twice the size so red + red = redgray.
+		
+		We could just keep computing additions and tell the computer all of the answers, but there are way too many possibilities. So we should come up with an algorithm.
+		
+		Using widths of blocks, it should be clear that rearranging the blocks will not change the total width. Instead of using the entire red block and the entire blue block we will arrange them by size.
+		
+		So redgray + blueblue becomes blueredblue. We will work left to right. We need one small purple block to match the one small blue block. Then to match the larger red and blue blocks we use one purple block of the larger size. 
+		
+		Treat red and blue blocks of the same size as a pair that should be worked together. If there are two of the same size, add a purple block of the next size. 
+		
+		If there is one of a size, then check if there is already a purple block of that size. If so, turn that purple block into a larger purple block. If not, add a purple block of that size. 
+		
+		When you are finished, you will have exactly matched the total width without reusing any of the small blocks. And then convert that to binary.
+		
+		A computer can use circuits and a similar type of algorithm to add any two binary numbers very quickly. Multiplication is more difficult, but can be achieved by repeated addition.
+		
+		What about decimals? Not every block will have width that is an exact multiple of the smallest block in our set. If we try to determine the width of such a block then we will reach a point where every block in the set is wider than the remaining width.
+		
+		In order to exactly match the width, we start adding smaller blocks to our set. Each new block will be half the width of the previous block. We keep adding the largest possible block that fits and recording it after the decimal point. If we get tired of adding new blocks we can stop and use the representation as an approximation.
+		
+		Since we are still using the same of idea of blocks of increasing size, addition is the same but we need to keep the decimals aligned to ensure that we are comparing blocks of the same size.
+		
+		
+		 
+		{{ range $adder := (seq 2) }}
+		<div style="position: relative; float: left; z-index: 5; width: 400px; height: 200px;">
+			{{ range $col := (seq $ncols) }}
+				{{ range $row := (seq 2) }}
+					<input type="checkbox" id="cell{{ $adder }}r{{ $row }}{{sub (add $ncols 1) $col }}" class="cellinput">
+					<label for="cell{{ $adder }}r{{ $row }}{{ sub (add $ncols 1) $col }}" class="cell{{ $row }}{{ sub (add $ncols 1) $col }}label celllabel celllabel{{ $row }}">
+					</label>
+				{{ end }}
+			{{ end }}
+				{{ range $col := (seq (add $ncols 1)) }}
+					<label class="cell3{{ $col }}label celllabel">
+					</label>
+				{{ end }}
+			{{ range $row := (seq 3) }}
+				<span id="span{{ $adder }}r{{ $row }}">
+				{{if eq $row 3}}
+					<span class="span3{{add $ncols 1}}"></span>
+				{{ end }}
+				{{ range $col := (seq $ncols) }}
+					<span class="span{{ $row }}{{ sub (add $ncols 1) $col }}"></span>
+				{{ end }}
+				</span>
+			{{ end }}
+
+		</div>
+		{{ end }}
+	</div>
+</body>
+
+
+{{ partial "footer.html" . }}

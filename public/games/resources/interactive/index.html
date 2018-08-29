@@ -1,0 +1,148 @@
+<div id="interactive1" style="display: block;">
+	<canvas id="myCanvas1" width="100" height="100"></canvas>
+	<button id="takeTurn1">Take Turn</button>
+	Each turn you can choose which resource to build up. 
+	To take a turn, click on a resource and then click the Take Turn button. 
+	The top row of numbers represents the total quantity of each resource stored at your farm.
+	The next row represents the current net change in that resource each turn. 
+	After you click on a resource, the bottom row will update so you know exactly what will happen on the turn.
+	
+</div>
+<div id="interactive2" style="display: none;">
+	<canvas id="myCanvas2" width="100" height="100"></canvas>
+	<button id="takeTurn2">Take Turn</button>
+</div>
+<div id="interactive3" style="display: none;">
+	<canvas id="myCanvas3" width="100" height="100"></canvas>
+	<button id="takeTurn3">Take Turn</button>
+</div>
+
+<script>
+
+function drawGoods(numId,ctx,imgs,divWidth,gameType) {
+    var img = new Image();
+    img.onload = function(){
+        ctx.drawImage(img,divWidth/6*numId+6,6,divWidth/6-12,divWidth/6-12);
+        imgs[numId] = img;
+    };
+    img.src = '/images/'+gameType+(numId+1).toString()+'.png';
+    return imgs;
+}
+function getTouch(x,y,cvs,divWidth,puzzleData) {
+    var touchColumn = 5;
+    for (i=0;i<6;i++) {
+        if (x<cvs.width/6*(i+1)) {
+            touchColumn = i;
+            break;
+        }
+    }
+    return doTouch(touchColumn,cvs.getContext("2d"),divWidth,puzzleData);
+}
+function doTouch(col,ctx,divWidth,puzzleData) {
+	ctx.fillStyle = "white";
+	ctx.fillRect(0,divWidth/6,divWidth,divWidth/12);
+    ctx.fillRect(0,divWidth/4,divWidth,divWidth/12);
+    ctx.strokeRect(0,divWidth/6,divWidth,divWidth/12);
+    ctx.strokeRect(0,divWidth/4,divWidth,divWidth/12);
+    ctx.fillStyle = "black";
+    
+    if (lastTouch == -1) {
+		for (i=0;i<6;i++){
+			ctx.fillText(puzzleData[i].toString(),divWidth/6*i+divWidth/12,divWidth/6+divWidth/18+divWidth/72);
+		}
+		puzzleData[6+col]+=10;
+		for (i=0;i<6;i++){
+			ctx.fillText(puzzleData[i+6].toString(),divWidth/6*i+divWidth/12,divWidth/4+divWidth/18+divWidth/72);
+		}
+    }
+    else {
+    	puzzleData[6+lastTouch]-=10;
+    	for (i=0;i<6;i++){
+			ctx.fillText(puzzleData[i].toString(),divWidth/6*i+divWidth/12,divWidth/6+divWidth/18+divWidth/72);
+		}
+		puzzleData[6+col]+=10;
+		for (i=0;i<6;i++){
+			ctx.fillText(puzzleData[i+6].toString(),divWidth/6*i+divWidth/12,divWidth/4+divWidth/18+divWidth/72);
+		}
+	}
+	lastTouch = col;
+
+    return puzzleData;
+}
+function takeTurn(ctx,divWidth,puzzleData) {
+	ctx.fillStyle = "white";
+	ctx.fillRect(0,divWidth/6,divWidth,divWidth/12);
+    ctx.fillRect(0,divWidth/4,divWidth,divWidth/12);
+    ctx.strokeRect(0,divWidth/6,divWidth,divWidth/12);
+    ctx.strokeRect(0,divWidth/4,divWidth,divWidth/12);
+    ctx.fillStyle = "black";
+    
+    var badTurn = false;
+    for (i=0;i<6;i++){
+    	puzzleData[i]+=puzzleData[i+6];
+        ctx.fillText(puzzleData[i].toString(),divWidth/6*i+divWidth/12,divWidth/6+divWidth/18+divWidth/72);
+        ctx.fillText(puzzleData[i+6].toString(),divWidth/6*i+divWidth/12,divWidth/4+divWidth/18+divWidth/72);
+        if (puzzleData[i]<0){
+        	badTurn = true;
+        }
+    }
+    if (badTurn) {
+    	alert("Bad Idea");
+    }
+    else {
+    	puzzleData[12]+=1;
+    	greenRedRatio[puzzleData[13]][0] = Math.max(greenRedRatio[puzzleData[13]][0],puzzleData[12]/3./puzzleData[13]);
+    	greenRed();
+    	if (puzzleData[12] >= 2.9*puzzleData[13]) {
+    		lastTouch = -1;
+    		if (puzzleData[13]==1){
+				createGoods([60,60,100,100,120,100,-10,-20,-30,10,-30,10,0,2]);
+			}
+			if (puzzleData[13]==2){
+				createGoods([80,60,120,100,120,100,-10,-20,-30,10,-30,-10,0,3]);
+			}
+    	}
+    }
+	lastTouch = -1;
+    return puzzleData;
+}
+
+function createGoods(initGoods) {
+    var imgs = [0,0,0,0,0,0,0,0,0];
+    var puzzleData = initGoods;
+    var divWidth = (document.getElementById("bigBox").offsetWidth-40)*.225;
+    var cvs = document.getElementById("interactive1");
+    cvs.style.display = "none";
+    cvs = document.getElementById("interactive2");
+    cvs.style.display = "none";
+    cvs = document.getElementById("interactive3");
+    cvs.style.display = "none";
+    cvs = document.getElementById("interactive"+puzzleData[13]);
+    cvs.style.display = "block";
+    cvs = document.getElementById("myCanvas"+puzzleData[13]);
+    var rect = cvs.getBoundingClientRect();
+    document.getElementById("takeTurn"+puzzleData[13]).addEventListener("click",function () {puzzleData = takeTurn(ctx,divWidth,puzzleData);}, false);
+    cvs.addEventListener("mousedown",function (e) {puzzleData = getTouch(e.pageX-rect.left,e.pageY-rect.top,cvs,divWidth,puzzleData);}, false);
+    cvs.width = divWidth;
+    cvs.height = divWidth*3/4;
+    var ctx = cvs.getContext("2d");
+
+    ctx.strokeStyle = "black";
+    ctx.lineWidth=3;
+
+    for (i=0;i<6;i++){
+        ctx.strokeRect(divWidth/6*i,0,divWidth/6,divWidth/6);
+        imgs = drawGoods(i,ctx,imgs,divWidth,"resource");
+    }
+    ctx.strokeRect(0,divWidth/6,divWidth,divWidth/12);
+    ctx.strokeRect(0,divWidth/4,divWidth,divWidth/12);
+    ctx.font = "bold "+(divWidth/18).toString()+"px Arial";
+    ctx.textAlign="center";
+    for (i=0;i<6;i++){
+        ctx.fillText(initGoods[i].toString(),divWidth/6*i+divWidth/12,divWidth/6+divWidth/18+divWidth/72);
+        ctx.fillText(initGoods[i+6].toString(),divWidth/6*i+divWidth/12,divWidth/4+divWidth/18+divWidth/72);
+    }
+}
+var lastTouch = -1;
+createGoods([100,50,100,0,50,100,-10,-20,-30,10,-30,10,0,1]);
+</script>

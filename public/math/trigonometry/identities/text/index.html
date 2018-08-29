@@ -1,0 +1,38 @@
+<div id="text1" class="text">
+    <span class="textHalf">
+		<h3>Basic Identities</h3>
+		<ul>
+			<li>
+				<span class="myKatex">\sin(2\theta)=2\sin(\theta)\cos(\theta)</span>
+			</li>
+			<li>
+				<span class="myKatex">\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)</span>
+			</li>
+			<li>
+				<span class="myKatex">\cos^2(\theta)+\sin^2(\theta)=1</span>
+			</li>
+		</ul>
+    </span>
+    <span class="textHalf">
+		<h3>Half-angle Formulae</h3>
+		<ul>
+			<li>
+				<span class="myKatex">\sin(\frac{\theta}{2})=\pm \sqrt{\frac{1-\cos(\theta)}{2}}</span>
+			</li>
+			<li>
+				<span class="myKatex">\cos(\frac{\theta}{2})=\pm \sqrt{\frac{1+\cos(\theta)}{2}}</span>
+			</li>
+			<li>
+				Determine the quadrant of <span class="myKatex">\frac{\theta}{2}</span> to determine the sign.
+			</li>
+
+		</ul>
+    </span>
+</div>
+
+<script>
+var allKatex = document.getElementsByClassName("myKatex");
+for (i=0;i<allKatex.length;i++) {
+	katex.render(allKatex.item(i).innerHTML,allKatex.item(i));
+}
+</script>

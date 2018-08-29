@@ -1,0 +1,151 @@
+{{ partial "header" . }}
+<style>
+:root {
+	--map-height: 40vw;
+}
+
+#targetSpan {
+	position: absolute;
+	top:50px;
+	left: 0px;
+	background: rgba(0,0,0,.25);
+	height: 200px;
+	width: 60px;
+	z-index: 2;
+}
+
+#guessSpan {
+	position: absolute;
+	top:50px;
+	left: 0px;
+	background: black;
+	height: 20px;
+}
+
+{{ $ncols := 7 }}
+{{ $powers2 := $.Param "powers2" }}
+{{range $col := (seq $ncols) }}
+	#guessSpan .spanG{{ $col }} {
+		position: relative;
+		float: left;
+		display: none;
+		width: {{index $powers2 $col}}px;
+		background: red;
+		height: 20px;
+		border: 1px solid black;
+		border-width: 1px 1px 1px 0px;
+		height: 100px;
+	}
+	input#input{{ $col }}:checked ~ #guessSpan .spanG{{ $col }} {
+		display: inline-block;
+	}
+	
+	input#input{{ $col }}:checked ~ .numberDisplay .label0{{ $col }} {
+		display: none;
+	}
+	input#input{{ $col }}:checked ~ .numberDisplay .label1{{ $col }} {
+		display: inline;
+	}
+	input#input{{ $col }}:not(:checked) ~ .numberDisplay .label0{{ $col }} {
+		display: inline;
+	}
+	input#input{{ $col }}:not(:checked) ~ .numberDisplay .label1{{ $col }} {
+		display: none;
+	}
+
+{{ end }}
+
+
+
+{{range $col := (seq $ncols) }}
+	#visSpan{{ $col }} {
+		position: relative;
+		float: left;
+		display: none;
+		width: {{index $powers2 (sub $col 1)}}px;
+		height: 200px;
+	}
+	input#input{{ $col }}:checked ~ #guessSpan #visSpan{{ $col }} {
+		display: inline-block;
+	}
+	input#input{{ $col }}:checked ~ input:checked ~ #guessSpan #visSpan{{ $col }} {
+		display: none;
+	}
+	
+	{{range $colu := (seq $col) }}
+		#visSpan{{ $col }} .span{{ $colu }} {
+			position: absolute;
+			top:{{mul (sub (add $col -1) $colu) 20}}px;
+			left: 0px;
+			height: 20px;
+			width: {{index $powers2 $colu}}px;
+			background: green;
+		}
+	{{ end }}
+
+{{ end }}
+#visSpan{{ (add 1 $ncols) }} {
+	position: relative;
+	float: left;
+	height: 200px;
+	display: none;
+	width: {{index $powers2 (sub (add 1 $ncols) 1)}}px;
+	height: 200px;
+}
+#guessSpan #visSpan{{add $ncols 1}} {
+	display: inline-block;
+}
+input:checked ~ #guessSpan #visSpan{{add $ncols 1}} {
+	display: none;
+}
+{{range $colu := (seq (add 1 $ncols)) }}
+	#visSpan{{ (add 1 $ncols) }} .span{{ $colu }} {
+		position: absolute;
+		top:{{mul (sub (add (add 1 $ncols) -1) $colu) 20}}px;
+		left: 0px;
+		height: 20px;
+		width: {{index $powers2 $colu}}px;
+		background: green;
+	}
+{{ end }}
+
+</style>
+</head>
+
+{{ partial "body-open" . }}
+	<div style="position: relative; left: 5%; z-index: 5;">
+			{{ range $col := (seq $ncols) }}
+				<input type="checkbox" id="input{{ sub (add $ncols 1) $col }}" style="display: none;">
+			{{ end }}
+			<span class="numberDisplay">
+			{{ range $col := (seq $ncols) }}
+				<label for="input{{ sub (add $ncols 1) $col }}" style="float: left; font-size: 2em;">
+					<span class="label0{{ sub (add $ncols 1) $col }}">0</span>
+					<span class="label1{{ sub (add $ncols 1) $col }}">1</span>
+				</label>
+			{{ end }}
+			</span>
+			<span id="targetSpan"></span>
+			<span id="guessSpan">
+			{{ range $col := (seq $ncols) }}
+				<span class="spanG{{ sub (add $ncols 1) $col }}"></span>
+			{{ end }}
+				<span id="visSpan{{ sub (add $ncols 1) 0 }}">
+				{{ range $colu := (seq (sub (sub (add $ncols 1) 0) 1)) }}
+					<span class="span{{ sub (add (sub (sub (add $ncols 1) 0) 1) 1) $colu }}"></span>
+				{{ end }}
+				</span>
+			{{ range $col := (seq $ncols) }}
+				<span id="visSpan{{ sub (add $ncols 1) $col }}">
+				{{ range $colu := (seq (sub (sub (add $ncols 1) $col) 1)) }}
+					<span class="span{{ sub (add (sub (sub (add $ncols 1) $col) 1) 1) $colu }}"></span>
+				{{ end }}
+				</span>
+			{{ end }}
+				
+			</span>
+	</div>
+</body>
+
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,97 @@
+<div id="interactive1" style="display: block;">
+	
+	You need to know which plots produce which resources and which plots consume which resources so that your farm never runs out.
+	<div style="display:block;">
+		<button class="plot" id="plot1" onclick="choosePlot(1)"><img src="/images/farm1.png" height="30px"></button>
+		<button class="plot" id="plot2" onclick="choosePlot(2)"><img src="/images/farm2.png" height="30px"></button>
+		<button class="plot" id="plot3" onclick="choosePlot(3)"><img src="/images/farm3.png" height="30px"></button><br />
+		<button class="plot" id="plot4" onclick="choosePlot(4)"><img src="/images/farm4.png" height="30px"></button>
+		<button class="plot" id="plot5" onclick="choosePlot(5)"><img src="/images/farm5.png" height="30px"></button>
+		<button class="plot" id="plot6" onclick="choosePlot(6)"><img src="/images/farm6.png" height="30px"></button><br />
+		<button class="plot" id="plot7" onclick="choosePlot(7)"><img src="/images/farm7.png" height="30px"></button>
+		<button class="plot" id="plot8" onclick="choosePlot(8)"><img src="/images/farm8.png" height="30px"></button>
+		<button class="plot" id="plot9" onclick="choosePlot(9)"><img src="/images/farm9.png" height="30px"></button><br />
+	</div>
+
+</div>
+<div id="interactive2" style="display: none;">
+	<canvas id="myCanvas2" width="100" height="100"></canvas>
+	<button id="takeTurn2">Take Turn</button>
+</div>
+
+
+<script>
+function choosePlot(plotNum) {
+	if (document.getElementById("plot"+plotNum.toString()).style.backgroundColor == "green") {
+		document.getElementById("plot"+plotNum.toString()).style.backgroundColor = "red";
+		plotData[plotNum-1] = -1;
+	}
+	else if (document.getElementById("plot"+plotNum.toString()).style.backgroundColor == "red") {
+		document.getElementById("plot"+plotNum.toString()).style.backgroundColor = "white";
+		plotData[plotNum-1] = 0;
+	}
+	else {
+		document.getElementById("plot"+plotNum.toString()).style.backgroundColor = "green";
+		plotData[plotNum-1] = 1;
+	}
+	var isCorrect = true;
+	for (i=0;i<9;i++){
+		if (plotData[i] != correctPlots[i]) {
+			isCorrect = false;
+			break;
+		}
+	}
+	if (isCorrect) {
+		resetButtons();
+		if (resourceType == 1) {
+			correctPlots = [-1,-1,-1,1,0,0,-1,-1,-1];
+			greenRedRatio[1][0] = .166;
+			greenRedRatio[2][0] = .166;
+			resourceType = 2;
+		}
+		else if (resourceType == 2) {
+			correctPlots = [-1,-1,-1,0,0,1,0,1,1];
+			greenRedRatio[1][0] = .333;
+			greenRedRatio[2][0] = .333;
+			resourceType = 3;
+		}
+		else if (resourceType == 3) {
+			correctPlots = [1,1,1,0,0,0,-1,-1,-1];
+			greenRedRatio[1][0] = .5;
+			greenRedRatio[2][0] = .5;
+			resourceType = 4;
+		}
+		else if (resourceType == 4) {
+			correctPlots = [0,0,0,0,1,1,0,0,0];
+			greenRedRatio[1][0] = .666;
+			greenRedRatio[2][0] = .666;
+			resourceType = 5;
+		}
+		else if (resourceType == 5) {
+			correctPlots = [1,0,1,0,0,0,0,0,0];
+			greenRedRatio[1][0] = .833;
+			greenRedRatio[2][0] = .833;
+			resourceType = 6;
+		}
+		else if (resourceType == 6) {
+			correctPlots = [0,0,0,0,0,0,0,0,0];
+			greenRedRatio[1][0] = 1;
+			greenRedRatio[2][0] = 1;
+			resourceType = 1;
+		}
+		greenRed();
+	}
+
+}
+
+function resetButtons() {
+	plotData = [0,0,0,0,0,0,0,0,0];
+	for (plotNum=1;plotNum<10;plotNum++) {
+		document.getElementById("plot"+plotNum.toString()).style.backgroundColor = "white";
+	}
+}
+
+var plotData = [0,0,0,0,0,0,0,0,0];
+var correctPlots = [1,1,1,0,0,1,1,1,1];
+var resourceType = 1;
+</script>

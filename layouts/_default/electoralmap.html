@@ -1,0 +1,211 @@
+{{ partial "header" . }}
+<style>
+:root {
+	--map-height: 40vw;
+	counter-reset: red reds redl blue blues bluel;
+
+}
+{{ range $state := .Params.states }}
+	#{{ $state.name }}B, #label{{ $state.name }}B {display: inline;}
+	#{{ $state.name }}BL, #label{{ $state.name }}BL, #{{ $state.name }}W, #label{{ $state.name }}W, #{{ $state.name }}RL, #label{{ $state.name }}RL, #{{ $state.name }}R, #label{{ $state.name }}R {display: none;}
+	#{{ $state.name }}B:checked ~ #{{ $state.name }}BL, #{{ $state.name }}B:checked ~ #label{{ $state.name }}BL, #{{ $state.name }}BL:checked ~ #{{ $state.name }}W, #{{ $state.name }}BL:checked ~ #label{{ $state.name }}W, #{{ $state.name }}W:checked ~ #{{ $state.name }}RL, #{{ $state.name }}W:checked ~ #label{{ $state.name }}RL, #{{ $state.name }}RL:checked ~ #{{ $state.name }}R, #{{ $state.name }}RL:checked ~ #label{{ $state.name }}R {display: inline;}
+	#{{ $state.name }}B:Not(:checked) ~ #scoreboard #{{ $state.name }}blueL, #{{ $state.name }}W:Not(:checked) ~ #scoreboard #{{ $state.name }}redL, #{{ $state.name }}RL:Not(:checked) ~ #scoreboard #{{ $state.name }}red, #{{ $state.name }}R:Not(:checked) ~ #scoreboard #{{ $state.name }}blue{display: none;}
+
+	#{{ $state.name }}Hover {display: none;}
+	#label{{ $state.name }}B:hover + input + label + input + label + input + label + input:checked ~ #{{ $state.name }}Hover {display: inline;}
+	input:checked + label + input + #label{{ $state.name }}BL:hover ~ #{{ $state.name }}Hover {display: inline;}
+	input:checked + label + input + #label{{ $state.name }}W:hover ~ #{{ $state.name }}Hover {display: inline;}
+	input:checked + label + input + #label{{ $state.name }}RL:hover ~ #{{ $state.name }}Hover {display: inline;}
+	input:checked + label + input + #label{{ $state.name }}R:hover ~ #{{ $state.name }}Hover {display: inline;}
+{{ end }}
+
+input[type='radio'] {
+	position: absolute;
+	left: 0px;
+	top:0px;
+	opacity: 0.0;
+}
+label {
+pointer-events: none;
+}
+
+.svgregion {
+	position: absolute;
+	left: 13px;
+	top: 13px;
+	width: calc(var(--map-height) * 2);
+	height: var(--map-height);
+}
+.hoverInfo {
+	display: none;
+	position: absolute;
+	top: 5vmin;
+	left: calc(var(--map-height) * 1.6);
+	font-size: calc(.25em + 1.5vw);
+	background: white;
+}
+.hoverInfo table {
+	border: 1px solid black;
+}
+.color1 {
+	fill: blue;
+}
+.color2 {
+	fill: rgb(135, 206, 250);
+}
+.color3 {
+	fill: white;
+}
+.color4 {
+	fill: rgb(255, 204, 203);
+}
+.color5 {
+	fill: red;
+}
+#scoreboard {
+	width: 538px;
+	height: 15px;
+	background: rgba(200,200,200,.25);
+	position: absolute;
+	top: var(--map-height);
+	left: 2vw;
+}
+#midMark {
+	position: absolute;
+	left: 269px;
+	width: 3px;
+	height: 100%;
+	background: rgba(0,0,0,1);
+}
+.scoreboardBlock4 {
+	width:1px;
+	height: 100%;
+	background: red;
+	float: left;
+}
+.scoreboardBlock3 {
+	width:1px;
+	height: 100%;
+	background: rgb(255, 204, 203);
+	float: left;
+}
+.scoreboardBlock2 {
+	width:1px;
+	height: 100%;
+	background: blue;
+	float: right;
+}
+.scoreboardBlock1 {
+	width:1px;
+	height: 100%;
+	background: rgb(135, 206, 250);
+	float: right;
+}
+.redTotal {
+	top: 15px;
+	position: absolute;
+	left: 0px;
+}
+.redTotal::after {
+	content: counter(red);
+}
+.blueTotal {
+	top: 15px;
+	position: absolute;
+	left: 420px;
+}
+.blueTotal::after {
+	content: counter(blue);
+}
+
+</style>
+</head>
+
+{{ partial "body-open" . }}
+	<div style="position: relative; left: 2%; z-index: 5;">
+
+		{{ range $state := .Params.states }}
+			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}B" {{ if eq $state.last 1}}checked{{ end }}><label for="{{ $state.name }}B" id="label{{ $state.name }}B">
+				<svg viewBox="0 -450 1000 450" class="svgregion color1">
+				{{ range $idx,$polygon := $state.polygons }}
+			  		<polygon id="{{ $state.name }}Poly{{ $idx }}" stroke="rgb(200,200,200)" stroke-width="1" points="{{ $polygon }}" pointer-events="fill"></polygon>
+			  	{{ end }}
+				</svg>
+		
+			</label>
+			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}BL" {{ if eq $state.last 2}}checked{{ end }}><label for="{{ $state.name }}BL" id="label{{ $state.name }}BL">
+				<svg viewBox="0 -450 1000 450" class="svgregion color2">
+			  	{{ range $idx,$polygon := $state.polygons }}
+			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  	{{ end }}
+				</svg>
+		
+			</label>
+			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}W" {{ if eq $state.last 3}}checked{{ end }}><label for="{{ $state.name }}W" id="label{{ $state.name }}W">
+				<svg viewBox="0 -450 1000 450" class="svgregion color3">
+			  	{{ range $idx,$polygon := $state.polygons }}
+			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  	{{ end }}
+				</svg>
+		
+			</label>
+			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}RL" {{ if eq $state.last 4}}checked{{ end }}><label for="{{ $state.name }}RL" id="label{{ $state.name }}RL">
+				<svg viewBox="0 -450 1000 450" class="svgregion color4">
+			  	{{ range $idx,$polygon := $state.polygons }}
+			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  	{{ end }}
+				</svg>
+		
+			</label>
+			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}R" {{ if eq $state.last 0}}checked{{ end }}><label for="{{ $state.name }}R" id="label{{ $state.name }}R">
+				<svg viewBox="0 -450 1000 450" class="svgregion color5">
+			  	{{ range $idx,$polygon := $state.polygons }}
+			  		<use href="#{{ $state.name }}Poly{{ $idx }}" />
+			  	{{ end }}
+				</svg>
+		
+			</label>
+			
+			<div id="{{ $state.name }}Hover" class="hoverInfo">
+				
+				<table>
+				<tr><th colspan="4"><h2><center>{{ $state.name_full }}</center></h2></th></tr>
+				<tr><th>Year</th><th>Dem.</th><th>Rep.</th><th>Shift</th></tr>
+				<tr><td>2016</td><td>{{ $state.results16d }}</td><td>{{ $state.results16r }}</td><td>{{if lt $state.national16 0}}R+{{mul $state.national16 -1}}{{ else }}D+{{mul $state.national16 1}}{{ end }}</td></tr>
+				<tr><td>2012</td><td>{{ $state.results12d }}</td><td>{{ $state.results12r }}</td><td>{{if lt $state.national12 0}}R+{{mul $state.national12 -1}}{{ else }}D+{{mul $state.national12 1}}{{ end }}</td></tr>
+				<tr><td>2008</td><td>{{ $state.results08d }}</td><td>{{ $state.results08r }}</td><td>{{if lt $state.national08 0}}R+{{mul $state.national08 -1}}{{ else }}D+{{mul $state.national08 1}}{{ end }}</td></tr>
+				<tr><td>2004</td><td>{{ $state.results04d }}</td><td>{{ $state.results04r }}</td><td>{{if lt $state.national04 0}}R+{{mul $state.national04 -1}}{{ else }}D+{{mul $state.national04 1}}{{ end }}</td></tr>
+				<tr><td>2000</td><td>{{ $state.results00d }}</td><td>{{ $state.results00r }}</td><td>{{if lt $state.national00 0}}R+{{mul $state.national00 -1}}{{ else }}D+{{mul $state.national00 1}}{{ end }}</td></tr>
+				<tr><td>1996</td><td>{{ $state.results96d }}</td><td>{{ $state.results96r }}</td><td>{{if lt $state.national96 0}}R+{{mul $state.national96 -1}}{{ else }}D+{{mul $state.national96 1}}{{ end }}</td></tr>
+				
+				</table>
+			</div>
+		
+		{{ end }}
+		
+		<div id="scoreboard">
+			
+			{{ range $state := .Params.states }}
+				<span class="scoreboardBlock4" style="width:{{ $state.ev }}px; counter-increment: red {{ $state.ev }} reds {{ $state.ev }};" id="{{ $state.name }}red"></span>
+			{{ end }}
+			{{ range $state := .Params.states }}
+				<span class="scoreboardBlock3" style="width:{{ $state.ev }}px; counter-increment: red {{ $state.ev }} redl {{ $state.ev }};" id="{{ $state.name }}redL"></span>
+			{{ end }}
+			{{ range $state := .Params.states }}
+				<span class="scoreboardBlock2" style="width:{{ $state.ev }}px; counter-increment: blue {{ $state.ev }} blues {{ $state.ev }};" id="{{ $state.name }}blue"></span>
+			{{ end }}
+			{{ range $state := .Params.states }}
+				<span class="scoreboardBlock1" style="width:{{ $state.ev }}px; counter-increment: blue {{ $state.ev }} bluel {{ $state.ev }};" id="{{ $state.name }}blueL"></span>
+			{{ end }}
+			<span id="midMark"></span>
+			<span class="redTotal">R: </span>
+			<span class="blueTotal">D: </span>
+		</div>
+		
+
+
+	</div>
+</body>
+
+
+{{ partial "footer.html" . }}

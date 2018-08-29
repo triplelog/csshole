@@ -1,0 +1,70 @@
+
+{{ partial "header" . }}
+
+<style>
+.first {
+display:inline;
+z-index: 1;
+}
+.second {
+display: none;
+}
+.third {
+display: none;
+}
+input:checked + .first ~ .second {
+	display:inline;
+	z-index: 2;
+}
+input:checked + .second ~ .third {
+	display:inline;
+	z-index: 3;
+}
+{{ range $idx,$i := .Params.cities }}
+	{{ range $iidx,$ii := $.Param "cities" }}
+		{{ if lt $iidx $idx }}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add 3 (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ #{{ $i.name }}{{ $ii.name }} {
+					color: blue;
+			}
+		{{ end }}
+		{{ if gt $iidx $idx }}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add 3 (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ #{{ $i.name }}{{ $ii.name }} {
+					color: blue;
+			}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+
+</style>
+
+</head>
+
+{{ partial "body-open" . }}
+
+	<div style="position: relative; left: 5%; width: 1500px; height: 500px; background: gray;">
+
+
+		{{ range $idx,$i := .Params.cities }}
+		  <input type="checkbox" style="display:none;" id="{{ $i.name }}1">
+		  <label style="position: absolute; left: {{ $i.left }}px; top: {{ $i.top }}px;" for="{{ $i.name }}1" class="{{ $i.name }} first">{{ $i.name }}</label>
+		{{ end }}
+		{{ range $idx,$i := .Params.cities }}
+		  <input type="checkbox" style="display:none;" id="{{ $i.name }}2">
+		  <label style="position: absolute; left: {{ $i.left }}px; top: {{ $i.top }}px;" for="{{ $i.name }}2" class="{{ $i.name }} second">{{ $i.name }}</label>
+		{{ end }}
+		{{ range $idx,$i := .Params.cities }}
+		  <input type="checkbox" style="display:none;" id="{{ $i.name }}3">
+		  <label style="position: absolute; left: {{ $i.left }}px; top: {{ $i.top }}px;" for="{{ $i.name }}3" class="{{ $i.name }} third">{{ $i.name }}</label>
+		{{ end }}
+		{{ range $idx,$i := .Params.cities }}
+			{{ range $iidx,$ii := $.Param "cities" }}
+				<span id="{{ $i.name }}{{ $ii.name }}">{{ $i.name }}{{ $ii.name }}</span>
+			{{ end }}
+		{{ end }}
+
+
+	</div>
+</body>
+
+{{ partial "footer.html" . }}

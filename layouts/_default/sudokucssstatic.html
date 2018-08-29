@@ -1,0 +1,55 @@
+
+{{ partial "header" . }}
+<link rel="stylesheet" href="/css/sudokucss.css">
+<style>
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+{{ range $i := .Params.num19 }}
+	{{ range $rowI := $i.arr1 }}
+		{{ range $colI := $i.arr2 }}
+			{{ if (eq (index (index $.Params.puzzle (sub $rowI 1)) (sub $colI 1)) $i.idx) }}
+				.row{{ $rowI }}{{ $i.idx }}.col{{ $colI }}{{ $i.idx }} + .check{{ $i.idx }} {z-index: 250 !important;color: black;}
+				.grow{{ $rowI }}{{ $i.idx }}.gcol{{ $colI }}{{ $i.idx }} + .gcheck{{ $i.idx }} {z-index: 260 !important;color: black;background: white !important;}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+
+</style>
+
+</head>
+{{ partial "body-open" . }}
+	<div style="position: relative; left: calc((100vw - (54vmin + 18px)) / 2); font-family: initial;">
+
+
+		{{ range $i := .Params.num19 }}
+		<label class="container">
+		  <input type="radio" checked="checked" name="radio" style="display:none;" class="radioB" accesskey="{{ $i.idx }}">
+		  <span class="cmark{{ $i.idx }} normBlock cmarkAll">{{ $i.idx }}</span>
+  
+		  <span class="sudoku{{ $i.idx }} sudokuAll">
+		  {{ range $rowI := $i.arr1 }}
+			{{ range $colI := $i.arr2 }}<input type="checkbox" style="display:none;" class="row{{ $rowI }}{{ $i.idx }} col{{ $colI }}{{ $i.idx }} box{{add (add (div (sub $colI 1) 3) (mul 3 (div (sub $rowI 1) 3))) 1 }}{{ $i.idx }}" id="cell{{ $i.idx }}{{ $rowI }}{{ $colI }}" {{ if (eq (index (index $.Params.puzzle (sub $rowI 1)) (sub $colI 1)) $i.idx) }}checked{{ end }}><label for="cell{{ $i.idx }}{{ $rowI }}{{ $colI }}" class="col{{ $colI }} row{{ $rowI }} check{{ $i.idx }} normBlock">{{ $i.idx }}</label>{{ end }}
+			<br />
+		  {{ end }}
+		  {{ range $rowI := $i.arr1 }}
+			{{ range $colI := $i.arr2 }}<input type="checkbox" style="display:none;" class="grow{{ $rowI }}{{ $i.idx }} gcol{{ $colI }}{{ $i.idx }} gbox{{add (add (div (sub $colI 1) 3) (mul 3 (div (sub $rowI 1) 3))) 1}}{{ $i.idx }}" id="gcell{{ $i.idx }}{{ $rowI }}{{ $colI }}"><label for="gcell{{ $i.idx }}{{ $rowI }}{{ $colI }}" class="col{{ $colI }} row{{ $rowI }} gcheck{{ $i.idx }} normBlock">{{ $i.idx }}</label>{{ end }}
+			<br />
+		  {{ end }}
+		  <span class="blackout{{ $i.idx }} normBlock blackoutAll">{{ $i.idx }}</span>
+
+		  <span class="winner">
+		  	<a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 0 }}">Reset Puzzle</a> <a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}">Next Puzzle</a> {{range $pid := (seq 100)}}<a href="/games/sudokucss/{{$.Param "gametype"}}{{ $pid }}" class="randomPuzzle{{ $pid}} randomPuzzlen1"> Random Puzzle</a>{{ end}}
+		  </span>
+		  <span class="winmessage"><a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}">Next Puzzle</a> Great job, you beat the game!</span>
+
+		  </span>
+		</label>
+		{{ end }}
+
+
+	</div>
+</body>
+
+{{ partial "footer.html" . }}

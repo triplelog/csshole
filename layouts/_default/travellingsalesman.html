@@ -1,0 +1,283 @@
+
+{{ partial "header" . }}
+
+<style>
+:root {
+	--height-max-bar: 25px;
+}
+html, body {margin: 0; height: 100%; overflow: hidden}
+.turn1 {
+	display:inline;
+	z-index: 1;
+}
+{{ range $turnn := (seq ($.Param "numcities") ) }}
+	.turn{{add $turnn 1}} {
+	display: none;
+	}
+	input:checked + .turn{{add $turnn 0}} ~ .turn{{add $turnn 1}} {
+		display:inline;
+		z-index: {{add $turnn 1}};
+	}
+{{ end }}
+input:checked + .turn{{add ($.Param "numcities") 0}} ~ .turn{{add ($.Param "numcities") 1}} {
+	display:inline;
+	z-index: 6000;
+}
+input:checked + .turn{{add ($.Param "numcities") 1}} ~ #maxContainerCover {
+	display:none;
+}
+#theform {
+	display: inline;
+	position: absolute;
+	top: 0px;
+	left: {{sub (mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 1) ($.Param "bwidth")}}px;
+	z-index: 1;
+}
+{{ range $turnn := (seq ($.Param "nbuttons") ) }}
+
+		input:checked + .turn{{add ($.Param "numcities") 1}} ~ #maxContainer #maxScore #max{{ sub ($.Param "nbuttons") $turnn }}:checked ~ #theform {
+			display:inline;
+			z-index: {{$turnn}};
+		}
+
+{{ end }}
+{{ range $idx,$i := .Params.cities }}
+	.{{ $i.name }}Cover {
+		display: none;
+	}
+	input:checked + .{{ $i.name }} ~ .{{ $i.name }}Cover {
+		display: inline;
+	}
+	{{ range $iidx,$ii := $.Param "cities" }}
+		#{{ $i.name }}{{ $ii.name }} {
+			display: none;
+		}
+		{{ if ne $iidx $idx }}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add (sub ($.Param "numcities") 1) (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ #{{ $i.name }}{{ $ii.name }} {
+					display: inline;
+			}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add (sub ($.Param "numcities") 1) (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ div #{{ $i.name }}{{ $ii.name }}Score {
+					display: inline;
+			}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add (sub ($.Param "numcities") 1) (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ div div #{{ $i.name }}{{ $ii.name }}ScoreMax {
+					display: inline;
+			}
+			input:checked + .{{ $i.name }} {{ range $num := (seq (add (sub ($.Param "numcities") 1) (sub $iidx $idx))) }}+ input + label {{ end }} + input:checked ~ div #{{ $i.name }}{{ $ii.name }}ScoreMax {
+					display: inline;
+			}
+		{{ end }}
+	{{ end }}
+{{ end }}
+
+{{ range $i := (seq ($.Param "nbuttons")) }}
+	#max{{sub ($.Param "nbuttons") $i }}:checked ~ #showMax{{sub ($.Param "nbuttons") $i }} {
+		display: inline;
+	}
+{{ end }}
+
+#scoreboard {
+	position: absolute;
+	top: 35vw;
+	left: 5vw;
+	width: 1000vw;
+	height: 20px;
+}
+.scoreboardSpan {
+	float: left;
+	height: 100%;
+	display: none;
+	background: red;
+}
+#maxContainer {
+	position: absolute;
+	top: calc(35vw + 60px);
+	left: calc({{add (mul (mul ($.Param "nbuttons") ($.Param "bwidth")) -1) 0}}px + 50vw);
+	width: {{mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 2}}px;
+	height: var(--height-max-bar);
+	background: yellow;
+	margin:0px;
+	padding:0px;
+}
+#maxContainerCover {
+	position: absolute;
+	top: calc(35vw + 60px);
+	left: calc({{add (mul (mul ($.Param "nbuttons") ($.Param "bwidth")) -1) 0}}px + 50vw);
+	width: {{mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 2}}px;
+	height: var(--height-max-bar);
+	background: white;
+	margin:0px;
+	padding:0px;
+	display: inline-block;
+	z-index: {{add ($.Param "nbuttons") 10}};
+}
+.resetButton {
+	height: var(--height-max-bar);
+}
+
+#maxScore {
+	float:left;
+	left: 100px;
+	width: {{mul ($.Param "nbuttons") ($.Param "bwidth")}}px;
+	height: var(--height-max-bar);
+	background: blue;
+	margin:0px;
+	padding:0px;
+	overflow: hidden;
+}
+.scoreboardSpanMax {
+	float: right;
+	height: 100%;
+	display: none;
+	background: red;
+	overflow: hidden;
+}
+.scoreboardSpanMax0 {
+	float: left;
+	height: 100%;
+	display: none;
+	background: black;
+}
+.maxScoreSpan {
+	position: relative;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+	width: {{sub ($.Param "bwidth") 2}}px;
+	height: calc(var(--height-max-bar) - 2px);
+	display: inline-block;
+	border: 1px solid black;
+	background: white;
+	padding:0px;
+	margin:0px;
+}
+.showMax {
+	display: none;
+	background: white;
+	position:fixed;
+	top: calc(35vw + 3.5em + 30px);
+	left: 5vw;
+	width:1000vw;
+}
+.showMaxInside {
+	position: relative;
+	display: inline-block;
+	background: black;
+	height: 100%;
+}
+#coverLeft {
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	background: white;
+	width: {{sub (mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 1) ($.Param "bwidth")}}px;
+	z-index: {{add ($.Param "nbuttons") 10}};
+}
+#coverRight {
+	position: absolute;
+	left: {{mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 1}}px;
+	height: 100%;
+	background: white;
+	width: {{mul (mul ($.Param "nbuttons") ($.Param "bwidth")) 1}}px;
+	z-index: {{add ($.Param "nbuttons") 10}};
+}
+.svgstate {
+	pointer-events: none;
+	width: 120vw;
+	height: 40vw;
+	position: absolute;
+	z-index: 1;
+	fill: white;
+}
+.svgcities {
+	position: relative;
+
+	width: 80vw;
+	height: 40vw;
+}
+</style>
+
+</head>
+
+{{ partial "body-open" . }}
+
+	<div class="svgcities">
+
+		{{ range $turnn := (seq (add ($.Param "numcities") 1)) }}
+			{{ range $idx,$i := $.Param "cities" }}
+			  <input type="checkbox" style="display:none;" id="{{ $i.name }}{{add $turnn 0}}" form="theform">
+			  <label style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 6000; pointer-events: none;" for="{{ $i.name }}{{add $turnn 0}}" class="{{ $i.name }} turn{{add $turnn 0}}">
+			  	<svg viewBox="0 -450 1000 450">
+					<circle cx="{{ $i.left }}" cy="{{$i.top}}" r="7" stroke="rgb(250,0,0)" stroke-width="2" pointer-events="all"></circle>
+				</svg>
+			  </label>
+			{{ end }}
+		{{ end }}
+		
+		{{ range $state := .Params.states }}
+			<svg viewBox="0 -450 1000 450" class="svgstate">
+			{{ range $idx,$polygon := $state.polygons }}
+				<polygon id="{{ $state.name }}Poly{{ $idx }}" stroke="rgb(200,200,200)" stroke-width="1" points="{{ $polygon }}" pointer-events="none"></polygon>
+			{{ end }}
+			</svg>
+		{{ end }}
+
+		{{ range $idx,$i := .Params.cities }}
+			{{ range $iidx,$ii := $.Param "cities" }}
+				<span id="{{ $i.name }}{{ $ii.name }}" style="pointer-events: none; left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; z-index: 5000;">
+					<svg viewBox="0 -450 1000 450" >
+						<line stroke="red" stroke-width="3" x1="{{ $i.left }}" y1="{{$i.top}}" x2="{{ $ii.left }}" y2="{{$ii.top}}"></line>
+					</svg>
+				</span>
+			{{ end }}
+		{{ end }}
+		
+		{{ range $idx,$i := $.Param "cities" }}
+		  <span style="position: absolute; left: 0px; top: 0px; width:100%; height:100%; z-index: 5000;" class="{{ $i.name }}Cover">
+		  	<svg viewBox="0 -450 1000 450">
+				<circle cx="{{ $i.left }}" cy="{{$i.top}}" r="7" stroke="rgb(250,0,0)" stroke-width="2" pointer-events="all"></circle>
+			</svg>
+		  </span>
+		{{ end }}
+		
+		<div id="scoreboard">
+		{{ range $idx,$i := .Params.cities }}
+			{{ range $iidx,$ii := $.Param "cities" }}
+				<span id="{{ $i.name }}{{ $ii.name }}Score" class="scoreboardSpan" style="width:{{mul (div (index $i.distances $iidx) 200.00) 9.00}}vw;">
+				</span>
+			{{ end }}
+		{{ end }}
+		</div>
+		
+		<div id="maxContainer">
+				{{ range $idx,$i := .Params.cities }}
+					{{ range $iidx,$ii := $.Param "cities" }}
+						<span id="{{ $i.name }}{{ $ii.name }}ScoreMax" class="scoreboardSpanMax0" style="width:{{mul (div (index $i.distances $iidx) 2) ($.Param "bwidth")}}px;">
+						</span>
+					{{ end }}
+				{{ end }}
+			<div id="maxScore">
+				{{ range $idx,$i := .Params.cities }}
+					{{ range $iidx,$ii := $.Param "cities" }}
+						<span id="{{ $i.name }}{{ $ii.name }}ScoreMax" class="scoreboardSpanMax" style="width:{{mul (div (index $i.distances $iidx) 2) ($.Param "bwidth")}}px;">
+						</span>
+					{{ end }}
+				{{ end }}
+				{{ range $i := (seq ($.Param "nbuttons")) }}<input type="radio" name="radio{{sub ($.Param "nbuttons") $i }}" id="max{{sub ($.Param "nbuttons") $i }}" style="display:none;"><label for="max{{sub ($.Param "nbuttons") $i }}" class="maxScoreSpan" style="z-index: {{ $i }};">Again?</label>{{ end }}
+				{{ range $i := (seq ($.Param "nbuttons")) }}<span class="showMax" id="showMax{{sub ($.Param "nbuttons") $i }}"><span class="showMaxInside" style="width: {{div (mul (sub ($.Param "nbuttons") $i) 90.00) 1000.00 }}vw;">{{sub ($.Param "nbuttons") $i }}</span></span>{{ end }}
+				<form id="theform"><input type="reset" class="resetButton"></form>
+			</div>
+			
+			<span id="coverLeft"></span>
+			<span id="coverRight"></span>
+				
+		</div>
+		<div id="maxContainerCover">
+				
+		</div>
+		
+
+
+	</div>
+</body>
+
+{{ partial "footer.html" . }}

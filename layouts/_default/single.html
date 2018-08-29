@@ -1,0 +1,30 @@
+{{ partial "header" . }}
+
+<main>
+
+	<div class="box" id="bigBox">
+		<div class="left">
+			<span class="interactive">
+				
+				{{ readFile .Params.interactive | safeHTML }}
+			</span>
+		</div>
+		<div class="middle">
+			<div class="video">
+				{{ readFile .Params.video | safeHTML }}
+			</div>
+			{{ readFile .Params.text | safeHTML }}
+		</div>
+		<div class="right">
+			<span class="objective">
+				{{ readFile .Params.objective | safeHTML }}
+			</span>
+			{{ readFile .Params.contents | safeHTML }}
+			{{ partial "applinks" }}
+		</div>
+	</div>
+
+
+</main>
+
+{{ partial "footer.html" . }}

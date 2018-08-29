@@ -1,0 +1,56 @@
+<div id="objective1">
+    <h2><center>Objectives</center></h2>
+    <br />
+    <input type="checkbox"><span class="greenText"></span><span class="redText">Know the resources</span>
+    <br />
+    <input type="checkbox"><span class="greenText"></span><span class="redText">Survive 3 rounds</span>
+    <br />
+    <input type="checkbox"><span class="greenText"></span><span class="redText">Survive 6 rounds</span>
+    <br />
+    <input type="checkbox"><span class="greenText"></span><span class="redText">Survive 9 rounds</span>
+
+</div>
+
+<script>
+greenRedRatio = [[0,0,0,0,0,0],[0],[0],[0]];
+function sumArray(theArray) {
+	var workingSum = 0
+	for (arri=0;arri<theArray.length;arri++) {
+		workingSum += theArray[arri];
+	}
+	return workingSum
+}
+function greenRed() {
+    var allGreen = document.getElementsByClassName("greenText");
+    var allRed = document.getElementsByClassName("redText");
+    for (i=0;i<allRed.length;i++) {
+        var x = sumArray(greenRedRatio[i]);
+        if (x>.975) {x = 1}
+        var fullString = allGreen.item(i).textContent+allRed.item(i).textContent;
+        allGreen.item(i).innerHTML = fullString.substring(0,fullString.length*x);
+        allRed.item(i).innerHTML = fullString.substring(fullString.length*x,fullString.length);
+        if (x > .975) {
+        	if (i>=0) {
+        		var index = videoPlaylist.indexOf(i+1);
+        		if (index > -1) {
+        			videoPlaylist.splice(index,1);
+        		}
+        	}
+        }
+    }
+}
+greenRed();
+function quizButton1(buttonID) {
+    var vid = document.getElementById("myVideo");
+    document.getElementById("pullQuote").innerHTML = vid.currentTime;
+    if (buttonID == 0) {
+        vid.src = "/videos/video5.mp4";
+        chgQuiz(1,3);
+        chgText(1,2);
+        createSudoku("farm");
+    }
+    else {
+        chgQuiz(1,2);
+    }
+}
+</script>

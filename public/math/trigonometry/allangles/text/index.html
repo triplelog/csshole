@@ -1,0 +1,46 @@
+<div id="text1" class="text">
+    <span class="textHalf">
+		<h3>Absolute Value of Sine</h3>
+		<ul>
+			<li>
+				Reduce theta so that <span class="myKatex">\gcd(a,b)=1</span> where <span class="myKatex">\theta = \frac{a\pi}{b}.</span>
+			</li>
+			<li>
+				What is the denominator?
+			</li>
+			<li>
+				What is <span class="myKatex">\sin(\frac{\pi}{b})</span>?
+			</li>
+			<li>
+				If b=1,2,3,4, or 6 and a is integer with gcd(a,b)=1 then <span class="myKatex">\sin(\frac{a\pi}{b})=\pm \sin(\frac{\pi}{b}).</span>
+			</li>
+		</ul>
+    </span>
+    <span class="textHalf">
+		<h3>Positive or Negative?</h3>
+		<ul>
+			<li>
+				For cosine, is <span class="myKatex">\frac{a\pi}{b}</span> on left or right?
+			</li>
+			<li>
+				For sine, is <span class="myKatex">\frac{a\pi}{b}</span> on top or bottom?
+			</li>
+			<li>
+				Add or subtract <span class="myKatex">\frac{2b\pi}{b}</span> until <span class="myKatex">-b\lt a\lt b.</span>
+			</li>
+			<li>
+				If <span class="myKatex">a\gt 0</span> then <span class="myKatex">\sin(\frac{a\pi}{b})</span> is positive.
+			</li>
+			<li>
+				If <span class="myKatex">|2a|\lt b</span> then <span class="myKatex">\cos(\frac{a\pi}{b})</span> is positive.
+			</li>
+		</ul>
+    </span>
+</div>
+
+<script>
+var allKatex = document.getElementsByClassName("myKatex");
+for (i=0;i<allKatex.length;i++) {
+	katex.render(allKatex.item(i).innerHTML,allKatex.item(i));
+}
+</script>

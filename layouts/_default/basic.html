@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+</head>
+{{ partial "body-open" . }}
+
+
+
+
+    {{ .Content | safeJS | safeHTML}}
+
+
+
+</body>
+{{ partial "footer" . }}

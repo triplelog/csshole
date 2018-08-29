@@ -1,0 +1,50 @@
+<video autoplay width="100%" id="myVideo" controls="true" src='/videos/video1.mp4' type='video/mp4'>
+</video>
+
+<script>
+	var videoPlaylist = [1];
+    document.getElementById('myVideo').addEventListener('ended',videoEnded,false);
+    document.getElementById('myVideo').addEventListener('timeupdate',updateTime,false);
+    function videoEnded() {
+        var vid = document.getElementById('myVideo');
+        var newVid = false;
+        if (videoPlaylist.length > 0) {
+			for (i=0;i<videoPlaylist.length-1;i++) {
+				if (vid.getAttribute("src") == "/videos/video"+videoPlaylist[i]+".mp4") {
+					vid.src = "/videos/video"+videoPlaylist[i+1]+".mp4";
+					newVid = true;
+					break;
+				}
+			}
+			if (!newVid) {
+				vid.src = "/videos/video"+videoPlaylist[0]+".mp4";
+			}
+		}
+
+    }
+    function updateTime() {
+        var vid = document.getElementById('myVideo');
+        if (vid.currentTime > 0) {
+			if (vid.getAttribute("src") == "/videos/video1.mp4") {
+				greenRedRatio[0][0] = Math.max(vid.currentTime/(vid.duration-.5),greenRedRatio[0][0]);
+				greenRed();
+			}
+			else if (vid.getAttribute("src") == "/videos/video2.mp4") {
+				greenRedRatio[1][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[1][0]);
+				greenRed();
+			}
+			else if (vid.getAttribute("src") == "/videos/video3.mp4") {
+				greenRedRatio[2][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[2][0]);
+				greenRed();
+			}
+			else if (vid.getAttribute("src") == "/videos/video4.mp4") {
+				greenRedRatio[3][0] = Math.max(vid.currentTime/(vid.duration*2-.5),greenRedRatio[3][0]);
+				greenRed();
+			}
+        }
+    }
+    function chgVideo(videoId) {
+        var vid = document.getElementById('myVideo');
+        vid.src = "/videos/video"+videoId.toString()+".mp4";
+    }
+</script>

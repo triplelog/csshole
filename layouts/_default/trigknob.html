@@ -1,0 +1,236 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }}</title>
+<link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+<meta name="description" content="{{ .Params.description }}"/>
+
+<style>
+@keyframes example {
+    from {z-index: 1000;}
+    to {z-index: -1;}
+}
+.svgregion {
+	position: absolute;
+	top:50px;
+	left:50px;
+	width: 400px;
+	height: 400px;
+	
+}
+.svgborder {
+	position: absolute;
+	top:40px;
+	left:40px;
+	width: 420px;
+	height: 420px;
+	z-index: 1;
+	opacity: 0.0;
+}
+.svgborder:hover {
+	opacity: 0.0;
+	z-index: 1000;
+	animation-name: example;
+	animation-duration: .1s;
+	animation-fill-mode: forwards;
+}
+
+.knob {
+	pointer-events: none;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	height: 500px;
+	width: 500px;
+	background: gray;
+}
+
+
+
+{{ range $turn := (seq ($.Param "nturns")) }}
+	.turn{{ $turn }} polygon{
+		fill:rgba({{mul $turn 0}},0,0,0.0);
+	}
+{{ end }}
+
+
+{{ range $turn := (seq ($.Param "nturns")) }}
+	{{ range $angle := (seq ($.Param "nangles")) }}
+		{{if lt $turn (div ($.Param "nturns") 2) }}
+			#wedge{{ $angle }}t{{ $turn }} {
+				z-index: {{add (mul (sub (add ($.Param "nturns") 1) $turn) ($.Param "nangles")) (sub ($.Param "nangles") $angle) }};
+			}
+			.svgborder:hover ~ #wedge{{ $angle }}t{{ $turn }} {
+				z-index: 1;
+			}
+		{{ end }}
+		{{if ge $turn (div ($.Param "nturns") 2) }}
+			#wedge{{ $angle }}t{{ $turn }} {
+				z-index: {{add (mul (sub (add ($.Param "nturns") 1) $turn) ($.Param "nangles")) (sub ($.Param "nangles") $angle) }};
+			}
+		{{ end }}
+	{{ end }}
+
+{{ end }}
+
+#wedge{{ $.Param "nangles" }}t1:hover {
+	z-index: {{sub (mul ($.Param "nturns") ($.Param "nangles")) 2}};
+}
+
+#wedge{{ $.Param "nangles" }}t1:hover ~ #wedge1t1 {
+	z-index: 1;
+}
+
+
+.svgneedle {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 400px;
+	height: 400px;
+}
+div.displayAngle {
+	display: none;
+	position: absolute;
+	left: 500px;
+	top: 100px;
+	background: yellow;
+	width: 50px;
+	height: 20px;
+}
+div.displayNeedle {
+	display: none;
+	position: absolute;
+	top:50px;
+	left:50px;
+	width: 400px;
+	height: 400px;
+	z-index: 1000;
+	pointer-events: none;
+}
+{{ range $turn := (seq ($.Param "nturns")) }}
+	{{ range $angle := (seq ($.Param "nangles")) }}
+		#wedge{{ $angle }}t{{add $turn 0}}:hover ~ div.c{{ $angle }}t{{add $turn 0}} {
+			display: inline-block;
+		}
+		#wedge{{ $angle }}t{{add $turn 0}}:hover ~ div.needle{{ $angle }}t{{add $turn 0}} {
+			display: inline-block;
+		}
+	{{ end }}
+	{{ if gt $turn 1 }}
+		#wedge1t{{add $turn 0}}:hover  {
+			z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) ($.Param "nangles")}};
+		}
+		#wedge1t{{add $turn 0}}:hover ~ #wedge2t{{add $turn 0}} {
+			z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) (add ($.Param "nangles") 1)}};
+		}
+		#wedge1t{{add $turn 0}}:hover ~ #wedge3t{{add $turn 0}} {
+			z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) (add ($.Param "nangles") 2)}};
+		}
+		#wedge1t{{add $turn 0}}:hover ~ .angle2:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge1t{{add $turn 0}}:hover ~ .angle3:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge1t{{add $turn 0}}:hover ~ .angle{{ $.Param "nangles" }}:not(.turn{{sub $turn 1}}) {
+			z-index: 1;
+		}
+		#wedge1t{{add $turn 0}}:hover ~ .angle{{sub ($.Param "nangles") 1}}:not(.turn{{sub $turn 1}}) {
+			z-index: 1;
+		}
+		{{ range $angle := (seq (sub ($.Param "nangles") 1)) }}
+			{{ if gt $angle 1 }}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover  {
+					z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) ($.Param "nangles")}};
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ #wedge{{add $angle 1}}t{{add $turn 0}} {
+					z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) (add ($.Param "nangles") 1)}};
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ #wedge{{add $angle 2}}t{{add $turn 0}} {
+					z-index: {{add (mul ($.Param "nturns") ($.Param "nangles")) (add ($.Param "nangles") 2)}};
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ .angle{{add $angle 1}}:not(.turn{{add $turn 0}}) {
+					z-index: 1;
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ .angle{{add $angle 2}}:not(.turn{{add $turn 0}}) {
+					z-index: 1;
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ .angle{{sub $angle 1}} {
+					z-index: 1;
+				}
+				#wedge{{ $angle }}t{{add $turn 0}}:hover ~ .angle{{sub $angle 2}} {
+					z-index: 1;
+				}
+			{{ end }}
+		{{ end }}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ #wedge2t{{add $turn 0}} {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ #wedge1t{{add $turn 0}} {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover {
+			z-index: {{add (add (mul ($.Param "nturns") ($.Param "nangles")) 2) (mul (mul $turn ($.Param "nangles")) -1)}};
+		}
+		
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ .angle{{ $.Param "nangles" }}:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ .angle{{sub ($.Param "nangles") 1}}:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ .angle{{sub ($.Param "nangles") 2}}:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ .angle1:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+		#wedge{{ $.Param "nangles" }}t{{add $turn 0}}:hover ~ .angle2:not(.turn{{add $turn 0}}) {
+			z-index: 1;
+		}
+
+	{{ end }}
+{{ end }}
+</style>
+
+</head>
+<body>
+
+	<div class="knob">
+		<svg viewBox="-100 -100 200 200" class="svgborder">
+			<polygon stroke="rgb(200,200,200)" stroke-width="0" points="-100,-100 100,-100 100,100 -100,100 -100,-100" pointer-events="all"></polygon>
+		</svg>
+		{{range $turn := (seq ($.Param "nturns")) }}
+			<svg viewBox="-100 -100 200 200" class="svgregion turn{{sub (add ($.Param "nturns") 1) $turn }} angle16" id="wedge16t{{sub (add ($.Param "nturns") 1) $turn }}">
+				<polygon stroke="rgb(200,200,200)" stroke-width="0" points="0,0 147,135 199,17 0,0" pointer-events="all"></polygon>
+			</svg>
+			{{range $idx,$angle := ($.Param "angles") }}
+				{{if lt $idx 15 }}
+				<svg viewBox="-100 -100 200 200" class="svgregion turn{{sub (add ($.Param "nturns") 1) $turn }} angle{{add $idx 1}}" id="wedge{{add $idx 1}}t{{sub (add ($.Param "nturns") 1) $turn }}">
+					<polygon stroke="rgb(200,200,200)" stroke-width="0" points="0,0 {{ $angle.points }} 0,0" pointer-events="all"></polygon>
+					<circle cx="0" cy="0" r="30" stroke="black" stroke-width="3" fill="red" pointer-events="all" />
+				</svg>
+				{{ end }}
+			{{ end }}
+
+			
+		{{ end }}
+		{{ range $turn := (seq ($.Param "nturns")) }}
+			{{ range $idx, $angle := ($.Param "angles") }}
+				<div class="c{{add $idx 1}}t{{$turn}} displayAngle">{{add $angle.numer (mul (sub $turn (div ($.Param "nturns") 2)) (mul 2 $angle.denom))}}pi/{{$angle.denom}}</div>
+				<div class="needle{{add $idx 1}}t{{$turn}} displayNeedle" style="pointer-events: none;">
+					<svg viewBox="-100 -100 200 200" class="svgneedle">
+						<polygon stroke="rgb(200,200,200)" stroke-width="3" points="0,0 {{ $angle.needle }} 0,0"></polygon>
+					</svg>
+				</div>
+			{{ end }}
+		{{ end }}
+	
+	</div>
+
+</body>
+
+{{ partial "footer.html" . }}

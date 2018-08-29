@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quizzes on CSS Hole - Interactive Web Apps using only HTML and CSS</title>
+    <link>https://csshole.github.io/quizzes/</link>
+    <description>Recent content in Quizzes on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://csshole.github.io/quizzes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/mathquiz/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/mathquiz/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/trigknob/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/trigknob/</guid>
+      <description>Hello! </description>
+    </item>
+    
+    <item>
+      <title>Sudoku Page</title>
+      <link>https://csshole.github.io/quizzes/trigonometryquiz/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.github.io/quizzes/trigonometryquiz/</guid>
+      <description>Hello! </description>
+    </item>
+    
+  </channel>
+</rss>

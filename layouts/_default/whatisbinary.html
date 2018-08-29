@@ -1,0 +1,311 @@
+{{ partial "header" . }}
+<style>
+:root {
+	--map-height: 40vw;
+}
+
+
+input:not(:checked) + .purpleblock {
+	width:1vw;
+	position: absolute;
+	top: 3vh;
+	display: block;
+	height: 1vw;
+	background: purple;
+}
+input:not(:checked) + .blueblock {
+	width:2vw;
+	position: absolute;
+	top: 6vh;
+	display: block;
+	height: 1vw;
+	background: blue;
+}
+input:not(:checked) + .redblock {
+	width:4vw;
+	position: absolute;
+	top: 9vh;
+	display: block;
+	height: 1vw;
+	background: red;
+}
+input:not(:checked) + .orangeblock {
+	width:8vw;
+	position: absolute;
+	top: 12vh;
+	display: block;
+	height: 1vw;
+	background: orange;
+}
+input:not(:checked) + .greenblock {
+	width:16vw;
+	position: absolute;
+	top: 15vh;
+	display: block;
+	height: 1vw;
+	background: green;
+}
+input:not(:checked) + .yellowblock {
+	width:32vw;
+	position: absolute;
+	top: 18vh;
+	display: block;
+	height: 1vw;
+	background: yellow;
+}
+
+input:checked + .purpleblock {
+	width:1vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: purple;
+}
+input:checked + .blueblock {
+	width:2vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: blue;
+}
+input:checked + .redblock {
+	width:4vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: red;
+}
+input:checked + .orangeblock {
+	width:8vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: orange;
+}
+input:checked + .greenblock {
+	width:16vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: green;
+}
+input:checked + .yellowblock {
+	width:32vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: yellow;
+}
+
+input:not(:checked) + .brownblock {
+	width:.5vw;
+	position: absolute;
+	top: 21vh;
+	display: block;
+	height: 1vw;
+	background: brown;
+}
+
+input:checked + .brownblock {
+	width:.5vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: brown;
+}
+
+.digits {
+	position: absolute;
+	top: 21vh;
+	display: block;
+	height: 1vw;
+}
+.digitsDecimal {
+	position: absolute;
+	top: 24vh;
+	display: block;
+	height: 1vw;
+}
+.redbit, .yellowbit, .purplebit, .bluebit, .greenbit, .orangebit, .brownbit {
+	width:1vw;
+	float: left;
+	display: inline-block;
+	height: 1vw;
+	background: gray;
+}
+input.redInput:checked ~ span .redbit {
+	background: red;
+}
+input.yellowInput:checked ~ span .yellowbit {
+	background: yellow;
+}
+input.blueInput:checked ~ span .bluebit {
+	background: blue;
+}
+input.purpleInput:checked ~ span .purplebit {
+	background: purple;
+}
+input.orangeInput:checked ~ span .orangebit {
+	background: orange;
+}
+input.greenInput:checked ~ span .greenbit {
+	background: green;
+}
+input.brownInput:checked ~ span .brownbit {
+	background: brown;
+}
+</style>
+</head>
+
+{{ partial "body-open" . }}
+	<div style="position: relative; left: 30%; z-index: 5; width: 40%;">
+		<center>What is binary?</center>
+		<p>Computers store information as a collection of bits that are either on or off. Using 0 to represent off and 1 to represent on is common, but most people equate "10" with the base-10 value that is equal to the number of fingers most people have. While in binary, "10" represents the number of hands most people have.
+		</p>
+		
+		<p>Instead of numbers we are going to use colors and widths to avoid preconceived notions of what digits represent. Going forward, any digit or number will be standard base-10. When dealing with binary representations, gray (or white) will represent off while any other color will represent on. 
+		</p>
+		
+		<p>Any information can be stored as a binary sequence. We are going to focus on representing numbers using only a sequence of colored squares. You should try to perform all of the operations without thinking about numbers.
+		</p>
+		
+		<p>How wide is the following block? 
+		</p>
+		
+		<span style="width:19vw; position: relative; display: block; height: 2vh; background: black;"></span>
+		
+		<p>A human would count the number pixels or measure the length in inches and use a base-10 number, but how can a computer store that information using only on and off?
+		</p>
+		
+		<p>We can use a set of smaller blocks that will uniquely define the width by stating whether each block is required or not.
+		</p>
+		
+		<span style="width:23vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		
+		<div style="height: 21vh; position: relative; width: 32vw;">
+		<input type="checkbox" id="yellow1" style="display:none;">
+		<label for="yellow1" class="yellowblock"></label>
+		<input type="checkbox" id="green1" style="display:none;">
+		<label for="green1" class="greenblock"></label>
+		<input type="checkbox" id="orange1" style="display:none;">
+		<label for="orange1" class="orangeblock"></label>
+		<input type="checkbox" id="red1" style="display:none;">
+		<label for="red1" class="redblock"></label>
+		<input type="checkbox" id="blue1" style="display:none;">
+		<label for="blue1" class="blueblock"></label>
+		<input type="checkbox" id="purple1" style="display:none;">
+		<label for="purple1" class="purpleblock"></label>
+		</div><br />
+		
+		<p>Click the blocks above to find a set that exactly matches the length of the black bar. Clicking a block arranges it just below the black bar for easy comparison. Clicking the block again removes it if you have gone too far.
+		</p>
+		
+		<p>For the above example, you hopefully determined that the green, red, blue, and purple blocks were required. Thus the width of the given black bar could be described by turning the bits for green, red, blue, and purple to on and all other bits off.
+		</p>
+		
+		<p>Each block is twice the size of the next smaller block, so no matter how wide the block is we can communicate its width in terms of yes or no regarding a defined set of smaller blocks. 
+		</p>
+		
+		<p>Adding another block twice as long as the yellow block would allow for representing blocks that are twice as long. Therefore adding a small number of bits can greatly increase the amount of information that can be stored.
+		</p>
+		
+		<p>How do we convert this talk of green and red blocks into something that more organized? Instead of using colors and sizes to distinguish the blocks we use their location.
+		</p>
+		
+		<span style="width:24vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		
+		<div style="height: 24vh; position: relative; width: 64vw;">
+		<input type="checkbox" id="yellow2" style="display:none;" class="yellowInput">
+		<label for="yellow2" class="yellowblock"></label>
+		<input type="checkbox" id="green2" style="display:none;" class="greenInput">
+		<label for="green2" class="greenblock"></label>
+		<input type="checkbox" id="orange2" style="display:none;" class="orangeInput">
+		<label for="orange2" class="orangeblock"></label>
+		<input type="checkbox" id="red2" style="display:none;" class="redInput">
+		<label for="red2" class="redblock"></label>
+		<input type="checkbox" id="blue2" style="display:none;" class="blueInput">
+		<label for="blue2" class="blueblock"></label>
+		<input type="checkbox" id="purple2" style="display:none;" class="purpleInput">
+		<label for="purple2" class="purpleblock"></label>
+		<span class="digits"><span style="float: left;">Width = </span><span class="yellowbit"></span><span class="greenbit"></span><span class="orangebit"></span><span class="redbit"></span><span class="bluebit"></span><span class="purplebit"></span></span>
+		</div><br />
+		
+		
+		
+		<p>For blocks as small as <span class="yellowbit"></span> up to blocks slightly wider than your screen, we can represent its size with a small number of on or off bits.
+		</p>
+		
+		<span style="width:13vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		
+		<div style="height: 24vh; position: relative; width: 64vw;">
+		<input type="checkbox" id="yellow3" style="display:none;" class="yellowInput">
+		<label for="yellow3" class="yellowblock"></label>
+		<input type="checkbox" id="green3" style="display:none;" class="greenInput">
+		<label for="green3" class="greenblock"></label>
+		<input type="checkbox" id="orange3" style="display:none;" class="orangeInput">
+		<label for="orange3" class="orangeblock"></label>
+		<input type="checkbox" id="red3" style="display:none;" class="redInput">
+		<label for="red3" class="redblock"></label>
+		<input type="checkbox" id="blue3" style="display:none;" class="blueInput">
+		<label for="blue3" class="blueblock"></label>
+		<input type="checkbox" id="purple3" style="display:none;" class="purpleInput">
+		<label for="purple3" class="purpleblock"></label>
+		<span class="digits"><span style="float: left;">Width = </span><span class="yellowbit"></span><span class="greenbit"></span><span class="orangebit"></span><span class="redbit"></span><span class="bluebit"></span><span class="purplebit"></span></span>
+		</div><br />
+		
+		<p>To get a bit trickier, what is the length of this block? You're not going to be able to get the exact length using just the six blocks. There is going to be a bit left over that is too small to be covered by any of the six blocks, but get as close as you can.
+		</p>
+		
+		<span style="width:17.5vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		
+		<div style="height: 24vh; position: relative; width: 64vw;">
+		<input type="checkbox" id="yellow4" style="display:none;" class="yellowInput">
+		<label for="yellow4" class="yellowblock"></label>
+		<input type="checkbox" id="green4" style="display:none;" class="greenInput">
+		<label for="green4" class="greenblock"></label>
+		<input type="checkbox" id="orange4" style="display:none;" class="orangeInput">
+		<label for="orange4" class="orangeblock"></label>
+		<input type="checkbox" id="red4" style="display:none;" class="redInput">
+		<label for="red4" class="redblock"></label>
+		<input type="checkbox" id="blue4" style="display:none;" class="blueInput">
+		<label for="blue4" class="blueblock"></label>
+		<input type="checkbox" id="purple4" style="display:none;" class="purpleInput">
+		<label for="purple4" class="purpleblock"></label>
+		<span class="digits"><span style="float: left;">Width = </span><span class="yellowbit"></span><span class="greenbit"></span><span class="orangebit"></span><span class="redbit"></span><span class="bluebit"></span><span class="purplebit"></span></span>
+		</div><br />
+		
+		<p>To match the block exactly, we need to add a seventh block that is smaller.
+		</p>
+		
+		<span style="width:17.5vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		
+		<div style="height: 24vh; position: relative; width: 64vw;">
+		<input type="checkbox" id="yellow5" style="display:none;" class="yellowInput">
+		<label for="yellow5" class="yellowblock"></label>
+		<input type="checkbox" id="green5" style="display:none;" class="greenInput">
+		<label for="green5" class="greenblock"></label>
+		<input type="checkbox" id="orange5" style="display:none;" class="orangeInput">
+		<label for="orange5" class="orangeblock"></label>
+		<input type="checkbox" id="red5" style="display:none;" class="redInput">
+		<label for="red5" class="redblock"></label>
+		<input type="checkbox" id="blue5" style="display:none;" class="blueInput">
+		<label for="blue5" class="blueblock"></label>
+		<input type="checkbox" id="purple5" style="display:none;" class="purpleInput">
+		<label for="purple5" class="purpleblock"></label>
+		<input type="checkbox" id="brown5" style="display:none;" class="brownInput">
+		<label for="brown5" class="brownblock"></label>
+		<span class="digitsDecimal"><span style="float: left;">Width = </span><span class="yellowbit"></span><span class="greenbit"></span><span class="orangebit"></span><span class="redbit"></span><span class="bluebit"></span><span class="purplebit"></span><span style="float: left;">.</span><span class="brownbit"></span></span>
+		</div><br />
+		
+		<p>Just like we can add larger blocks to help represent wider blocks, we can also keep adding blocks that are half as wide to represent blocks that do not fit exactly.
+		</p>
+		
+		<p>Now that we know it is possible to record numbers using a sequence of on or off bits, why does this representation allow for the magic of computers? Computers can very quickly manipulate the information using logical algorithms.
+		</p>
+		
+		
+	</div>
+</body>
+
+
+{{ partial "footer.html" . }}

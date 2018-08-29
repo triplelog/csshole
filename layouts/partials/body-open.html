@@ -1,0 +1,75 @@
+      
+    <body>
+        <ul class="navbar">
+				
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+			<li class="nav dropdown1">
+				<ul class="dropdown-content1">
+					<li class="dropdown1a">
+						<ul class="dropdown-content1a">
+						{{ range $pid := (seq 100) }}
+						<a href="/games/travellingsalesman/10{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">10 Cities</a>
+						{{ end }}
+						<a href="/games/travellingsalesman100" class="randomPuzzlet0">Simple</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/travellingsalesman/15{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">15 Cities</a>
+						{{ end }}
+						<a href="/games/travellingsalesman100" class="randomPuzzlet0">Easy</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/travellingsalesman/20{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">20 Cities</a>
+						{{ end }}
+						<a href="/games/travellingsalesman100" class="randomPuzzlet0">Medium</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/travellingsalesman/25{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">25 Cities</a>
+						{{ end }}
+						<a href="/games/travellingsalesman100" class="randomPuzzlet0">Hard</a>
+						</ul>
+						<a class="dropdown1a">Travelling Salesman</a>
+					</li>
+					<li class="dropdown1b">
+						<ul class="dropdown-content1b">
+						{{ range $pid := (seq 100) }}
+						<a href="/games/sudokucss/simple{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">Simple</a>
+						{{ end }}
+						<a href="/games/sudokucss/simple0" class="randomPuzzlet0">Simple</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/sudokucss/easy{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">Easy</a>
+						{{ end }}
+						<a href="/games/sudokucss/easy0" class="randomPuzzlet0">Easy</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/sudokucss/medium{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">Medium</a>
+						{{ end }}
+						<a href="/games/sudokucss/medium0" class="randomPuzzlet0">Medium</a>
+						{{ range $pid := (seq 100) }}
+						<a href="/games/sudokucss/hard{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1">Hard</a>
+						{{ end }}
+						<a href="/games/sudokucss/hard0" class="randomPuzzlet0">Hard</a>
+						</ul>
+						<a class="dropdown1b">Sudoku</a>
+					</li>
+				</ul>
+				<a class="dropdown1">Games</a>
+			</li>
+			<li class="nav dropdown2">
+				<ul class="dropdown-content2">
+					<li><a href="/maps/electoral">Electoral College</a></li>
+					<li><a href="/maps/cdmap">U.S. House Map</a></li>
+				</ul>
+				<a class="dropdown2">Maps</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/math/whatisbinary">Binary</a></li>
+					<!--<li><a href="/math/whatisaddition">Addition</a></li>-->
+					<li><a href="/math/trigonometryquiz">Trigonometry</a></li>
+				</ul>
+				<a class="dropdown3">Math</a>
+			</li>
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/howto/about">Why?</a></li>
+				</ul>
+				<a class="dropdown3" href="/howto/about">About</a>
+			</li>
+		
+		</ul>

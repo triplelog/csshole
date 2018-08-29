@@ -1,0 +1,527 @@
+html, body {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*footer*/
+
+.copyright {
+    margin: 15px 0;
+}
+
+
+h1 {
+    color: #212121;
+    font-size: 12vh;
+}
+
+/*apply accent colour to links*/
+
+a:link, a:visited {
+    color: var(--accent);
+}
+
+a.icon:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent) !important;
+    text-decoration: underline black;
+}
+
+/*navigation bar icons*/
+
+.navbar-icon {
+    font-size: 125%;
+    display: inline-block !important;
+}
+
+/*coloured borders at top and bottom of the page*/
+
+
+
+footer {
+    border-bottom: var(--border-width) solid var(--accent);
+}
+
+
+.dropdown1, .dropdown2, .dropdown3 {
+	position: relative;
+	z-index: 1;
+	overflow: visible;
+}
+
+
+.dropdown-content1, .dropdown-content2, .dropdown-content3 {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #111111;
+    color: white;
+    min-width: 160px;
+    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.33);
+    padding: 2px 4px;
+    z-index: 1;
+    overflow: visible;
+    top: 100%;
+    width: 100%;
+}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+    z-index: 1;
+    overflow: visible;
+}
+.dropdown-content1:hover ~ .dropdown1 {
+    background-color: #111111;
+}
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+    z-index: 1;
+    overflow: visible;
+}
+.dropdown-content2:hover ~ .dropdown2 {
+    background-color: #111111;
+}
+.dropdown3:hover .dropdown-content3 {
+    display: block;
+    z-index: 1;
+    overflow: visible;
+}
+.dropdown-content3:hover ~ .dropdown3 {
+    background-color: #111111;
+}
+ul.navbar {
+	border-top: var(--border-width) solid var(--accent);
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	height: 3.5em;
+    overflow: visible;
+    background-color: #999999;
+    position: relative;
+    z-index: 100000;
+
+}
+ul.dropdown-content1, ul.dropdown-content2, ul.dropdown-content3, ul.dropdown-content1a, ul.dropdown-content1b {
+	list-style-type: none;
+}
+
+.dropdown1a, .dropdown1b {
+	position: relative;
+	z-index: 1;
+	overflow: visible;
+}
+.dropdown-content1a, .dropdown-content1b {
+    display: none;
+    position: absolute;
+    right: 100%;
+    background-color: #111111;
+    color: white;
+    min-width: 160px;
+    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.33);
+    padding: 2px 4px;
+    z-index: 1;
+    overflow: visible;
+    top: 0%;
+    width: 100%;
+}
+.dropdown1a:hover .dropdown-content1a {
+    display: block;
+    z-index: 1;
+    overflow: visible;
+}
+.dropdown-content1a:hover ~ .dropdown1a {
+    background-color: #111111;
+}
+.dropdown1b:hover .dropdown-content1b {
+    display: block;
+    z-index: 1;
+    overflow: visible;
+}
+.dropdown-content1b:hover ~ .dropdown1b {
+    background-color: #111111;
+}
+
+
+
+li.nav {
+    float: right;
+}
+li.logo {
+    float: left;
+    height: 100%;
+}
+li.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li.nav a:hover {
+    background-color: #111111;
+}
+li.logo a {
+    color: white;
+    text-align: center;
+    padding-left: 16px;
+    text-decoration: none;
+}
+
+li.logo a:hover {
+    background-color: #ffffff;
+}
+
+.dropdown-btn {
+	padding: .1em .15em;
+	border-radius: .25em;
+	background: linear-gradient(rgb(135,206,250), rgb(30,144,255));
+	border: 1px solid rgba(0,0,0,.3);
+	box-shadow: 0 1px white inset, 0 .3em .3em -.3em rgba(0,0,0,.3);
+	vertical-align: middle;
+	height: .8em;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.helper {
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+@keyframes randomz {
+	from {z-index: 100;}
+	to {z-index: 1;}
+}
+.randomPuzzleh1 {
+	position: absolute;
+	z-index: 1;
+	animation: randomz .1s infinite;
+	padding: 0px;
+	left: 0px;
+	width: 128px;
+
+}
+.randomPuzzlen1 {
+	position: absolute;
+	z-index: 1;
+	animation: randomz .1s infinite;
+
+
+}
+.randomPuzzlet0 {
+	position: relative;
+	z-index: 1;
+	opacity: 0;
+
+}
+
+	.randomPuzzle1 {animation-delay: 0.001s;}
+	.randomPuzzle1:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle2 {animation-delay: 0.002s;}
+	.randomPuzzle2:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle3 {animation-delay: 0.003s;}
+	.randomPuzzle3:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle4 {animation-delay: 0.004s;}
+	.randomPuzzle4:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle5 {animation-delay: 0.005s;}
+	.randomPuzzle5:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle6 {animation-delay: 0.006s;}
+	.randomPuzzle6:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle7 {animation-delay: 0.007s;}
+	.randomPuzzle7:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle8 {animation-delay: 0.008s;}
+	.randomPuzzle8:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle9 {animation-delay: 0.009s;}
+	.randomPuzzle9:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle10 {animation-delay: 0.01s;}
+	.randomPuzzle10:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle11 {animation-delay: 0.011s;}
+	.randomPuzzle11:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle12 {animation-delay: 0.012s;}
+	.randomPuzzle12:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle13 {animation-delay: 0.013s;}
+	.randomPuzzle13:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle14 {animation-delay: 0.014s;}
+	.randomPuzzle14:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle15 {animation-delay: 0.015s;}
+	.randomPuzzle15:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle16 {animation-delay: 0.016s;}
+	.randomPuzzle16:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle17 {animation-delay: 0.017s;}
+	.randomPuzzle17:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle18 {animation-delay: 0.018s;}
+	.randomPuzzle18:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle19 {animation-delay: 0.019s;}
+	.randomPuzzle19:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle20 {animation-delay: 0.02s;}
+	.randomPuzzle20:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle21 {animation-delay: 0.021s;}
+	.randomPuzzle21:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle22 {animation-delay: 0.022s;}
+	.randomPuzzle22:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle23 {animation-delay: 0.023s;}
+	.randomPuzzle23:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle24 {animation-delay: 0.024s;}
+	.randomPuzzle24:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle25 {animation-delay: 0.025s;}
+	.randomPuzzle25:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle26 {animation-delay: 0.026s;}
+	.randomPuzzle26:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle27 {animation-delay: 0.027s;}
+	.randomPuzzle27:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle28 {animation-delay: 0.028s;}
+	.randomPuzzle28:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle29 {animation-delay: 0.029s;}
+	.randomPuzzle29:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle30 {animation-delay: 0.03s;}
+	.randomPuzzle30:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle31 {animation-delay: 0.031s;}
+	.randomPuzzle31:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle32 {animation-delay: 0.032s;}
+	.randomPuzzle32:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle33 {animation-delay: 0.033s;}
+	.randomPuzzle33:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle34 {animation-delay: 0.034s;}
+	.randomPuzzle34:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle35 {animation-delay: 0.035000000000000003s;}
+	.randomPuzzle35:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle36 {animation-delay: 0.036s;}
+	.randomPuzzle36:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle37 {animation-delay: 0.037s;}
+	.randomPuzzle37:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle38 {animation-delay: 0.038s;}
+	.randomPuzzle38:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle39 {animation-delay: 0.039s;}
+	.randomPuzzle39:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle40 {animation-delay: 0.04s;}
+	.randomPuzzle40:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle41 {animation-delay: 0.041000000000000003s;}
+	.randomPuzzle41:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle42 {animation-delay: 0.042s;}
+	.randomPuzzle42:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle43 {animation-delay: 0.043s;}
+	.randomPuzzle43:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle44 {animation-delay: 0.044s;}
+	.randomPuzzle44:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle45 {animation-delay: 0.045s;}
+	.randomPuzzle45:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle46 {animation-delay: 0.046s;}
+	.randomPuzzle46:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle47 {animation-delay: 0.047000000000000003s;}
+	.randomPuzzle47:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle48 {animation-delay: 0.048s;}
+	.randomPuzzle48:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle49 {animation-delay: 0.049s;}
+	.randomPuzzle49:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle50 {animation-delay: 0.05s;}
+	.randomPuzzle50:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle51 {animation-delay: 0.051s;}
+	.randomPuzzle51:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle52 {animation-delay: 0.052s;}
+	.randomPuzzle52:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle53 {animation-delay: 0.053s;}
+	.randomPuzzle53:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle54 {animation-delay: 0.054s;}
+	.randomPuzzle54:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle55 {animation-delay: 0.055s;}
+	.randomPuzzle55:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle56 {animation-delay: 0.056s;}
+	.randomPuzzle56:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle57 {animation-delay: 0.05700000000000001s;}
+	.randomPuzzle57:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle58 {animation-delay: 0.058s;}
+	.randomPuzzle58:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle59 {animation-delay: 0.059s;}
+	.randomPuzzle59:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle60 {animation-delay: 0.06s;}
+	.randomPuzzle60:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle61 {animation-delay: 0.061s;}
+	.randomPuzzle61:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle62 {animation-delay: 0.062s;}
+	.randomPuzzle62:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle63 {animation-delay: 0.063s;}
+	.randomPuzzle63:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle64 {animation-delay: 0.064s;}
+	.randomPuzzle64:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle65 {animation-delay: 0.065s;}
+	.randomPuzzle65:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle66 {animation-delay: 0.066s;}
+	.randomPuzzle66:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle67 {animation-delay: 0.067s;}
+	.randomPuzzle67:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle68 {animation-delay: 0.068s;}
+	.randomPuzzle68:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle69 {animation-delay: 0.06900000000000001s;}
+	.randomPuzzle69:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle70 {animation-delay: 0.07000000000000001s;}
+	.randomPuzzle70:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle71 {animation-delay: 0.071s;}
+	.randomPuzzle71:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle72 {animation-delay: 0.072s;}
+	.randomPuzzle72:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle73 {animation-delay: 0.073s;}
+	.randomPuzzle73:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle74 {animation-delay: 0.074s;}
+	.randomPuzzle74:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle75 {animation-delay: 0.075s;}
+	.randomPuzzle75:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle76 {animation-delay: 0.076s;}
+	.randomPuzzle76:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle77 {animation-delay: 0.077s;}
+	.randomPuzzle77:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle78 {animation-delay: 0.078s;}
+	.randomPuzzle78:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle79 {animation-delay: 0.079s;}
+	.randomPuzzle79:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle80 {animation-delay: 0.08s;}
+	.randomPuzzle80:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle81 {animation-delay: 0.081s;}
+	.randomPuzzle81:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle82 {animation-delay: 0.08200000000000001s;}
+	.randomPuzzle82:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle83 {animation-delay: 0.08300000000000001s;}
+	.randomPuzzle83:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle84 {animation-delay: 0.084s;}
+	.randomPuzzle84:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle85 {animation-delay: 0.085s;}
+	.randomPuzzle85:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle86 {animation-delay: 0.086s;}
+	.randomPuzzle86:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle87 {animation-delay: 0.087s;}
+	.randomPuzzle87:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle88 {animation-delay: 0.088s;}
+	.randomPuzzle88:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle89 {animation-delay: 0.089s;}
+	.randomPuzzle89:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle90 {animation-delay: 0.09s;}
+	.randomPuzzle90:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle91 {animation-delay: 0.091s;}
+	.randomPuzzle91:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle92 {animation-delay: 0.092s;}
+	.randomPuzzle92:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle93 {animation-delay: 0.093s;}
+	.randomPuzzle93:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle94 {animation-delay: 0.09400000000000001s;}
+	.randomPuzzle94:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle95 {animation-delay: 0.09500000000000001s;}
+	.randomPuzzle95:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle96 {animation-delay: 0.096s;}
+	.randomPuzzle96:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle97 {animation-delay: 0.097s;}
+	.randomPuzzle97:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle98 {animation-delay: 0.098s;}
+	.randomPuzzle98:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle99 {animation-delay: 0.099s;}
+	.randomPuzzle99:hover {z-index: 101;animation: randomz 0s;}
+
+	.randomPuzzle100 {animation-delay: 1s;}
+	.randomPuzzle100:hover {z-index: 101;animation: randomz 0s;}
+
+
