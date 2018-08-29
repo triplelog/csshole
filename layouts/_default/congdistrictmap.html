@@ -225,7 +225,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}BL" id="label{{ $cd.name }}BL" class="cdLabel">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color2">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
 					{{ end }}
 					</svg>
 
@@ -235,7 +235,7 @@ cursor: crosshair;
 					
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color3">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
 					{{ end }}
 					</svg>
 
@@ -244,7 +244,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}RL" id="label{{ $cd.name }}RL" class="cdLabel">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color4">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
 					{{ end }}
 					</svg>
 
@@ -253,7 +253,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}R" id="label{{ $cd.name }}R" class="cdLabel">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color5">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
 					{{ end }}
 					</svg>
 
@@ -344,7 +344,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}BL2" id="label{{ $cd.name }}BL2" style="pointer-events: none;">
 					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color2">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}I" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
 					{{ end }}
 					</svg>
 
@@ -353,7 +353,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}W2" id="label{{ $cd.name }}W2" style="pointer-events: none;">
 					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color3">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}I" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
 					{{ end }}
 					</svg>
 
@@ -362,7 +362,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}RL2" id="label{{ $cd.name }}RL2" style="pointer-events: none;">
 					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color4">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}I" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
 					{{ end }}
 					</svg>
 
@@ -371,7 +371,7 @@ cursor: crosshair;
 				<label for="{{ $cd.name }}R2" id="label{{ $cd.name }}R2" style="pointer-events: none;">
 					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color5">
 					{{ range $idx, $polygon := $cd.polygons }}
-						<use href="#{{ $cd.name }}Poly{{ $idx }}I" />
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
 					{{ end }}
 					</svg>
 
