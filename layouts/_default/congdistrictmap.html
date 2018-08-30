@@ -5,41 +5,43 @@
 }
 
 {{ range $state := .Params.states }}
-	#{{ $state.name }}form {display: none;}
 	#{{ $state.name }}B:checked ~ #{{ $state.name }}form {display: inline;}
-	{{ range $cd := $state.cds }}
-		#{{ $cd.name }}B {display: inline;}
-		
-		#{{ $state.name }}B:checked ~ #label{{ $cd.name }}B {display: inline;}
-		
-		#{{ $cd.name }}BL, #label{{ $cd.name }}BL, #{{ $cd.name }}RL, #label{{ $cd.name }}RL, #{{ $cd.name }}W, #label{{ $cd.name }}W, #{{ $cd.name }}R, #label{{ $cd.name }}R {display: none;}
-		
-		#{{ $cd.name }}Hover {display: none;}
-		#label{{ $cd.name }}B:hover + input + label + input + label + input + label + input:checked ~ #{{ $cd.name }}Hover {display: inline;}
-		input:checked + label + input + label:hover ~ #{{ $cd.name }}Hover {display: inline;}
-		
-		#{{ $state.name }}B:checked ~ .{{ $cd.name }}C:checked + label + input + label {display: inline;}
-		
-		
-		#{{ $cd.name }}B:Not(:checked) ~ #scoreboard #{{ $cd.name }}blueL, #{{ $cd.name }}W:Not(:checked) ~ #scoreboard #{{ $cd.name }}redL, #{{ $cd.name }}RL:Not(:checked) ~ #scoreboard #{{ $cd.name }}red, #{{ $cd.name }}R:Not(:checked) ~ #scoreboard #{{ $cd.name }}blue{display: none;}
-		
-		#label{{ $cd.name }}W2, #label{{ $cd.name }}RL2, #label{{ $cd.name }}BL2, #label{{ $cd.name }}R2 {display: none;}
-		#{{ $cd.name }}B:checked ~ #label{{ $cd.name }}BL2 {display: inline;}
-		#{{ $cd.name }}BL:checked ~ #label{{ $cd.name }}W2 {display: inline;}
-		#{{ $cd.name }}W:checked ~ #label{{ $cd.name }}RL2 {display: inline;}
-		#{{ $cd.name }}RL:checked ~ #label{{ $cd.name }}R2 {display: inline;}
-
-
-	{{ end }}
+	#{{ $state.name }}B:checked ~ .{{ $state.name }}CD.blueCD {display: inline;}
+	#{{ $state.name }}B:checked ~ .{{ $state.name }}C:checked + label + input + label {display: inline;}
 
 {{ end }}
 
+.blueCD {
+	display: inline;
+}
+.bluelCD, .whiteCD, .redlCD, .redCD, .bluelCD2, .whiteCD2, .redlCD2, .redCD2 {
+	display: none;
+}
+
+input:checked + .blueCD + input + label + input + label + input + label + input + label + input + label + input + label.bluelCD2 {display: inline;}
+input:checked + .bluelCD + input + label + input + label + input + label + input + label + input + label + input + label.whiteCD2 {display: inline;}
+input:checked + .whiteCD + input + label + input + label + input + label + input + label + input + label + input + label.redlCD2 {display: inline;}
+input:checked + .redlCD + input + label + input + label + input + label + input + label + input + label + input + label.redCD2 {display: inline;}
+
+input:Not(:checked) + .blueCD + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + span + span + span + span {display: none;}
+input:Not(:checked) + .whiteCD + input + label + input + label + input + label + input + label + input + label + input + label + input + label + span + span {display: none;}
+input:Not(:checked) + .redlCD + input + label + input + label + input + label + input + label + input + label + input + label + span {display: none;}
+input:Not(:checked) + .redCD + input + label + input + label + input + label + input + label + input + label + span + span + span {display: none;}
+
+input:checked + .redlCD + input + label:hover + input + label + input + label + input + label + input + label + input + label + span + span + span + span + div {display: inline;}
+input:checked + .whiteCD + input + label:hover + input + label + input + label + input + label + input + label + input + label + input + label + span + span + span + span + div {display: inline;}
+input:checked + .bluelCD + input + label:hover + input + label + input + label + input + label + input + label + input + label + input + label + input + label + span + span + span + span + div {display: inline;}
+input:checked + .blueCD + input + label:hover + input + label + input + label + input + label + input + label + input + label + input + label + input + label + input + label + span + span + span + span + div {display: inline;}
+input + .blueCD:hover + input + label + input + label + input + label + input:checked + label + input + label + input + label + input + label + input + label + input + label + span + span + span + span + div {display: inline;}
 
 input[type='radio'] {
 position: absolute;
 left: 0px;
 top:0px;
 opacity: 0.0;
+}
+form {
+	display: none;
 }
 label {
 pointer-events: none;
@@ -52,13 +54,11 @@ cursor: crosshair;
 }
 
 {{ range $state := .Params.states }}
-	{{ range $cd := $state.cds }}
 
 		#{{ $state.name }}B + label polygon {
 			fill: gray;
 		}
 
-	{{ end }}
 {{ end }}
 
 .svgregion {
@@ -190,6 +190,7 @@ cursor: crosshair;
 {{ partial "body-open" . }}
 	<div style="position: relative; left: 1%; z-index: 5;">
 		
+		<div id="scoreboard">
 		{{ range $state := .Params.states }}
 			<input type="radio" name="state" id="{{ $state.name }}B" class="stateRadio">
 			<label for="{{ $state.name }}B" id="label{{ $state.name }}B" class="stateOutline">
@@ -204,8 +205,8 @@ cursor: crosshair;
 		
 
 			{{ range $cd := $state.cds }}
-				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C" id="{{ $cd.name }}B" form="{{ $state.name }}form" {{ if eq $cd.last 2}}checked{{ end }} {{ if eq $cd.last 3}}checked{{ end }}>
-				<label for="{{ $cd.name }}B" id="label{{ $cd.name }}B" class="cdLabel">
+				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C {{ $state.name }}C" id="{{ $cd.name }}B" form="{{ $state.name }}form" {{ if eq $cd.last 2}}checked{{ end }} {{ if eq $cd.last 3}}checked{{ end }}>
+				<label for="{{ $cd.name }}B" id="label{{ $cd.name }}B" class="cdLabel blueCD {{ $state.name }}CD">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color1" fill="blue">
 					{{ range $idx, $polygon := $cd.polygons }}
 						<polygon id="{{ $cd.name }}Poly{{ $idx }}" stroke="rgb(200,200,200)" stroke-width="1" points="{{ $polygon }}" pointer-events="fill"></polygon>
@@ -213,8 +214,8 @@ cursor: crosshair;
 					</svg>
 
 				</label>
-				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C" id="{{ $cd.name }}BL" form="{{ $state.name }}form" {{ if eq $cd.last 4}}checked{{ end }}>
-				<label for="{{ $cd.name }}BL" id="label{{ $cd.name }}BL" class="cdLabel">
+				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C {{ $state.name }}C" id="{{ $cd.name }}BL" form="{{ $state.name }}form" {{ if eq $cd.last 4}}checked{{ end }}>
+				<label for="{{ $cd.name }}BL" id="label{{ $cd.name }}BL" class="cdLabel bluelCD">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color2">
 					{{ range $idx, $polygon := $cd.polygons }}
 						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
@@ -222,8 +223,8 @@ cursor: crosshair;
 					</svg>
 
 				</label>
-				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C" id="{{ $cd.name }}W" form="{{ $state.name }}form" {{ if eq $cd.last 5}}checked{{ end }} {{ if eq $cd.last 6}}checked{{ end }}>
-				<label for="{{ $cd.name }}W" id="label{{ $cd.name }}W" class="cdLabel">
+				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C {{ $state.name }}C" id="{{ $cd.name }}W" form="{{ $state.name }}form" {{ if eq $cd.last 5}}checked{{ end }} {{ if eq $cd.last 6}}checked{{ end }}>
+				<label for="{{ $cd.name }}W" id="label{{ $cd.name }}W" class="cdLabel whiteCD">
 					
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color3">
 					{{ range $idx, $polygon := $cd.polygons }}
@@ -232,8 +233,8 @@ cursor: crosshair;
 					</svg>
 
 				</label>
-				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C" id="{{ $cd.name }}RL" form="{{ $state.name }}form" {{ if eq $cd.last 7}}checked{{ end }}>
-				<label for="{{ $cd.name }}RL" id="label{{ $cd.name }}RL" class="cdLabel">
+				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C {{ $state.name }}C" id="{{ $cd.name }}RL" form="{{ $state.name }}form" {{ if eq $cd.last 7}}checked{{ end }}>
+				<label for="{{ $cd.name }}RL" id="label{{ $cd.name }}RL" class="cdLabel redlCD">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color4">
 					{{ range $idx, $polygon := $cd.polygons }}
 						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
@@ -241,8 +242,8 @@ cursor: crosshair;
 					</svg>
 
 				</label>
-				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C" id="{{ $cd.name }}R" form="{{ $state.name }}form" {{ if eq $cd.last 1}}checked{{ end }}>
-				<label for="{{ $cd.name }}R" id="label{{ $cd.name }}R" class="cdLabel">
+				<input type="radio" name="{{ $cd.name }}" class="{{ $cd.name }}C {{ $state.name }}C" id="{{ $cd.name }}R" form="{{ $state.name }}form" {{ if eq $cd.last 1}}checked{{ end }}>
+				<label for="{{ $cd.name }}R" id="label{{ $cd.name }}R" class="cdLabel redCD">
 					<svg viewBox="{{ $state.bounds }}" class="svgregion color5">
 					{{ range $idx, $polygon := $cd.polygons }}
 						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}" />
@@ -250,6 +251,57 @@ cursor: crosshair;
 					</svg>
 
 				</label>
+				
+				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}B2">
+				<label for="{{ $cd.name }}B2" id="label{{ $cd.name }}B2" style="pointer-events: none;" class="blueCD2">
+					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color1">
+					{{ range $idx, $polygon := $cd.polygons }}
+						<polygon id="{{ $cd.name }}Poly{{ $idx }}I" stroke="rgb(200,200,200)" stroke-width="1" points="{{ $polygon }}" pointer-events="none"></polygon>
+					{{ end }}
+					</svg>
+
+				</label>
+				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}BL2">
+				<label for="{{ $cd.name }}BL2" id="label{{ $cd.name }}BL2" style="pointer-events: none;" class="bluelCD2">
+					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color2">
+					{{ range $idx, $polygon := $cd.polygons }}
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
+					{{ end }}
+					</svg>
+
+				</label>
+				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}W2">
+				<label for="{{ $cd.name }}W2" id="label{{ $cd.name }}W2" style="pointer-events: none;" class="whiteCD2">
+					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color3">
+					{{ range $idx, $polygon := $cd.polygons }}
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
+					{{ end }}
+					</svg>
+
+				</label>
+				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}RL2">
+				<label for="{{ $cd.name }}RL2" id="label{{ $cd.name }}RL2" style="pointer-events: none;" class="redlCD2">
+					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color4">
+					{{ range $idx, $polygon := $cd.polygons }}
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
+					{{ end }}
+					</svg>
+
+				</label>
+				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}R2">
+				<label for="{{ $cd.name }}R2" id="label{{ $cd.name }}R2" style="pointer-events: none;" class="redCD2">
+					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color5">
+					{{ range $idx, $polygon := $cd.polygons }}
+						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
+					{{ end }}
+					</svg>
+
+				</label>
+				
+				<span class="scoreboardBlock4"></span>
+				<span class="scoreboardBlock3"></span>
+				<span class="scoreboardBlock2"></span>
+				<span class="scoreboardBlock1"></span>
 				
 				
 				<div class="hoverInfo" id="{{ $cd.name }}Hover">
@@ -322,54 +374,6 @@ cursor: crosshair;
 			<form id="{{ $state.name }}form"><input type="reset" value="Reset {{ $state.name }}" class="resetButton"></form>
 			
 			
-			{{ range $cd := $state.cds }}
-				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}B2">
-				<label for="{{ $cd.name }}B2" id="label{{ $cd.name }}B2" style="pointer-events: none;">
-					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color1">
-					{{ range $idx, $polygon := $cd.polygons }}
-						<polygon id="{{ $cd.name }}Poly{{ $idx }}I" stroke="rgb(200,200,200)" stroke-width="1" points="{{ $polygon }}" pointer-events="none"></polygon>
-					{{ end }}
-					</svg>
-
-				</label>
-				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}BL2">
-				<label for="{{ $cd.name }}BL2" id="label{{ $cd.name }}BL2" style="pointer-events: none;">
-					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color2">
-					{{ range $idx, $polygon := $cd.polygons }}
-						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
-					{{ end }}
-					</svg>
-
-				</label>
-				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}W2">
-				<label for="{{ $cd.name }}W2" id="label{{ $cd.name }}W2" style="pointer-events: none;">
-					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color3">
-					{{ range $idx, $polygon := $cd.polygons }}
-						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
-					{{ end }}
-					</svg>
-
-				</label>
-				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}RL2">
-				<label for="{{ $cd.name }}RL2" id="label{{ $cd.name }}RL2" style="pointer-events: none;">
-					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color4">
-					{{ range $idx, $polygon := $cd.polygons }}
-						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
-					{{ end }}
-					</svg>
-
-				</label>
-				<input type="radio" name="{{ $cd.name }}" id="{{ $cd.name }}R2">
-				<label for="{{ $cd.name }}R2" id="label{{ $cd.name }}R2" style="pointer-events: none;">
-					<svg viewBox='{{ $.Param "bounds" }}' class="svgregion color5">
-					{{ range $idx, $polygon := $cd.polygons }}
-						<use xlink:href="#{{ $cd.name }}Poly{{ $idx }}I" />
-					{{ end }}
-					</svg>
-
-				</label>
-
-			{{ end }}
 		{{ end }}
 		
 		{{ range $state := .Params.states }}
@@ -384,28 +388,7 @@ cursor: crosshair;
 		
 		{{ end }}
 		
-		<div id="scoreboard">
-			{{ range $state := .Params.states }}
-				{{ range $cd := $state.cds }}
-					<span class="scoreboardBlock4" id="{{ $cd.name }}red"></span>
-				{{ end }}
-			{{ end }}
-			{{ range $state := .Params.states }}
-				{{ range $cd := $state.cds }}
-					<span class="scoreboardBlock3" id="{{ $cd.name }}redL"></span>
-				{{ end }}
-			{{ end }}
-			
-			{{ range $state := .Params.states }}
-				{{ range $cd := $state.cds }}
-					<span class="scoreboardBlock2" id="{{ $cd.name }}blue"></span>
-				{{ end }}
-			{{ end }}
-			{{ range $state := .Params.states }}
-				{{ range $cd := $state.cds }}
-					<span class="scoreboardBlock1" id="{{ $cd.name }}blueL"></span>
-				{{ end }}
-			{{ end }}
+		
 			
 			<span id="midMark"></span>
 			
