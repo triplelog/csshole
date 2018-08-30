@@ -1,5 +1,5 @@
 :root {
-	--width-block: 6vmin;
+	--width-block: 20px;
     --shift-cover-puzzle: calc(-40px - var(--width-block)*9); 
     --left-margin: 0px;
 }
@@ -32,7 +32,7 @@ input {
 	height: var(--width-block);
 	width: var(--width-block);
 	line-height: var(--width-block);
-	font-size: var(--width-block);
+	font-size: calc(var(--width-block) / 2);
 }
 .sudokuAll {
 	position: absolute;

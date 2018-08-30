@@ -7,7 +7,7 @@
 }
 {{ range $state := .Params.states }}
 	#{{ $state.name }}B:Not(:checked) ~ #label{{ $state.name }}B {display: inline; z-index: 1;}
-	#{{ $state.name }}B:checked ~ #label{{ $state.name }}B {display: none;}
+
 	#{{ $state.name }}B, #{{ $state.name }}BL, #label{{ $state.name }}BL, #{{ $state.name }}W, #label{{ $state.name }}W, #{{ $state.name }}RL, #label{{ $state.name }}RL, #{{ $state.name }}R, #label{{ $state.name }}R {display: none;}
 	#{{ $state.name }}B:checked ~ #label{{ $state.name }}BL, #{{ $state.name }}BL:checked ~ #label{{ $state.name }}W, #{{ $state.name }}W:checked ~ #label{{ $state.name }}RL, #{{ $state.name }}RL:checked ~ #label{{ $state.name }}R {display: inline; z-index: 2;}
 	#{{ $state.name }}B:Not(:checked) ~ #scoreboard #{{ $state.name }}blueL, #{{ $state.name }}W:Not(:checked) ~ #scoreboard #{{ $state.name }}redL, #{{ $state.name }}RL:Not(:checked) ~ #scoreboard #{{ $state.name }}red, #{{ $state.name }}R:Not(:checked) ~ #scoreboard #{{ $state.name }}blue{display: none;}
@@ -137,7 +137,7 @@ pointer-events: none;
 			<input type="radio" name="{{ $state.name }}" id="{{ $state.name }}BL" {{ if eq $state.last 2}}checked{{ end }}><label for="{{ $state.name }}BL" id="label{{ $state.name }}BL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	{{ range $idx,$polygon := $state.polygons }}
-			  		<use xlink:href href="#{{ $state.name }}Poly{{ $idx }}" />
+			  		<use xlink:href="#{{ $state.name }}Poly{{ $idx }}" />
 			  	{{ end }}
 				</svg>
 		

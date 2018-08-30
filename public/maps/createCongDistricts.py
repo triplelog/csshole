@@ -106,9 +106,9 @@ for i in allresultshouse14[1:]:
 			if ii['name']==dname:
 				if i[16] != '':
 					if i[10] == 'R':
-						ii['perc14r']=i[16]
+						ii['perc14r']=i[16].replace('%','')
 					elif i[10] == 'D':
-						ii['perc14d']=i[16]
+						ii['perc14d']=i[16].replace('%','')
 
 for i in allresultshouse16[1:]:
 	if i[10] == 'R' or i[10] == 'D':
@@ -121,9 +121,9 @@ for i in allresultshouse16[1:]:
 				if ii['name']==dname:
 					if i[16] != '':
 						if i[10] == 'R':
-							ii['perc16r']=i[16]
+							ii['perc16r']=i[16].replace('%','')
 						elif i[10] == 'D':
-							ii['perc16d']=i[16]
+							ii['perc16d']=i[16].replace('%','')
 						
 xstretch = 90
 ystretch = 100
@@ -161,7 +161,7 @@ for state in states:
 		for iii in iiii:
 			iStr = ""
 			for ii in range(0,len(iii)):
-				if int(xstretch*iii[ii][0])+xadd != lastx or -1*int(ystretch*iii[ii][1])+yadd != lasty:
+				if int(xstretch*iii[ii][0])+xadd >= lastx + 3 or -1*int(ystretch*iii[ii][1])+yadd >= lasty + 3 or int(xstretch*iii[ii][0])+xadd <= lastx - 3 or -1*int(ystretch*iii[ii][1])+yadd <= lasty - 3:
 					iStr += str(int(xstretch*iii[ii][0])+xadd)
 					iStr += ','
 					iStr += str(-1*int(ystretch*iii[ii][1])+yadd)
@@ -202,7 +202,7 @@ for state in states:
 			for iii in iiii:
 				iStr = ""
 				for ii in range(0,len(iii)):
-					if int(xstretch*iii[ii][0])+xadd != lastx or -1*int(ystretch*iii[ii][1])+yadd != lasty:
+					if int(xstretch*iii[ii][0])+xadd >= lastx + 3 or -1*int(ystretch*iii[ii][1])+yadd >= lasty + 3 or int(xstretch*iii[ii][0])+xadd <= lastx - 3 or -1*int(ystretch*iii[ii][1])+yadd <= lasty - 3:
 						iStr += str(int(xstretch*iii[ii][0])+xadd)
 						iStr += ','
 						iStr += str(-1*int(ystretch*iii[ii][1])+yadd)

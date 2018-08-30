@@ -13,7 +13,7 @@
         <style>
 
     html body {
-        font-family: sans-serif;
+        font-family: 'Raleway', sans-serif;
         background-color: white;
     }
 
@@ -46,7 +46,7 @@
 }
 
 	#AKB:Not(:checked) ~ #labelAKB {display: inline; z-index: 1;}
-	#AKB:checked ~ #labelAKB {display: none;}
+
 	#AKB, #AKBL, #labelAKBL, #AKW, #labelAKW, #AKRL, #labelAKRL, #AKR, #labelAKR {display: none;}
 	#AKB:checked ~ #labelAKBL, #AKBL:checked ~ #labelAKW, #AKW:checked ~ #labelAKRL, #AKRL:checked ~ #labelAKR {display: inline; z-index: 2;}
 	#AKB:Not(:checked) ~ #scoreboard #AKblueL, #AKW:Not(:checked) ~ #scoreboard #AKredL, #AKRL:Not(:checked) ~ #scoreboard #AKred, #AKR:Not(:checked) ~ #scoreboard #AKblue{display: none;}
@@ -59,7 +59,7 @@
 	input:checked + label + input + #labelAKR:hover ~ #AKHover {display: inline;}
 
 	#HIB:Not(:checked) ~ #labelHIB {display: inline; z-index: 1;}
-	#HIB:checked ~ #labelHIB {display: none;}
+
 	#HIB, #HIBL, #labelHIBL, #HIW, #labelHIW, #HIRL, #labelHIRL, #HIR, #labelHIR {display: none;}
 	#HIB:checked ~ #labelHIBL, #HIBL:checked ~ #labelHIW, #HIW:checked ~ #labelHIRL, #HIRL:checked ~ #labelHIR {display: inline; z-index: 2;}
 	#HIB:Not(:checked) ~ #scoreboard #HIblueL, #HIW:Not(:checked) ~ #scoreboard #HIredL, #HIRL:Not(:checked) ~ #scoreboard #HIred, #HIR:Not(:checked) ~ #scoreboard #HIblue{display: none;}
@@ -72,7 +72,7 @@
 	input:checked + label + input + #labelHIR:hover ~ #HIHover {display: inline;}
 
 	#ALB:Not(:checked) ~ #labelALB {display: inline; z-index: 1;}
-	#ALB:checked ~ #labelALB {display: none;}
+
 	#ALB, #ALBL, #labelALBL, #ALW, #labelALW, #ALRL, #labelALRL, #ALR, #labelALR {display: none;}
 	#ALB:checked ~ #labelALBL, #ALBL:checked ~ #labelALW, #ALW:checked ~ #labelALRL, #ALRL:checked ~ #labelALR {display: inline; z-index: 2;}
 	#ALB:Not(:checked) ~ #scoreboard #ALblueL, #ALW:Not(:checked) ~ #scoreboard #ALredL, #ALRL:Not(:checked) ~ #scoreboard #ALred, #ALR:Not(:checked) ~ #scoreboard #ALblue{display: none;}
@@ -85,7 +85,7 @@
 	input:checked + label + input + #labelALR:hover ~ #ALHover {display: inline;}
 
 	#AZB:Not(:checked) ~ #labelAZB {display: inline; z-index: 1;}
-	#AZB:checked ~ #labelAZB {display: none;}
+
 	#AZB, #AZBL, #labelAZBL, #AZW, #labelAZW, #AZRL, #labelAZRL, #AZR, #labelAZR {display: none;}
 	#AZB:checked ~ #labelAZBL, #AZBL:checked ~ #labelAZW, #AZW:checked ~ #labelAZRL, #AZRL:checked ~ #labelAZR {display: inline; z-index: 2;}
 	#AZB:Not(:checked) ~ #scoreboard #AZblueL, #AZW:Not(:checked) ~ #scoreboard #AZredL, #AZRL:Not(:checked) ~ #scoreboard #AZred, #AZR:Not(:checked) ~ #scoreboard #AZblue{display: none;}
@@ -98,7 +98,7 @@
 	input:checked + label + input + #labelAZR:hover ~ #AZHover {display: inline;}
 
 	#ARB:Not(:checked) ~ #labelARB {display: inline; z-index: 1;}
-	#ARB:checked ~ #labelARB {display: none;}
+
 	#ARB, #ARBL, #labelARBL, #ARW, #labelARW, #ARRL, #labelARRL, #ARR, #labelARR {display: none;}
 	#ARB:checked ~ #labelARBL, #ARBL:checked ~ #labelARW, #ARW:checked ~ #labelARRL, #ARRL:checked ~ #labelARR {display: inline; z-index: 2;}
 	#ARB:Not(:checked) ~ #scoreboard #ARblueL, #ARW:Not(:checked) ~ #scoreboard #ARredL, #ARRL:Not(:checked) ~ #scoreboard #ARred, #ARR:Not(:checked) ~ #scoreboard #ARblue{display: none;}
@@ -111,7 +111,7 @@
 	input:checked + label + input + #labelARR:hover ~ #ARHover {display: inline;}
 
 	#CAB:Not(:checked) ~ #labelCAB {display: inline; z-index: 1;}
-	#CAB:checked ~ #labelCAB {display: none;}
+
 	#CAB, #CABL, #labelCABL, #CAW, #labelCAW, #CARL, #labelCARL, #CAR, #labelCAR {display: none;}
 	#CAB:checked ~ #labelCABL, #CABL:checked ~ #labelCAW, #CAW:checked ~ #labelCARL, #CARL:checked ~ #labelCAR {display: inline; z-index: 2;}
 	#CAB:Not(:checked) ~ #scoreboard #CAblueL, #CAW:Not(:checked) ~ #scoreboard #CAredL, #CARL:Not(:checked) ~ #scoreboard #CAred, #CAR:Not(:checked) ~ #scoreboard #CAblue{display: none;}
@@ -124,7 +124,7 @@
 	input:checked + label + input + #labelCAR:hover ~ #CAHover {display: inline;}
 
 	#COB:Not(:checked) ~ #labelCOB {display: inline; z-index: 1;}
-	#COB:checked ~ #labelCOB {display: none;}
+
 	#COB, #COBL, #labelCOBL, #COW, #labelCOW, #CORL, #labelCORL, #COR, #labelCOR {display: none;}
 	#COB:checked ~ #labelCOBL, #COBL:checked ~ #labelCOW, #COW:checked ~ #labelCORL, #CORL:checked ~ #labelCOR {display: inline; z-index: 2;}
 	#COB:Not(:checked) ~ #scoreboard #COblueL, #COW:Not(:checked) ~ #scoreboard #COredL, #CORL:Not(:checked) ~ #scoreboard #COred, #COR:Not(:checked) ~ #scoreboard #COblue{display: none;}
@@ -137,7 +137,7 @@
 	input:checked + label + input + #labelCOR:hover ~ #COHover {display: inline;}
 
 	#CTB:Not(:checked) ~ #labelCTB {display: inline; z-index: 1;}
-	#CTB:checked ~ #labelCTB {display: none;}
+
 	#CTB, #CTBL, #labelCTBL, #CTW, #labelCTW, #CTRL, #labelCTRL, #CTR, #labelCTR {display: none;}
 	#CTB:checked ~ #labelCTBL, #CTBL:checked ~ #labelCTW, #CTW:checked ~ #labelCTRL, #CTRL:checked ~ #labelCTR {display: inline; z-index: 2;}
 	#CTB:Not(:checked) ~ #scoreboard #CTblueL, #CTW:Not(:checked) ~ #scoreboard #CTredL, #CTRL:Not(:checked) ~ #scoreboard #CTred, #CTR:Not(:checked) ~ #scoreboard #CTblue{display: none;}
@@ -150,7 +150,7 @@
 	input:checked + label + input + #labelCTR:hover ~ #CTHover {display: inline;}
 
 	#DEB:Not(:checked) ~ #labelDEB {display: inline; z-index: 1;}
-	#DEB:checked ~ #labelDEB {display: none;}
+
 	#DEB, #DEBL, #labelDEBL, #DEW, #labelDEW, #DERL, #labelDERL, #DER, #labelDER {display: none;}
 	#DEB:checked ~ #labelDEBL, #DEBL:checked ~ #labelDEW, #DEW:checked ~ #labelDERL, #DERL:checked ~ #labelDER {display: inline; z-index: 2;}
 	#DEB:Not(:checked) ~ #scoreboard #DEblueL, #DEW:Not(:checked) ~ #scoreboard #DEredL, #DERL:Not(:checked) ~ #scoreboard #DEred, #DER:Not(:checked) ~ #scoreboard #DEblue{display: none;}
@@ -163,7 +163,7 @@
 	input:checked + label + input + #labelDER:hover ~ #DEHover {display: inline;}
 
 	#DCB:Not(:checked) ~ #labelDCB {display: inline; z-index: 1;}
-	#DCB:checked ~ #labelDCB {display: none;}
+
 	#DCB, #DCBL, #labelDCBL, #DCW, #labelDCW, #DCRL, #labelDCRL, #DCR, #labelDCR {display: none;}
 	#DCB:checked ~ #labelDCBL, #DCBL:checked ~ #labelDCW, #DCW:checked ~ #labelDCRL, #DCRL:checked ~ #labelDCR {display: inline; z-index: 2;}
 	#DCB:Not(:checked) ~ #scoreboard #DCblueL, #DCW:Not(:checked) ~ #scoreboard #DCredL, #DCRL:Not(:checked) ~ #scoreboard #DCred, #DCR:Not(:checked) ~ #scoreboard #DCblue{display: none;}
@@ -176,7 +176,7 @@
 	input:checked + label + input + #labelDCR:hover ~ #DCHover {display: inline;}
 
 	#FLB:Not(:checked) ~ #labelFLB {display: inline; z-index: 1;}
-	#FLB:checked ~ #labelFLB {display: none;}
+
 	#FLB, #FLBL, #labelFLBL, #FLW, #labelFLW, #FLRL, #labelFLRL, #FLR, #labelFLR {display: none;}
 	#FLB:checked ~ #labelFLBL, #FLBL:checked ~ #labelFLW, #FLW:checked ~ #labelFLRL, #FLRL:checked ~ #labelFLR {display: inline; z-index: 2;}
 	#FLB:Not(:checked) ~ #scoreboard #FLblueL, #FLW:Not(:checked) ~ #scoreboard #FLredL, #FLRL:Not(:checked) ~ #scoreboard #FLred, #FLR:Not(:checked) ~ #scoreboard #FLblue{display: none;}
@@ -189,7 +189,7 @@
 	input:checked + label + input + #labelFLR:hover ~ #FLHover {display: inline;}
 
 	#GAB:Not(:checked) ~ #labelGAB {display: inline; z-index: 1;}
-	#GAB:checked ~ #labelGAB {display: none;}
+
 	#GAB, #GABL, #labelGABL, #GAW, #labelGAW, #GARL, #labelGARL, #GAR, #labelGAR {display: none;}
 	#GAB:checked ~ #labelGABL, #GABL:checked ~ #labelGAW, #GAW:checked ~ #labelGARL, #GARL:checked ~ #labelGAR {display: inline; z-index: 2;}
 	#GAB:Not(:checked) ~ #scoreboard #GAblueL, #GAW:Not(:checked) ~ #scoreboard #GAredL, #GARL:Not(:checked) ~ #scoreboard #GAred, #GAR:Not(:checked) ~ #scoreboard #GAblue{display: none;}
@@ -202,7 +202,7 @@
 	input:checked + label + input + #labelGAR:hover ~ #GAHover {display: inline;}
 
 	#IDB:Not(:checked) ~ #labelIDB {display: inline; z-index: 1;}
-	#IDB:checked ~ #labelIDB {display: none;}
+
 	#IDB, #IDBL, #labelIDBL, #IDW, #labelIDW, #IDRL, #labelIDRL, #IDR, #labelIDR {display: none;}
 	#IDB:checked ~ #labelIDBL, #IDBL:checked ~ #labelIDW, #IDW:checked ~ #labelIDRL, #IDRL:checked ~ #labelIDR {display: inline; z-index: 2;}
 	#IDB:Not(:checked) ~ #scoreboard #IDblueL, #IDW:Not(:checked) ~ #scoreboard #IDredL, #IDRL:Not(:checked) ~ #scoreboard #IDred, #IDR:Not(:checked) ~ #scoreboard #IDblue{display: none;}
@@ -215,7 +215,7 @@
 	input:checked + label + input + #labelIDR:hover ~ #IDHover {display: inline;}
 
 	#ILB:Not(:checked) ~ #labelILB {display: inline; z-index: 1;}
-	#ILB:checked ~ #labelILB {display: none;}
+
 	#ILB, #ILBL, #labelILBL, #ILW, #labelILW, #ILRL, #labelILRL, #ILR, #labelILR {display: none;}
 	#ILB:checked ~ #labelILBL, #ILBL:checked ~ #labelILW, #ILW:checked ~ #labelILRL, #ILRL:checked ~ #labelILR {display: inline; z-index: 2;}
 	#ILB:Not(:checked) ~ #scoreboard #ILblueL, #ILW:Not(:checked) ~ #scoreboard #ILredL, #ILRL:Not(:checked) ~ #scoreboard #ILred, #ILR:Not(:checked) ~ #scoreboard #ILblue{display: none;}
@@ -228,7 +228,7 @@
 	input:checked + label + input + #labelILR:hover ~ #ILHover {display: inline;}
 
 	#INB:Not(:checked) ~ #labelINB {display: inline; z-index: 1;}
-	#INB:checked ~ #labelINB {display: none;}
+
 	#INB, #INBL, #labelINBL, #INW, #labelINW, #INRL, #labelINRL, #INR, #labelINR {display: none;}
 	#INB:checked ~ #labelINBL, #INBL:checked ~ #labelINW, #INW:checked ~ #labelINRL, #INRL:checked ~ #labelINR {display: inline; z-index: 2;}
 	#INB:Not(:checked) ~ #scoreboard #INblueL, #INW:Not(:checked) ~ #scoreboard #INredL, #INRL:Not(:checked) ~ #scoreboard #INred, #INR:Not(:checked) ~ #scoreboard #INblue{display: none;}
@@ -241,7 +241,7 @@
 	input:checked + label + input + #labelINR:hover ~ #INHover {display: inline;}
 
 	#IAB:Not(:checked) ~ #labelIAB {display: inline; z-index: 1;}
-	#IAB:checked ~ #labelIAB {display: none;}
+
 	#IAB, #IABL, #labelIABL, #IAW, #labelIAW, #IARL, #labelIARL, #IAR, #labelIAR {display: none;}
 	#IAB:checked ~ #labelIABL, #IABL:checked ~ #labelIAW, #IAW:checked ~ #labelIARL, #IARL:checked ~ #labelIAR {display: inline; z-index: 2;}
 	#IAB:Not(:checked) ~ #scoreboard #IAblueL, #IAW:Not(:checked) ~ #scoreboard #IAredL, #IARL:Not(:checked) ~ #scoreboard #IAred, #IAR:Not(:checked) ~ #scoreboard #IAblue{display: none;}
@@ -254,7 +254,7 @@
 	input:checked + label + input + #labelIAR:hover ~ #IAHover {display: inline;}
 
 	#KSB:Not(:checked) ~ #labelKSB {display: inline; z-index: 1;}
-	#KSB:checked ~ #labelKSB {display: none;}
+
 	#KSB, #KSBL, #labelKSBL, #KSW, #labelKSW, #KSRL, #labelKSRL, #KSR, #labelKSR {display: none;}
 	#KSB:checked ~ #labelKSBL, #KSBL:checked ~ #labelKSW, #KSW:checked ~ #labelKSRL, #KSRL:checked ~ #labelKSR {display: inline; z-index: 2;}
 	#KSB:Not(:checked) ~ #scoreboard #KSblueL, #KSW:Not(:checked) ~ #scoreboard #KSredL, #KSRL:Not(:checked) ~ #scoreboard #KSred, #KSR:Not(:checked) ~ #scoreboard #KSblue{display: none;}
@@ -267,7 +267,7 @@
 	input:checked + label + input + #labelKSR:hover ~ #KSHover {display: inline;}
 
 	#KYB:Not(:checked) ~ #labelKYB {display: inline; z-index: 1;}
-	#KYB:checked ~ #labelKYB {display: none;}
+
 	#KYB, #KYBL, #labelKYBL, #KYW, #labelKYW, #KYRL, #labelKYRL, #KYR, #labelKYR {display: none;}
 	#KYB:checked ~ #labelKYBL, #KYBL:checked ~ #labelKYW, #KYW:checked ~ #labelKYRL, #KYRL:checked ~ #labelKYR {display: inline; z-index: 2;}
 	#KYB:Not(:checked) ~ #scoreboard #KYblueL, #KYW:Not(:checked) ~ #scoreboard #KYredL, #KYRL:Not(:checked) ~ #scoreboard #KYred, #KYR:Not(:checked) ~ #scoreboard #KYblue{display: none;}
@@ -280,7 +280,7 @@
 	input:checked + label + input + #labelKYR:hover ~ #KYHover {display: inline;}
 
 	#LAB:Not(:checked) ~ #labelLAB {display: inline; z-index: 1;}
-	#LAB:checked ~ #labelLAB {display: none;}
+
 	#LAB, #LABL, #labelLABL, #LAW, #labelLAW, #LARL, #labelLARL, #LAR, #labelLAR {display: none;}
 	#LAB:checked ~ #labelLABL, #LABL:checked ~ #labelLAW, #LAW:checked ~ #labelLARL, #LARL:checked ~ #labelLAR {display: inline; z-index: 2;}
 	#LAB:Not(:checked) ~ #scoreboard #LAblueL, #LAW:Not(:checked) ~ #scoreboard #LAredL, #LARL:Not(:checked) ~ #scoreboard #LAred, #LAR:Not(:checked) ~ #scoreboard #LAblue{display: none;}
@@ -293,7 +293,7 @@
 	input:checked + label + input + #labelLAR:hover ~ #LAHover {display: inline;}
 
 	#MEB:Not(:checked) ~ #labelMEB {display: inline; z-index: 1;}
-	#MEB:checked ~ #labelMEB {display: none;}
+
 	#MEB, #MEBL, #labelMEBL, #MEW, #labelMEW, #MERL, #labelMERL, #MER, #labelMER {display: none;}
 	#MEB:checked ~ #labelMEBL, #MEBL:checked ~ #labelMEW, #MEW:checked ~ #labelMERL, #MERL:checked ~ #labelMER {display: inline; z-index: 2;}
 	#MEB:Not(:checked) ~ #scoreboard #MEblueL, #MEW:Not(:checked) ~ #scoreboard #MEredL, #MERL:Not(:checked) ~ #scoreboard #MEred, #MER:Not(:checked) ~ #scoreboard #MEblue{display: none;}
@@ -306,7 +306,7 @@
 	input:checked + label + input + #labelMER:hover ~ #MEHover {display: inline;}
 
 	#MDB:Not(:checked) ~ #labelMDB {display: inline; z-index: 1;}
-	#MDB:checked ~ #labelMDB {display: none;}
+
 	#MDB, #MDBL, #labelMDBL, #MDW, #labelMDW, #MDRL, #labelMDRL, #MDR, #labelMDR {display: none;}
 	#MDB:checked ~ #labelMDBL, #MDBL:checked ~ #labelMDW, #MDW:checked ~ #labelMDRL, #MDRL:checked ~ #labelMDR {display: inline; z-index: 2;}
 	#MDB:Not(:checked) ~ #scoreboard #MDblueL, #MDW:Not(:checked) ~ #scoreboard #MDredL, #MDRL:Not(:checked) ~ #scoreboard #MDred, #MDR:Not(:checked) ~ #scoreboard #MDblue{display: none;}
@@ -319,7 +319,7 @@
 	input:checked + label + input + #labelMDR:hover ~ #MDHover {display: inline;}
 
 	#MAB:Not(:checked) ~ #labelMAB {display: inline; z-index: 1;}
-	#MAB:checked ~ #labelMAB {display: none;}
+
 	#MAB, #MABL, #labelMABL, #MAW, #labelMAW, #MARL, #labelMARL, #MAR, #labelMAR {display: none;}
 	#MAB:checked ~ #labelMABL, #MABL:checked ~ #labelMAW, #MAW:checked ~ #labelMARL, #MARL:checked ~ #labelMAR {display: inline; z-index: 2;}
 	#MAB:Not(:checked) ~ #scoreboard #MAblueL, #MAW:Not(:checked) ~ #scoreboard #MAredL, #MARL:Not(:checked) ~ #scoreboard #MAred, #MAR:Not(:checked) ~ #scoreboard #MAblue{display: none;}
@@ -332,7 +332,7 @@
 	input:checked + label + input + #labelMAR:hover ~ #MAHover {display: inline;}
 
 	#MIB:Not(:checked) ~ #labelMIB {display: inline; z-index: 1;}
-	#MIB:checked ~ #labelMIB {display: none;}
+
 	#MIB, #MIBL, #labelMIBL, #MIW, #labelMIW, #MIRL, #labelMIRL, #MIR, #labelMIR {display: none;}
 	#MIB:checked ~ #labelMIBL, #MIBL:checked ~ #labelMIW, #MIW:checked ~ #labelMIRL, #MIRL:checked ~ #labelMIR {display: inline; z-index: 2;}
 	#MIB:Not(:checked) ~ #scoreboard #MIblueL, #MIW:Not(:checked) ~ #scoreboard #MIredL, #MIRL:Not(:checked) ~ #scoreboard #MIred, #MIR:Not(:checked) ~ #scoreboard #MIblue{display: none;}
@@ -345,7 +345,7 @@
 	input:checked + label + input + #labelMIR:hover ~ #MIHover {display: inline;}
 
 	#MNB:Not(:checked) ~ #labelMNB {display: inline; z-index: 1;}
-	#MNB:checked ~ #labelMNB {display: none;}
+
 	#MNB, #MNBL, #labelMNBL, #MNW, #labelMNW, #MNRL, #labelMNRL, #MNR, #labelMNR {display: none;}
 	#MNB:checked ~ #labelMNBL, #MNBL:checked ~ #labelMNW, #MNW:checked ~ #labelMNRL, #MNRL:checked ~ #labelMNR {display: inline; z-index: 2;}
 	#MNB:Not(:checked) ~ #scoreboard #MNblueL, #MNW:Not(:checked) ~ #scoreboard #MNredL, #MNRL:Not(:checked) ~ #scoreboard #MNred, #MNR:Not(:checked) ~ #scoreboard #MNblue{display: none;}
@@ -358,7 +358,7 @@
 	input:checked + label + input + #labelMNR:hover ~ #MNHover {display: inline;}
 
 	#MSB:Not(:checked) ~ #labelMSB {display: inline; z-index: 1;}
-	#MSB:checked ~ #labelMSB {display: none;}
+
 	#MSB, #MSBL, #labelMSBL, #MSW, #labelMSW, #MSRL, #labelMSRL, #MSR, #labelMSR {display: none;}
 	#MSB:checked ~ #labelMSBL, #MSBL:checked ~ #labelMSW, #MSW:checked ~ #labelMSRL, #MSRL:checked ~ #labelMSR {display: inline; z-index: 2;}
 	#MSB:Not(:checked) ~ #scoreboard #MSblueL, #MSW:Not(:checked) ~ #scoreboard #MSredL, #MSRL:Not(:checked) ~ #scoreboard #MSred, #MSR:Not(:checked) ~ #scoreboard #MSblue{display: none;}
@@ -371,7 +371,7 @@
 	input:checked + label + input + #labelMSR:hover ~ #MSHover {display: inline;}
 
 	#MOB:Not(:checked) ~ #labelMOB {display: inline; z-index: 1;}
-	#MOB:checked ~ #labelMOB {display: none;}
+
 	#MOB, #MOBL, #labelMOBL, #MOW, #labelMOW, #MORL, #labelMORL, #MOR, #labelMOR {display: none;}
 	#MOB:checked ~ #labelMOBL, #MOBL:checked ~ #labelMOW, #MOW:checked ~ #labelMORL, #MORL:checked ~ #labelMOR {display: inline; z-index: 2;}
 	#MOB:Not(:checked) ~ #scoreboard #MOblueL, #MOW:Not(:checked) ~ #scoreboard #MOredL, #MORL:Not(:checked) ~ #scoreboard #MOred, #MOR:Not(:checked) ~ #scoreboard #MOblue{display: none;}
@@ -384,7 +384,7 @@
 	input:checked + label + input + #labelMOR:hover ~ #MOHover {display: inline;}
 
 	#MTB:Not(:checked) ~ #labelMTB {display: inline; z-index: 1;}
-	#MTB:checked ~ #labelMTB {display: none;}
+
 	#MTB, #MTBL, #labelMTBL, #MTW, #labelMTW, #MTRL, #labelMTRL, #MTR, #labelMTR {display: none;}
 	#MTB:checked ~ #labelMTBL, #MTBL:checked ~ #labelMTW, #MTW:checked ~ #labelMTRL, #MTRL:checked ~ #labelMTR {display: inline; z-index: 2;}
 	#MTB:Not(:checked) ~ #scoreboard #MTblueL, #MTW:Not(:checked) ~ #scoreboard #MTredL, #MTRL:Not(:checked) ~ #scoreboard #MTred, #MTR:Not(:checked) ~ #scoreboard #MTblue{display: none;}
@@ -397,7 +397,7 @@
 	input:checked + label + input + #labelMTR:hover ~ #MTHover {display: inline;}
 
 	#NEB:Not(:checked) ~ #labelNEB {display: inline; z-index: 1;}
-	#NEB:checked ~ #labelNEB {display: none;}
+
 	#NEB, #NEBL, #labelNEBL, #NEW, #labelNEW, #NERL, #labelNERL, #NER, #labelNER {display: none;}
 	#NEB:checked ~ #labelNEBL, #NEBL:checked ~ #labelNEW, #NEW:checked ~ #labelNERL, #NERL:checked ~ #labelNER {display: inline; z-index: 2;}
 	#NEB:Not(:checked) ~ #scoreboard #NEblueL, #NEW:Not(:checked) ~ #scoreboard #NEredL, #NERL:Not(:checked) ~ #scoreboard #NEred, #NER:Not(:checked) ~ #scoreboard #NEblue{display: none;}
@@ -410,7 +410,7 @@
 	input:checked + label + input + #labelNER:hover ~ #NEHover {display: inline;}
 
 	#NVB:Not(:checked) ~ #labelNVB {display: inline; z-index: 1;}
-	#NVB:checked ~ #labelNVB {display: none;}
+
 	#NVB, #NVBL, #labelNVBL, #NVW, #labelNVW, #NVRL, #labelNVRL, #NVR, #labelNVR {display: none;}
 	#NVB:checked ~ #labelNVBL, #NVBL:checked ~ #labelNVW, #NVW:checked ~ #labelNVRL, #NVRL:checked ~ #labelNVR {display: inline; z-index: 2;}
 	#NVB:Not(:checked) ~ #scoreboard #NVblueL, #NVW:Not(:checked) ~ #scoreboard #NVredL, #NVRL:Not(:checked) ~ #scoreboard #NVred, #NVR:Not(:checked) ~ #scoreboard #NVblue{display: none;}
@@ -423,7 +423,7 @@
 	input:checked + label + input + #labelNVR:hover ~ #NVHover {display: inline;}
 
 	#NHB:Not(:checked) ~ #labelNHB {display: inline; z-index: 1;}
-	#NHB:checked ~ #labelNHB {display: none;}
+
 	#NHB, #NHBL, #labelNHBL, #NHW, #labelNHW, #NHRL, #labelNHRL, #NHR, #labelNHR {display: none;}
 	#NHB:checked ~ #labelNHBL, #NHBL:checked ~ #labelNHW, #NHW:checked ~ #labelNHRL, #NHRL:checked ~ #labelNHR {display: inline; z-index: 2;}
 	#NHB:Not(:checked) ~ #scoreboard #NHblueL, #NHW:Not(:checked) ~ #scoreboard #NHredL, #NHRL:Not(:checked) ~ #scoreboard #NHred, #NHR:Not(:checked) ~ #scoreboard #NHblue{display: none;}
@@ -436,7 +436,7 @@
 	input:checked + label + input + #labelNHR:hover ~ #NHHover {display: inline;}
 
 	#NJB:Not(:checked) ~ #labelNJB {display: inline; z-index: 1;}
-	#NJB:checked ~ #labelNJB {display: none;}
+
 	#NJB, #NJBL, #labelNJBL, #NJW, #labelNJW, #NJRL, #labelNJRL, #NJR, #labelNJR {display: none;}
 	#NJB:checked ~ #labelNJBL, #NJBL:checked ~ #labelNJW, #NJW:checked ~ #labelNJRL, #NJRL:checked ~ #labelNJR {display: inline; z-index: 2;}
 	#NJB:Not(:checked) ~ #scoreboard #NJblueL, #NJW:Not(:checked) ~ #scoreboard #NJredL, #NJRL:Not(:checked) ~ #scoreboard #NJred, #NJR:Not(:checked) ~ #scoreboard #NJblue{display: none;}
@@ -449,7 +449,7 @@
 	input:checked + label + input + #labelNJR:hover ~ #NJHover {display: inline;}
 
 	#NMB:Not(:checked) ~ #labelNMB {display: inline; z-index: 1;}
-	#NMB:checked ~ #labelNMB {display: none;}
+
 	#NMB, #NMBL, #labelNMBL, #NMW, #labelNMW, #NMRL, #labelNMRL, #NMR, #labelNMR {display: none;}
 	#NMB:checked ~ #labelNMBL, #NMBL:checked ~ #labelNMW, #NMW:checked ~ #labelNMRL, #NMRL:checked ~ #labelNMR {display: inline; z-index: 2;}
 	#NMB:Not(:checked) ~ #scoreboard #NMblueL, #NMW:Not(:checked) ~ #scoreboard #NMredL, #NMRL:Not(:checked) ~ #scoreboard #NMred, #NMR:Not(:checked) ~ #scoreboard #NMblue{display: none;}
@@ -462,7 +462,7 @@
 	input:checked + label + input + #labelNMR:hover ~ #NMHover {display: inline;}
 
 	#NYB:Not(:checked) ~ #labelNYB {display: inline; z-index: 1;}
-	#NYB:checked ~ #labelNYB {display: none;}
+
 	#NYB, #NYBL, #labelNYBL, #NYW, #labelNYW, #NYRL, #labelNYRL, #NYR, #labelNYR {display: none;}
 	#NYB:checked ~ #labelNYBL, #NYBL:checked ~ #labelNYW, #NYW:checked ~ #labelNYRL, #NYRL:checked ~ #labelNYR {display: inline; z-index: 2;}
 	#NYB:Not(:checked) ~ #scoreboard #NYblueL, #NYW:Not(:checked) ~ #scoreboard #NYredL, #NYRL:Not(:checked) ~ #scoreboard #NYred, #NYR:Not(:checked) ~ #scoreboard #NYblue{display: none;}
@@ -475,7 +475,7 @@
 	input:checked + label + input + #labelNYR:hover ~ #NYHover {display: inline;}
 
 	#NCB:Not(:checked) ~ #labelNCB {display: inline; z-index: 1;}
-	#NCB:checked ~ #labelNCB {display: none;}
+
 	#NCB, #NCBL, #labelNCBL, #NCW, #labelNCW, #NCRL, #labelNCRL, #NCR, #labelNCR {display: none;}
 	#NCB:checked ~ #labelNCBL, #NCBL:checked ~ #labelNCW, #NCW:checked ~ #labelNCRL, #NCRL:checked ~ #labelNCR {display: inline; z-index: 2;}
 	#NCB:Not(:checked) ~ #scoreboard #NCblueL, #NCW:Not(:checked) ~ #scoreboard #NCredL, #NCRL:Not(:checked) ~ #scoreboard #NCred, #NCR:Not(:checked) ~ #scoreboard #NCblue{display: none;}
@@ -488,7 +488,7 @@
 	input:checked + label + input + #labelNCR:hover ~ #NCHover {display: inline;}
 
 	#NDB:Not(:checked) ~ #labelNDB {display: inline; z-index: 1;}
-	#NDB:checked ~ #labelNDB {display: none;}
+
 	#NDB, #NDBL, #labelNDBL, #NDW, #labelNDW, #NDRL, #labelNDRL, #NDR, #labelNDR {display: none;}
 	#NDB:checked ~ #labelNDBL, #NDBL:checked ~ #labelNDW, #NDW:checked ~ #labelNDRL, #NDRL:checked ~ #labelNDR {display: inline; z-index: 2;}
 	#NDB:Not(:checked) ~ #scoreboard #NDblueL, #NDW:Not(:checked) ~ #scoreboard #NDredL, #NDRL:Not(:checked) ~ #scoreboard #NDred, #NDR:Not(:checked) ~ #scoreboard #NDblue{display: none;}
@@ -501,7 +501,7 @@
 	input:checked + label + input + #labelNDR:hover ~ #NDHover {display: inline;}
 
 	#OHB:Not(:checked) ~ #labelOHB {display: inline; z-index: 1;}
-	#OHB:checked ~ #labelOHB {display: none;}
+
 	#OHB, #OHBL, #labelOHBL, #OHW, #labelOHW, #OHRL, #labelOHRL, #OHR, #labelOHR {display: none;}
 	#OHB:checked ~ #labelOHBL, #OHBL:checked ~ #labelOHW, #OHW:checked ~ #labelOHRL, #OHRL:checked ~ #labelOHR {display: inline; z-index: 2;}
 	#OHB:Not(:checked) ~ #scoreboard #OHblueL, #OHW:Not(:checked) ~ #scoreboard #OHredL, #OHRL:Not(:checked) ~ #scoreboard #OHred, #OHR:Not(:checked) ~ #scoreboard #OHblue{display: none;}
@@ -514,7 +514,7 @@
 	input:checked + label + input + #labelOHR:hover ~ #OHHover {display: inline;}
 
 	#OKB:Not(:checked) ~ #labelOKB {display: inline; z-index: 1;}
-	#OKB:checked ~ #labelOKB {display: none;}
+
 	#OKB, #OKBL, #labelOKBL, #OKW, #labelOKW, #OKRL, #labelOKRL, #OKR, #labelOKR {display: none;}
 	#OKB:checked ~ #labelOKBL, #OKBL:checked ~ #labelOKW, #OKW:checked ~ #labelOKRL, #OKRL:checked ~ #labelOKR {display: inline; z-index: 2;}
 	#OKB:Not(:checked) ~ #scoreboard #OKblueL, #OKW:Not(:checked) ~ #scoreboard #OKredL, #OKRL:Not(:checked) ~ #scoreboard #OKred, #OKR:Not(:checked) ~ #scoreboard #OKblue{display: none;}
@@ -527,7 +527,7 @@
 	input:checked + label + input + #labelOKR:hover ~ #OKHover {display: inline;}
 
 	#ORB:Not(:checked) ~ #labelORB {display: inline; z-index: 1;}
-	#ORB:checked ~ #labelORB {display: none;}
+
 	#ORB, #ORBL, #labelORBL, #ORW, #labelORW, #ORRL, #labelORRL, #ORR, #labelORR {display: none;}
 	#ORB:checked ~ #labelORBL, #ORBL:checked ~ #labelORW, #ORW:checked ~ #labelORRL, #ORRL:checked ~ #labelORR {display: inline; z-index: 2;}
 	#ORB:Not(:checked) ~ #scoreboard #ORblueL, #ORW:Not(:checked) ~ #scoreboard #ORredL, #ORRL:Not(:checked) ~ #scoreboard #ORred, #ORR:Not(:checked) ~ #scoreboard #ORblue{display: none;}
@@ -540,7 +540,7 @@
 	input:checked + label + input + #labelORR:hover ~ #ORHover {display: inline;}
 
 	#PAB:Not(:checked) ~ #labelPAB {display: inline; z-index: 1;}
-	#PAB:checked ~ #labelPAB {display: none;}
+
 	#PAB, #PABL, #labelPABL, #PAW, #labelPAW, #PARL, #labelPARL, #PAR, #labelPAR {display: none;}
 	#PAB:checked ~ #labelPABL, #PABL:checked ~ #labelPAW, #PAW:checked ~ #labelPARL, #PARL:checked ~ #labelPAR {display: inline; z-index: 2;}
 	#PAB:Not(:checked) ~ #scoreboard #PAblueL, #PAW:Not(:checked) ~ #scoreboard #PAredL, #PARL:Not(:checked) ~ #scoreboard #PAred, #PAR:Not(:checked) ~ #scoreboard #PAblue{display: none;}
@@ -553,7 +553,7 @@
 	input:checked + label + input + #labelPAR:hover ~ #PAHover {display: inline;}
 
 	#RIB:Not(:checked) ~ #labelRIB {display: inline; z-index: 1;}
-	#RIB:checked ~ #labelRIB {display: none;}
+
 	#RIB, #RIBL, #labelRIBL, #RIW, #labelRIW, #RIRL, #labelRIRL, #RIR, #labelRIR {display: none;}
 	#RIB:checked ~ #labelRIBL, #RIBL:checked ~ #labelRIW, #RIW:checked ~ #labelRIRL, #RIRL:checked ~ #labelRIR {display: inline; z-index: 2;}
 	#RIB:Not(:checked) ~ #scoreboard #RIblueL, #RIW:Not(:checked) ~ #scoreboard #RIredL, #RIRL:Not(:checked) ~ #scoreboard #RIred, #RIR:Not(:checked) ~ #scoreboard #RIblue{display: none;}
@@ -566,7 +566,7 @@
 	input:checked + label + input + #labelRIR:hover ~ #RIHover {display: inline;}
 
 	#SCB:Not(:checked) ~ #labelSCB {display: inline; z-index: 1;}
-	#SCB:checked ~ #labelSCB {display: none;}
+
 	#SCB, #SCBL, #labelSCBL, #SCW, #labelSCW, #SCRL, #labelSCRL, #SCR, #labelSCR {display: none;}
 	#SCB:checked ~ #labelSCBL, #SCBL:checked ~ #labelSCW, #SCW:checked ~ #labelSCRL, #SCRL:checked ~ #labelSCR {display: inline; z-index: 2;}
 	#SCB:Not(:checked) ~ #scoreboard #SCblueL, #SCW:Not(:checked) ~ #scoreboard #SCredL, #SCRL:Not(:checked) ~ #scoreboard #SCred, #SCR:Not(:checked) ~ #scoreboard #SCblue{display: none;}
@@ -579,7 +579,7 @@
 	input:checked + label + input + #labelSCR:hover ~ #SCHover {display: inline;}
 
 	#SDB:Not(:checked) ~ #labelSDB {display: inline; z-index: 1;}
-	#SDB:checked ~ #labelSDB {display: none;}
+
 	#SDB, #SDBL, #labelSDBL, #SDW, #labelSDW, #SDRL, #labelSDRL, #SDR, #labelSDR {display: none;}
 	#SDB:checked ~ #labelSDBL, #SDBL:checked ~ #labelSDW, #SDW:checked ~ #labelSDRL, #SDRL:checked ~ #labelSDR {display: inline; z-index: 2;}
 	#SDB:Not(:checked) ~ #scoreboard #SDblueL, #SDW:Not(:checked) ~ #scoreboard #SDredL, #SDRL:Not(:checked) ~ #scoreboard #SDred, #SDR:Not(:checked) ~ #scoreboard #SDblue{display: none;}
@@ -592,7 +592,7 @@
 	input:checked + label + input + #labelSDR:hover ~ #SDHover {display: inline;}
 
 	#TNB:Not(:checked) ~ #labelTNB {display: inline; z-index: 1;}
-	#TNB:checked ~ #labelTNB {display: none;}
+
 	#TNB, #TNBL, #labelTNBL, #TNW, #labelTNW, #TNRL, #labelTNRL, #TNR, #labelTNR {display: none;}
 	#TNB:checked ~ #labelTNBL, #TNBL:checked ~ #labelTNW, #TNW:checked ~ #labelTNRL, #TNRL:checked ~ #labelTNR {display: inline; z-index: 2;}
 	#TNB:Not(:checked) ~ #scoreboard #TNblueL, #TNW:Not(:checked) ~ #scoreboard #TNredL, #TNRL:Not(:checked) ~ #scoreboard #TNred, #TNR:Not(:checked) ~ #scoreboard #TNblue{display: none;}
@@ -605,7 +605,7 @@
 	input:checked + label + input + #labelTNR:hover ~ #TNHover {display: inline;}
 
 	#TXB:Not(:checked) ~ #labelTXB {display: inline; z-index: 1;}
-	#TXB:checked ~ #labelTXB {display: none;}
+
 	#TXB, #TXBL, #labelTXBL, #TXW, #labelTXW, #TXRL, #labelTXRL, #TXR, #labelTXR {display: none;}
 	#TXB:checked ~ #labelTXBL, #TXBL:checked ~ #labelTXW, #TXW:checked ~ #labelTXRL, #TXRL:checked ~ #labelTXR {display: inline; z-index: 2;}
 	#TXB:Not(:checked) ~ #scoreboard #TXblueL, #TXW:Not(:checked) ~ #scoreboard #TXredL, #TXRL:Not(:checked) ~ #scoreboard #TXred, #TXR:Not(:checked) ~ #scoreboard #TXblue{display: none;}
@@ -618,7 +618,7 @@
 	input:checked + label + input + #labelTXR:hover ~ #TXHover {display: inline;}
 
 	#UTB:Not(:checked) ~ #labelUTB {display: inline; z-index: 1;}
-	#UTB:checked ~ #labelUTB {display: none;}
+
 	#UTB, #UTBL, #labelUTBL, #UTW, #labelUTW, #UTRL, #labelUTRL, #UTR, #labelUTR {display: none;}
 	#UTB:checked ~ #labelUTBL, #UTBL:checked ~ #labelUTW, #UTW:checked ~ #labelUTRL, #UTRL:checked ~ #labelUTR {display: inline; z-index: 2;}
 	#UTB:Not(:checked) ~ #scoreboard #UTblueL, #UTW:Not(:checked) ~ #scoreboard #UTredL, #UTRL:Not(:checked) ~ #scoreboard #UTred, #UTR:Not(:checked) ~ #scoreboard #UTblue{display: none;}
@@ -631,7 +631,7 @@
 	input:checked + label + input + #labelUTR:hover ~ #UTHover {display: inline;}
 
 	#VTB:Not(:checked) ~ #labelVTB {display: inline; z-index: 1;}
-	#VTB:checked ~ #labelVTB {display: none;}
+
 	#VTB, #VTBL, #labelVTBL, #VTW, #labelVTW, #VTRL, #labelVTRL, #VTR, #labelVTR {display: none;}
 	#VTB:checked ~ #labelVTBL, #VTBL:checked ~ #labelVTW, #VTW:checked ~ #labelVTRL, #VTRL:checked ~ #labelVTR {display: inline; z-index: 2;}
 	#VTB:Not(:checked) ~ #scoreboard #VTblueL, #VTW:Not(:checked) ~ #scoreboard #VTredL, #VTRL:Not(:checked) ~ #scoreboard #VTred, #VTR:Not(:checked) ~ #scoreboard #VTblue{display: none;}
@@ -644,7 +644,7 @@
 	input:checked + label + input + #labelVTR:hover ~ #VTHover {display: inline;}
 
 	#VAB:Not(:checked) ~ #labelVAB {display: inline; z-index: 1;}
-	#VAB:checked ~ #labelVAB {display: none;}
+
 	#VAB, #VABL, #labelVABL, #VAW, #labelVAW, #VARL, #labelVARL, #VAR, #labelVAR {display: none;}
 	#VAB:checked ~ #labelVABL, #VABL:checked ~ #labelVAW, #VAW:checked ~ #labelVARL, #VARL:checked ~ #labelVAR {display: inline; z-index: 2;}
 	#VAB:Not(:checked) ~ #scoreboard #VAblueL, #VAW:Not(:checked) ~ #scoreboard #VAredL, #VARL:Not(:checked) ~ #scoreboard #VAred, #VAR:Not(:checked) ~ #scoreboard #VAblue{display: none;}
@@ -657,7 +657,7 @@
 	input:checked + label + input + #labelVAR:hover ~ #VAHover {display: inline;}
 
 	#WAB:Not(:checked) ~ #labelWAB {display: inline; z-index: 1;}
-	#WAB:checked ~ #labelWAB {display: none;}
+
 	#WAB, #WABL, #labelWABL, #WAW, #labelWAW, #WARL, #labelWARL, #WAR, #labelWAR {display: none;}
 	#WAB:checked ~ #labelWABL, #WABL:checked ~ #labelWAW, #WAW:checked ~ #labelWARL, #WARL:checked ~ #labelWAR {display: inline; z-index: 2;}
 	#WAB:Not(:checked) ~ #scoreboard #WAblueL, #WAW:Not(:checked) ~ #scoreboard #WAredL, #WARL:Not(:checked) ~ #scoreboard #WAred, #WAR:Not(:checked) ~ #scoreboard #WAblue{display: none;}
@@ -670,7 +670,7 @@
 	input:checked + label + input + #labelWAR:hover ~ #WAHover {display: inline;}
 
 	#WVB:Not(:checked) ~ #labelWVB {display: inline; z-index: 1;}
-	#WVB:checked ~ #labelWVB {display: none;}
+
 	#WVB, #WVBL, #labelWVBL, #WVW, #labelWVW, #WVRL, #labelWVRL, #WVR, #labelWVR {display: none;}
 	#WVB:checked ~ #labelWVBL, #WVBL:checked ~ #labelWVW, #WVW:checked ~ #labelWVRL, #WVRL:checked ~ #labelWVR {display: inline; z-index: 2;}
 	#WVB:Not(:checked) ~ #scoreboard #WVblueL, #WVW:Not(:checked) ~ #scoreboard #WVredL, #WVRL:Not(:checked) ~ #scoreboard #WVred, #WVR:Not(:checked) ~ #scoreboard #WVblue{display: none;}
@@ -683,7 +683,7 @@
 	input:checked + label + input + #labelWVR:hover ~ #WVHover {display: inline;}
 
 	#WIB:Not(:checked) ~ #labelWIB {display: inline; z-index: 1;}
-	#WIB:checked ~ #labelWIB {display: none;}
+
 	#WIB, #WIBL, #labelWIBL, #WIW, #labelWIW, #WIRL, #labelWIRL, #WIR, #labelWIR {display: none;}
 	#WIB:checked ~ #labelWIBL, #WIBL:checked ~ #labelWIW, #WIW:checked ~ #labelWIRL, #WIRL:checked ~ #labelWIR {display: inline; z-index: 2;}
 	#WIB:Not(:checked) ~ #scoreboard #WIblueL, #WIW:Not(:checked) ~ #scoreboard #WIredL, #WIRL:Not(:checked) ~ #scoreboard #WIred, #WIR:Not(:checked) ~ #scoreboard #WIblue{display: none;}
@@ -696,7 +696,7 @@
 	input:checked + label + input + #labelWIR:hover ~ #WIHover {display: inline;}
 
 	#WYB:Not(:checked) ~ #labelWYB {display: inline; z-index: 1;}
-	#WYB:checked ~ #labelWYB {display: none;}
+
 	#WYB, #WYBL, #labelWYBL, #WYW, #labelWYW, #WYRL, #labelWYRL, #WYR, #labelWYR {display: none;}
 	#WYB:checked ~ #labelWYBL, #WYBL:checked ~ #labelWYW, #WYW:checked ~ #labelWYRL, #WYRL:checked ~ #labelWYR {display: inline; z-index: 2;}
 	#WYB:Not(:checked) ~ #scoreboard #WYblueL, #WYW:Not(:checked) ~ #scoreboard #WYredL, #WYRL:Not(:checked) ~ #scoreboard #WYred, #WYR:Not(:checked) ~ #scoreboard #WYblue{display: none;}
@@ -2590,113 +2590,113 @@ pointer-events: none;
 			<input type="radio" name="AK" id="AKBL" ><label for="AKBL" id="labelAKBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#AKPoly0" />
+			  		<use xlink:href="#AKPoly0" />
 			  	
-			  		<use xlink:href href="#AKPoly1" />
+			  		<use xlink:href="#AKPoly1" />
 			  	
-			  		<use xlink:href href="#AKPoly2" />
+			  		<use xlink:href="#AKPoly2" />
 			  	
-			  		<use xlink:href href="#AKPoly3" />
+			  		<use xlink:href="#AKPoly3" />
 			  	
-			  		<use xlink:href href="#AKPoly4" />
+			  		<use xlink:href="#AKPoly4" />
 			  	
-			  		<use xlink:href href="#AKPoly5" />
+			  		<use xlink:href="#AKPoly5" />
 			  	
-			  		<use xlink:href href="#AKPoly6" />
+			  		<use xlink:href="#AKPoly6" />
 			  	
-			  		<use xlink:href href="#AKPoly7" />
+			  		<use xlink:href="#AKPoly7" />
 			  	
-			  		<use xlink:href href="#AKPoly8" />
+			  		<use xlink:href="#AKPoly8" />
 			  	
-			  		<use xlink:href href="#AKPoly9" />
+			  		<use xlink:href="#AKPoly9" />
 			  	
-			  		<use xlink:href href="#AKPoly10" />
+			  		<use xlink:href="#AKPoly10" />
 			  	
-			  		<use xlink:href href="#AKPoly11" />
+			  		<use xlink:href="#AKPoly11" />
 			  	
-			  		<use xlink:href href="#AKPoly12" />
+			  		<use xlink:href="#AKPoly12" />
 			  	
-			  		<use xlink:href href="#AKPoly13" />
+			  		<use xlink:href="#AKPoly13" />
 			  	
-			  		<use xlink:href href="#AKPoly14" />
+			  		<use xlink:href="#AKPoly14" />
 			  	
-			  		<use xlink:href href="#AKPoly15" />
+			  		<use xlink:href="#AKPoly15" />
 			  	
-			  		<use xlink:href href="#AKPoly16" />
+			  		<use xlink:href="#AKPoly16" />
 			  	
-			  		<use xlink:href href="#AKPoly17" />
+			  		<use xlink:href="#AKPoly17" />
 			  	
-			  		<use xlink:href href="#AKPoly18" />
+			  		<use xlink:href="#AKPoly18" />
 			  	
-			  		<use xlink:href href="#AKPoly19" />
+			  		<use xlink:href="#AKPoly19" />
 			  	
-			  		<use xlink:href href="#AKPoly20" />
+			  		<use xlink:href="#AKPoly20" />
 			  	
-			  		<use xlink:href href="#AKPoly21" />
+			  		<use xlink:href="#AKPoly21" />
 			  	
-			  		<use xlink:href href="#AKPoly22" />
+			  		<use xlink:href="#AKPoly22" />
 			  	
-			  		<use xlink:href href="#AKPoly23" />
+			  		<use xlink:href="#AKPoly23" />
 			  	
-			  		<use xlink:href href="#AKPoly24" />
+			  		<use xlink:href="#AKPoly24" />
 			  	
-			  		<use xlink:href href="#AKPoly25" />
+			  		<use xlink:href="#AKPoly25" />
 			  	
-			  		<use xlink:href href="#AKPoly26" />
+			  		<use xlink:href="#AKPoly26" />
 			  	
-			  		<use xlink:href href="#AKPoly27" />
+			  		<use xlink:href="#AKPoly27" />
 			  	
-			  		<use xlink:href href="#AKPoly28" />
+			  		<use xlink:href="#AKPoly28" />
 			  	
-			  		<use xlink:href href="#AKPoly29" />
+			  		<use xlink:href="#AKPoly29" />
 			  	
-			  		<use xlink:href href="#AKPoly30" />
+			  		<use xlink:href="#AKPoly30" />
 			  	
-			  		<use xlink:href href="#AKPoly31" />
+			  		<use xlink:href="#AKPoly31" />
 			  	
-			  		<use xlink:href href="#AKPoly32" />
+			  		<use xlink:href="#AKPoly32" />
 			  	
-			  		<use xlink:href href="#AKPoly33" />
+			  		<use xlink:href="#AKPoly33" />
 			  	
-			  		<use xlink:href href="#AKPoly34" />
+			  		<use xlink:href="#AKPoly34" />
 			  	
-			  		<use xlink:href href="#AKPoly35" />
+			  		<use xlink:href="#AKPoly35" />
 			  	
-			  		<use xlink:href href="#AKPoly36" />
+			  		<use xlink:href="#AKPoly36" />
 			  	
-			  		<use xlink:href href="#AKPoly37" />
+			  		<use xlink:href="#AKPoly37" />
 			  	
-			  		<use xlink:href href="#AKPoly38" />
+			  		<use xlink:href="#AKPoly38" />
 			  	
-			  		<use xlink:href href="#AKPoly39" />
+			  		<use xlink:href="#AKPoly39" />
 			  	
-			  		<use xlink:href href="#AKPoly40" />
+			  		<use xlink:href="#AKPoly40" />
 			  	
-			  		<use xlink:href href="#AKPoly41" />
+			  		<use xlink:href="#AKPoly41" />
 			  	
-			  		<use xlink:href href="#AKPoly42" />
+			  		<use xlink:href="#AKPoly42" />
 			  	
-			  		<use xlink:href href="#AKPoly43" />
+			  		<use xlink:href="#AKPoly43" />
 			  	
-			  		<use xlink:href href="#AKPoly44" />
+			  		<use xlink:href="#AKPoly44" />
 			  	
-			  		<use xlink:href href="#AKPoly45" />
+			  		<use xlink:href="#AKPoly45" />
 			  	
-			  		<use xlink:href href="#AKPoly46" />
+			  		<use xlink:href="#AKPoly46" />
 			  	
-			  		<use xlink:href href="#AKPoly47" />
+			  		<use xlink:href="#AKPoly47" />
 			  	
-			  		<use xlink:href href="#AKPoly48" />
+			  		<use xlink:href="#AKPoly48" />
 			  	
-			  		<use xlink:href href="#AKPoly49" />
+			  		<use xlink:href="#AKPoly49" />
 			  	
-			  		<use xlink:href href="#AKPoly50" />
+			  		<use xlink:href="#AKPoly50" />
 			  	
-			  		<use xlink:href href="#AKPoly51" />
+			  		<use xlink:href="#AKPoly51" />
 			  	
-			  		<use xlink:href href="#AKPoly52" />
+			  		<use xlink:href="#AKPoly52" />
 			  	
-			  		<use xlink:href href="#AKPoly53" />
+			  		<use xlink:href="#AKPoly53" />
 			  	
 				</svg>
 		
@@ -3085,21 +3085,21 @@ pointer-events: none;
 			<input type="radio" name="HI" id="HIBL" ><label for="HIBL" id="labelHIBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#HIPoly0" />
+			  		<use xlink:href="#HIPoly0" />
 			  	
-			  		<use xlink:href href="#HIPoly1" />
+			  		<use xlink:href="#HIPoly1" />
 			  	
-			  		<use xlink:href href="#HIPoly2" />
+			  		<use xlink:href="#HIPoly2" />
 			  	
-			  		<use xlink:href href="#HIPoly3" />
+			  		<use xlink:href="#HIPoly3" />
 			  	
-			  		<use xlink:href href="#HIPoly4" />
+			  		<use xlink:href="#HIPoly4" />
 			  	
-			  		<use xlink:href href="#HIPoly5" />
+			  		<use xlink:href="#HIPoly5" />
 			  	
-			  		<use xlink:href href="#HIPoly6" />
+			  		<use xlink:href="#HIPoly6" />
 			  	
-			  		<use xlink:href href="#HIPoly7" />
+			  		<use xlink:href="#HIPoly7" />
 			  	
 				</svg>
 		
@@ -3200,9 +3200,9 @@ pointer-events: none;
 			<input type="radio" name="AL" id="ALBL" ><label for="ALBL" id="labelALBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#ALPoly0" />
+			  		<use xlink:href="#ALPoly0" />
 			  	
-			  		<use xlink:href href="#ALPoly1" />
+			  		<use xlink:href="#ALPoly1" />
 			  	
 				</svg>
 		
@@ -3265,7 +3265,7 @@ pointer-events: none;
 			<input type="radio" name="AZ" id="AZBL" ><label for="AZBL" id="labelAZBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#AZPoly0" />
+			  		<use xlink:href="#AZPoly0" />
 			  	
 				</svg>
 		
@@ -3322,7 +3322,7 @@ pointer-events: none;
 			<input type="radio" name="AR" id="ARBL" ><label for="ARBL" id="labelARBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#ARPoly0" />
+			  		<use xlink:href="#ARPoly0" />
 			  	
 				</svg>
 		
@@ -3391,19 +3391,19 @@ pointer-events: none;
 			<input type="radio" name="CA" id="CABL" ><label for="CABL" id="labelCABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#CAPoly0" />
+			  		<use xlink:href="#CAPoly0" />
 			  	
-			  		<use xlink:href href="#CAPoly1" />
+			  		<use xlink:href="#CAPoly1" />
 			  	
-			  		<use xlink:href href="#CAPoly2" />
+			  		<use xlink:href="#CAPoly2" />
 			  	
-			  		<use xlink:href href="#CAPoly3" />
+			  		<use xlink:href="#CAPoly3" />
 			  	
-			  		<use xlink:href href="#CAPoly4" />
+			  		<use xlink:href="#CAPoly4" />
 			  	
-			  		<use xlink:href href="#CAPoly5" />
+			  		<use xlink:href="#CAPoly5" />
 			  	
-			  		<use xlink:href href="#CAPoly6" />
+			  		<use xlink:href="#CAPoly6" />
 			  	
 				</svg>
 		
@@ -3496,7 +3496,7 @@ pointer-events: none;
 			<input type="radio" name="CO" id="COBL" ><label for="COBL" id="labelCOBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#COPoly0" />
+			  		<use xlink:href="#COPoly0" />
 			  	
 				</svg>
 		
@@ -3553,7 +3553,7 @@ pointer-events: none;
 			<input type="radio" name="CT" id="CTBL" ><label for="CTBL" id="labelCTBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#CTPoly0" />
+			  		<use xlink:href="#CTPoly0" />
 			  	
 				</svg>
 		
@@ -3610,7 +3610,7 @@ pointer-events: none;
 			<input type="radio" name="DE" id="DEBL" ><label for="DEBL" id="labelDEBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#DEPoly0" />
+			  		<use xlink:href="#DEPoly0" />
 			  	
 				</svg>
 		
@@ -3667,7 +3667,7 @@ pointer-events: none;
 			<input type="radio" name="DC" id="DCBL" ><label for="DCBL" id="labelDCBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#DCPoly0" />
+			  		<use xlink:href="#DCPoly0" />
 			  	
 				</svg>
 		
@@ -3740,23 +3740,23 @@ pointer-events: none;
 			<input type="radio" name="FL" id="FLBL" checked><label for="FLBL" id="labelFLBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#FLPoly0" />
+			  		<use xlink:href="#FLPoly0" />
 			  	
-			  		<use xlink:href href="#FLPoly1" />
+			  		<use xlink:href="#FLPoly1" />
 			  	
-			  		<use xlink:href href="#FLPoly2" />
+			  		<use xlink:href="#FLPoly2" />
 			  	
-			  		<use xlink:href href="#FLPoly3" />
+			  		<use xlink:href="#FLPoly3" />
 			  	
-			  		<use xlink:href href="#FLPoly4" />
+			  		<use xlink:href="#FLPoly4" />
 			  	
-			  		<use xlink:href href="#FLPoly5" />
+			  		<use xlink:href="#FLPoly5" />
 			  	
-			  		<use xlink:href href="#FLPoly6" />
+			  		<use xlink:href="#FLPoly6" />
 			  	
-			  		<use xlink:href href="#FLPoly7" />
+			  		<use xlink:href="#FLPoly7" />
 			  	
-			  		<use xlink:href href="#FLPoly8" />
+			  		<use xlink:href="#FLPoly8" />
 			  	
 				</svg>
 		
@@ -3861,7 +3861,7 @@ pointer-events: none;
 			<input type="radio" name="GA" id="GABL" ><label for="GABL" id="labelGABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#GAPoly0" />
+			  		<use xlink:href="#GAPoly0" />
 			  	
 				</svg>
 		
@@ -3918,7 +3918,7 @@ pointer-events: none;
 			<input type="radio" name="ID" id="IDBL" ><label for="IDBL" id="labelIDBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#IDPoly0" />
+			  		<use xlink:href="#IDPoly0" />
 			  	
 				</svg>
 		
@@ -3975,7 +3975,7 @@ pointer-events: none;
 			<input type="radio" name="IL" id="ILBL" ><label for="ILBL" id="labelILBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#ILPoly0" />
+			  		<use xlink:href="#ILPoly0" />
 			  	
 				</svg>
 		
@@ -4032,7 +4032,7 @@ pointer-events: none;
 			<input type="radio" name="IN" id="INBL" ><label for="INBL" id="labelINBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#INPoly0" />
+			  		<use xlink:href="#INPoly0" />
 			  	
 				</svg>
 		
@@ -4089,7 +4089,7 @@ pointer-events: none;
 			<input type="radio" name="IA" id="IABL" ><label for="IABL" id="labelIABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#IAPoly0" />
+			  		<use xlink:href="#IAPoly0" />
 			  	
 				</svg>
 		
@@ -4146,7 +4146,7 @@ pointer-events: none;
 			<input type="radio" name="KS" id="KSBL" ><label for="KSBL" id="labelKSBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#KSPoly0" />
+			  		<use xlink:href="#KSPoly0" />
 			  	
 				</svg>
 		
@@ -4205,9 +4205,9 @@ pointer-events: none;
 			<input type="radio" name="KY" id="KYBL" ><label for="KYBL" id="labelKYBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#KYPoly0" />
+			  		<use xlink:href="#KYPoly0" />
 			  	
-			  		<use xlink:href href="#KYPoly1" />
+			  		<use xlink:href="#KYPoly1" />
 			  	
 				</svg>
 		
@@ -4272,9 +4272,9 @@ pointer-events: none;
 			<input type="radio" name="LA" id="LABL" ><label for="LABL" id="labelLABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#LAPoly0" />
+			  		<use xlink:href="#LAPoly0" />
 			  	
-			  		<use xlink:href href="#LAPoly1" />
+			  		<use xlink:href="#LAPoly1" />
 			  	
 				</svg>
 		
@@ -4359,29 +4359,29 @@ pointer-events: none;
 			<input type="radio" name="ME" id="MEBL" checked><label for="MEBL" id="labelMEBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MEPoly0" />
+			  		<use xlink:href="#MEPoly0" />
 			  	
-			  		<use xlink:href href="#MEPoly1" />
+			  		<use xlink:href="#MEPoly1" />
 			  	
-			  		<use xlink:href href="#MEPoly2" />
+			  		<use xlink:href="#MEPoly2" />
 			  	
-			  		<use xlink:href href="#MEPoly3" />
+			  		<use xlink:href="#MEPoly3" />
 			  	
-			  		<use xlink:href href="#MEPoly4" />
+			  		<use xlink:href="#MEPoly4" />
 			  	
-			  		<use xlink:href href="#MEPoly5" />
+			  		<use xlink:href="#MEPoly5" />
 			  	
-			  		<use xlink:href href="#MEPoly6" />
+			  		<use xlink:href="#MEPoly6" />
 			  	
-			  		<use xlink:href href="#MEPoly7" />
+			  		<use xlink:href="#MEPoly7" />
 			  	
-			  		<use xlink:href href="#MEPoly8" />
+			  		<use xlink:href="#MEPoly8" />
 			  	
-			  		<use xlink:href href="#MEPoly9" />
+			  		<use xlink:href="#MEPoly9" />
 			  	
-			  		<use xlink:href href="#MEPoly10" />
+			  		<use xlink:href="#MEPoly10" />
 			  	
-			  		<use xlink:href href="#MEPoly11" />
+			  		<use xlink:href="#MEPoly11" />
 			  	
 				</svg>
 		
@@ -4508,11 +4508,11 @@ pointer-events: none;
 			<input type="radio" name="MD" id="MDBL" ><label for="MDBL" id="labelMDBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MDPoly0" />
+			  		<use xlink:href="#MDPoly0" />
 			  	
-			  		<use xlink:href href="#MDPoly1" />
+			  		<use xlink:href="#MDPoly1" />
 			  	
-			  		<use xlink:href href="#MDPoly2" />
+			  		<use xlink:href="#MDPoly2" />
 			  	
 				</svg>
 		
@@ -4585,11 +4585,11 @@ pointer-events: none;
 			<input type="radio" name="MA" id="MABL" ><label for="MABL" id="labelMABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MAPoly0" />
+			  		<use xlink:href="#MAPoly0" />
 			  	
-			  		<use xlink:href href="#MAPoly1" />
+			  		<use xlink:href="#MAPoly1" />
 			  	
-			  		<use xlink:href href="#MAPoly2" />
+			  		<use xlink:href="#MAPoly2" />
 			  	
 				</svg>
 		
@@ -4670,19 +4670,19 @@ pointer-events: none;
 			<input type="radio" name="MI" id="MIBL" checked><label for="MIBL" id="labelMIBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MIPoly0" />
+			  		<use xlink:href="#MIPoly0" />
 			  	
-			  		<use xlink:href href="#MIPoly1" />
+			  		<use xlink:href="#MIPoly1" />
 			  	
-			  		<use xlink:href href="#MIPoly2" />
+			  		<use xlink:href="#MIPoly2" />
 			  	
-			  		<use xlink:href href="#MIPoly3" />
+			  		<use xlink:href="#MIPoly3" />
 			  	
-			  		<use xlink:href href="#MIPoly4" />
+			  		<use xlink:href="#MIPoly4" />
 			  	
-			  		<use xlink:href href="#MIPoly5" />
+			  		<use xlink:href="#MIPoly5" />
 			  	
-			  		<use xlink:href href="#MIPoly6" />
+			  		<use xlink:href="#MIPoly6" />
 			  	
 				</svg>
 		
@@ -4775,7 +4775,7 @@ pointer-events: none;
 			<input type="radio" name="MN" id="MNBL" checked><label for="MNBL" id="labelMNBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MNPoly0" />
+			  		<use xlink:href="#MNPoly0" />
 			  	
 				</svg>
 		
@@ -4832,7 +4832,7 @@ pointer-events: none;
 			<input type="radio" name="MS" id="MSBL" ><label for="MSBL" id="labelMSBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MSPoly0" />
+			  		<use xlink:href="#MSPoly0" />
 			  	
 				</svg>
 		
@@ -4889,7 +4889,7 @@ pointer-events: none;
 			<input type="radio" name="MO" id="MOBL" ><label for="MOBL" id="labelMOBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MOPoly0" />
+			  		<use xlink:href="#MOPoly0" />
 			  	
 				</svg>
 		
@@ -4946,7 +4946,7 @@ pointer-events: none;
 			<input type="radio" name="MT" id="MTBL" ><label for="MTBL" id="labelMTBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#MTPoly0" />
+			  		<use xlink:href="#MTPoly0" />
 			  	
 				</svg>
 		
@@ -5003,7 +5003,7 @@ pointer-events: none;
 			<input type="radio" name="NE" id="NEBL" ><label for="NEBL" id="labelNEBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NEPoly0" />
+			  		<use xlink:href="#NEPoly0" />
 			  	
 				</svg>
 		
@@ -5060,7 +5060,7 @@ pointer-events: none;
 			<input type="radio" name="NV" id="NVBL" checked><label for="NVBL" id="labelNVBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NVPoly0" />
+			  		<use xlink:href="#NVPoly0" />
 			  	
 				</svg>
 		
@@ -5117,7 +5117,7 @@ pointer-events: none;
 			<input type="radio" name="NH" id="NHBL" checked><label for="NHBL" id="labelNHBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NHPoly0" />
+			  		<use xlink:href="#NHPoly0" />
 			  	
 				</svg>
 		
@@ -5174,7 +5174,7 @@ pointer-events: none;
 			<input type="radio" name="NJ" id="NJBL" ><label for="NJBL" id="labelNJBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NJPoly0" />
+			  		<use xlink:href="#NJPoly0" />
 			  	
 				</svg>
 		
@@ -5231,7 +5231,7 @@ pointer-events: none;
 			<input type="radio" name="NM" id="NMBL" ><label for="NMBL" id="labelNMBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NMPoly0" />
+			  		<use xlink:href="#NMPoly0" />
 			  	
 				</svg>
 		
@@ -5294,13 +5294,13 @@ pointer-events: none;
 			<input type="radio" name="NY" id="NYBL" ><label for="NYBL" id="labelNYBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NYPoly0" />
+			  		<use xlink:href="#NYPoly0" />
 			  	
-			  		<use xlink:href href="#NYPoly1" />
+			  		<use xlink:href="#NYPoly1" />
 			  	
-			  		<use xlink:href href="#NYPoly2" />
+			  		<use xlink:href="#NYPoly2" />
 			  	
-			  		<use xlink:href href="#NYPoly3" />
+			  		<use xlink:href="#NYPoly3" />
 			  	
 				</svg>
 		
@@ -5379,11 +5379,11 @@ pointer-events: none;
 			<input type="radio" name="NC" id="NCBL" ><label for="NCBL" id="labelNCBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NCPoly0" />
+			  		<use xlink:href="#NCPoly0" />
 			  	
-			  		<use xlink:href href="#NCPoly1" />
+			  		<use xlink:href="#NCPoly1" />
 			  	
-			  		<use xlink:href href="#NCPoly2" />
+			  		<use xlink:href="#NCPoly2" />
 			  	
 				</svg>
 		
@@ -5452,7 +5452,7 @@ pointer-events: none;
 			<input type="radio" name="ND" id="NDBL" ><label for="NDBL" id="labelNDBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#NDPoly0" />
+			  		<use xlink:href="#NDPoly0" />
 			  	
 				</svg>
 		
@@ -5513,11 +5513,11 @@ pointer-events: none;
 			<input type="radio" name="OH" id="OHBL" ><label for="OHBL" id="labelOHBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#OHPoly0" />
+			  		<use xlink:href="#OHPoly0" />
 			  	
-			  		<use xlink:href href="#OHPoly1" />
+			  		<use xlink:href="#OHPoly1" />
 			  	
-			  		<use xlink:href href="#OHPoly2" />
+			  		<use xlink:href="#OHPoly2" />
 			  	
 				</svg>
 		
@@ -5586,7 +5586,7 @@ pointer-events: none;
 			<input type="radio" name="OK" id="OKBL" ><label for="OKBL" id="labelOKBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#OKPoly0" />
+			  		<use xlink:href="#OKPoly0" />
 			  	
 				</svg>
 		
@@ -5643,7 +5643,7 @@ pointer-events: none;
 			<input type="radio" name="OR" id="ORBL" ><label for="ORBL" id="labelORBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#ORPoly0" />
+			  		<use xlink:href="#ORPoly0" />
 			  	
 				</svg>
 		
@@ -5700,7 +5700,7 @@ pointer-events: none;
 			<input type="radio" name="PA" id="PABL" checked><label for="PABL" id="labelPABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#PAPoly0" />
+			  		<use xlink:href="#PAPoly0" />
 			  	
 				</svg>
 		
@@ -5763,13 +5763,13 @@ pointer-events: none;
 			<input type="radio" name="RI" id="RIBL" ><label for="RIBL" id="labelRIBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#RIPoly0" />
+			  		<use xlink:href="#RIPoly0" />
 			  	
-			  		<use xlink:href href="#RIPoly1" />
+			  		<use xlink:href="#RIPoly1" />
 			  	
-			  		<use xlink:href href="#RIPoly2" />
+			  		<use xlink:href="#RIPoly2" />
 			  	
-			  		<use xlink:href href="#RIPoly3" />
+			  		<use xlink:href="#RIPoly3" />
 			  	
 				</svg>
 		
@@ -5844,7 +5844,7 @@ pointer-events: none;
 			<input type="radio" name="SC" id="SCBL" ><label for="SCBL" id="labelSCBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#SCPoly0" />
+			  		<use xlink:href="#SCPoly0" />
 			  	
 				</svg>
 		
@@ -5901,7 +5901,7 @@ pointer-events: none;
 			<input type="radio" name="SD" id="SDBL" ><label for="SDBL" id="labelSDBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#SDPoly0" />
+			  		<use xlink:href="#SDPoly0" />
 			  	
 				</svg>
 		
@@ -5958,7 +5958,7 @@ pointer-events: none;
 			<input type="radio" name="TN" id="TNBL" ><label for="TNBL" id="labelTNBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#TNPoly0" />
+			  		<use xlink:href="#TNPoly0" />
 			  	
 				</svg>
 		
@@ -6017,9 +6017,9 @@ pointer-events: none;
 			<input type="radio" name="TX" id="TXBL" ><label for="TXBL" id="labelTXBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#TXPoly0" />
+			  		<use xlink:href="#TXPoly0" />
 			  	
-			  		<use xlink:href href="#TXPoly1" />
+			  		<use xlink:href="#TXPoly1" />
 			  	
 				</svg>
 		
@@ -6082,7 +6082,7 @@ pointer-events: none;
 			<input type="radio" name="UT" id="UTBL" ><label for="UTBL" id="labelUTBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#UTPoly0" />
+			  		<use xlink:href="#UTPoly0" />
 			  	
 				</svg>
 		
@@ -6139,7 +6139,7 @@ pointer-events: none;
 			<input type="radio" name="VT" id="VTBL" ><label for="VTBL" id="labelVTBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#VTPoly0" />
+			  		<use xlink:href="#VTPoly0" />
 			  	
 				</svg>
 		
@@ -6198,9 +6198,9 @@ pointer-events: none;
 			<input type="radio" name="VA" id="VABL" ><label for="VABL" id="labelVABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#VAPoly0" />
+			  		<use xlink:href="#VAPoly0" />
 			  	
-			  		<use xlink:href href="#VAPoly1" />
+			  		<use xlink:href="#VAPoly1" />
 			  	
 				</svg>
 		
@@ -6277,21 +6277,21 @@ pointer-events: none;
 			<input type="radio" name="WA" id="WABL" ><label for="WABL" id="labelWABL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#WAPoly0" />
+			  		<use xlink:href="#WAPoly0" />
 			  	
-			  		<use xlink:href href="#WAPoly1" />
+			  		<use xlink:href="#WAPoly1" />
 			  	
-			  		<use xlink:href href="#WAPoly2" />
+			  		<use xlink:href="#WAPoly2" />
 			  	
-			  		<use xlink:href href="#WAPoly3" />
+			  		<use xlink:href="#WAPoly3" />
 			  	
-			  		<use xlink:href href="#WAPoly4" />
+			  		<use xlink:href="#WAPoly4" />
 			  	
-			  		<use xlink:href href="#WAPoly5" />
+			  		<use xlink:href="#WAPoly5" />
 			  	
-			  		<use xlink:href href="#WAPoly6" />
+			  		<use xlink:href="#WAPoly6" />
 			  	
-			  		<use xlink:href href="#WAPoly7" />
+			  		<use xlink:href="#WAPoly7" />
 			  	
 				</svg>
 		
@@ -6390,7 +6390,7 @@ pointer-events: none;
 			<input type="radio" name="WV" id="WVBL" ><label for="WVBL" id="labelWVBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#WVPoly0" />
+			  		<use xlink:href="#WVPoly0" />
 			  	
 				</svg>
 		
@@ -6455,15 +6455,15 @@ pointer-events: none;
 			<input type="radio" name="WI" id="WIBL" checked><label for="WIBL" id="labelWIBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#WIPoly0" />
+			  		<use xlink:href="#WIPoly0" />
 			  	
-			  		<use xlink:href href="#WIPoly1" />
+			  		<use xlink:href="#WIPoly1" />
 			  	
-			  		<use xlink:href href="#WIPoly2" />
+			  		<use xlink:href="#WIPoly2" />
 			  	
-			  		<use xlink:href href="#WIPoly3" />
+			  		<use xlink:href="#WIPoly3" />
 			  	
-			  		<use xlink:href href="#WIPoly4" />
+			  		<use xlink:href="#WIPoly4" />
 			  	
 				</svg>
 		
@@ -6544,7 +6544,7 @@ pointer-events: none;
 			<input type="radio" name="WY" id="WYBL" ><label for="WYBL" id="labelWYBL">
 				<svg viewBox="0 -450 1000 450" class="svgregion color2">
 			  	
-			  		<use xlink:href href="#WYPoly0" />
+			  		<use xlink:href="#WYPoly0" />
 			  	
 				</svg>
 		

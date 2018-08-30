@@ -3,6 +3,7 @@
 :root {
 	--map-height: 23vw;
 }
+
 {{ range $state := .Params.states }}
 	#{{ $state.name }}form {display: none;}
 	#{{ $state.name }}B:checked ~ #{{ $state.name }}form {display: inline;}
@@ -18,6 +19,7 @@
 		input:checked + label + input + label:hover ~ #{{ $cd.name }}Hover {display: inline;}
 		
 		#{{ $state.name }}B:checked ~ .{{ $cd.name }}C:checked + label + input + label {display: inline;}
+		
 		
 		#{{ $cd.name }}B:Not(:checked) ~ #scoreboard #{{ $cd.name }}blueL, #{{ $cd.name }}W:Not(:checked) ~ #scoreboard #{{ $cd.name }}redL, #{{ $cd.name }}RL:Not(:checked) ~ #scoreboard #{{ $cd.name }}red, #{{ $cd.name }}R:Not(:checked) ~ #scoreboard #{{ $cd.name }}blue{display: none;}
 		
@@ -65,6 +67,7 @@ cursor: crosshair;
 	top: 4vw;
 	width: calc(2 * var(--map-height));
 	height: var(--map-height);
+
 }
 .cdLabel {
 	position: absolute;
