@@ -47,6 +47,6 @@ I hope you enjoy this website. If you think you can build similar web apps with 
 </p>
 
 <p>
-To see my sources for mapping and political data, <a href="/about/sources/index.html">click here</a>.
+To see my sources for mapping and political data, <a href="/howto/sources/index.html">click here</a>.
 </p>
 </div>
