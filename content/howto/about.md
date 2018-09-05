@@ -15,7 +15,7 @@ Every web page on this domain is created using only HTML and CSS. No Javascript 
 </p>
 
 <p>
-With those caveats out of the way, why might throwing out Javascript and server scripts be a good exercise? The best reason is that you want a fun challenge that combines creativity with brute force perseverance. If you are trying to reduce your dependence on Javascript/JQuery/Python/PHP/... then being restricted to CSS may teach you a trick or two that actually improves your web page.
+With those caveats (and many more) out of the way, why might throwing out Javascript and server scripts be a good exercise? The best reason is that you want a fun challenge that combines creativity with brute force perseverance. If you are trying to reduce your dependence on Javascript/JQuery/Python/PHP/... then being restricted to CSS may teach you a trick or two that actually improves your web page.
 </p>
 
 <p>
@@ -31,11 +31,22 @@ A flat structure means that much of the work of positioning elements needs to be
 </p>
 
 <p>
-Creating an interactive web page with just HTML and CSS is like a magic trick. If you see how it is done, then you will probably be disappointed by its simplicity. There is a lot of deception by placing smoke and mirrors in just the right places. If you try to figure out how things are done on your own it will be much more satisfying. However, I am working on posts for the future that describe how the pages work. In the meantime, looking at the source may give you some clues. All the answers are in the source, but figuring out what each line does can be tricky.
+Creating an interactive web page with just HTML and CSS is like a magic trick. If you see how it is done, then you will probably be disappointed by its simplicity. There is a lot of deception by placing smoke and mirrors in just the right places. If you try to figure out how things are done on your own it will be much more satisfying.
 </p>
 
 <p>
-I use Hugo to generate static sites. There is lots of repetition so I strongly suggest using something like Hugo if you are trying to create a complicated web page.
+However, I am working on posts for the future that describe how the pages work. In the meantime, looking at the source may give you some clues. All the answers are in the source, but figuring out what each line does can be tricky.
 </p>
 
+<p>
+This website is still a work in progress, but should be good on Firefox/Chrome on a laptop/desktop. Only the bare minimum has been done to make the site responsive so not every page really works on a phone. Safari seems to have trouble with lots of SVGs and so the House map and travelling salesman game are slow. Most things needed to be built from the ground up so any edge cases that established frameworks handle automatically could be problematic.
+</p>
+
+<p>
+I hope you enjoy this website. If you think you can build similar web apps with just HTML and CSS, I encourage you to give it a shot. The process is very frustrating at times, but the result can be worth it if you enjoy doing things that other people might view as crazy. I use Hugo to generate static sites, and I suggest using something like Hugo if you are trying to create a complicated web page.
+</p>
+
+<p>
+To see my sources for mapping and political data, <a href="/about/sources/index.html">click here</a>.
+</p>
 </div>

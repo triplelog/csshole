@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Travelling Salesman Game - Just CSS/HTML</title>
         
-        <link rel="icon" href="https://csshole.com/images/logo.png">
+        <link rel="icon" href="https://csshole.com/images/circle_logo.png">
         
         
         
@@ -49,6 +49,9 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 .turn1 {
 	display:inline;
 	z-index: 1;
+}
+input:checked + label.turn2 ~ #scoreboard > .howtoplay {
+	display: none;
 }
 
 	.turn2 {
@@ -15398,6 +15401,14 @@ input:checked + .turn16 ~ #maxContainerCover {
 	display: none;
 	background: red;
 }
+.winner {
+	position:absolute;
+	top:calc(35vw - 10px * var(--p-button-h));
+	left:5vw;
+	z-index:10;
+	width:calc(500px * var(--p-button-mul));
+	height: 20px;
+}
 #maxContainer {
 	position: absolute;
 	top: calc(35vw + 60px);
@@ -15532,824 +15543,824 @@ input:checked + .turn16 ~ #maxContainerCover {
     <body>
         <ul class="navbar">
 				
-			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;">CSS Hole</a></li>
 			<li class="nav dropdown1">
 				<ul class="dropdown-content1">
 					<li class="dropdown1a">
 						<ul class="dropdown-content1a">
 						<span class="randomPuzzlet0" style="top: 0em;">
 						
-						<a href="/games/travellingsalesman/101" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/101/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/102" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/102/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/103" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/103/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/104" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/104/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/105" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/105/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/106" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/106/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/107" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/107/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/108" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/108/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/109" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/109/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1010" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1010/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1011" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1011/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1012" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1012/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1013" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1013/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1014" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1014/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1015" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1015/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1016" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1016/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1017" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1017/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1018" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1018/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1019" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1019/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1020" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1020/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1021" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1021/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1022" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1022/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1023" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1023/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1024" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1024/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1025" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1025/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1026" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1026/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1027" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1027/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1028" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1028/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1029" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1029/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1030" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1030/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1031" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1031/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1032" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1032/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1033" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1033/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1034" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1034/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1035" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1035/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1036" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1036/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1037" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1037/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1038" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1038/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1039" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1039/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1040" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1040/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1041" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1041/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1042" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1042/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1043" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1043/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1044" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1044/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1045" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1045/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1046" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1046/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1047" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1047/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1048" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1048/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1049" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1049/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1050" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1050/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1051" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1051/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1052" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1052/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1053" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1053/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1054" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1054/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1055" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1055/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1056" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1056/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1057" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1057/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1058" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1058/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1059" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1059/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1060" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1060/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1061" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1061/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1062" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1062/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1063" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1063/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1064" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1064/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1065" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1065/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1066" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1066/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1067" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1067/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1068" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1068/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1069" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1069/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1070" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1070/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1071" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1071/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1072" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1072/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1073" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1073/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1074" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1074/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1075" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1075/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1076" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1076/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1077" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1077/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1078" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1078/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1079" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1079/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1080" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1080/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1081" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1081/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1082" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1082/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1083" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1083/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1084" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1084/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1085" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1085/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1086" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1086/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1087" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1087/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1088" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1088/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1089" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1089/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1090" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1090/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1091" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1091/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1092" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1092/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1093" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1093/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1094" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1094/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1095" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1095/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1096" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1096/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1097" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1097/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1098" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1098/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1099" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1099/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/10100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/10100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">10 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 4em;">
 						
-						<a href="/games/travellingsalesman/151" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/151/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/152" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/152/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/153" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/153/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/154" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/154/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/155" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/155/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/156" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/156/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/157" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/157/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/158" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/158/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/159" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/159/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1510" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1510/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1511" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1511/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1512" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1512/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1513" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1513/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1514" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1514/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1515" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1515/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1516" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1516/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1517" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1517/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1518" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1518/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1519" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1519/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1520" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1520/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1521" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1521/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1522" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1522/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1523" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1523/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1524" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1524/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1525" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1525/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1526" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1526/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1527" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1527/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1528" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1528/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1529" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1529/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1530" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1530/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1531" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1531/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1532" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1532/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1533" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1533/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1534" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1534/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1535" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1535/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1536" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1536/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1537" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1537/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1538" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1538/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1539" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1539/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1540" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1540/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1541" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1541/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1542" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1542/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1543" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1543/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1544" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1544/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1545" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1545/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1546" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1546/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1547" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1547/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1548" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1548/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1549" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1549/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1550" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1550/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1551" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1551/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1552" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1552/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1553" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1553/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1554" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1554/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1555" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1555/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1556" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1556/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1557" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1557/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1558" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1558/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1559" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1559/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1560" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1560/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1561" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1561/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1562" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1562/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1563" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1563/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1564" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1564/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1565" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1565/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1566" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1566/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1567" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1567/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1568" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1568/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1569" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1569/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1570" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1570/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1571" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1571/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1572" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1572/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1573" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1573/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1574" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1574/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1575" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1575/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1576" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1576/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1577" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1577/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1578" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1578/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1579" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1579/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1580" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1580/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1581" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1581/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1582" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1582/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1583" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1583/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1584" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1584/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1585" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1585/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1586" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1586/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1587" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1587/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1588" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1588/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1589" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1589/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1590" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1590/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1591" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1591/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1592" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1592/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1593" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1593/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1594" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1594/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1595" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1595/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1596" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1596/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1597" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1597/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1598" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1598/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/1599" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/1599/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/15100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/15100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">15 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 8em;">
 						
-						<a href="/games/travellingsalesman/201" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/201/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/202" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/202/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/203" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/203/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/204" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/204/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/205" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/205/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/206" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/206/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/207" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/207/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/208" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/208/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/209" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/209/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2010" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2010/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2011" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2011/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2012" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2012/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2013" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2013/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2014" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2014/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2015" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2015/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2016" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2016/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2017" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2017/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2018" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2018/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2019" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2019/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2020" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2020/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2021" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2021/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2022" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2022/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2023" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2023/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2024" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2024/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2025" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2025/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2026" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2026/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2027" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2027/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2028" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2028/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2029" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2029/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2030" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2030/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2031" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2031/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2032" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2032/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2033" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2033/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2034" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2034/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2035" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2035/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2036" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2036/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2037" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2037/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2038" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2038/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2039" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2039/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2040" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2040/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2041" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2041/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2042" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2042/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2043" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2043/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2044" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2044/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2045" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2045/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2046" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2046/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2047" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2047/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2048" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2048/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2049" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2049/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2050" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2050/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2051" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2051/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2052" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2052/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2053" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2053/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2054" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2054/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2055" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2055/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2056" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2056/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2057" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2057/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2058" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2058/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2059" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2059/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2060" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2060/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2061" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2061/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2062" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2062/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2063" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2063/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2064" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2064/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2065" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2065/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2066" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2066/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2067" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2067/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2068" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2068/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2069" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2069/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2070" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2070/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2071" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2071/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2072" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2072/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2073" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2073/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2074" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2074/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2075" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2075/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2076" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2076/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2077" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2077/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2078" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2078/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2079" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2079/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2080" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2080/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2081" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2081/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2082" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2082/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2083" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2083/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2084" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2084/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2085" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2085/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2086" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2086/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2087" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2087/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2088" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2088/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2089" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2089/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2090" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2090/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2091" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2091/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2092" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2092/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2093" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2093/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2094" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2094/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2095" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2095/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2096" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2096/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2097" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2097/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2098" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2098/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2099" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2099/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/20100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/20100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">20 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 12em;">
 						
-						<a href="/games/travellingsalesman/251" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/251/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/252" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/252/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/253" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/253/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/254" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/254/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/255" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/255/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/256" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/256/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/257" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/257/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/258" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/258/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/259" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/259/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2510" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2510/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2511" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2511/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2512" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2512/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2513" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2513/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2514" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2514/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2515" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2515/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2516" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2516/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2517" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2517/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2518" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2518/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2519" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2519/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2520" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2520/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2521" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2521/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2522" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2522/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2523" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2523/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2524" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2524/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2525" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2525/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2526" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2526/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2527" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2527/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2528" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2528/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2529" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2529/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2530" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2530/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2531" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2531/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2532" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2532/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2533" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2533/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2534" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2534/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2535" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2535/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2536" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2536/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2537" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2537/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2538" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2538/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2539" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2539/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2540" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2540/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2541" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2541/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2542" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2542/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2543" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2543/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2544" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2544/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2545" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2545/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2546" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2546/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2547" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2547/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2548" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2548/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2549" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2549/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2550" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2550/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2551" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2551/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2552" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2552/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2553" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2553/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2554" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2554/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2555" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2555/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2556" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2556/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2557" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2557/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2558" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2558/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2559" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2559/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2560" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2560/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2561" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2561/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2562" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2562/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2563" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2563/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2564" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2564/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2565" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2565/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2566" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2566/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2567" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2567/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2568" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2568/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2569" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2569/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2570" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2570/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2571" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2571/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2572" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2572/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2573" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2573/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2574" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2574/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2575" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2575/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2576" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2576/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2577" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2577/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2578" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2578/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2579" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2579/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2580" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2580/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2581" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2581/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2582" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2582/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2583" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2583/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2584" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2584/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2585" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2585/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2586" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2586/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2587" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2587/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2588" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2588/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2589" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2589/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2590" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2590/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2591" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2591/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2592" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2592/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2593" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2593/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2594" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2594/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2595" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2595/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2596" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2596/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2597" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2597/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2598" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2598/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/2599" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/2599/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/travellingsalesman/25100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/25100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">25 Cities</a>
 						</span>
@@ -16360,817 +16371,817 @@ input:checked + .turn16 ~ #maxContainerCover {
 						<ul class="dropdown-content1b">
 						<span class="randomPuzzlet0" style="top: 0em;">
 						
-						<a href="/games/sudokucss/simple1" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple1/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple2" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple2/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple3" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple3/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple4" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple4/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple5" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple5/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple6" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple6/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple7" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple7/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple8" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple8/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple9" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple9/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple10" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple10/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple11" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple11/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple12" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple12/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple13" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple13/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple14" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple14/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple15" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple15/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple16" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple16/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple17" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple17/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple18" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple18/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple19" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple19/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple20" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple20/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple21" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple21/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple22" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple22/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple23" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple23/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple24" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple24/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple25" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple25/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple26" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple26/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple27" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple27/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple28" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple28/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple29" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple29/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple30" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple30/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple31" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple31/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple32" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple32/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple33" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple33/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple34" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple34/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple35" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple35/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple36" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple36/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple37" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple37/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple38" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple38/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple39" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple39/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple40" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple40/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple41" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple41/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple42" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple42/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple43" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple43/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple44" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple44/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple45" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple45/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple46" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple46/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple47" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple47/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple48" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple48/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple49" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple49/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple50" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple50/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple51" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple51/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple52" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple52/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple53" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple53/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple54" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple54/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple55" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple55/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple56" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple56/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple57" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple57/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple58" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple58/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple59" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple59/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple60" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple60/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple61" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple61/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple62" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple62/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple63" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple63/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple64" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple64/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple65" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple65/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple66" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple66/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple67" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple67/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple68" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple68/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple69" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple69/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple70" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple70/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple71" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple71/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple72" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple72/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple73" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple73/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple74" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple74/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple75" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple75/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple76" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple76/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple77" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple77/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple78" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple78/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple79" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple79/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple80" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple80/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple81" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple81/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple82" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple82/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple83" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple83/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple84" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple84/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple85" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple85/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple86" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple86/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple87" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple87/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple88" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple88/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple89" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple89/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple90" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple90/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple91" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple91/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple92" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple92/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple93" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple93/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple94" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple94/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple95" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple95/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple96" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple96/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple97" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple97/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple98" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple98/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple99" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple99/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/simple100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">Simple</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 4em;">
 						
-						<a href="/games/sudokucss/easy1" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy1/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy2" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy2/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy3" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy3/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy4" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy4/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy5" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy5/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy6" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy6/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy7" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy7/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy8" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy8/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy9" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy9/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy10" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy10/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy11" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy11/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy12" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy12/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy13" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy13/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy14" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy14/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy15" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy15/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy16" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy16/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy17" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy17/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy18" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy18/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy19" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy19/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy20" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy20/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy21" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy21/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy22" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy22/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy23" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy23/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy24" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy24/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy25" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy25/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy26" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy26/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy27" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy27/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy28" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy28/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy29" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy29/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy30" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy30/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy31" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy31/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy32" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy32/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy33" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy33/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy34" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy34/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy35" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy35/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy36" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy36/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy37" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy37/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy38" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy38/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy39" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy39/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy40" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy40/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy41" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy41/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy42" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy42/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy43" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy43/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy44" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy44/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy45" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy45/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy46" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy46/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy47" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy47/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy48" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy48/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy49" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy49/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy50" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy50/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy51" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy51/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy52" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy52/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy53" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy53/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy54" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy54/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy55" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy55/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy56" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy56/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy57" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy57/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy58" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy58/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy59" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy59/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy60" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy60/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy61" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy61/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy62" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy62/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy63" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy63/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy64" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy64/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy65" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy65/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy66" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy66/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy67" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy67/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy68" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy68/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy69" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy69/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy70" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy70/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy71" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy71/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy72" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy72/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy73" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy73/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy74" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy74/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy75" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy75/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy76" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy76/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy77" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy77/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy78" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy78/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy79" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy79/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy80" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy80/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy81" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy81/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy82" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy82/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy83" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy83/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy84" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy84/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy85" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy85/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy86" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy86/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy87" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy87/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy88" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy88/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy89" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy89/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy90" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy90/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy91" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy91/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy92" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy92/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy93" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy93/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy94" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy94/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy95" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy95/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy96" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy96/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy97" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy97/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy98" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy98/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy99" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy99/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/easy100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">Easy</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 8em;">
 						
-						<a href="/games/sudokucss/medium1" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium1/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium2" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium2/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium3" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium3/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium4" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium4/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium5" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium5/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium6" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium6/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium7" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium7/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium8" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium8/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium9" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium9/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium10" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium10/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium11" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium11/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium12" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium12/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium13" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium13/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium14" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium14/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium15" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium15/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium16" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium16/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium17" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium17/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium18" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium18/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium19" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium19/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium20" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium20/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium21" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium21/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium22" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium22/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium23" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium23/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium24" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium24/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium25" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium25/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium26" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium26/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium27" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium27/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium28" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium28/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium29" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium29/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium30" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium30/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium31" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium31/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium32" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium32/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium33" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium33/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium34" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium34/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium35" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium35/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium36" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium36/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium37" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium37/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium38" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium38/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium39" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium39/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium40" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium40/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium41" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium41/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium42" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium42/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium43" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium43/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium44" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium44/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium45" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium45/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium46" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium46/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium47" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium47/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium48" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium48/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium49" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium49/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium50" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium50/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium51" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium51/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium52" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium52/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium53" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium53/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium54" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium54/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium55" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium55/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium56" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium56/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium57" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium57/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium58" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium58/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium59" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium59/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium60" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium60/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium61" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium61/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium62" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium62/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium63" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium63/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium64" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium64/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium65" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium65/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium66" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium66/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium67" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium67/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium68" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium68/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium69" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium69/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium70" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium70/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium71" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium71/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium72" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium72/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium73" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium73/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium74" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium74/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium75" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium75/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium76" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium76/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium77" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium77/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium78" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium78/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium79" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium79/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium80" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium80/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium81" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium81/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium82" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium82/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium83" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium83/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium84" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium84/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium85" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium85/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium86" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium86/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium87" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium87/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium88" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium88/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium89" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium89/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium90" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium90/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium91" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium91/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium92" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium92/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium93" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium93/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium94" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium94/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium95" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium95/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium96" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium96/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium97" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium97/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium98" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium98/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium99" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium99/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/medium100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">Medium</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 12em;">
 						
-						<a href="/games/sudokucss/hard1" class="randomPuzzle1 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard1/index.html" class="randomPuzzle1 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard2" class="randomPuzzle2 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard2/index.html" class="randomPuzzle2 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard3" class="randomPuzzle3 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard3/index.html" class="randomPuzzle3 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard4" class="randomPuzzle4 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard4/index.html" class="randomPuzzle4 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard5" class="randomPuzzle5 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard5/index.html" class="randomPuzzle5 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard6" class="randomPuzzle6 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard6/index.html" class="randomPuzzle6 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard7" class="randomPuzzle7 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard7/index.html" class="randomPuzzle7 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard8" class="randomPuzzle8 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard8/index.html" class="randomPuzzle8 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard9" class="randomPuzzle9 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard9/index.html" class="randomPuzzle9 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard10" class="randomPuzzle10 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard10/index.html" class="randomPuzzle10 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard11" class="randomPuzzle11 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard11/index.html" class="randomPuzzle11 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard12" class="randomPuzzle12 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard12/index.html" class="randomPuzzle12 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard13" class="randomPuzzle13 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard13/index.html" class="randomPuzzle13 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard14" class="randomPuzzle14 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard14/index.html" class="randomPuzzle14 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard15" class="randomPuzzle15 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard15/index.html" class="randomPuzzle15 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard16" class="randomPuzzle16 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard16/index.html" class="randomPuzzle16 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard17" class="randomPuzzle17 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard17/index.html" class="randomPuzzle17 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard18" class="randomPuzzle18 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard18/index.html" class="randomPuzzle18 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard19" class="randomPuzzle19 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard19/index.html" class="randomPuzzle19 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard20" class="randomPuzzle20 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard20/index.html" class="randomPuzzle20 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard21" class="randomPuzzle21 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard21/index.html" class="randomPuzzle21 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard22" class="randomPuzzle22 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard22/index.html" class="randomPuzzle22 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard23" class="randomPuzzle23 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard23/index.html" class="randomPuzzle23 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard24" class="randomPuzzle24 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard24/index.html" class="randomPuzzle24 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard25" class="randomPuzzle25 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard25/index.html" class="randomPuzzle25 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard26" class="randomPuzzle26 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard26/index.html" class="randomPuzzle26 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard27" class="randomPuzzle27 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard27/index.html" class="randomPuzzle27 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard28" class="randomPuzzle28 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard28/index.html" class="randomPuzzle28 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard29" class="randomPuzzle29 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard29/index.html" class="randomPuzzle29 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard30" class="randomPuzzle30 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard30/index.html" class="randomPuzzle30 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard31" class="randomPuzzle31 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard31/index.html" class="randomPuzzle31 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard32" class="randomPuzzle32 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard32/index.html" class="randomPuzzle32 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard33" class="randomPuzzle33 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard33/index.html" class="randomPuzzle33 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard34" class="randomPuzzle34 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard34/index.html" class="randomPuzzle34 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard35" class="randomPuzzle35 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard35/index.html" class="randomPuzzle35 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard36" class="randomPuzzle36 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard36/index.html" class="randomPuzzle36 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard37" class="randomPuzzle37 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard37/index.html" class="randomPuzzle37 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard38" class="randomPuzzle38 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard38/index.html" class="randomPuzzle38 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard39" class="randomPuzzle39 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard39/index.html" class="randomPuzzle39 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard40" class="randomPuzzle40 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard40/index.html" class="randomPuzzle40 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard41" class="randomPuzzle41 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard41/index.html" class="randomPuzzle41 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard42" class="randomPuzzle42 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard42/index.html" class="randomPuzzle42 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard43" class="randomPuzzle43 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard43/index.html" class="randomPuzzle43 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard44" class="randomPuzzle44 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard44/index.html" class="randomPuzzle44 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard45" class="randomPuzzle45 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard45/index.html" class="randomPuzzle45 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard46" class="randomPuzzle46 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard46/index.html" class="randomPuzzle46 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard47" class="randomPuzzle47 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard47/index.html" class="randomPuzzle47 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard48" class="randomPuzzle48 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard48/index.html" class="randomPuzzle48 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard49" class="randomPuzzle49 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard49/index.html" class="randomPuzzle49 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard50" class="randomPuzzle50 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard50/index.html" class="randomPuzzle50 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard51" class="randomPuzzle51 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard51/index.html" class="randomPuzzle51 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard52" class="randomPuzzle52 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard52/index.html" class="randomPuzzle52 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard53" class="randomPuzzle53 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard53/index.html" class="randomPuzzle53 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard54" class="randomPuzzle54 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard54/index.html" class="randomPuzzle54 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard55" class="randomPuzzle55 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard55/index.html" class="randomPuzzle55 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard56" class="randomPuzzle56 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard56/index.html" class="randomPuzzle56 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard57" class="randomPuzzle57 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard57/index.html" class="randomPuzzle57 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard58" class="randomPuzzle58 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard58/index.html" class="randomPuzzle58 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard59" class="randomPuzzle59 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard59/index.html" class="randomPuzzle59 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard60" class="randomPuzzle60 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard60/index.html" class="randomPuzzle60 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard61" class="randomPuzzle61 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard61/index.html" class="randomPuzzle61 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard62" class="randomPuzzle62 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard62/index.html" class="randomPuzzle62 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard63" class="randomPuzzle63 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard63/index.html" class="randomPuzzle63 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard64" class="randomPuzzle64 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard64/index.html" class="randomPuzzle64 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard65" class="randomPuzzle65 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard65/index.html" class="randomPuzzle65 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard66" class="randomPuzzle66 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard66/index.html" class="randomPuzzle66 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard67" class="randomPuzzle67 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard67/index.html" class="randomPuzzle67 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard68" class="randomPuzzle68 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard68/index.html" class="randomPuzzle68 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard69" class="randomPuzzle69 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard69/index.html" class="randomPuzzle69 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard70" class="randomPuzzle70 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard70/index.html" class="randomPuzzle70 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard71" class="randomPuzzle71 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard71/index.html" class="randomPuzzle71 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard72" class="randomPuzzle72 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard72/index.html" class="randomPuzzle72 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard73" class="randomPuzzle73 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard73/index.html" class="randomPuzzle73 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard74" class="randomPuzzle74 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard74/index.html" class="randomPuzzle74 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard75" class="randomPuzzle75 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard75/index.html" class="randomPuzzle75 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard76" class="randomPuzzle76 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard76/index.html" class="randomPuzzle76 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard77" class="randomPuzzle77 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard77/index.html" class="randomPuzzle77 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard78" class="randomPuzzle78 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard78/index.html" class="randomPuzzle78 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard79" class="randomPuzzle79 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard79/index.html" class="randomPuzzle79 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard80" class="randomPuzzle80 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard80/index.html" class="randomPuzzle80 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard81" class="randomPuzzle81 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard81/index.html" class="randomPuzzle81 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard82" class="randomPuzzle82 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard82/index.html" class="randomPuzzle82 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard83" class="randomPuzzle83 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard83/index.html" class="randomPuzzle83 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard84" class="randomPuzzle84 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard84/index.html" class="randomPuzzle84 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard85" class="randomPuzzle85 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard85/index.html" class="randomPuzzle85 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard86" class="randomPuzzle86 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard86/index.html" class="randomPuzzle86 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard87" class="randomPuzzle87 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard87/index.html" class="randomPuzzle87 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard88" class="randomPuzzle88 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard88/index.html" class="randomPuzzle88 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard89" class="randomPuzzle89 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard89/index.html" class="randomPuzzle89 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard90" class="randomPuzzle90 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard90/index.html" class="randomPuzzle90 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard91" class="randomPuzzle91 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard91/index.html" class="randomPuzzle91 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard92" class="randomPuzzle92 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard92/index.html" class="randomPuzzle92 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard93" class="randomPuzzle93 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard93/index.html" class="randomPuzzle93 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard94" class="randomPuzzle94 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard94/index.html" class="randomPuzzle94 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard95" class="randomPuzzle95 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard95/index.html" class="randomPuzzle95 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard96" class="randomPuzzle96 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard96/index.html" class="randomPuzzle96 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard97" class="randomPuzzle97 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard97/index.html" class="randomPuzzle97 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard98" class="randomPuzzle98 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard98/index.html" class="randomPuzzle98 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard99" class="randomPuzzle99 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard99/index.html" class="randomPuzzle99 randomPuzzleh1"></a>
 						
-						<a href="/games/sudokucss/hard100" class="randomPuzzle100 randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard100/index.html" class="randomPuzzle100 randomPuzzleh1"></a>
 						
 						<a href="" class="linkholder">Hard</a>
 						</span>
@@ -17182,24 +17193,42 @@ input:checked + .turn16 ~ #maxContainerCover {
 			</li>
 			<li class="nav dropdown2">
 				<ul class="dropdown-content2">
-					<li><a href="/maps/electoral">Electoral College</a></li>
-					<li><a href="/maps/cdmap">U.S. House Map</a></li>
+					<li><a href="/maps/electoral/index.html">Electoral College</a></li>
+					<li><a href="/maps/cdmap/index.html">U.S. House Map</a></li>
 				</ul>
 				<a class="dropdown2">Maps</a>
 			</li>
 			<li class="nav dropdown3">
 				<ul class="dropdown-content3">
-					<li><a href="/math/whatisbinary">Binary</a></li>
+					<li><a href="/math/whatisbinary/index.html">Binary</a></li>
 					
-					<li><a href="/math/trigonometryquiz">Trigonometry</a></li>
+					<li><a href="/math/trigonometryquiz/index.html">Trigonometry</a></li>
 				</ul>
 				<a class="dropdown3">Math</a>
 			</li>
 			<li class="nav dropdown3">
 				<ul class="dropdown-content3">
-					<li><a href="/howto/about">Why?</a></li>
+					<li><a href="/howto/about/index.html">Why?</a></li>
 				</ul>
-				<a class="dropdown3" href="/howto/about">About</a>
+				<a class="dropdown3" href="/howto/about/index.html">About</a>
+			</li>
+		
+		</ul>
+		<ul class="navbar mobile-navbar">
+				
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;">CSS Hole</a></li>
+			
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/howto/about/index.html">Why?</a></li>
+					<li><a href="/games/sudokucss/easy50/index.html">Sudoku</a></li>
+					<li><a href="/games/travellingsalesman/1050/index.html">Travelling Salesman</a></li>
+					<li><a href="/math/trigonometryquiz/index.html">Trigonometry</a></li>
+					<li><a href="/math/whatisbinary/index.html">Binary</a></li>
+					<li><a href="/maps/electoral/index.html">Electoral College</a></li>
+					<li><a href="/maps/cdmap/index.html">U.S. House Map</a></li>
+				</ul>
+				<a class="dropdown3">Menu</a>
 			</li>
 		
 		</ul>
@@ -20808,6 +20837,7 @@ input:checked + .turn16 ~ #maxContainerCover {
 		
 		
 		<div id="scoreboard">
+		<span class="howtoplay">Click a city to start your journey. Then visit every city and return home with the shortest possible route.</span>
 		
 			
 				<span id="CharlestonCharlestonScoreMax" class="scoreboardSpan" style="width:0vw;">
@@ -22942,6 +22972,9 @@ input:checked + .turn16 ~ #maxContainerCover {
 		<div id="maxContainerCover">
 				
 		</div>
+		<span class="winner">
+		  	<span class="randomPuzzlet0 notnav"><a href="/games/travellingsalesman/151/index.html" class="randomPuzzle1 randomPuzzlen1"></a><a href="/games/travellingsalesman/152/index.html" class="randomPuzzle2 randomPuzzlen1"></a><a href="/games/travellingsalesman/153/index.html" class="randomPuzzle3 randomPuzzlen1"></a><a href="/games/travellingsalesman/154/index.html" class="randomPuzzle4 randomPuzzlen1"></a><a href="/games/travellingsalesman/155/index.html" class="randomPuzzle5 randomPuzzlen1"></a><a href="/games/travellingsalesman/156/index.html" class="randomPuzzle6 randomPuzzlen1"></a><a href="/games/travellingsalesman/157/index.html" class="randomPuzzle7 randomPuzzlen1"></a><a href="/games/travellingsalesman/158/index.html" class="randomPuzzle8 randomPuzzlen1"></a><a href="/games/travellingsalesman/159/index.html" class="randomPuzzle9 randomPuzzlen1"></a><a href="/games/travellingsalesman/1510/index.html" class="randomPuzzle10 randomPuzzlen1"></a><a href="/games/travellingsalesman/1511/index.html" class="randomPuzzle11 randomPuzzlen1"></a><a href="/games/travellingsalesman/1512/index.html" class="randomPuzzle12 randomPuzzlen1"></a><a href="/games/travellingsalesman/1513/index.html" class="randomPuzzle13 randomPuzzlen1"></a><a href="/games/travellingsalesman/1514/index.html" class="randomPuzzle14 randomPuzzlen1"></a><a href="/games/travellingsalesman/1515/index.html" class="randomPuzzle15 randomPuzzlen1"></a><a href="/games/travellingsalesman/1516/index.html" class="randomPuzzle16 randomPuzzlen1"></a><a href="/games/travellingsalesman/1517/index.html" class="randomPuzzle17 randomPuzzlen1"></a><a href="/games/travellingsalesman/1518/index.html" class="randomPuzzle18 randomPuzzlen1"></a><a href="/games/travellingsalesman/1519/index.html" class="randomPuzzle19 randomPuzzlen1"></a><a href="/games/travellingsalesman/1520/index.html" class="randomPuzzle20 randomPuzzlen1"></a><a href="/games/travellingsalesman/1521/index.html" class="randomPuzzle21 randomPuzzlen1"></a><a href="/games/travellingsalesman/1522/index.html" class="randomPuzzle22 randomPuzzlen1"></a><a href="/games/travellingsalesman/1523/index.html" class="randomPuzzle23 randomPuzzlen1"></a><a href="/games/travellingsalesman/1524/index.html" class="randomPuzzle24 randomPuzzlen1"></a><a href="/games/travellingsalesman/1525/index.html" class="randomPuzzle25 randomPuzzlen1"></a><a href="/games/travellingsalesman/1526/index.html" class="randomPuzzle26 randomPuzzlen1"></a><a href="/games/travellingsalesman/1527/index.html" class="randomPuzzle27 randomPuzzlen1"></a><a href="/games/travellingsalesman/1528/index.html" class="randomPuzzle28 randomPuzzlen1"></a><a href="/games/travellingsalesman/1529/index.html" class="randomPuzzle29 randomPuzzlen1"></a><a href="/games/travellingsalesman/1530/index.html" class="randomPuzzle30 randomPuzzlen1"></a><a href="/games/travellingsalesman/1531/index.html" class="randomPuzzle31 randomPuzzlen1"></a><a href="/games/travellingsalesman/1532/index.html" class="randomPuzzle32 randomPuzzlen1"></a><a href="/games/travellingsalesman/1533/index.html" class="randomPuzzle33 randomPuzzlen1"></a><a href="/games/travellingsalesman/1534/index.html" class="randomPuzzle34 randomPuzzlen1"></a><a href="/games/travellingsalesman/1535/index.html" class="randomPuzzle35 randomPuzzlen1"></a><a href="/games/travellingsalesman/1536/index.html" class="randomPuzzle36 randomPuzzlen1"></a><a href="/games/travellingsalesman/1537/index.html" class="randomPuzzle37 randomPuzzlen1"></a><a href="/games/travellingsalesman/1538/index.html" class="randomPuzzle38 randomPuzzlen1"></a><a href="/games/travellingsalesman/1539/index.html" class="randomPuzzle39 randomPuzzlen1"></a><a href="/games/travellingsalesman/1540/index.html" class="randomPuzzle40 randomPuzzlen1"></a><a href="/games/travellingsalesman/1541/index.html" class="randomPuzzle41 randomPuzzlen1"></a><a href="/games/travellingsalesman/1542/index.html" class="randomPuzzle42 randomPuzzlen1"></a><a href="/games/travellingsalesman/1543/index.html" class="randomPuzzle43 randomPuzzlen1"></a><a href="/games/travellingsalesman/1544/index.html" class="randomPuzzle44 randomPuzzlen1"></a><a href="/games/travellingsalesman/1545/index.html" class="randomPuzzle45 randomPuzzlen1"></a><a href="/games/travellingsalesman/1546/index.html" class="randomPuzzle46 randomPuzzlen1"></a><a href="/games/travellingsalesman/1547/index.html" class="randomPuzzle47 randomPuzzlen1"></a><a href="/games/travellingsalesman/1548/index.html" class="randomPuzzle48 randomPuzzlen1"></a><a href="/games/travellingsalesman/1549/index.html" class="randomPuzzle49 randomPuzzlen1"></a><a href="/games/travellingsalesman/1550/index.html" class="randomPuzzle50 randomPuzzlen1"></a><a href="/games/travellingsalesman/1551/index.html" class="randomPuzzle51 randomPuzzlen1"></a><a href="/games/travellingsalesman/1552/index.html" class="randomPuzzle52 randomPuzzlen1"></a><a href="/games/travellingsalesman/1553/index.html" class="randomPuzzle53 randomPuzzlen1"></a><a href="/games/travellingsalesman/1554/index.html" class="randomPuzzle54 randomPuzzlen1"></a><a href="/games/travellingsalesman/1555/index.html" class="randomPuzzle55 randomPuzzlen1"></a><a href="/games/travellingsalesman/1556/index.html" class="randomPuzzle56 randomPuzzlen1"></a><a href="/games/travellingsalesman/1557/index.html" class="randomPuzzle57 randomPuzzlen1"></a><a href="/games/travellingsalesman/1558/index.html" class="randomPuzzle58 randomPuzzlen1"></a><a href="/games/travellingsalesman/1559/index.html" class="randomPuzzle59 randomPuzzlen1"></a><a href="/games/travellingsalesman/1560/index.html" class="randomPuzzle60 randomPuzzlen1"></a><a href="/games/travellingsalesman/1561/index.html" class="randomPuzzle61 randomPuzzlen1"></a><a href="/games/travellingsalesman/1562/index.html" class="randomPuzzle62 randomPuzzlen1"></a><a href="/games/travellingsalesman/1563/index.html" class="randomPuzzle63 randomPuzzlen1"></a><a href="/games/travellingsalesman/1564/index.html" class="randomPuzzle64 randomPuzzlen1"></a><a href="/games/travellingsalesman/1565/index.html" class="randomPuzzle65 randomPuzzlen1"></a><a href="/games/travellingsalesman/1566/index.html" class="randomPuzzle66 randomPuzzlen1"></a><a href="/games/travellingsalesman/1567/index.html" class="randomPuzzle67 randomPuzzlen1"></a><a href="/games/travellingsalesman/1568/index.html" class="randomPuzzle68 randomPuzzlen1"></a><a href="/games/travellingsalesman/1569/index.html" class="randomPuzzle69 randomPuzzlen1"></a><a href="/games/travellingsalesman/1570/index.html" class="randomPuzzle70 randomPuzzlen1"></a><a href="/games/travellingsalesman/1571/index.html" class="randomPuzzle71 randomPuzzlen1"></a><a href="/games/travellingsalesman/1572/index.html" class="randomPuzzle72 randomPuzzlen1"></a><a href="/games/travellingsalesman/1573/index.html" class="randomPuzzle73 randomPuzzlen1"></a><a href="/games/travellingsalesman/1574/index.html" class="randomPuzzle74 randomPuzzlen1"></a><a href="/games/travellingsalesman/1575/index.html" class="randomPuzzle75 randomPuzzlen1"></a><a href="/games/travellingsalesman/1576/index.html" class="randomPuzzle76 randomPuzzlen1"></a><a href="/games/travellingsalesman/1577/index.html" class="randomPuzzle77 randomPuzzlen1"></a><a href="/games/travellingsalesman/1578/index.html" class="randomPuzzle78 randomPuzzlen1"></a><a href="/games/travellingsalesman/1579/index.html" class="randomPuzzle79 randomPuzzlen1"></a><a href="/games/travellingsalesman/1580/index.html" class="randomPuzzle80 randomPuzzlen1"></a><a href="/games/travellingsalesman/1581/index.html" class="randomPuzzle81 randomPuzzlen1"></a><a href="/games/travellingsalesman/1582/index.html" class="randomPuzzle82 randomPuzzlen1"></a><a href="/games/travellingsalesman/1583/index.html" class="randomPuzzle83 randomPuzzlen1"></a><a href="/games/travellingsalesman/1584/index.html" class="randomPuzzle84 randomPuzzlen1"></a><a href="/games/travellingsalesman/1585/index.html" class="randomPuzzle85 randomPuzzlen1"></a><a href="/games/travellingsalesman/1586/index.html" class="randomPuzzle86 randomPuzzlen1"></a><a href="/games/travellingsalesman/1587/index.html" class="randomPuzzle87 randomPuzzlen1"></a><a href="/games/travellingsalesman/1588/index.html" class="randomPuzzle88 randomPuzzlen1"></a><a href="/games/travellingsalesman/1589/index.html" class="randomPuzzle89 randomPuzzlen1"></a><a href="/games/travellingsalesman/1590/index.html" class="randomPuzzle90 randomPuzzlen1"></a><a href="/games/travellingsalesman/1591/index.html" class="randomPuzzle91 randomPuzzlen1"></a><a href="/games/travellingsalesman/1592/index.html" class="randomPuzzle92 randomPuzzlen1"></a><a href="/games/travellingsalesman/1593/index.html" class="randomPuzzle93 randomPuzzlen1"></a><a href="/games/travellingsalesman/1594/index.html" class="randomPuzzle94 randomPuzzlen1"></a><a href="/games/travellingsalesman/1595/index.html" class="randomPuzzle95 randomPuzzlen1"></a><a href="/games/travellingsalesman/1596/index.html" class="randomPuzzle96 randomPuzzlen1"></a><a href="/games/travellingsalesman/1597/index.html" class="randomPuzzle97 randomPuzzlen1"></a><a href="/games/travellingsalesman/1598/index.html" class="randomPuzzle98 randomPuzzlen1"></a><a href="/games/travellingsalesman/1599/index.html" class="randomPuzzle99 randomPuzzlen1"></a><a href="/games/travellingsalesman/15100/index.html" class="randomPuzzle100 randomPuzzlen1"></a><a href="" class="linkholder"> New Puzzle</a></span>
+		  </span>
 		
 
 

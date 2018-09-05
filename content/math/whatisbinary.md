@@ -1,5 +1,6 @@
 ---
-title: "Electoral Map - Just CSS/HTML"
+title: "Binary Introduction"
+description: "Learn the basics of binary numbers."
 date: 2018-06-20
 tags: []
 draft: false

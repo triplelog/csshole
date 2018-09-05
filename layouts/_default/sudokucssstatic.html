@@ -42,7 +42,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 		  <span class="blackout{{ $i.idx }} normBlock blackoutAll">{{ $i.idx }}</span>
 
 		  <span class="winner">
-		  	<a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 0 }}" class="buttonPuzzle">Reset Puzzle</a><a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}" class="buttonPuzzle">Next Puzzle</a><span class="randomPuzzlet0 notnav">{{range $pid := (seq 100)}}<a href="/games/sudokucss/{{$.Param "gametype"}}{{ $pid }}" class="randomPuzzle{{ $pid}} randomPuzzlen1"></a>{{ end}}<a href="" class="linkholder"> Random Puzzle</a></span>
+		  	<a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 0 }}/index.html" class="buttonPuzzle">Reset Puzzle</a><a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}/index.html" class="buttonPuzzle">Next Puzzle</a><span class="randomPuzzlet0 notnav">{{range $pid := (seq 100)}}<a href="/games/sudokucss/{{$.Param "gametype"}}{{ $pid }}/index.html" class="randomPuzzle{{ $pid}} randomPuzzlen1"></a>{{ end}}<a href="" class="linkholder"> Random Puzzle</a></span>
 		  </span>
 		  <span class="nowinmessage">
 		  </span>

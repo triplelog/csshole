@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.com/maps/cdmap/</link>
+      <title>Binary Introduction</title>
+      <link>https://csshole.com/math/whatisbinary/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/maps/cdmap/</guid>
+      <guid>https://csshole.com/math/whatisbinary/</guid>
       <description></description>
     </item>
     
@@ -57,15 +57,6 @@
     </item>
     
     <item>
-      <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.com/math/whatisbinary/</link>
-      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://csshole.com/math/whatisbinary/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Interactive Maps with only CSS/HTML</title>
       <link>https://csshole.com/howto/howtomap/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
@@ -82,6 +73,15 @@
       
       <guid>https://csshole.com/howto/about/</guid>
       <description>Every web page on this domain is created using only HTML and CSS. No Javascript and no server interaction (other than navigating to a new static page). There is no good reason to make an interactive website completely static and avoid Javascript. Most of these web pages could be improved and made smaller by using just a few lines of Javascript because CSS is really not designed to do the things I use it for.</description>
+    </item>
+    
+    <item>
+      <title>Sources for maps and political data</title>
+      <link>https://csshole.com/howto/sources/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.com/howto/sources/</guid>
+      <description> The default values for House races come from Sabato&#39;s crystal ball at UVA&#39;s Center for Politics.  The partisan index for each district comes from Cook PVI.  The congressional district maps come from this GitHub repository.  </description>
     </item>
     
     <item>
@@ -7381,6 +7381,15 @@ But there are features that a computer makes possible that paper and pencil cann
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://csshole.com/math/trigonometryquiz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>U.S. House Races Map - Just CSS/HTML</title>
+      <link>https://csshole.com/maps/cdmap/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.com/maps/cdmap/</guid>
       <description></description>
     </item>
     

@@ -72,7 +72,7 @@ input {
 	top: calc(var(--width-block) / 2);
 }
 .blackoutAll {
-	top: calc(var(--left-margin) * -1 + var(--width-block));
+	top: calc(var(--width-block) * -1.5);
 }
 .cmark1 {
 	left: calc(var(--width-block)*0 + 4px*0 + var(--left-margin) + 3px); 

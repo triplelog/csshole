@@ -192,7 +192,7 @@ label.c0n1:not(.nextButton) {
 </head>
 {{ partial "body-open" . }}
 
-	<div style="position: relative; left: 5%;">
+	<div style="position: relative; left: calc((100vw - (300px)) / 2);">
 		  <div class="blockBase">
 		  	<svg viewBox="0 0 {{mul $nlevels 20}} 20">
 		  		{{ range $nspan := (seq (add $nlevels 0)) }}

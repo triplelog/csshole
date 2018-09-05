@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>Sources for maps and political data</title>
+      <link>https://csshole.com/howto/sources/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://csshole.com/howto/sources/</guid>
+      <description> The default values for House races come from Sabato&#39;s crystal ball at UVA&#39;s Center for Politics.  The partisan index for each district comes from Cook PVI.  The congressional district maps come from this GitHub repository.  </description>
+    </item>
+    
+    <item>
       <title>Sudoku Game with only CSS/HTML</title>
       <link>https://csshole.com/howto/howtosudoku/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>

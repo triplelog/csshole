@@ -2,32 +2,32 @@
     <body>
         <ul class="navbar">
 				
-			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;"><img src="/images/logoText.png" height="30px" style="vertical-align: middle;"></a></li>
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;">CSS Hole</a></li>
 			<li class="nav dropdown1">
 				<ul class="dropdown-content1">
 					<li class="dropdown1a">
 						<ul class="dropdown-content1a">
 						<span class="randomPuzzlet0" style="top: 0em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/travellingsalesman/10{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/10{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">10 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 4em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/travellingsalesman/15{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/15{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">15 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 8em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/travellingsalesman/20{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/20{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">20 Cities</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 12em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/travellingsalesman/25{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/travellingsalesman/25{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">25 Cities</a>
 						</span>
@@ -38,25 +38,25 @@
 						<ul class="dropdown-content1b">
 						<span class="randomPuzzlet0" style="top: 0em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/sudokucss/simple{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/sudokucss/simple{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">Simple</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 4em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/sudokucss/easy{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/sudokucss/easy{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">Easy</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 8em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/sudokucss/medium{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/sudokucss/medium{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">Medium</a>
 						</span>
 						<span class="randomPuzzlet0" style="top: 12em;">
 						{{ range $pid := (seq 100) }}
-						<a href="/games/sudokucss/hard{{ $pid }}" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
+						<a href="/games/sudokucss/hard{{ $pid }}/index.html" class="randomPuzzle{{ $pid }} randomPuzzleh1"></a>
 						{{ end }}
 						<a href="" class="linkholder">Hard</a>
 						</span>
@@ -68,24 +68,42 @@
 			</li>
 			<li class="nav dropdown2">
 				<ul class="dropdown-content2">
-					<li><a href="/maps/electoral">Electoral College</a></li>
-					<li><a href="/maps/cdmap">U.S. House Map</a></li>
+					<li><a href="/maps/electoral/index.html">Electoral College</a></li>
+					<li><a href="/maps/cdmap/index.html">U.S. House Map</a></li>
 				</ul>
 				<a class="dropdown2">Maps</a>
 			</li>
 			<li class="nav dropdown3">
 				<ul class="dropdown-content3">
-					<li><a href="/math/whatisbinary">Binary</a></li>
+					<li><a href="/math/whatisbinary/index.html">Binary</a></li>
 					<!--<li><a href="/math/whatisaddition">Addition</a></li>-->
-					<li><a href="/math/trigonometryquiz">Trigonometry</a></li>
+					<li><a href="/math/trigonometryquiz/index.html">Trigonometry</a></li>
 				</ul>
 				<a class="dropdown3">Math</a>
 			</li>
 			<li class="nav dropdown3">
 				<ul class="dropdown-content3">
-					<li><a href="/howto/about">Why?</a></li>
+					<li><a href="/howto/about/index.html">Why?</a></li>
 				</ul>
-				<a class="dropdown3" href="/howto/about">About</a>
+				<a class="dropdown3" href="/howto/about/index.html">About</a>
+			</li>
+		
+		</ul>
+		<ul class="navbar mobile-navbar">
+				
+			<li class="logo"><span class="helper"></span><a href="/index.html" style="vertical-align: middle; display: inline-block;">CSS Hole</a></li>
+			
+			<li class="nav dropdown3">
+				<ul class="dropdown-content3">
+					<li><a href="/howto/about/index.html">Why?</a></li>
+					<li><a href="/games/sudokucss/easy50/index.html">Sudoku</a></li>
+					<li><a href="/games/travellingsalesman/1050/index.html">Travelling Salesman</a></li>
+					<li><a href="/math/trigonometryquiz/index.html">Trigonometry</a></li>
+					<li><a href="/math/whatisbinary/index.html">Binary</a></li>
+					<li><a href="/maps/electoral/index.html">Electoral College</a></li>
+					<li><a href="/maps/cdmap/index.html">U.S. House Map</a></li>
+				</ul>
+				<a class="dropdown3">Menu</a>
 			</li>
 		
 		</ul>

@@ -1,5 +1,6 @@
 ---
 title: "Electoral Map - Just CSS/HTML"
+description: "Create your own map to predict the 2020 Presidential election. View historical voting results for each state."
 date: 2018-06-20
 tags: []
 draft: false

@@ -1,5 +1,6 @@
 ---
 title: 'Trigonometry Quiz'
+description: 'Test your knowledge of trigonometric values.'
 date: 2018-06-20
 tags: []
 draft: false

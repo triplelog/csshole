@@ -124,9 +124,10 @@ for i in allresultshouse16[1:]:
 							ii['perc16r']=i[16].replace('%','')
 						elif i[10] == 'D':
 							ii['perc16d']=i[16].replace('%','')
-						
-xstretch = 90
-ystretch = 100
+
+precision = .5		
+xstretch = 90*precision
+ystretch = 100*precision
 states = allstates
 allbounds = [10000,10000,-10000,-10000]
 for state in states:
@@ -143,17 +144,17 @@ for state in states:
 	lastx = 0
 	lasty = 0
 	if state['name'] == 'AK':
-		xstretch = 27
-		ystretch = 30
+		xstretch = 27*precision
+		ystretch = 30*precision
 	else:
-		xstretch = 90
-		ystretch = 100
+		xstretch = 90*precision
+		ystretch = 100*precision
 	if state['name'] == 'AK':
-		xadd = -6500
-		yadd = -950
+		xadd = -6500*precision
+		yadd = -950*precision
 	elif state['name'] == 'HI':
-		xadd = 4600
-		yadd = -500
+		xadd = 4600*precision
+		yadd = -500*precision
 	else:
 		xadd = 0
 		yadd = 0
@@ -161,7 +162,7 @@ for state in states:
 		for iii in iiii:
 			iStr = ""
 			for ii in range(0,len(iii)):
-				if int(xstretch*iii[ii][0])+xadd >= lastx + 3 or -1*int(ystretch*iii[ii][1])+yadd >= lasty + 3 or int(xstretch*iii[ii][0])+xadd <= lastx - 3 or -1*int(ystretch*iii[ii][1])+yadd <= lasty - 3:
+				if int(xstretch*iii[ii][0])+xadd != lastx or -1*int(ystretch*iii[ii][1])+yadd != lasty or int(xstretch*iii[ii][0])+xadd != lastx or -1*int(ystretch*iii[ii][1])+yadd != lasty:
 					iStr += str(int(xstretch*iii[ii][0])+xadd)
 					iStr += ','
 					iStr += str(-1*int(ystretch*iii[ii][1])+yadd)
@@ -202,7 +203,7 @@ for state in states:
 			for iii in iiii:
 				iStr = ""
 				for ii in range(0,len(iii)):
-					if int(xstretch*iii[ii][0])+xadd >= lastx + 3 or -1*int(ystretch*iii[ii][1])+yadd >= lasty + 3 or int(xstretch*iii[ii][0])+xadd <= lastx - 3 or -1*int(ystretch*iii[ii][1])+yadd <= lasty - 3:
+					if int(xstretch*iii[ii][0])+xadd != lastx or -1*int(ystretch*iii[ii][1])+yadd != lasty or int(xstretch*iii[ii][0])+xadd != lastx  or -1*int(ystretch*iii[ii][1])+yadd != lasty :
 						iStr += str(int(xstretch*iii[ii][0])+xadd)
 						iStr += ','
 						iStr += str(-1*int(ystretch*iii[ii][1])+yadd)
@@ -231,7 +232,7 @@ for state in states:
 	print(state['name'],state['bounds'])
 
 f = open('cdmap.md','w')
-startStr = "---\ntitle: 'Electoral Map - Just CSS/HTML'\ndate: 2018-06-20\ntags: []\ndraft: false\ntype: 'games'\n"
+startStr = "---\ntitle: 'U.S. House Races Map - Just CSS/HTML'\ndescription: 'Create your own map to predict 2018 U.S. House races. View information about each district to pick a winner.'\ndate: 2018-06-20\ntags: []\ndraft: false\ntype: 'games'\n"
 f.write(startStr+'states: '+json.dumps(states)+'\nbounds: "'+str(allbounds[0]-1)+' '+str(allbounds[1]-1)+' '+str(allbounds[2]-allbounds[0]+2)+' '+str(allbounds[3]-allbounds[1]+2)+'"\n'+"layout: 'congdistrictmap'\n---")
 f.close()
 

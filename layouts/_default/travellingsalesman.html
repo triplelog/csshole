@@ -10,6 +10,9 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 	display:inline;
 	z-index: 1;
 }
+input:checked + label.turn2 ~ #scoreboard > .howtoplay {
+	display: none;
+}
 {{ range $turnn := (seq ($.Param "numcities") ) }}
 	.turn{{add $turnn 1}} {
 	display: none;
@@ -75,6 +78,14 @@ input:checked + .turn{{add ($.Param "numcities") 1}} ~ #maxContainerCover {
 	height: 100%;
 	display: none;
 	background: red;
+}
+.winner {
+	position:absolute;
+	top:calc(35vw - 10px * var(--p-button-h));
+	left:5vw;
+	z-index:10;
+	width:calc(500px * var(--p-button-mul));
+	height: 20px;
 }
 #maxContainer {
 	position: absolute;
@@ -249,6 +260,7 @@ input:checked + .turn{{add ($.Param "numcities") 1}} ~ #maxContainerCover {
 		{{ end }}
 		
 		<div id="scoreboard">
+		<span class="howtoplay">Click a city to start your journey. Then visit every city and return home with the shortest possible route.</span>
 		{{ range $idx,$i := .Params.cities }}
 			{{ range $iidx,$ii := $.Param "cities" }}
 				<span id="{{ $i.name }}{{ $ii.name }}ScoreMax" class="scoreboardSpan" style="width:{{mul (div (index $i.distances $iidx) 200.00) 9.00}}vw;">
@@ -283,6 +295,9 @@ input:checked + .turn{{add ($.Param "numcities") 1}} ~ #maxContainerCover {
 		<div id="maxContainerCover">
 				
 		</div>
+		<span class="winner">
+		  	<span class="randomPuzzlet0 notnav">{{range $pid := (seq 100)}}<a href="/games/travellingsalesman/{{$.Param "numcities"}}{{ $pid }}/index.html" class="randomPuzzle{{ $pid}} randomPuzzlen1"></a>{{ end}}<a href="" class="linkholder"> New Puzzle</a></span>
+		  </span>
 		
 
 

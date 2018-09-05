@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://csshole.com/maps/cdmap/</loc>
+    <loc>https://csshole.com/math/whatisbinary/</loc>
     <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,17 +28,17 @@
   </url>
   
   <url>
-    <loc>https://csshole.com/math/whatisbinary/</loc>
-    <lastmod>2018-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://csshole.com/howto/howtomap/</loc>
     <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://csshole.com/howto/about/</loc>
+    <lastmod>2018-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://csshole.com/howto/sources/</loc>
     <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -4094,6 +4094,11 @@
   
   <url>
     <loc>https://csshole.com/math/trigonometryquiz/</loc>
+    <lastmod>2018-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://csshole.com/maps/cdmap/</loc>
     <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
