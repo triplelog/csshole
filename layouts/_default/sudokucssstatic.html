@@ -16,6 +16,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 {{ end }}
 
 
+
+
 </style>
 
 </head>
@@ -40,9 +42,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 		  <span class="blackout{{ $i.idx }} normBlock blackoutAll">{{ $i.idx }}</span>
 
 		  <span class="winner">
-		  	<a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 0 }}">Reset Puzzle</a> <a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}">Next Puzzle</a> {{range $pid := (seq 100)}}<a href="/games/sudokucss/{{$.Param "gametype"}}{{ $pid }}" class="randomPuzzle{{ $pid}} randomPuzzlen1"> Random Puzzle</a>{{ end}}
+		  	<a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 0 }}" class="buttonPuzzle">Reset Puzzle</a><a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}" class="buttonPuzzle">Next Puzzle</a><span class="randomPuzzlet0 notnav">{{range $pid := (seq 100)}}<a href="/games/sudokucss/{{$.Param "gametype"}}{{ $pid }}" class="randomPuzzle{{ $pid}} randomPuzzlen1"></a>{{ end}}<a href="" class="linkholder"> Random Puzzle</a></span>
 		  </span>
-		  <span class="winmessage"><a href="/games/sudokucss/{{$.Param "gametype"}}{{add ($.Param "gameid") 1 }}">Next Puzzle</a> Great job, you beat the game!</span>
+		  <span class="nowinmessage">
+		  </span>
+		  <span class="winmessage">Great job, you beat the game!</span>
 
 		  </span>
 		</label>

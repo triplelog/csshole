@@ -7,6 +7,41 @@ main {
     flex-direction: column;
 }
 
+:root {
+	--map-height: 23vw;
+	--nav-button-mul: 1;
+	--p-button-mul: .5;
+	--p-button-h: 2;
+	--p-font-size: 10px;
+}
+@media screen and (min-width: 320px) and (min-height: 320px) {
+	:root {
+    	--p-button-mul: .6;
+		--p-button-h: 3;
+		--p-font-size: 12px;
+    }
+}
+@media screen and (min-width: 480px) and (min-height: 480px) {
+	:root {
+    	--p-button-mul: .75;
+		--p-button-h: 4;
+		--p-font-size: 14px;
+    }
+}
+@media screen and (min-width: 720px) and (min-height: 720px) {
+	:root {
+    	--p-button-mul: 1;
+		--p-button-h: 5;
+		--p-font-size: 18px;
+    }
+}
+@media screen and (min-width: 1080px) and (min-height: 1080px) {
+	:root {
+    	--p-button-mul: 1.25;
+		--p-button-h: 6;
+		--p-font-size: 24px;
+    }
+}
 /*footer*/
 
 .copyright {
@@ -126,7 +161,7 @@ ul.dropdown-content1, ul.dropdown-content2, ul.dropdown-content3, ul.dropdown-co
     color: white;
     min-width: 160px;
     box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.33);
-    padding: 2px 4px;
+    padding: 0px;
     z-index: 1;
     overflow: visible;
     top: 0%;
@@ -204,325 +239,390 @@ li.logo a:hover {
 .randomPuzzleh1 {
 	position: absolute;
 	z-index: 1;
-	animation: randomz .1s infinite;
 	padding: 0px;
 	left: 0px;
-	width: 128px;
-	background: green;
-	
 }
 
 .randomPuzzlen1 {
 	position: absolute;
 	z-index: 1;
-	animation: randomz .1s infinite;
+	padding: 0px;
 }
 
-.randomPuzzlet0 {
+li.nav span.randomPuzzlet0 {
+	position: absolute;
+	z-index: 1;
+	background: black;
+	color: white;
+	padding:0px;
+	height: 4em;
+	width: calc(160px * var(--nav-button-mul));
+
+}
+li.nav span.randomPuzzlet0 a.linkholder {
+	padding-top: 1.5em;
+	position: absolute;
+	z-index: 1;
+	height: 2.5em;
+	width: calc(160px * var(--nav-button-mul));
+	opacity: 1;
+	background: inherit;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+
+}
+li.nav span.randomPuzzlet0:hover a {
+	color: red;
+}
+
+.notnav.randomPuzzlet0 {
+	position: absolute;
+	z-index: 1;
+	background: black;
+	color: white;
+	padding:0px;
+	height: calc(10px * var(--p-button-h));
+	width: calc(160px * var(--p-button-mul));
+
+}
+.notnav.randomPuzzlet0 a.linkholder {
+	padding-top: calc(3px * var(--p-button-h));
+	position: absolute;
+	z-index: 1;
+	height: calc(7px * var(--p-button-h));
+	width: calc(160px * var(--p-button-mul));
+	opacity: 1;
+	background: inherit;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: var(--p-font-size);
+
+}
+
+.notnav.randomPuzzlet0:hover a {
+	color: red;
+}
+
+a.buttonPuzzle {
+	display: inline-block;
+	padding-top: calc(3px * var(--p-button-h));
 	position: relative;
 	z-index: 1;
-	opacity: 0;
-
+	height: calc(7px * var(--p-button-h));
+	width: calc(160px * var(--p-button-mul));
+	opacity: 1;
+	background: black;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	border: 0px solid white;
+	border-right: 5px solid white;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: var(--p-font-size);
 }
 
-	.randomPuzzle1 {animation-delay: 0.001s;}
-	.randomPuzzle1:hover {z-index: 101;animation: randomz 0s; background: red;}
+li.nav a.randomPuzzle1 {left: calc(16px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle1 {left: calc(16px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle2 {animation-delay: 0.002s;}
-	.randomPuzzle2:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle2 {left: calc(32px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle2 {left: calc(32px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle3 {animation-delay: 0.003s;}
-	.randomPuzzle3:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle3 {left: calc(48px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle3 {left: calc(48px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle4 {animation-delay: 0.004s;}
-	.randomPuzzle4:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle4 {left: calc(64px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle4 {left: calc(64px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle5 {animation-delay: 0.005s;}
-	.randomPuzzle5:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle5 {left: calc(80px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle5 {left: calc(80px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle6 {animation-delay: 0.006s;}
-	.randomPuzzle6:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle6 {left: calc(96px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle6 {left: calc(96px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle7 {animation-delay: 0.007s;}
-	.randomPuzzle7:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle7 {left: calc(112px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle7 {left: calc(112px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle8 {animation-delay: 0.008s;}
-	.randomPuzzle8:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle8 {left: calc(128px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle8 {left: calc(128px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle9 {animation-delay: 0.009s;}
-	.randomPuzzle9:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle9 {left: calc(144px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle9 {left: calc(144px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle10 {animation-delay: 0.01s;}
-	.randomPuzzle10:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle10 {left: calc(0px * var(--nav-button-mul)); top: 0em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle10 {left: calc(0px * var(--p-button-mul)); top: calc(0px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle11 {animation-delay: 0.011s;}
-	.randomPuzzle11:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle11 {left: calc(16px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle11 {left: calc(16px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle12 {animation-delay: 0.012s;}
-	.randomPuzzle12:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle12 {left: calc(32px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle12 {left: calc(32px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle13 {animation-delay: 0.013s;}
-	.randomPuzzle13:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle13 {left: calc(48px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle13 {left: calc(48px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle14 {animation-delay: 0.014s;}
-	.randomPuzzle14:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle14 {left: calc(64px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle14 {left: calc(64px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle15 {animation-delay: 0.015s;}
-	.randomPuzzle15:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle15 {left: calc(80px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle15 {left: calc(80px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle16 {animation-delay: 0.016s;}
-	.randomPuzzle16:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle16 {left: calc(96px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle16 {left: calc(96px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle17 {animation-delay: 0.017s;}
-	.randomPuzzle17:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle17 {left: calc(112px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle17 {left: calc(112px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle18 {animation-delay: 0.018s;}
-	.randomPuzzle18:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle18 {left: calc(128px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle18 {left: calc(128px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle19 {animation-delay: 0.019s;}
-	.randomPuzzle19:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle19 {left: calc(144px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle19 {left: calc(144px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle20 {animation-delay: 0.02s;}
-	.randomPuzzle20:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle20 {left: calc(0px * var(--nav-button-mul)); top: 0.4em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle20 {left: calc(0px * var(--p-button-mul)); top: calc(1px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle21 {animation-delay: 0.021s;}
-	.randomPuzzle21:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle21 {left: calc(16px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle21 {left: calc(16px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle22 {animation-delay: 0.022s;}
-	.randomPuzzle22:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle22 {left: calc(32px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle22 {left: calc(32px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle23 {animation-delay: 0.023s;}
-	.randomPuzzle23:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle23 {left: calc(48px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle23 {left: calc(48px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle24 {animation-delay: 0.024s;}
-	.randomPuzzle24:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle24 {left: calc(64px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle24 {left: calc(64px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle25 {animation-delay: 0.025s;}
-	.randomPuzzle25:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle25 {left: calc(80px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle25 {left: calc(80px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle26 {animation-delay: 0.026s;}
-	.randomPuzzle26:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle26 {left: calc(96px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle26 {left: calc(96px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle27 {animation-delay: 0.027s;}
-	.randomPuzzle27:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle27 {left: calc(112px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle27 {left: calc(112px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle28 {animation-delay: 0.028s;}
-	.randomPuzzle28:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle28 {left: calc(128px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle28 {left: calc(128px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle29 {animation-delay: 0.029s;}
-	.randomPuzzle29:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle29 {left: calc(144px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle29 {left: calc(144px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle30 {animation-delay: 0.03s;}
-	.randomPuzzle30:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle30 {left: calc(0px * var(--nav-button-mul)); top: 0.8em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle30 {left: calc(0px * var(--p-button-mul)); top: calc(2px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle31 {animation-delay: 0.031s;}
-	.randomPuzzle31:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle31 {left: calc(16px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle31 {left: calc(16px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle32 {animation-delay: 0.032s;}
-	.randomPuzzle32:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle32 {left: calc(32px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle32 {left: calc(32px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle33 {animation-delay: 0.033s;}
-	.randomPuzzle33:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle33 {left: calc(48px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle33 {left: calc(48px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle34 {animation-delay: 0.034s;}
-	.randomPuzzle34:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle34 {left: calc(64px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle34 {left: calc(64px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle35 {animation-delay: 0.035000000000000003s;}
-	.randomPuzzle35:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle35 {left: calc(80px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle35 {left: calc(80px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle36 {animation-delay: 0.036s;}
-	.randomPuzzle36:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle36 {left: calc(96px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle36 {left: calc(96px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle37 {animation-delay: 0.037s;}
-	.randomPuzzle37:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle37 {left: calc(112px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle37 {left: calc(112px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle38 {animation-delay: 0.038s;}
-	.randomPuzzle38:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle38 {left: calc(128px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle38 {left: calc(128px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle39 {animation-delay: 0.039s;}
-	.randomPuzzle39:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle39 {left: calc(144px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle39 {left: calc(144px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle40 {animation-delay: 0.04s;}
-	.randomPuzzle40:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle40 {left: calc(0px * var(--nav-button-mul)); top: 1.2000000000000002em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle40 {left: calc(0px * var(--p-button-mul)); top: calc(3px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle41 {animation-delay: 0.041000000000000003s;}
-	.randomPuzzle41:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle41 {left: calc(16px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle41 {left: calc(16px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle42 {animation-delay: 0.042s;}
-	.randomPuzzle42:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle42 {left: calc(32px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle42 {left: calc(32px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle43 {animation-delay: 0.043s;}
-	.randomPuzzle43:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle43 {left: calc(48px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle43 {left: calc(48px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle44 {animation-delay: 0.044s;}
-	.randomPuzzle44:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle44 {left: calc(64px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle44 {left: calc(64px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle45 {animation-delay: 0.045s;}
-	.randomPuzzle45:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle45 {left: calc(80px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle45 {left: calc(80px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle46 {animation-delay: 0.046s;}
-	.randomPuzzle46:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle46 {left: calc(96px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle46 {left: calc(96px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle47 {animation-delay: 0.047000000000000003s;}
-	.randomPuzzle47:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle47 {left: calc(112px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle47 {left: calc(112px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle48 {animation-delay: 0.048s;}
-	.randomPuzzle48:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle48 {left: calc(128px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle48 {left: calc(128px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle49 {animation-delay: 0.049s;}
-	.randomPuzzle49:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle49 {left: calc(144px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle49 {left: calc(144px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle50 {animation-delay: 0.05s;}
-	.randomPuzzle50:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle50 {left: calc(0px * var(--nav-button-mul)); top: 1.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle50 {left: calc(0px * var(--p-button-mul)); top: calc(4px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle51 {animation-delay: 0.051s;}
-	.randomPuzzle51:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle51 {left: calc(16px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle51 {left: calc(16px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle52 {animation-delay: 0.052s;}
-	.randomPuzzle52:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle52 {left: calc(32px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle52 {left: calc(32px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle53 {animation-delay: 0.053s;}
-	.randomPuzzle53:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle53 {left: calc(48px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle53 {left: calc(48px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle54 {animation-delay: 0.054s;}
-	.randomPuzzle54:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle54 {left: calc(64px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle54 {left: calc(64px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle55 {animation-delay: 0.055s;}
-	.randomPuzzle55:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle55 {left: calc(80px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle55 {left: calc(80px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle56 {animation-delay: 0.056s;}
-	.randomPuzzle56:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle56 {left: calc(96px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle56 {left: calc(96px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle57 {animation-delay: 0.05700000000000001s;}
-	.randomPuzzle57:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle57 {left: calc(112px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle57 {left: calc(112px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle58 {animation-delay: 0.058s;}
-	.randomPuzzle58:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle58 {left: calc(128px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle58 {left: calc(128px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle59 {animation-delay: 0.059s;}
-	.randomPuzzle59:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle59 {left: calc(144px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle59 {left: calc(144px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle60 {animation-delay: 0.06s;}
-	.randomPuzzle60:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle60 {left: calc(0px * var(--nav-button-mul)); top: 2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle60 {left: calc(0px * var(--p-button-mul)); top: calc(5px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle61 {animation-delay: 0.061s;}
-	.randomPuzzle61:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle61 {left: calc(16px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle61 {left: calc(16px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle62 {animation-delay: 0.062s;}
-	.randomPuzzle62:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle62 {left: calc(32px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle62 {left: calc(32px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle63 {animation-delay: 0.063s;}
-	.randomPuzzle63:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle63 {left: calc(48px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle63 {left: calc(48px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle64 {animation-delay: 0.064s;}
-	.randomPuzzle64:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle64 {left: calc(64px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle64 {left: calc(64px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle65 {animation-delay: 0.065s;}
-	.randomPuzzle65:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle65 {left: calc(80px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle65 {left: calc(80px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle66 {animation-delay: 0.066s;}
-	.randomPuzzle66:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle66 {left: calc(96px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle66 {left: calc(96px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle67 {animation-delay: 0.067s;}
-	.randomPuzzle67:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle67 {left: calc(112px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle67 {left: calc(112px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle68 {animation-delay: 0.068s;}
-	.randomPuzzle68:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle68 {left: calc(128px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle68 {left: calc(128px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle69 {animation-delay: 0.06900000000000001s;}
-	.randomPuzzle69:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle69 {left: calc(144px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle69 {left: calc(144px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle70 {animation-delay: 0.07000000000000001s;}
-	.randomPuzzle70:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle70 {left: calc(0px * var(--nav-button-mul)); top: 2.4000000000000004em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle70 {left: calc(0px * var(--p-button-mul)); top: calc(6px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle71 {animation-delay: 0.071s;}
-	.randomPuzzle71:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle71 {left: calc(16px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle71 {left: calc(16px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle72 {animation-delay: 0.072s;}
-	.randomPuzzle72:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle72 {left: calc(32px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle72 {left: calc(32px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle73 {animation-delay: 0.073s;}
-	.randomPuzzle73:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle73 {left: calc(48px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle73 {left: calc(48px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle74 {animation-delay: 0.074s;}
-	.randomPuzzle74:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle74 {left: calc(64px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle74 {left: calc(64px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle75 {animation-delay: 0.075s;}
-	.randomPuzzle75:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle75 {left: calc(80px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle75 {left: calc(80px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle76 {animation-delay: 0.076s;}
-	.randomPuzzle76:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle76 {left: calc(96px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle76 {left: calc(96px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle77 {animation-delay: 0.077s;}
-	.randomPuzzle77:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle77 {left: calc(112px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle77 {left: calc(112px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle78 {animation-delay: 0.078s;}
-	.randomPuzzle78:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle78 {left: calc(128px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle78 {left: calc(128px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle79 {animation-delay: 0.079s;}
-	.randomPuzzle79:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle79 {left: calc(144px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle79 {left: calc(144px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle80 {animation-delay: 0.08s;}
-	.randomPuzzle80:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle80 {left: calc(0px * var(--nav-button-mul)); top: 2.8000000000000003em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle80 {left: calc(0px * var(--p-button-mul)); top: calc(7px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle81 {animation-delay: 0.081s;}
-	.randomPuzzle81:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle81 {left: calc(16px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle81 {left: calc(16px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle82 {animation-delay: 0.08200000000000001s;}
-	.randomPuzzle82:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle82 {left: calc(32px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle82 {left: calc(32px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle83 {animation-delay: 0.08300000000000001s;}
-	.randomPuzzle83:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle83 {left: calc(48px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle83 {left: calc(48px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle84 {animation-delay: 0.084s;}
-	.randomPuzzle84:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle84 {left: calc(64px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle84 {left: calc(64px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle85 {animation-delay: 0.085s;}
-	.randomPuzzle85:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle85 {left: calc(80px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle85 {left: calc(80px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle86 {animation-delay: 0.086s;}
-	.randomPuzzle86:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle86 {left: calc(96px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle86 {left: calc(96px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle87 {animation-delay: 0.087s;}
-	.randomPuzzle87:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle87 {left: calc(112px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle87 {left: calc(112px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle88 {animation-delay: 0.088s;}
-	.randomPuzzle88:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle88 {left: calc(128px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle88 {left: calc(128px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle89 {animation-delay: 0.089s;}
-	.randomPuzzle89:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle89 {left: calc(144px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle89 {left: calc(144px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle90 {animation-delay: 0.09s;}
-	.randomPuzzle90:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle90 {left: calc(0px * var(--nav-button-mul)); top: 3.2em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle90 {left: calc(0px * var(--p-button-mul)); top: calc(8px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle91 {animation-delay: 0.091s;}
-	.randomPuzzle91:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle91 {left: calc(16px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle91 {left: calc(16px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle92 {animation-delay: 0.092s;}
-	.randomPuzzle92:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle92 {left: calc(32px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle92 {left: calc(32px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle93 {animation-delay: 0.093s;}
-	.randomPuzzle93:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle93 {left: calc(48px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle93 {left: calc(48px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle94 {animation-delay: 0.09400000000000001s;}
-	.randomPuzzle94:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle94 {left: calc(64px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle94 {left: calc(64px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle95 {animation-delay: 0.09500000000000001s;}
-	.randomPuzzle95:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle95 {left: calc(80px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle95 {left: calc(80px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle96 {animation-delay: 0.096s;}
-	.randomPuzzle96:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle96 {left: calc(96px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle96 {left: calc(96px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle97 {animation-delay: 0.097s;}
-	.randomPuzzle97:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle97 {left: calc(112px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle97 {left: calc(112px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle98 {animation-delay: 0.098s;}
-	.randomPuzzle98:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle98 {left: calc(128px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle98 {left: calc(128px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle99 {animation-delay: 0.099s;}
-	.randomPuzzle99:hover {z-index: 101;animation: randomz 0s; background: red;}
+	li.nav a.randomPuzzle99 {left: calc(144px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle99 {left: calc(144px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}
 
-	.randomPuzzle100 {animation-delay: 1s;}
-	.randomPuzzle100:hover {z-index: 101;animation: randomz 0s; background: red;}
-
-
+	li.nav a.randomPuzzle100 {left: calc(0px * var(--nav-button-mul)); top: 3.6em; height: .4em; padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--nav-button-mul));}
+	.randomPuzzlen1.randomPuzzle100 {left: calc(0px * var(--p-button-mul)); top: calc(9px * var(--p-button-h)); height: calc(1px * var(--p-button-h)); padding: 0px; margin: 0px; z-index: 2; opacity: 0; width: calc(16px * var(--p-button-mul));}

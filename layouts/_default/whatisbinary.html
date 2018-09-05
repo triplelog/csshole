@@ -1,7 +1,8 @@
 {{ partial "header" . }}
 <style>
 :root {
-	--map-height: 40vw;
+	--bar-height: 1vw;
+	--color-gray: rgb(220,220,220);
 }
 
 
@@ -131,7 +132,7 @@ input:checked + .brownblock {
 	float: left;
 	display: inline-block;
 	height: 1vw;
-	background: gray;
+	background: var(--color-gray);
 }
 input.redInput:checked ~ span .redbit {
 	background: red;
@@ -232,7 +233,7 @@ input.brownInput:checked ~ span .brownbit {
 		
 		
 		
-		<p>For blocks as small as <span class="yellowbit"></span> up to blocks slightly wider than your screen, we can represent its size with a small number of on or off bits.
+		<p>For blocks as small as <span class="yellowbit" style="position: relative; display: inline-block; background: black;"></span> up to blocks slightly wider than your screen, we can represent its size with a small number of on or off bits.
 		</p>
 		
 		<span style="width:13vw; position: relative; display: block; height: 1vw; background: black;"></span>
