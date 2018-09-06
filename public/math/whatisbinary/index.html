@@ -42,7 +42,9 @@
 
 <style>
 :root {
-	--bar-height: 1vw;
+	--bar-height: 2vw;
+	--bit-height: 2vw;
+	--bit-width: 2vw;
 	--color-gray: rgb(220,220,220);
 }
 
@@ -50,49 +52,49 @@
 input:not(:checked) + .purpleblock {
 	width:1vw;
 	position: absolute;
-	top: 3vh;
+	top: calc(1.1 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: purple;
 }
 input:not(:checked) + .blueblock {
 	width:2vw;
 	position: absolute;
-	top: 6vh;
+	top: calc(2.2 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: blue;
 }
 input:not(:checked) + .redblock {
 	width:4vw;
 	position: absolute;
-	top: 9vh;
+	top: calc(3.3 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: red;
 }
 input:not(:checked) + .orangeblock {
 	width:8vw;
 	position: absolute;
-	top: 12vh;
+	top: calc(4.4 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: orange;
 }
 input:not(:checked) + .greenblock {
 	width:16vw;
 	position: absolute;
-	top: 15vh;
+	top: calc(5.5 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: green;
 }
 input:not(:checked) + .yellowblock {
 	width:32vw;
 	position: absolute;
-	top: 18vh;
+	top: calc(6.6 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: yellow;
 }
 
@@ -100,51 +102,51 @@ input:checked + .purpleblock {
 	width:1vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: purple;
 }
 input:checked + .blueblock {
 	width:2vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: blue;
 }
 input:checked + .redblock {
 	width:4vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: red;
 }
 input:checked + .orangeblock {
 	width:8vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: orange;
 }
 input:checked + .greenblock {
 	width:16vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: green;
 }
 input:checked + .yellowblock {
 	width:32vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: yellow;
 }
 
 input:not(:checked) + .brownblock {
 	width:.5vw;
 	position: absolute;
-	top: 21vh;
+	top: calc(7.7 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: brown;
 }
 
@@ -152,27 +154,27 @@ input:checked + .brownblock {
 	width:.5vw;
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bar-height);
 	background: brown;
 }
 
 .digits {
 	position: absolute;
-	top: 21vh;
+	top: calc(7.7 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bit-height);
 }
 .digitsDecimal {
 	position: absolute;
-	top: 24vh;
+	top: calc(8.8 * var(--bar-height));
 	display: block;
-	height: 1vw;
+	height: var(--bit-height);
 }
 .redbit, .yellowbit, .purplebit, .bluebit, .greenbit, .orangebit, .brownbit {
-	width:1vw;
+	width: var(--bit-width);
 	float: left;
 	display: inline-block;
-	height: 1vw;
+	height: var(--bit-height);
 	background: var(--color-gray);
 }
 input.redInput:checked ~ span .redbit {
@@ -195,6 +197,12 @@ input.greenInput:checked ~ span .greenbit {
 }
 input.brownInput:checked ~ span .brownbit {
 	background: brown;
+}
+.blackbar {
+	 position: relative;
+	 display: block;
+	 height: var(--bar-height);
+	 background: black;
 }
 </style>
 </head>
@@ -1894,8 +1902,8 @@ input.brownInput:checked ~ span .brownbit {
 		</ul>
 		
 	<iframe src="https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-125340485-1&cid=f9897df0-1f6c-47d2-ba42-cd73e6db1404&dp=%2Fmath%2Fwhatisbinary" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-	<div style="position: relative; left: 30%; z-index: 5; width: 40%;">
-		<center>What is binary?</center>
+	<div style="margin-left: auto; margin-right: auto; width: calc(200px + 40vw); display: block; position: relative; padding: 2em 0px;">
+		<h2><center>What is binary?</center></h2>
 		<p>Computers store information as a collection of bits that are either on or off. Using 0 to represent off and 1 to represent on is common, but most people equate "10" with the base-10 value that is equal to the number of fingers most people have. While in binary, "10" represents the number of hands most people have.
 		</p>
 		
@@ -1916,9 +1924,9 @@ input.brownInput:checked ~ span .brownbit {
 		<p>We can use a set of smaller blocks that will uniquely define the width by stating whether each block is required or not.
 		</p>
 		
-		<span style="width:23vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		<span class="blackbar" style="width:23vw;"></span>
 		
-		<div style="height: 21vh; position: relative; width: 32vw;">
+		<div style="height: calc(7.7 * var(--bar-height)); position: relative; width: 32vw;">
 		<input type="checkbox" id="yellow1" style="display:none;">
 		<label for="yellow1" class="yellowblock"></label>
 		<input type="checkbox" id="green1" style="display:none;">
@@ -1948,9 +1956,9 @@ input.brownInput:checked ~ span .brownbit {
 		<p>How do we convert this talk of green and red blocks into something that more organized? Instead of using colors and sizes to distinguish the blocks we use their location.
 		</p>
 		
-		<span style="width:24vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		<span class="blackbar" style="width:24vw;"></span>
 		
-		<div style="height: 24vh; position: relative; width: 64vw;">
+		<div style="height: calc(8.8 * var(--bar-height)); position: relative; width: 64vw;">
 		<input type="checkbox" id="yellow2" style="display:none;" class="yellowInput">
 		<label for="yellow2" class="yellowblock"></label>
 		<input type="checkbox" id="green2" style="display:none;" class="greenInput">
@@ -1968,12 +1976,12 @@ input.brownInput:checked ~ span .brownbit {
 		
 		
 		
-		<p>For blocks as small as <span class="yellowbit" style="position: relative; display: inline-block; background: black;"></span> up to blocks slightly wider than your screen, we can represent its size with a small number of on or off bits.
+		<p>For blocks as small as <span class="yellowbit" style="position: relative; display: inline-block; background: black; float: none;"></span> up to blocks almost as wide as your screen, we can represent its size with just six on or off bits.
 		</p>
 		
-		<span style="width:13vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		<span class="blackbar" style="width:13vw;"></span>
 		
-		<div style="height: 24vh; position: relative; width: 64vw;">
+		<div style="height: calc(8.8 * var(--bar-height)); position: relative; width: 64vw;">
 		<input type="checkbox" id="yellow3" style="display:none;" class="yellowInput">
 		<label for="yellow3" class="yellowblock"></label>
 		<input type="checkbox" id="green3" style="display:none;" class="greenInput">
@@ -1992,9 +2000,9 @@ input.brownInput:checked ~ span .brownbit {
 		<p>To get a bit trickier, what is the length of this block? You're not going to be able to get the exact length using just the six blocks. There is going to be a bit left over that is too small to be covered by any of the six blocks, but get as close as you can.
 		</p>
 		
-		<span style="width:17.5vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		<span class="blackbar" style="width:17.5vw;"></span>
 		
-		<div style="height: 24vh; position: relative; width: 64vw;">
+		<div style="height: calc(8.8 * var(--bar-height)); position: relative; width: 64vw;">
 		<input type="checkbox" id="yellow4" style="display:none;" class="yellowInput">
 		<label for="yellow4" class="yellowblock"></label>
 		<input type="checkbox" id="green4" style="display:none;" class="greenInput">
@@ -2013,9 +2021,9 @@ input.brownInput:checked ~ span .brownbit {
 		<p>To match the block exactly, we need to add a seventh block that is smaller.
 		</p>
 		
-		<span style="width:17.5vw; position: relative; display: block; height: 1vw; background: black;"></span>
+		<span class="blackbar" style="width:17.5vw;"></span>
 		
-		<div style="height: 24vh; position: relative; width: 64vw;">
+		<div style="height: calc(9.9 * var(--bar-height)); position: relative; width: 64vw;">
 		<input type="checkbox" id="yellow5" style="display:none;" class="yellowInput">
 		<label for="yellow5" class="yellowblock"></label>
 		<input type="checkbox" id="green5" style="display:none;" class="greenInput">

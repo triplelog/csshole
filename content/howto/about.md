@@ -8,14 +8,14 @@ type: "howto"
 layout: "basic"
 ---
 
-<div style="margin-left: auto; margin-right: auto; width: calc(200px + 40vw); display: block; position: relative;">
+<div style="margin-left: auto; margin-right: auto; width: calc(200px + 40vw); display: block; position: relative; padding: 3em 0px;">
 
 <p>
 Every web page on this domain is created using only HTML and CSS. No Javascript and no server interaction (other than navigating to a new static page). There is no good reason to make an interactive website completely static and avoid Javascript. Most of these web pages could be improved and made smaller by using just a few lines of Javascript because CSS is really not designed to do the things I use it for. If you are trying to learn HTML and CSS for the first time, you may not want to look at the source.
 </p>
 
 <p>
-With those caveats (and many more) out of the way, why might throwing out Javascript and server scripts be a good exercise? The best reason is that you want a fun challenge that combines creativity with brute force perseverance. If you are trying to reduce your dependence on Javascript/JQuery/Python/PHP/... then being restricted to CSS may teach you a trick or two that actually improves your web page.
+With those caveats (and many more) out of the way, why might throwing out Javascript and server scripts be a good exercise? The best reason is that you want a fun challenge that combines creativity with brute force perseverance. If you are trying to reduce your dependence on Javascript/JQuery/Python/Ruby/... then being restricted to CSS may teach you a trick or two that actually improves your web page.
 </p>
 
 <p>
@@ -47,6 +47,6 @@ I hope you enjoy this website. If you think you can build similar web apps with 
 </p>
 
 <p>
-To see my sources for mapping and political data, <a href="/howto/sources/index.html">click here</a>.
+To see my sources for mapping and political data, <a href="https://www.csshole.com/howto/sources/index.html">click here</a>.
 </p>
 </div>
