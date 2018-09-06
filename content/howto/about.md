@@ -47,6 +47,6 @@ I hope you enjoy this website. If you think you can build similar web apps with 
 </p>
 
 <p>
-To see my sources for mapping and political data, <a href="https://www.csshole.com/howto/sources/index.html">click here</a>.
+To see my sources for mapping and political data, <a href="https://www.csshole.com/howto/sources/index.html">click here</a>. If you would like to contact me to tell me what you have built or any other reason, my email is robmwilc+csshole@gmail.com.
 </p>
 </div>
