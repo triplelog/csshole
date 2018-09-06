@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maths on CSS Hole - Interactive Web Apps using only HTML and CSS</title>
-    <link>https://csshole.com/math/</link>
+    <link>https://www.csshole.com/math/</link>
     <description>Recent content in Maths on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://csshole.com/math/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.csshole.com/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Binary Introduction</title>
-      <link>https://csshole.com/math/whatisbinary/</link>
+      <link>https://www.csshole.com/math/whatisbinary/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/whatisbinary/</guid>
+      <guid>https://www.csshole.com/math/whatisbinary/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.com/math/adder/</link>
+      <link>https://www.csshole.com/math/adder/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/adder/</guid>
+      <guid>https://www.csshole.com/math/adder/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.com/math/binary/</link>
+      <link>https://www.csshole.com/math/binary/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/binary/</guid>
+      <guid>https://www.csshole.com/math/binary/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electoral Map - Just CSS/HTML</title>
-      <link>https://csshole.com/math/whatisaddition/</link>
+      <link>https://www.csshole.com/math/whatisaddition/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/whatisaddition/</guid>
+      <guid>https://www.csshole.com/math/whatisaddition/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sudoku Page</title>
-      <link>https://csshole.com/math/mathquiz/</link>
+      <link>https://www.csshole.com/math/mathquiz/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/mathquiz/</guid>
+      <guid>https://www.csshole.com/math/mathquiz/</guid>
       <description>Hello! </description>
     </item>
     
     <item>
       <title>Sudoku Page</title>
-      <link>https://csshole.com/math/trigknob/</link>
+      <link>https://www.csshole.com/math/trigknob/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/trigknob/</guid>
+      <guid>https://www.csshole.com/math/trigknob/</guid>
       <description>Hello! </description>
     </item>
     
     <item>
       <title>Trigonometry Quiz</title>
-      <link>https://csshole.com/math/trigonometryquiz/</link>
+      <link>https://www.csshole.com/math/trigonometryquiz/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://csshole.com/math/trigonometryquiz/</guid>
+      <guid>https://www.csshole.com/math/trigonometryquiz/</guid>
       <description></description>
     </item>
     

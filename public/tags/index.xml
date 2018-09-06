@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on CSS Hole - Interactive Web Apps using only HTML and CSS</title>
-    <link>https://csshole.com/tags/</link>
+    <link>https://www.csshole.com/tags/</link>
     <description>Recent content in Tags on CSS Hole - Interactive Web Apps using only HTML and CSS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://csshole.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.csshole.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
